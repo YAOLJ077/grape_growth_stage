@@ -1,0 +1,68 @@
+{
+  "france_tempo": {
+    "date_max": "2022-10-14",
+    "date_min": "1349-09-19",
+    "excluded_non_vitis_rows": 9,
+    "joined_rows": 555791,
+    "raw_rows": 555791,
+    "training_duplicate_rows_removed": 412707,
+    "training_rows": 143075,
+    "unique_sites": 2297,
+    "unique_stages": 54
+  },
+  "germany_dwd": {
+    "date_max": "2026-06-24",
+    "date_min": "1951-09-05",
+    "joined_rows": 93510,
+    "selected_raw_rows": 93510,
+    "station_metadata_downloads": {
+      "annual_downloaded": false,
+      "immediate_downloaded": false
+    },
+    "training_duplicate_rows_removed": 402,
+    "training_rows": 93108,
+    "unique_sites": 732,
+    "unique_stages": 11,
+    "unmatched_station_rows": 0
+  },
+  "outputs": {
+    "france_grape_phenology_complete": {
+      "countries": {
+        "France": 555791
+      },
+      "missing": {
+        "bbch_code_pct": 0.0,
+        "latitude_pct": 0.0,
+        "longitude_pct": 0.0,
+        "stage_description_pct": 0.0
+      },
+      "rows": 555791,
+      "unique_sites": 2297,
+      "unique_stages": 54,
+      "years": {
+        "max": 2022,
+        "min": 1349,
+        "unique": 657
+      }
+    },
+    "germany_grape_phenology_complete": {
+      "countries": {
+        "Germany": 93510
+      },
+      "missing": {
+        "bbch_code_pct": 62.56443161159234,
+        "latitude_pct": 0.0,
+        "longitude_pct": 0.0,
+        "stage_description_pct": 0.0
+      },
+      "rows": 93510,
+      "unique_sites": 732,
+      "unique_stages": 11,
+      "years": {
+        "max": 2026,
+        "min": 1951,
+        "unique": 76
+      }
+    }
+  }
+}

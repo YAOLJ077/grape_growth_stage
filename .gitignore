@@ -5,3 +5,10 @@ __pycache__/
 venv/
 env/
 .env
+
+# Large generated data files kept locally; regenerate with src/standardize_grape_phenology.py.
+data/phenology_grape/processed/france_grape_phenology_complete.csv
+
+# DEM downloads can be several GB and should be stored outside normal Git history.
+data/topography/raw/
+*.part
