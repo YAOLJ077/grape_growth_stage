@@ -14,11 +14,12 @@ import pandas as pd
 
 
 COUNTRY_TABLES = [
-    Path("data/phenology_grape/processed/france_grape_phenology_complete.csv"),
-    Path("data/phenology_grape/processed/germany_grape_phenology_complete.csv"),
+    Path("data/phenology/processed/france_grape_phenology_complete.csv"),
+    Path("data/phenology/processed/germany_grape_phenology_complete.csv"),
 ]
 EXTENT = [-6.5, 16.0, 41.0, 55.5]
 COUNTRY_COLORS = {"France": "#2f6f9f", "Germany": "#d95f02"}
+DEFAULT_START_YEAR = 1951
 AXIS_LABEL_SIZE = 14
 TICK_LABEL_SIZE = 12
 SUBTITLE_SIZE = 15
@@ -32,7 +33,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--data-dir",
         type=Path,
-        default=Path("data/phenology_grape/derived/descriptive_phenology"),
+        default=Path("data/phenology/derived/descriptive_phenology"),
     )
     parser.add_argument(
         "--topography-dir",
@@ -51,6 +52,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--refresh", action="store_true", help="Rebuild cached topography outputs.")
     parser.add_argument("--dpi", type=int, default=300)
+    parser.add_argument(
+        "--start-year",
+        type=int,
+        default=DEFAULT_START_YEAR,
+        help="Include only observations from this year onward (default: 1951).",
+    )
     return parser.parse_args()
 
 
@@ -86,14 +93,16 @@ def tile_key(lon: float, lat: float) -> tuple[int, int]:
     return math.floor(lat), math.floor(lon)
 
 
-def load_sites(paths: list[Path]) -> pd.DataFrame:
-    columns = ["country_name", "source_system", "site_id", "site_name", "latitude", "longitude", "altitude", "doy"]
+def load_sites(paths: list[Path], start_year: int = DEFAULT_START_YEAR) -> pd.DataFrame:
+    columns = ["country_name", "source_system", "site_id", "site_name", "latitude", "longitude", "altitude", "year", "doy"]
     df = pd.concat(
         [pd.read_csv(path, usecols=columns, low_memory=False) for path in paths],
         ignore_index=True,
     )
     for column in ["latitude", "longitude", "altitude"]:
         df[column] = pd.to_numeric(df[column], errors="coerce")
+    df["year"] = pd.to_numeric(df["year"], errors="coerce")
+    df = df[df["year"].ge(start_year)].copy()
     df = df.dropna(subset=["country_name", "site_id", "latitude", "longitude"]).copy()
     sites = (
         df.groupby(["country_name", "source_system", "site_id"], dropna=False)
@@ -135,7 +144,12 @@ def sample_dem_points(points: pd.DataFrame) -> np.ndarray:
 
 def build_site_topography(sites: pd.DataFrame, out_path: Path, refresh: bool, include_slope: bool, skip_site_dem: bool) -> pd.DataFrame:
     if out_path.exists() and not refresh:
-        return pd.read_csv(out_path)
+        cached = pd.read_csv(out_path)
+        key_columns = ["country_name", "source_system", "site_id"]
+        expected_keys = set(map(tuple, sites[key_columns].astype(str).to_numpy()))
+        cached_keys = set(map(tuple, cached[key_columns].astype(str).to_numpy()))
+        if cached_keys == expected_keys:
+            return cached
     if skip_site_dem:
         topo = sites.copy()
         topo["dem_elevation_m"] = np.nan
@@ -243,8 +257,20 @@ def site_tile_keys(sites: pd.DataFrame, margin: int, max_tiles: int | None) -> l
 
 
 def build_background_dem(out_path: Path, sites: pd.DataFrame, resolution: float, tile_margin: int, max_tiles: int, refresh: bool) -> pd.DataFrame:
+    selected_keys = set(site_tile_keys(sites, tile_margin, max_tiles))
     if out_path.exists() and not refresh:
-        return pd.read_csv(out_path)
+        cached = pd.read_csv(out_path)
+        if {"tile_lat", "tile_lon"}.issubset(cached.columns):
+            cached_keys = set(
+                zip(cached["tile_lat"].astype(int), cached["tile_lon"].astype(int), strict=False)
+            )
+            if selected_keys.issubset(cached_keys):
+                return cached[
+                    cached[["tile_lat", "tile_lon"]]
+                    .astype(int)
+                    .apply(tuple, axis=1)
+                    .isin(selected_keys)
+                ].copy()
 
     import rasterio
     from rasterio.enums import Resampling
@@ -252,7 +278,7 @@ def build_background_dem(out_path: Path, sites: pd.DataFrame, resolution: float,
     rows = []
     tile_size = max(8, int(round(1 / resolution)))
     with rasterio.Env(GDAL_DISABLE_READDIR_ON_OPEN="EMPTY_DIR", CPL_VSIL_CURL_ALLOWED_EXTENSIONS=".tif"):
-        for lat_floor, lon_floor in site_tile_keys(sites, tile_margin, max_tiles):
+        for lat_floor, lon_floor in sorted(selected_keys):
             url = copernicus_dem_url(lat_floor, lon_floor)
             try:
                 with rasterio.open(url) as src:
@@ -387,8 +413,10 @@ Processed files are derived from Copernicus DEM GLO-30 public Cloud Optimized Ge
 def main() -> int:
     args = parse_args()
     configure_matplotlib()
-    sites = load_sites(args.input)
-    site_topography_path = args.data_dir / "site_topography.csv"
+    sites = load_sites(args.input, args.start_year)
+    # Keep this legacy France/Germany visualization separate from the canonical
+    # six-country 1951+ table generated by base_table/build_site_topography.py.
+    site_topography_path = args.data_dir / "site_topography_france_germany_legacy.csv"
     resolution_tag = str(args.background_resolution).replace(".", "p")
     dem_cache_path = args.topography_dir / (
         f"site_region_dem_glo30_background_{resolution_tag}deg_top{args.max_background_tiles}tiles.csv"
@@ -399,6 +427,7 @@ def main() -> int:
     write_metadata(args.topography_dir.parent / "metadata" / "copernicus_dem_glo30.md")
 
     print(f"Sites summarized: {len(topo):,}")
+    print(f"Study period: {args.start_year} onward")
     print(f"Site topography written to: {site_topography_path}")
     print(f"DEM background cache written to: {dem_cache_path}")
     print(f"Figure written to: {args.fig_dir / 'site_distribution_dem_overlap.png'}")

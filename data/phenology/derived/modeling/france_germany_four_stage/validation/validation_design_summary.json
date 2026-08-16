@@ -1,0 +1,40 @@
+{
+  "study_scope": "France and Germany, 1951+, BBCH 07/65/81/89",
+  "outer_group_column": "validation_block_1deg_id",
+  "inner_group_column": "validation_block_1deg_id",
+  "n_outer_folds": 5,
+  "n_inner_folds": 4,
+  "random_seed": 20260804,
+  "n_events": 31439,
+  "n_sites": 2324,
+  "n_site_years": 17172,
+  "n_era5_grids": 1306,
+  "n_outer_spatial_blocks": 114,
+  "outer_assignment_objective": 0.00999184,
+  "inner_assignment_objectives": {
+    "1": 0.01136871,
+    "2": 0.01019203,
+    "3": 0.01089556,
+    "4": 0.00197267,
+    "5": 0.0106264
+  },
+  "max_outer_country_stage_event_share_deviation_pct_points": 7.703,
+  "max_inner_country_stage_event_share_deviation_pct_points": 9.712,
+  "max_outer_country_stage_tier_event_share_deviation_pct_points": 80.0,
+  "max_inner_country_stage_tier_event_share_deviation_pct_points": 75.0,
+  "leakage_checks": {
+    "sites_in_multiple_outer_folds": 0,
+    "era5_grids_in_multiple_outer_folds": 0,
+    "one_degree_blocks_in_multiple_outer_folds": 0,
+    "sites_in_multiple_inner_folds_within_outer_training_set": 0,
+    "era5_grids_in_multiple_inner_folds_within_outer_training_set": 0,
+    "one_degree_blocks_in_multiple_inner_folds_within_outer_training_set": 0,
+    "outer_test_blocks_present_in_corresponding_inner_map": 0
+  },
+  "scale_decision": {
+    "selected": "1 degree",
+    "rejected_as_primary": "2 degree",
+    "reason": "The largest German 2-degree block contains roughly half of each stage; 1-degree blocks materially improve five-fold balance while preserving regional separation."
+  },
+  "balance_note": "Country-stage counts are balanced without splitting spatial groups. Sparse, geographically concentrated model tiers are audited but not forced to equal shares."
+}

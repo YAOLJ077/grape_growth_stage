@@ -1,0 +1,25 @@
+{
+  "scope": "France and Germany, 1951+, BBCH 07/65/81/89",
+  "modeling_event_index": "data/phenology/derived/modeling/france_germany_four_stage/validation/modeling_event_index.csv",
+  "outer_fold_mapping": "data/phenology/derived/modeling/france_germany_four_stage/validation/outer_spatial_block_folds.csv",
+  "inner_fold_mapping": "data/phenology/derived/modeling/france_germany_four_stage/validation/inner_spatial_block_folds.csv",
+  "temperature_branches": {
+    "raw": {
+      "tmean": "temperature_2m_c",
+      "tmin": "temperature_2m_min_c",
+      "tmax": "temperature_2m_max_c"
+    },
+    "adjusted_6p5": {
+      "tmean": "temperature_2m_c_adjusted_main_6p5c_km",
+      "tmin": "temperature_2m_min_c_adjusted_main_6p5c_km",
+      "tmax": "temperature_2m_max_c_adjusted_main_6p5c_km"
+    }
+  },
+  "n_model_structures": 11,
+  "n_temperature_model_combinations": 22,
+  "calibration_rule": "All fitted forcing thresholds are estimated inside the active training fold only.",
+  "comparison_rule": "Raw and adjusted branches use identical observations, outer folds and inner folds.",
+  "primary_sample_rule": "Core and extended events are pooled with equal status and weight; tier is not a predictor or stratification variable. Sensitivity events are excluded from the primary analysis.",
+  "fixed_reference_rule": "Only literature-supported cultivar-median external benchmarks are executable; no universal BBCH89 threshold is imposed.",
+  "execution_state": "foundation_ready; completed runs are recorded in baseline_mechanistic/run_summary.json"
+}

@@ -13,8 +13,8 @@ import pandas as pd
 
 
 COUNTRY_TABLES = [
-    Path("data/phenology_grape/processed/france_grape_phenology_complete.csv"),
-    Path("data/phenology_grape/processed/germany_grape_phenology_complete.csv"),
+    Path("data/phenology/processed/france_grape_phenology_complete.csv"),
+    Path("data/phenology/processed/germany_grape_phenology_complete.csv"),
 ]
 
 KEY_BBCH = ["07", "09", "11", "15", "19", "55", "61", "65", "69", "75", "79", "81", "89"]
@@ -62,7 +62,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--data-dir",
         type=Path,
-        default=Path("data/phenology_grape/derived/descriptive_phenology"),
+        default=Path("data/phenology/derived/descriptive_phenology"),
         help="Directory for derived summary CSVs.",
     )
     parser.add_argument("--dpi", type=int, default=300, help="Output image resolution.")

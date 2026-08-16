@@ -33,8 +33,8 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         nargs="+",
         default=[
-            Path("data/phenology_grape/processed/france_grape_phenology_complete.csv"),
-            Path("data/phenology_grape/processed/germany_grape_phenology_complete.csv"),
+            Path("data/phenology/processed/france_grape_phenology_complete.csv"),
+            Path("data/phenology/processed/germany_grape_phenology_complete.csv"),
         ],
         help="Processed phenology table(s) to map.",
     )
@@ -47,7 +47,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--data-out-dir",
         type=Path,
-        default=Path("data/phenology_grape/derived/phenology_distribution"),
+        default=Path("data/phenology/derived/phenology_distribution"),
         help="Directory for derived CSV summaries.",
     )
     parser.add_argument(

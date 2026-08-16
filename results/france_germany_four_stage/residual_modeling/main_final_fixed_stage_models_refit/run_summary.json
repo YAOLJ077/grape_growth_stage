@@ -1,0 +1,28 @@
+{
+  "scope": "fixed stage-level hybrid model evaluation with inner-RMSE hyperparameter tuning",
+  "data_dir": "results/france_germany_four_stage/residual_machine_learning_main_final",
+  "selection_source_dir": "results/france_germany_four_stage/residual_modeling/main_final_minrmse_four_stage",
+  "residual_definition": "observed_doy - mechanistic_predicted_doy",
+  "fixed_algorithms": {
+    "budburst": "ridge",
+    "flowering": "rf",
+    "veraison": "ridge",
+    "maturity_or_harvest": "rf"
+  },
+  "selection_rule": "min_rmse",
+  "selection_rule_description": "stage-level minimum mean inner spatial-CV RMSE for algorithm fixation; inner spatial-CV RMSE for hyperparameter tuning within fixed algorithm",
+  "complexity_order": {
+    "mechanistic": 0,
+    "ridge": 1,
+    "gam": 2,
+    "rf": 3,
+    "xgboost": 4,
+    "lightgbm": 5
+  },
+  "test_targets_used_for_algorithm_or_hyperparameter_selection": false,
+  "n_jobs": 4,
+  "random_state": 20260805,
+  "elapsed_seconds": 500.06502766604535,
+  "output_dir": "results/france_germany_four_stage/residual_modeling/main_final_fixed_stage_models_refit",
+  "report_path": "results/report/main_final_fixed_stage_hybrid_results.md"
+}

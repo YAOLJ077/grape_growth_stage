@@ -1,0 +1,49 @@
+column_name,data_type,meaning_zh,meaning_en,source_or_derivation,applies_to,modeling_note
+source_system,string,数据源系统标识,Source system identifier,standardization script constant: france_tempo or germany_dwd,all,用于分组建模/来源效应控制/分层验证
+source_dataset,string,数据集或子数据源名称,Dataset or sub-source name,TEMPO datasource name or DWD reporter dataset label,all,可用于识别 ODS/Epiphyt/Phenoclim 或 DWD annual/immediate
+observation_id,string,标准化后的观测记录ID,Standardized observation record ID,TEMPO id or generated DWD composite id,all,用于追踪单条记录；不是跨数据源可比较的自然键
+date,date,物候事件发生日期,Phenological event date,TEMPO date or DWD Eintrittsdatum converted to YYYY-MM-DD,all,核心目标变量的日期字段
+year,integer,事件年份,Event year,parsed from date string,all,用于按年匹配气象和划分训练/验证
+month,integer,事件月份,Event month,parsed from date string,all,用于季节检查和异常筛选
+day,integer,事件日,Event day of month,parsed from date string,all,用于日期完整性检查
+doy,integer,年内日序,Day of year,TEMPO date-derived DOY or DWD Jultag,all,常用物候模型目标变量
+country,string,国家代码或原始国家ID,Country code or original country ID,TEMPO country id; Germany uses DE,all,法国为 TEMPO country id 2；德国为 DE
+country_name,string,国家名称,Country name,TEMPO country metadata or constant Germany,all,用于筛选国家和跨国比较
+site_id,string,站点ID,Site identifier,TEMPO site id or DWD Stations_id,all,站点随机效应/空间匹配关键字段
+site_name,string,站点名称,Site name,TEMPO site name or DWD Stationsname,all,人工浏览和地理核查
+latitude,float,纬度,WGS84 latitude,TEMPO site metadata or DWD station metadata,all,气象/遥感格点匹配关键字段
+longitude,float,经度,WGS84 longitude,TEMPO site metadata or DWD station metadata,all,气象/遥感格点匹配关键字段
+altitude,float,统一来源海拔,Canonical source altitude in meters,TEMPO reported altitude with altitudeIgn fallback; DWD Stationshoehe; PEP725 alt,all,用于数据审计；跨国建模优先使用统一提取的 Copernicus dem_elevation_m
+altitude_reported,float,来源自报海拔,Reported source altitude in meters,TEMPO altitude; DWD Stationshoehe; PEP725 alt,all,保留原始来源值以进行质量核查
+altitude_ign,float,法国IGN海拔,French IGN-derived elevation,TEMPO altitudeIgn,france_tempo,TEMPO altitude 缺失时用于回填统一来源海拔
+altitude_source,string,统一来源海拔的取值来源,Provenance of canonical source altitude,derived from source-specific availability,all,区分 tempo_reported、tempo_ign、dwd_station_reported 和 pep725_reported
+region,string,法国大区名称,French region name,TEMPO region metadata,france_tempo,法国行政区分组；德国为空
+department,string,法国省名称,French department name,TEMPO department metadata,france_tempo,法国行政区分组；德国为空
+commune,string,法国市镇名称,French commune name,TEMPO commune metadata,france_tempo,法国细粒度行政区；德国为空
+natural_region,string,德国自然区名称,German natural region,DWD station metadata Naturraum,germany_dwd,德国自然地理分组；法国为空
+federal_state,string,德国联邦州,German federal state,DWD station metadata Bundesland,germany_dwd,德国行政区分组；法国为空
+taxon_id,string,作物/分类单元ID,Taxon or object identifier,TEMPO taxon id or DWD Objekt_id,all,用于区分物种、品种或成熟组
+taxon_name,string,分类单元短名,Taxon short name,TEMPO taxon name or DWD object name,all,人工浏览字段
+taxon_fullname,string,分类单元全名,Taxon full name,TEMPO fullname or constructed DWD Vitis name,all,用于葡萄筛选和作物范围核查
+cultivar,string,品种名称,Cultivar name,TEMPO variety name when available or DWD object name,all,法国多为空或品种名；德国多为成熟组/品种组名称
+cultivar_group,string,品种组/成熟组,Cultivar or maturity group,TEMPO cultivar fallback or DWD file-derived group,all,建模时可作为品种/成熟组效应
+stage_id,string,物候阶段ID,Phenological stage identifier,TEMPO stage id or DWD Phase_id,all,阶段主键；跨源不直接等价
+stage_code,string,源数据阶段代码,Source stage code,TEMPO stage code or DWD Phase_id,all,保留源数据阶段编码
+bbch_code,string,BBCH阶段代码,BBCH stage code,TEMPO stage code; DWD BBCH mapping where available,all,跨源统一物候阶段的首选字段；DWD 部分阶段无 BBCH
+stage_eventcode,string,粗分物候事件代码,Broad phenological event code,TEMPO eventcode; DWD empty,france_tempo,法国 TEMPO 粗阶段分组；德国为空
+stage_event,string,物候阶段名称,Phenological stage name,TEMPO event or DWD phase name,all,人工浏览和阶段筛选
+stage_description,string,物候阶段描述,Phenological stage description,TEMPO description or DWD phase definition/English fallback,all,解释阶段含义；模型前建议核查同名阶段差异
+datasource_id,string,源数据源ID,Source-specific datasource ID,TEMPO datasource id or DWD reporter_type,all,用于来源追踪和去重
+datasource_name,string,源数据源名称,Source-specific datasource name,TEMPO datasource name or DWD reporter label,all,用于来源分组与质量评估
+license_id,string,许可证ID,License identifier,TEMPO license id; DWD empty,all,数据许可追踪；DWD 许可写在 license_name
+license_name,string,许可证名称,License name,TEMPO license name or DWD open data,all,数据许可追踪
+quality_level,string,质量等级,Quality level,DWD Qualitaetsniveau; TEMPO empty,germany_dwd,DWD 质量标志，可用于过滤低质量记录
+date_quality_flag,string,日期质量标志,Date quality flag,DWD Eintrittsdatum_QB; TEMPO empty,germany_dwd,DWD 日期质量控制字段
+reporter_type,string,DWD观测员类型,DWD reporter type,DWD annual or immediate; TEMPO empty,germany_dwd,区分年度观测员和即时观测员
+additionalData_id,string,TEMPO附加数据ID,TEMPO additional data ID,TEMPO additionalData id; DWD empty,france_tempo,用于追溯 TEMPO 附加字段
+additionalData_raw,string,TEMPO附加数据原文,Raw TEMPO additional data,TEMPO additionaldata data string; DWD empty,france_tempo,包含来源、备注、材料等半结构化信息
+source_file,string,原始文件名,Source file name,DWD source txt filename; TEMPO empty,germany_dwd,用于追踪德国数据来自哪个 DWD 文件
+dedup_group_id,string,去重分组ID,Deduplication group ID,hash of source-specific deduplication key,training/base tables,同一训练表中不应重复；可追踪去重规则
+is_training_record,boolean,是否训练记录,Whether row is retained for training,standardization flag,all,训练基表为 True；宽表中也保留该字段
+analysis_tier,integer,扩展分析分级,Analysis tier for selected PEP725 extension countries,PEP725 selected-country standardization script,pep725_selected_countries,Tier 1 为核心扩展国家；Tier 2 为补充/敏感性分析国家
+analysis_tier_note,string,扩展分析分级说明,Short note explaining the analysis tier,PEP725 selected-country standardization script,pep725_selected_countries,用于快速判断该国家更适合核心分析还是扩展分析

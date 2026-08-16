@@ -1,0 +1,590 @@
+column,role,description
+split,metadata,Retained for audit
+outer_fold,fold_control,Current spatial test round
+inner_fold,fold_control,Training-region validation fold
+model_id,stratum,Model or stage definition; fit stages separately
+stage,stratum,Model or stage definition; fit stages separately
+temperature_branch,stratum,Model or stage definition; fit stages separately
+forcing_threshold_c_days,core_feature,Mechanistic or temporal predictor available before residual target
+record_id,identifier,Phenology event identifier
+weather_id,identifier,Site-year weather identifier
+country,regional_structure_feature,Country/source structure; interpretation is confounded
+year,core_feature,Mechanistic or temporal predictor available before residual target
+observed_doy,target_source,Observed event day; never a predictor
+predicted_doy,core_feature,Mechanistic or temporal predictor available before residual target
+threshold_reached,quality_control,Thermal threshold reached in target year
+dataset_role,fold_control,Training-region OOF or spatial test
+predicted_flowering_doy,metadata,Retained for audit
+predicted_veraison_doy,core_feature,Mechanistic or temporal predictor available before residual target
+site_uid,identifier,Grouping identifier; not a default predictor
+source,regional_structure_feature,Country/source structure; interpretation is confounded
+site_id,identifier,Grouping identifier; not a default predictor
+lat,selected_feature,Frozen predictor for at least one stage
+lon,selected_feature,Frozen predictor for at least one stage
+bbch,stratum,Model or stage definition; fit stages separately
+target_stage,stratum,Model or stage definition; fit stages separately
+target_stage_order,core_feature,Static site or terrain predictor
+dem_elevation_m,selected_feature,Frozen predictor for at least one stage
+era5_grid_id,identifier,Grouping identifier; not a default predictor
+era5_grid_elevation_m,core_feature,Static site or terrain predictor
+site_minus_grid_elevation_m,adjustment_audit_only,Elevation mismatch already used to construct adjusted temperature; never a residual-ML predictor
+abs_site_grid_elevation_difference_m,core_feature,Static site or terrain predictor
+validation_block_1deg_id,fold_control,Spatial block; never a predictor
+event_assigned_outer_fold,fold_control,Event's fixed spatial fold
+dem_local_median_m,core_feature,Static site or terrain predictor
+dem_local_std_m,selected_feature,Frozen predictor for at least one stage
+dem_local_range_m,core_feature,Static site or terrain predictor
+slope_deg,core_feature,Static site or terrain predictor
+aspect_deg,sensitivity_feature,Spatial feature; assess extrapolation sensitivity
+northness,selected_feature,Frozen predictor for at least one stage
+eastness,core_feature,Static site or terrain predictor
+era5_grid_lat,sensitivity_feature,Spatial feature; assess extrapolation sensitivity
+era5_grid_lon,sensitivity_feature,Spatial feature; assess extrapolation sensitivity
+era5_grid_land_fraction,core_feature,Static site or terrain predictor
+glo30_grid_std_m,core_feature,Static site or terrain predictor
+glo30_grid_range_m,core_feature,Static site or terrain predictor
+coastal_or_island_buffer_fill_flag,core_feature,Static site or terrain predictor
+mechanistic_predicted_doy,selected_feature,Frozen predictor for at least one stage
+residual_days,target,Observed DOY minus mechanistic OOF DOY
+absolute_mechanistic_error_days,diagnostic_only,Absolute baseline error
+residual_ml_eligible,quality_control,Mechanistic prediction and residual available
+model_forcing_start_doy,core_feature,Mechanistic or temporal predictor available before residual target
+residual_row_id,identifier,Unique nested-CV row identifier
+country_network,regional_structure_feature,Country/source structure; interpretation is confounded
+upstream_stage,metadata,Retained for audit
+upstream_temperature_branch,metadata,Retained for audit
+upstream_model_id,metadata,Retained for audit
+upstream_model_start_doy,metadata,Retained for audit
+upstream_model_base_temperature_c,metadata,Retained for audit
+upstream_forcing_threshold_c_days,metadata,Retained for audit
+upstream_chill_threshold_cu,metadata,Retained for audit
+ty_n_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_tmean_adjusted_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_tmean_adjusted_sd_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_tmin_adjusted_min_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_tmax_adjusted_max_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_diurnal_temperature_range_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_cool_days_tmean_lt10c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_cool_degree_days_below10_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_frost_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_frost_degree_days_below0_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_hot_days_ge30,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_hot_days_ge35,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_heat_degree_days_above30_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_heat_degree_days_above35_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_gdd0_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_gdd5_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_gdd10_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_rain_days_ge1mm,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ty_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_n_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_tmean_adjusted_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_tmean_adjusted_sd_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_tmin_adjusted_min_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_tmax_adjusted_max_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_diurnal_temperature_range_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_cool_days_tmean_lt10c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_cool_degree_days_below10_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_frost_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_frost_degree_days_below0_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_hot_days_ge30,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_hot_days_ge35,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_heat_degree_days_above30_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_heat_degree_days_above35_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_gdd0_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_gdd5_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_gdd10_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_rain_days_ge1mm,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+ms_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_n_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_tmean_adjusted_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_tmean_adjusted_sd_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_tmin_adjusted_min_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_tmax_adjusted_max_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_diurnal_temperature_range_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_cool_days_tmean_lt10c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_cool_degree_days_below10_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_frost_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_frost_degree_days_below0_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_hot_days_ge30,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_hot_days_ge35,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_heat_degree_days_above30_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_heat_degree_days_above35_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_gdd0_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_gdd5_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_gdd10_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_rain_days_ge1mm,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t15_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_n_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_tmean_adjusted_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_tmean_adjusted_sd_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_tmin_adjusted_min_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_tmax_adjusted_max_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_diurnal_temperature_range_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_cool_days_tmean_lt10c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_cool_degree_days_below10_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_frost_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_frost_degree_days_below0_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_hot_days_ge30,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_hot_days_ge35,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_heat_degree_days_above30_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_heat_degree_days_above35_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_gdd0_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_gdd5_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_gdd10_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_rain_days_ge1mm,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t30_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_n_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_tmean_adjusted_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_tmean_adjusted_sd_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_tmin_adjusted_min_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_tmax_adjusted_max_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_diurnal_temperature_range_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_cool_days_tmean_lt10c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_cool_degree_days_below10_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_frost_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_frost_degree_days_below0_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_hot_days_ge30,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_hot_days_ge35,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_heat_degree_days_above30_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_heat_degree_days_above35_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_gdd0_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_gdd5_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_gdd10_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_rain_days_ge1mm,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+t60_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_n_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_tmean_adjusted_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_tmean_adjusted_sd_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_tmin_adjusted_min_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_tmax_adjusted_max_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_diurnal_temperature_range_mean_c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_cool_days_tmean_lt10c,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_cool_degree_days_below10_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_frost_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_frost_degree_days_below0_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_hot_days_ge30,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_hot_days_ge35,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_heat_degree_days_above30_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_heat_degree_days_above35_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_gdd0_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_gdd5_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_gdd10_adjusted_c_days,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_rain_days_ge1mm,core_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+pa_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+preseason_chill_days_tmean_0_10c,selected_feature,Frozen predictor for at least one stage
+preseason_frost_degree_days_below0_c_days,selected_feature,Frozen predictor for at least one stage
+forcing_temperature_variability_c,metadata,Retained for audit
+upstream_mechanistic_predicted_doy,core_feature,Mechanistic or temporal predictor available before residual target
+mechanistic_interval_from_upstream_days,core_feature,Mechanistic or temporal predictor available before residual target
+budburst_to_flowering_n_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_tmean_adjusted_mean_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_tmean_adjusted_sd_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_tmin_adjusted_min_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_tmax_adjusted_max_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_diurnal_temperature_range_mean_c,selected_feature,Frozen predictor for at least one stage
+budburst_to_flowering_cool_days_tmean_lt10c,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_cool_degree_days_below10_c_days,selected_feature,Frozen predictor for at least one stage
+budburst_to_flowering_frost_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_frost_degree_days_below0_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_hot_days_ge30,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_hot_days_ge35,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_heat_degree_days_above30_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_heat_degree_days_above35_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_gdd0_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_gdd5_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_gdd10_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_rain_days_ge1mm,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_solar_radiation_mean_mj_m2_day,selected_feature,Frozen predictor for at least one stage
+budburst_to_flowering_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_vpd_fao56_mean_kpa,selected_feature,Frozen predictor for at least one stage
+budburst_to_flowering_et0_fao56_sum_mm,selected_feature,Frozen predictor for at least one stage
+budburst_to_flowering_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_positive_climatic_water_deficit_sum_mm,selected_feature,Frozen predictor for at least one stage
+budburst_to_flowering_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_to_flowering_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre15d_cool_days_tmean_lt10c,metadata,Retained for audit
+flowering_pre15d_frost_degree_days_below0_c_days,metadata,Retained for audit
+flowering_pre15d_vpd_fao56_mean_kpa,selected_feature,Frozen predictor for at least one stage
+flowering_pre15d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre15d_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_n_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_tmean_adjusted_mean_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_tmean_adjusted_sd_c,selected_feature,Frozen predictor for at least one stage
+flowering_to_veraison_tmin_adjusted_min_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_tmax_adjusted_max_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_diurnal_temperature_range_mean_c,selected_feature,Frozen predictor for at least one stage
+flowering_to_veraison_cool_days_tmean_lt10c,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_cool_degree_days_below10_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_frost_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_frost_degree_days_below0_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_hot_days_ge30,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_hot_days_ge35,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_heat_degree_days_above30_c_days,selected_feature,Frozen predictor for at least one stage
+flowering_to_veraison_heat_degree_days_above35_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_gdd0_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_gdd5_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_gdd10_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_rain_days_ge1mm,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_to_veraison_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+preveraison_30d_heat_degree_days_above35_c_days,selected_feature,Frozen predictor for at least one stage
+preveraison_30d_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+preveraison_30d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+preveraison_30d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+preveraison_30d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+preveraison_30d_positive_climatic_water_deficit_sum_mm,selected_feature,Frozen predictor for at least one stage
+preveraison_30d_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+preveraison_30d_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_n_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_tmean_adjusted_mean_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_tmean_adjusted_sd_c,selected_feature,Frozen predictor for at least one stage
+veraison_to_harvest_tmin_adjusted_min_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_tmax_adjusted_max_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_diurnal_temperature_range_mean_c,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_cool_days_tmean_lt10c,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_cool_degree_days_below10_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_frost_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_frost_degree_days_below0_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_hot_days_ge30,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_hot_days_ge35,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_heat_degree_days_above30_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_heat_degree_days_above35_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_gdd0_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_gdd5_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_gdd10_adjusted_c_days,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_precipitation_sum_mm,selected_feature,Frozen predictor for at least one stage
+veraison_to_harvest_rain_days_ge1mm,selected_feature,Weather summary over a cross-fitted predicted stage window
+veraison_to_harvest_solar_radiation_sum_mj_m2,selected_feature,Frozen predictor for at least one stage
+veraison_to_harvest_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_vpd_raw_grid_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_vpd_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_vpd_fao56_mean_kpa,selected_feature,Frozen predictor for at least one stage
+veraison_to_harvest_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_et0_fao56_mean_mm_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_positive_climatic_water_deficit_sum_mm,selected_feature,Frozen predictor for at least one stage
+veraison_to_harvest_soil_water_rootzone_l1_l3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_rootzone_l1_l3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_wind_speed_mean_m_s,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_layer1_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_layer1_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_layer2_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_layer2_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_layer3_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_layer3_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_layer4_mean_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_soil_water_layer4_min_m3_m3,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_vpd_days_above1p5_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_vpd_days_above2_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_to_harvest_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+country_france,metadata,Retained for audit
+country_germany,metadata,Retained for audit
+country_france_x_mechanistic_predicted_doy,metadata,Retained for audit
+budburst_pre15d_gdd5_rate_c_day,selected_feature,Frozen predictor for at least one stage
+budburst_pre30d_gdd5_rate_c_day,selected_feature,Frozen predictor for at least one stage
+budburst_pre15d_frost_degree_days_below0_c_days,metadata,Retained for audit
+budburst_pre30d_frost_degree_days_below0_c_days,metadata,Retained for audit
+flowering_predicted_stage_length_days,metadata,Retained for audit
+budburst_to_flowering_gdd0_rate_c_day,selected_feature,Weather summary over a cross-fitted predicted stage window
+budburst_to_flowering_gdd10_rate_c_day,selected_feature,Frozen predictor for at least one stage
+flowering_pre15d_heat_degree_days_above30_c_days,metadata,Retained for audit
+flowering_pre15d_solar_radiation_mean_mj_m2_day,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_predicted_stage_length_days,selected_feature,Frozen predictor for at least one stage
+flowering_to_veraison_gdd0_rate_c_day,selected_feature,Weather summary over a cross-fitted predicted stage window
+flowering_to_veraison_gdd10_rate_c_day,selected_feature,Weather summary over a cross-fitted predicted stage window
+preveraison_30d_vpd_et0_interaction_kpa_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+preveraison_30d_vpd_precipitation_interaction_kpa_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+country_france_x_preveraison_30d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre15d_gdd10_rate_c_day,metadata,Retained for audit
+budburst_pre15d_cool_degree_days_below10_c_days,metadata,Retained for audit
+budburst_pre15d_heat_degree_days_above30_c_days,metadata,Retained for audit
+budburst_pre15d_heat_degree_days_above35_c_days,metadata,Retained for audit
+budburst_pre15d_solar_radiation_sum_mj_m2,selected_feature,Frozen predictor for at least one stage
+budburst_pre15d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre15d_rain_days_ge1mm,metadata,Retained for audit
+budburst_pre15d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre15d_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre15d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre15d_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre15d_gdd5_rate_c_day,metadata,Retained for audit
+flowering_pre15d_gdd10_rate_c_day,metadata,Retained for audit
+flowering_pre15d_cool_degree_days_below10_c_days,metadata,Retained for audit
+flowering_pre15d_heat_degree_days_above35_c_days,metadata,Retained for audit
+flowering_pre15d_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre15d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre15d_rain_days_ge1mm,metadata,Retained for audit
+flowering_pre15d_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre15d_gdd5_rate_c_day,metadata,Retained for audit
+veraison_pre15d_gdd10_rate_c_day,selected_feature,Frozen predictor for at least one stage
+veraison_pre15d_cool_degree_days_below10_c_days,metadata,Retained for audit
+veraison_pre15d_frost_degree_days_below0_c_days,metadata,Retained for audit
+veraison_pre15d_heat_degree_days_above30_c_days,metadata,Retained for audit
+veraison_pre15d_heat_degree_days_above35_c_days,metadata,Retained for audit
+veraison_pre15d_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre15d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre15d_rain_days_ge1mm,metadata,Retained for audit
+veraison_pre15d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre15d_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre15d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre15d_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre15d_gdd5_rate_c_day,metadata,Retained for audit
+maturity_pre15d_gdd10_rate_c_day,selected_feature,Frozen predictor for at least one stage
+maturity_pre15d_cool_degree_days_below10_c_days,metadata,Retained for audit
+maturity_pre15d_frost_degree_days_below0_c_days,metadata,Retained for audit
+maturity_pre15d_heat_degree_days_above30_c_days,selected_feature,Frozen predictor for at least one stage
+maturity_pre15d_heat_degree_days_above35_c_days,metadata,Retained for audit
+maturity_pre15d_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre15d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre15d_rain_days_ge1mm,metadata,Retained for audit
+maturity_pre15d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre15d_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre15d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre15d_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre30d_gdd10_rate_c_day,metadata,Retained for audit
+budburst_pre30d_tmean_adjusted_sd_c,metadata,Retained for audit
+budburst_pre30d_diurnal_temperature_range_mean_c,metadata,Retained for audit
+budburst_pre30d_cool_degree_days_below10_c_days,metadata,Retained for audit
+budburst_pre30d_heat_degree_days_above30_c_days,metadata,Retained for audit
+budburst_pre30d_heat_degree_days_above35_c_days,metadata,Retained for audit
+budburst_pre30d_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre30d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre30d_rain_days_ge1mm,metadata,Retained for audit
+budburst_pre30d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre30d_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre30d_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre30d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+budburst_pre30d_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre30d_gdd5_rate_c_day,metadata,Retained for audit
+flowering_pre30d_gdd10_rate_c_day,metadata,Retained for audit
+flowering_pre30d_tmean_adjusted_sd_c,metadata,Retained for audit
+flowering_pre30d_diurnal_temperature_range_mean_c,selected_feature,Frozen predictor for at least one stage
+flowering_pre30d_cool_degree_days_below10_c_days,metadata,Retained for audit
+flowering_pre30d_frost_degree_days_below0_c_days,metadata,Retained for audit
+flowering_pre30d_heat_degree_days_above30_c_days,metadata,Retained for audit
+flowering_pre30d_heat_degree_days_above35_c_days,metadata,Retained for audit
+flowering_pre30d_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre30d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre30d_rain_days_ge1mm,metadata,Retained for audit
+flowering_pre30d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre30d_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre30d_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre30d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+flowering_pre30d_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre30d_gdd5_rate_c_day,metadata,Retained for audit
+veraison_pre30d_gdd10_rate_c_day,metadata,Retained for audit
+veraison_pre30d_tmean_adjusted_sd_c,metadata,Retained for audit
+veraison_pre30d_diurnal_temperature_range_mean_c,metadata,Retained for audit
+veraison_pre30d_cool_degree_days_below10_c_days,metadata,Retained for audit
+veraison_pre30d_frost_degree_days_below0_c_days,metadata,Retained for audit
+veraison_pre30d_heat_degree_days_above30_c_days,metadata,Retained for audit
+veraison_pre30d_heat_degree_days_above35_c_days,metadata,Retained for audit
+veraison_pre30d_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre30d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre30d_rain_days_ge1mm,metadata,Retained for audit
+veraison_pre30d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre30d_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre30d_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre30d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+veraison_pre30d_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre30d_gdd5_rate_c_day,metadata,Retained for audit
+maturity_pre30d_gdd10_rate_c_day,metadata,Retained for audit
+maturity_pre30d_tmean_adjusted_sd_c,metadata,Retained for audit
+maturity_pre30d_diurnal_temperature_range_mean_c,metadata,Retained for audit
+maturity_pre30d_cool_degree_days_below10_c_days,metadata,Retained for audit
+maturity_pre30d_frost_degree_days_below0_c_days,metadata,Retained for audit
+maturity_pre30d_heat_degree_days_above30_c_days,metadata,Retained for audit
+maturity_pre30d_heat_degree_days_above35_c_days,metadata,Retained for audit
+maturity_pre30d_solar_radiation_sum_mj_m2,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre30d_precipitation_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre30d_rain_days_ge1mm,metadata,Retained for audit
+maturity_pre30d_vpd_fao56_mean_kpa,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre30d_vpd_degree_days_above1p5_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre30d_vpd_degree_days_above2_kpa_days,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre30d_et0_fao56_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction
+maturity_pre30d_positive_climatic_water_deficit_sum_mm,sensitivity_feature,Leakage-safe weather summary ending at mechanistic prediction

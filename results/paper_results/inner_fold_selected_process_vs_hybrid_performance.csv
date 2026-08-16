@@ -1,0 +1,5 @@
+Stage,Process model,Residual learner,Process inner MAE,Process inner RMSE,Hybrid inner MAE,Hybrid inner RMSE,ΔMAE hybrid-process,ΔRMSE hybrid-process
+BBCH07 Budburst,BRIN-Aug1,Ridge,6.71,9.39,6.19,8.35,-0.52,-1.04
+BBCH65 Flowering,adjusted GFV,RF,5.8,8.25,5.24,7.82,-0.55,-0.43
+BBCH81 Veraison,adjusted GFV,Ridge,12.44,15.52,11.96,14.7,-0.48,-0.82
+BBCH89 Maturity/harvest,predicted-veraison GDD10,RF,27.88,30.6,8.51,10.97,-19.38,-19.64

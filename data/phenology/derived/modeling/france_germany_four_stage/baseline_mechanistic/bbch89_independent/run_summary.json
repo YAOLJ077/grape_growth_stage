@@ -1,0 +1,18 @@
+{
+  "scope": "BBCH89 independent operational endpoint module",
+  "bbch89_events": 11412,
+  "temperature_branches": [
+    "raw",
+    "adjusted_6p5"
+  ],
+  "spatial_test_rounds": 5,
+  "training_region_selection_folds_per_round": 4,
+  "inner_chain_prediction_rows": 91296,
+  "common_sample_check": true,
+  "training_start_rule": "BBCH81 predicted by training-region four-fold cross-fitting",
+  "test_start_rule": "BBCH81 predicted by model fitted only on current training region",
+  "n_jobs": 4,
+  "n_candidates": 401,
+  "bbch81_audit_file": "results/france_germany_four_stage/bbch81_audit/audited_bbch81_event_overrides.csv",
+  "elapsed_seconds": 155.49
+}

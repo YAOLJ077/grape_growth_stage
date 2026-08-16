@@ -1,0 +1,20 @@
+{
+  "scope": "BBCH81 independent stage-continuity candidate",
+  "bbch81_events": 4137,
+  "temperature_branches": [
+    "raw",
+    "adjusted_6p5"
+  ],
+  "spatial_test_rounds": 5,
+  "training_region_selection_folds_per_round": 4,
+  "inner_chain_prediction_rows": 33096,
+  "common_sample_check": true,
+  "training_start_rule": "BBCH65 predicted by training-region four-fold cross-fitting",
+  "test_start_rule": "BBCH65 predicted by model fitted only on current training region",
+  "chain_model_id": "veraison__predicted_flowering_post_gdd10",
+  "chain_base_temperature_c": 10.0,
+  "n_jobs": 4,
+  "n_candidates": 401,
+  "bbch81_audit_file": "results/france_germany_four_stage/bbch81_audit_doyrange21/audited_bbch81_event_overrides.csv",
+  "elapsed_seconds": 37.191
+}

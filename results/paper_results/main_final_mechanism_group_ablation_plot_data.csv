@@ -1,0 +1,20 @@
+stage,mechanism_group,n_group_features,addon_profile,addon_mae_gain_vs_anchor_days,addon_rmse_gain_vs_anchor_days,leaveout_profile,leaveout_mae_cost_vs_all_days,leaveout_rmse_cost_vs_all_days,stage_label,group_label,stage_order,group_order
+budburst,process_state,1,anchor_only,0.0,0.0,environment_only_no_process_state,0.3491091875351797,0.8722294065502503,BBCH07,Process state,0,0
+budburst,temperature_structure,4,anchor_plus_temperature_structure,0.2570012361701757,0.4193816551798601,all_minus_temperature_structure,0.1430581925705274,0.1786325357976981,BBCH07,Thermal structure,0,2
+budburst,radiation_light,1,anchor_plus_radiation_light,0.105514666335102,0.0954239001969821,all_minus_radiation_light,0.0478678092413549,0.0358516411440952,BBCH07,Radiation,0,4
+budburst,terrain_spatial,5,anchor_plus_terrain_spatial,-0.0091881980415617,0.1811350982416719,all_minus_terrain_spatial,-0.0922834924835998,-0.0407576096247996,BBCH07,Terrain/spatial,0,5
+flowering,process_state,1,anchor_only,0.0,0.0,environment_only_no_process_state,0.0098838365558684,0.002601573508989,BBCH65,Process state,1,0
+flowering,temperature_structure,4,anchor_plus_temperature_structure,0.6631631942414442,0.4699069501809667,all_minus_temperature_structure,0.3273761048500487,0.1944515961612483,BBCH65,Thermal structure,1,2
+flowering,water_drought,4,anchor_plus_water_drought,0.3812213387517253,0.3006078314366123,all_minus_water_drought,0.0844685206842816,0.0515208476624868,BBCH65,Water/drought,1,3
+flowering,radiation_light,1,anchor_plus_radiation_light,0.2963497114030362,0.2517775913932301,all_minus_radiation_light,-0.00346830675974,0.0157985581124071,BBCH65,Radiation,1,4
+flowering,terrain_spatial,2,anchor_plus_terrain_spatial,-0.1056479947820996,-0.0576845744005716,all_minus_terrain_spatial,-0.0303118630855632,-0.0190318755451261,BBCH65,Terrain/spatial,1,5
+veraison,process_state,2,anchor_only,0.0,0.0,environment_only_no_process_state,0.1387928057566494,0.1655548134089119,BBCH81,Process state,2,0
+veraison,process_timing,1,anchor_plus_process_timing,0.2552949724732745,0.3524107372622822,all_minus_process_timing,0.1077377696214849,0.1504096292105785,BBCH81,Process timing,2,1
+veraison,temperature_structure,5,anchor_plus_temperature_structure,0.1252874183820758,0.1803760428943714,all_minus_temperature_structure,0.0741575349724321,0.0382585470234033,BBCH81,Thermal structure,2,2
+veraison,water_drought,1,anchor_plus_water_drought,0.0021113463709099,0.0088054900030485,all_minus_water_drought,-0.0178165327225201,-0.0064304456544856,BBCH81,Water/drought,2,3
+veraison,terrain_spatial,4,anchor_plus_terrain_spatial,0.4621431750397935,0.6302662185210863,all_minus_terrain_spatial,0.2760500934923158,0.4209682969181756,BBCH81,Terrain/spatial,2,5
+maturity_or_harvest,process_state,1,anchor_only,0.0,0.0,environment_only_no_process_state,0.1484002243722049,0.184864068017168,BBCH89,Process state,3,0
+maturity_or_harvest,temperature_structure,3,anchor_plus_temperature_structure,0.3783444699949321,0.38398049640295,all_minus_temperature_structure,0.121243760286319,0.1221786066178669,BBCH89,Thermal structure,3,2
+maturity_or_harvest,water_drought,3,anchor_plus_water_drought,0.3693909461661828,0.3806467425376034,all_minus_water_drought,0.0568262585512204,0.0517073790267534,BBCH89,Water/drought,3,3
+maturity_or_harvest,radiation_light,1,anchor_plus_radiation_light,0.1563742439247857,0.1566273492533447,all_minus_radiation_light,0.0237016223487582,0.0221924698909123,BBCH89,Radiation,3,4
+maturity_or_harvest,terrain_spatial,3,anchor_plus_terrain_spatial,-0.0183888217862104,0.0224717246279571,all_minus_terrain_spatial,-0.0667616113497437,-0.0242510491281837,BBCH89,Terrain/spatial,3,5

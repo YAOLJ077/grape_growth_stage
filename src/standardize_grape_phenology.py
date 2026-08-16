@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """Standardize France TEMPO and Germany DWD grape phenology data.
 
-The script reads source downloads from data/phenology_grape/raw, writes complete
-country tables under data/phenology_grape/processed, and writes QA metadata under
-data/phenology_grape/metadata/standardization.
+The script reads source downloads from data/phenology/raw, writes complete
+country tables under data/phenology/processed, and writes QA metadata under
+data/phenology/metadata/standardization.
 """
 
 from __future__ import annotations
@@ -47,6 +47,9 @@ STANDARD_COLUMNS = [
     "latitude",
     "longitude",
     "altitude",
+    "altitude_reported",
+    "altitude_ign",
+    "altitude_source",
     "region",
     "department",
     "commune",
@@ -214,6 +217,20 @@ def ensure_standard_columns(df: pd.DataFrame) -> pd.DataFrame:
     return df[STANDARD_COLUMNS]
 
 
+def harmonize_france_altitude(df: pd.DataFrame) -> pd.DataFrame:
+    """Prefer reported TEMPO altitude and fill its gaps with IGN elevation."""
+    result = df.copy()
+    reported = pd.to_numeric(result.get("altitude"), errors="coerce").mask(lambda value: value < -500)
+    ign = pd.to_numeric(result.get("altitudeIgn"), errors="coerce").mask(lambda value: value < -500)
+    result["altitude_reported"] = reported
+    result["altitude_ign"] = ign
+    result["altitude"] = reported.fillna(ign)
+    result["altitude_source"] = pd.Series(pd.NA, index=result.index, dtype="string")
+    result.loc[reported.notna(), "altitude_source"] = "tempo_reported"
+    result.loc[reported.isna() & ign.notna(), "altitude_source"] = "tempo_ign"
+    return result
+
+
 def stable_group_id(prefix: str, values: pd.Series) -> str:
     raw = "|".join("" if pd.isna(value) else str(value) for value in values)
     digest = hashlib.sha1(raw.encode("utf-8")).hexdigest()[:16]
@@ -277,6 +294,7 @@ def load_france(base_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, A
         additional = pd.DataFrame(columns=["additionalData", "additionalData_raw"])
 
     df = obs.merge(sites, on="site", how="left").merge(additional, on="additionalData", how="left")
+    df = harmonize_france_altitude(df)
 
     df["source_system"] = "france_tempo"
     df["source_dataset"] = df["datasource"].map(lambda value: sources.get(value, {}).get("name"))
@@ -532,6 +550,12 @@ def load_germany(base_dir: Path, refresh_station_metadata: bool = False) -> tupl
     )
     df["country"] = "DE"
     df["country_name"] = "Germany"
+    df["altitude"] = pd.to_numeric(df["altitude"], errors="coerce").mask(lambda value: value < -500)
+    df["altitude_reported"] = df["altitude"]
+    df["altitude_ign"] = pd.NA
+    df["altitude_source"] = df["altitude"].notna().map(
+        {True: "dwd_station_reported", False: pd.NA}
+    )
     df["taxon_id"] = df["object_id"].astype("Int64").astype(str).replace("<NA>", pd.NA)
     df["taxon_name"] = df["object_name"].fillna(df["object_id"].map(lambda value: DWD_OBJECT_NAMES.get(int(value)) if pd.notna(value) else pd.NA))
     df["taxon_fullname"] = "Plantae Vitis vinifera - " + df["taxon_name"].fillna(df["cultivar_group"])
@@ -640,7 +664,7 @@ def build_dedup_report(fr_train_pre: pd.DataFrame, de_train_pre: pd.DataFrame) -
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--base-dir", type=Path, default=Path("data") / "phenology_grape")
+    parser.add_argument("--base-dir", type=Path, default=Path("data") / "phenology")
     parser.add_argument("--refresh-dwd-stations", action="store_true")
     return parser.parse_args(argv)
 

@@ -12,9 +12,10 @@ import requests
 
 
 COUNTRY_TABLES = [
-    Path("data/phenology_grape/processed/france_grape_phenology_complete.csv"),
-    Path("data/phenology_grape/processed/germany_grape_phenology_complete.csv"),
+    Path("data/phenology/processed/france_grape_phenology_complete.csv"),
+    Path("data/phenology/processed/germany_grape_phenology_complete.csv"),
 ]
+DEFAULT_START_YEAR = 1951
 
 
 def parse_args() -> argparse.Namespace:
@@ -24,6 +25,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--manifest", type=Path, default=Path("data/topography/metadata/copernicus_dem_glo30_site_tiles.csv"))
     parser.add_argument("--max-tiles", type=int, default=0, help="Download top N site-dense tiles; 0 downloads all site tiles.")
     parser.add_argument("--timeout", type=int, default=180)
+    parser.add_argument(
+        "--start-year",
+        type=int,
+        default=DEFAULT_START_YEAR,
+        help="Select site-driven DEM tiles using observations from this year onward (default: 1951).",
+    )
     return parser.parse_args()
 
 
@@ -42,12 +49,14 @@ def tile_path(out_dir: Path, lat_floor: int, lon_floor: int) -> Path:
     return out_dir / f"{tile_name(lat_floor, lon_floor)}.tif"
 
 
-def site_tiles(paths: list[Path], max_tiles: int) -> pd.DataFrame:
-    columns = ["country_name", "site_id", "latitude", "longitude", "doy"]
+def site_tiles(paths: list[Path], max_tiles: int, start_year: int = DEFAULT_START_YEAR) -> pd.DataFrame:
+    columns = ["country_name", "site_id", "latitude", "longitude", "year", "doy"]
     df = pd.concat(
         [pd.read_csv(path, usecols=columns, low_memory=False) for path in paths],
         ignore_index=True,
     )
+    df["year"] = pd.to_numeric(df["year"], errors="coerce")
+    df = df[df["year"].ge(start_year)].copy()
     df = df.dropna(subset=["country_name", "site_id", "latitude", "longitude"])
     sites = (
         df.groupby(["country_name", "site_id"], dropna=False)
@@ -90,7 +99,7 @@ def main() -> int:
     args.out_dir.mkdir(parents=True, exist_ok=True)
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
 
-    tiles = site_tiles(args.input, args.max_tiles)
+    tiles = site_tiles(args.input, args.max_tiles, args.start_year)
     statuses = []
     for i, row in enumerate(tiles.itertuples(index=False), start=1):
         path = tile_path(args.out_dir, int(row.tile_lat), int(row.tile_lon))
@@ -102,6 +111,7 @@ def main() -> int:
     tiles["size_mb"] = [Path(path).stat().st_size / 1024 / 1024 for path in tiles["local_path"]]
     tiles.to_csv(args.manifest, index=False)
     print(f"Tiles: {len(tiles):,}")
+    print(f"Study period: {args.start_year} onward")
     print(f"Total size: {tiles['size_mb'].sum():.1f} MB")
     print(f"Manifest written to: {args.manifest}")
     return 0

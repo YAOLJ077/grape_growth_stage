@@ -2,7 +2,7 @@
 """Download public grape phenology data from TEMPO France and DWD Germany.
 
 The script is intentionally dependency-free. It writes raw source files/data,
-manifest rows, failure logs, and run configuration under data/phenology_grape.
+manifest rows, failure logs, and run configuration under data/phenology.
 """
 
 from __future__ import annotations
@@ -582,7 +582,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", choices=("all", "france", "germany"), default="all")
     parser.add_argument("--workers", type=ensure_workers, default=DEFAULT_WORKERS)
-    parser.add_argument("--out", type=Path, default=Path("data") / "phenology_grape")
+    parser.add_argument("--out", type=Path, default=Path("data") / "phenology")
     parser.add_argument("--dry-run", action="store_true", help="Build plans and metadata without downloading raw data files.")
     parser.add_argument("--resume", action=argparse.BooleanOptionalAction, default=True)
     return parser.parse_args(argv)

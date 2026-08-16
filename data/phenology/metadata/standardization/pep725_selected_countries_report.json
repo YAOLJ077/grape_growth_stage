@@ -1,0 +1,60 @@
+{
+  "countries": {
+    "Austria": {
+      "analysis_tier": 1,
+      "first_year": 1775,
+      "last_year": 2026,
+      "rows": 15645,
+      "training_rows": 15645,
+      "unique_sites": 732,
+      "unique_stages": 9
+    },
+    "Slovakia": {
+      "analysis_tier": 2,
+      "first_year": 2000,
+      "last_year": 2024,
+      "rows": 4364,
+      "training_rows": 4364,
+      "unique_sites": 55,
+      "unique_stages": 6
+    },
+    "Spain": {
+      "analysis_tier": 2,
+      "first_year": 1952,
+      "last_year": 2025,
+      "rows": 1169,
+      "training_rows": 1169,
+      "unique_sites": 43,
+      "unique_stages": 19
+    },
+    "Switzerland": {
+      "analysis_tier": 2,
+      "first_year": 1951,
+      "last_year": 2022,
+      "rows": 4236,
+      "training_rows": 4236,
+      "unique_sites": 95,
+      "unique_stages": 2
+    }
+  },
+  "duplicate_rows_removed": 0,
+  "missing": {
+    "altitude_pct": 0.0,
+    "bbch_code_pct": 29.904776894625012,
+    "latitude_pct": 0.0,
+    "longitude_pct": 0.0,
+    "stage_description_pct": 0.0
+  },
+  "raw_rows": 145276,
+  "selected_provider_ids": [
+    14,
+    301,
+    501,
+    601,
+    1401,
+    1402
+  ],
+  "selected_rows": 25414,
+  "source_file": "data/phenology/raw/pep725/pep725_20260701_0.csv",
+  "training_rows": 25414
+}

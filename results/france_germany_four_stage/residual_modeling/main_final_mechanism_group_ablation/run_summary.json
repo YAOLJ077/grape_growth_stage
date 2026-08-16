@@ -1,0 +1,47 @@
+{
+  "scope": "main_final fixed-algorithm residual mechanism-group ablation",
+  "residual_definition": "observed_doy - mechanistic_predicted_doy",
+  "positive_residual_meaning": "observed later than process prediction; process model predicted too early",
+  "input_dir": "results/france_germany_four_stage/residual_machine_learning_main_final",
+  "fixed_dir": "results/france_germany_four_stage/residual_modeling/main_final_fixed_stage_models_refit",
+  "stages": [
+    "budburst",
+    "flowering",
+    "veraison",
+    "maturity_or_harvest"
+  ],
+  "profiles": [
+    "anchor_only",
+    "anchor_plus_process_timing",
+    "anchor_plus_temperature_structure",
+    "anchor_plus_water_drought",
+    "anchor_plus_radiation_light",
+    "anchor_plus_terrain_spatial",
+    "all_mechanisms",
+    "all_minus_process_timing",
+    "all_minus_temperature_structure",
+    "all_minus_water_drought",
+    "all_minus_radiation_light",
+    "all_minus_terrain_spatial",
+    "environment_only_no_process_state"
+  ],
+  "outer_folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "fixed_algorithms": {
+    "budburst": "ridge",
+    "flowering": "rf",
+    "maturity_or_harvest": "rf",
+    "veraison": "ridge"
+  },
+  "configuration_source": "main_final fixed_stage_outer_fold_metrics.csv",
+  "test_targets_used_for_training_or_selection": false,
+  "n_jobs": 4,
+  "random_state": 20260805,
+  "elapsed_seconds": 92.85543595795752,
+  "output_dir": "results/france_germany_four_stage/residual_modeling/main_final_mechanism_group_ablation"
+}
