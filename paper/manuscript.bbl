@@ -1,4 +1,4 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{55}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -55,6 +55,14 @@ Isabelle Chuine.
 \newblock ISSN 00225193.
 \newblock \doi{10.1006/jtbi.2000.2178}.
 
+\bibitem[Chuine and
+  R{\'e}gni{\`e}re(2017)]{chuineProcessBasedModelsPhenology2017}
+Isabelle Chuine and Jacques R{\'e}gni{\`e}re.
+\newblock Process-based models of phenology for plants and animals.
+\newblock \emph{Annual Review of Ecology, Evolution, and Systematics},
+  48:\penalty0 159--182, 2017.
+\newblock \doi{10.1146/annurev-ecolsys-110316-022706}.
+
 \bibitem[{Copernicus Climate Change
   Service}(2019)]{copernicusClimateChangeServiceERA5LandHourly2019}
 {Copernicus Climate Change Service}.
@@ -71,6 +79,27 @@ Christopher Daly, Michael Halbleib, Joseph~I. Smith, Wayne~P. Gibson,
 \newblock \emph{International Journal of Climatology}, 28\penalty0
   (15):\penalty0 2031--2064, 2008.
 \newblock \doi{10.1002/joc.1688}.
+
+\bibitem[de~Ress{\'e}guier et~al.(2020)de~Ress{\'e}guier, Mary, Le~Roux,
+  Petitjean, Qu{\'e}nol, and van
+  Leeuwen]{deresseguierTemperatureVariabilityLocal2020}
+Laure de~Ress{\'e}guier, S{\'e}verine Mary, Renan Le~Roux, Th{\'e}o Petitjean,
+  Herv{\'e} Qu{\'e}nol, and Cornelis van Leeuwen.
+\newblock Temperature variability at local scale in the bordeaux area:
+  Relations with environmental factors and impact on vine phenology.
+\newblock \emph{Frontiers in Plant Science}, 11:\penalty0 515, 2020.
+\newblock \doi{10.3389/fpls.2020.00515}.
+
+\bibitem[de~Ress{\'e}guier et~al.(2026)de~Ress{\'e}guier, Parker, Petitjean,
+  Garc{\'i}a~de Cort{\'a}zar-Atauri, and van
+  Leeuwen]{deresseguierModelingGrapevinePhenology2026}
+Laure de~Ress{\'e}guier, Amber~K. Parker, Th{\'e}o Petitjean, I{\~n}aki
+  Garc{\'i}a~de Cort{\'a}zar-Atauri, and Cornelis van Leeuwen.
+\newblock Modeling grapevine phenology at local scale in the context of climate
+  change: An example in the bordeaux area.
+\newblock \emph{Agricultural and Forest Meteorology}, 376:\penalty0 110831,
+  2026.
+\newblock \doi{10.1016/j.agrformet.2025.110831}.
 
 \bibitem[Dormann et~al.(2013)Dormann, Elith, Bacher, Buchmann, Carl, Carr{\'e},
   Marqu{\'e}z, Gruber, Lafourcade, Leit{\~a}o, M{\"u}nkem{\"u}ller, McClean,
@@ -112,6 +141,17 @@ Eduardo Fernandez, Katja Schiffers, Carsten Urbach, and Eike Luedeling.
 \newblock \emph{Agricultural and Forest Meteorology}, 322:\penalty0 109020,
   2022.
 \newblock \doi{10.1016/j.agrformet.2022.109020}.
+
+\bibitem[Fila et~al.(2014)Fila, Gardiman, Belvini, Meggio, and
+  Pitacco]{filaComparisonDifferentModelling2014}
+Gianni Fila, Massimo Gardiman, Paolo Belvini, Franco Meggio, and Andrea
+  Pitacco.
+\newblock A comparison of different modelling solutions for studying grapevine
+  phenology under present and future climate scenarios.
+\newblock \emph{Agricultural and Forest Meteorology}, 195--196:\penalty0
+  192--205, September 2014.
+\newblock ISSN 01681923.
+\newblock \doi{10.1016/j.agrformet.2014.05.011}.
 
 \bibitem[Fraga et~al.(2016)Fraga, Garc{\'i}a De Cort{\'a}zar~Atauri, Malheiro,
   and Santos]{fragaModellingClimateChange2016}
@@ -224,19 +264,6 @@ Scott~M. Lundberg and Su-In Lee.
 \newblock In \emph{Advances in Neural Information Processing Systems},
   volume~30, 2017.
 
-\bibitem[{Mart{\'i}nez-L{\"u}scher} et~al.(2016){Mart{\'i}nez-L{\"u}scher},
-  Kizildeniz, Vu{\v c}eti{\'c}, Dai, Luedeling, Van~Leeuwen, Gom{\`e}s,
-  Pascual, Irigoyen, Morales, and
-  Delrot]{martinez-luscherSensitivityGrapevinePhenology2016}
-Johann {Mart{\'i}nez-L{\"u}scher}, Tefide Kizildeniz, Vi{\v s}nja Vu{\v
-  c}eti{\'c}, Zhanwu Dai, Eike Luedeling, Cornelis Van~Leeuwen, Eric Gom{\`e}s,
-  Inmaculada Pascual, Juan~J. Irigoyen, Ferm{\'i}n Morales, and Serge Delrot.
-\newblock Sensitivity of {{Grapevine Phenology}} to {{Water Availability}},
-  {{Temperature}} and {{CO2 Concentration}}.
-\newblock \emph{Frontiers in Environmental Science}, 4, July 2016.
-\newblock ISSN 2296-665X.
-\newblock \doi{10.3389/fenvs.2016.00048}.
-
 \bibitem[Mojahid et~al.(2025)Mojahid, Caspersen, Delgado, Dapena, Luedeling,
   Schiffers, and Fernandez]{mojahidCrossRegionalValidation2025}
 Hajar Mojahid, Lars Caspersen, Alvaro Delgado, Enrique Dapena, Eike Luedeling,
@@ -273,6 +300,16 @@ Joaqu{\'i}n {Mu{\~n}oz-Sabater}, Emanuel Dutra, Anna Agust{\'i}-Panareda,
   4349--4383, 2021.
 \newblock \doi{10.5194/essd-13-4349-2021}.
 
+\bibitem[Neethling et~al.(2019)Neethling, Barbeau, Coulon-Leroy, and
+  Qu{\'e}nol]{neethlingSpatialComplexityTemporal2019}
+Etienne Neethling, G{\'e}rard Barbeau, C{\'e}cile Coulon-Leroy, and Herv{\'e}
+  Qu{\'e}nol.
+\newblock Spatial complexity and temporal dynamics in viticulture: A review of
+  climate-driven scales.
+\newblock \emph{Agricultural and Forest Meteorology}, 276--277:\penalty0
+  107618, 2019.
+\newblock \doi{10.1016/j.agrformet.2019.107618}.
+
 \bibitem[O'Brien(2007)]{obrienCautionRegardingRules2007}
 Robert~M. O'Brien.
 \newblock A caution regarding rules of thumb for variance inflation factors.
@@ -308,6 +345,16 @@ A.K. Parker, I.G. {De Cort{\'a}zar-Atauri}, C.~Van~Leeuwen, and I.~Chuine.
   (2):\penalty0 206--216, June 2011.
 \newblock ISSN 13227130.
 \newblock \doi{10.1111/j.1755-0238.2011.00140.x}.
+
+\bibitem[Parker et~al.(2020)Parker, Garc{\'i}a~de Cort{\'a}zar-Atauri, Trought,
+  Destrac, Agnew, Sturman, and van Leeuwen]{parkerAdaptationClimateChange2020}
+Amber~K. Parker, I{\~n}aki Garc{\'i}a~de Cort{\'a}zar-Atauri, Michael C.~T.
+  Trought, Agn{\`e}s Destrac, Rob Agnew, Andrew Sturman, and Cornelis van
+  Leeuwen.
+\newblock Adaptation to climate change by determining grapevine cultivar
+  differences using temperature-based phenology models.
+\newblock \emph{OENO One}, 54\penalty0 (4), 2020.
+\newblock \doi{10.20870/oeno-one.2020.54.4.3861}.
 
 \bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
   Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
@@ -388,6 +435,16 @@ Jiaojiao Tan, Gang Zhao, Qi~Tian, Lei Zheng, Xiaofeng Kang, Qinsi He, Yu~Shi,
   September 2024.
 \newblock ISSN 01681923.
 \newblock \doi{10.1016/j.agrformet.2024.110167}.
+
+\bibitem[Thomas et~al.(2026)Thomas, Cameron, Hayman, Bonada, Sadras, Gambetta,
+  Jolley, and Petrie]{thomasDevelopingTestingWinegrape2026}
+Dane~S. Thomas, Wendy Cameron, Peter~T. Hayman, Marcos Bonada, Victor~O.
+  Sadras, Joanna~M. Gambetta, Jessica Y.~C. Jolley, and Paul~R. Petrie.
+\newblock Developing and testing of a winegrape phenology model for australian
+  conditions.
+\newblock \emph{Agricultural and Forest Meteorology}, 382:\penalty0 111131,
+  2026.
+\newblock \doi{10.1016/j.agrformet.2026.111131}.
 
 \bibitem[Tomasi et~al.(2011)Tomasi, Jones, Giust, Lovat, and
   Gaiotti]{tomasiGrapevinePhenologyClimate2011}
