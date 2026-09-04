@@ -44,6 +44,8 @@
 
 　　相关证据新增 Chuine and Régnière (2017) 的过程物候模型综述、Neethling et al. (2019) 的葡萄种植气候尺度综述、Parker et al. (2020) 的品种差异与温度模型评述、de Rességuier et al. (2020, 2026) 的波尔多局地温度和物候研究，以及 Thomas et al. (2026) 的澳大利亚多区域模型检验。GFV 在引言中的首次出现已改为全称“Grapevine Flowering Veraison”后接缩写。
 
+　　经典模型第一项限制原由两个较长复合句表述，多个重要判断与段末引文之间的对应关系不够明确。修订后将其拆分为三个可独立核查的论断：品种热量需求作为固定参数跨年份和环境应用，模型未显式表示适应变化与前期环境的遗留效应，固定日历起算日期隐含相近初始生理状态的假设。每个论断后分别配置品种模型综述、大尺度热量需求研究、历史气候模型比较、legacy-effect 研究及葡萄跨区域和阶段间模型验证文献。
+
 ## 6. 新增核心文献
 
 　　经典休眠与冷量—热量模型部分新增 Fadón et al. (2020), Wang et al. (2020), Luedeling et al. (2021), Fernandez et al. (2022), Picornell et al. (2025) 和 Mojahid et al. (2025)。研究组及 Dingrong Wu 相关部分新增或强化 Tan et al. (2024), Kang et al. (2024), Wu et al. (2024) 和 Ou et al. (2025)。所有新增文献均已写入 `paper/references/Phenological.bib`，并在引言相应论断处引用。
