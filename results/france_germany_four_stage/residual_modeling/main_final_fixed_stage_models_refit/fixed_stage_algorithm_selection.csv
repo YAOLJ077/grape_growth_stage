@@ -1,5 +1,0 @@
-stage,process_model,stage_algorithm_rule,best_inner_rmse_algorithm,best_mean_inner_rmse_days,best_se_inner_rmse_days,fixed_residual_algorithm,fixed_mean_inner_rmse_days,fixed_mean_inner_mae_days,fixed_mean_abs_inner_bias_days,fixed_complexity_rank
-budburst,BRIN-Aug1,min_rmse,ridge,8.320271096091911,0.03971995623638729,ridge,8.320271096091911,6.151041452371551,0.9745070008269572,1
-flowering,adjusted GFV,min_rmse,rf,7.815644184471698,0.10167215178005788,rf,7.815644184471698,5.236220497035604,1.3265440595747664,3
-veraison,adjusted GFV,min_rmse,ridge,14.658189693594682,0.13629926394419534,ridge,14.658189693594682,11.903981789804005,1.960255088613469,1
-maturity_or_harvest,predicted-veraison GDD10,min_rmse,rf,10.898690078775914,0.14913133271887877,rf,10.898690078775914,8.45088506159439,1.9236542807095582,3

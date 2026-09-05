@@ -1,5 +1,0 @@
-# Residual machine-learning foundation
-
-Generated from the four frozen mechanistic model structures. Training residuals are produced only by four-fold spatial cross-fitting inside each current training region; spatial-test residuals are retained only for later evaluation and must never train or tune the residual model. Weather features end at the mechanistic predicted date, not the observed event date. For BBCH81, the strict feature window starts after the fold-specific OOF mechanistic flowering prediction and ends at the fold-specific OOF mechanistic BBCH81 prediction; neither boundary uses an observed phenology date.
-
-`residual_ml_feature_sets.csv` freezes one parsimonious predictor set per stage; `residual_ml_feature_exclusion_log.csv` records deduplication decisions. The four `training_ready/*.parquet` files contain only fold controls, targets and the frozen stage features. Site-grid elevation mismatch remains only in the full audit table because it already determines the adjusted temperature. Imputation, scaling and encoding remain to be fitted inside each current training region.

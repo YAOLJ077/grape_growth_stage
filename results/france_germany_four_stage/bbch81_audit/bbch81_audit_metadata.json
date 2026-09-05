@@ -1,9 +1,0 @@
-{
-  "aggregation_target": "earliest eligible exact-BBCH81 observation at each site-year",
-  "germany_quality_rule": "exclude Eintrittsdatum_QB 5 (doubtful) and 8 (incorrect); retain 0/1/2/3",
-  "france_quality_rule": "retain exact source BBCH81; no equivalent observation quality byte is available",
-  "chronology_rule": "flowering < audited BBCH81 < maturity/harvest whenever adjacent stages exist",
-  "spatial_folds_changed": false,
-  "records": 6394,
-  "retained": 6364
-}
