@@ -3,7 +3,8 @@
 This is an academic paper repository for grapevine phenology modelling. The
 study evaluates the predictive accuracy of classical process-based phenology
 models and quantifies the contributions of DEM-based temperature correction
-and machine-learning residual correction.
+and machine-learning residual correction. It also compares how these model
+choices affect projected phenological responses to climate change.
 
 Prioritize scientifically defensible analyses, reproducibility, and
 publication-ready text, figures, and tables. Keep manuscript claims consistent
@@ -156,6 +157,9 @@ definitions and provenance.
    accuracy, and do any gains generalize to held-out sites and regions?
 4. Are DEM-based temperature correction and residual learning complementary,
    or does their combined benefit depend on the stage and environmental setting?
+5. How do forcing functions, chilling formulations, residual learning and
+   temperature correction alter projected phenological shifts under matched
+   climate-change inputs?
 
 Improvements are hypotheses to test. Report negligible changes, performance
 degradation, and heterogeneous effects as well as improvements.
@@ -288,10 +292,18 @@ the temperature input while holding parameters fixed.
 - Prioritize spatially held-out evaluation for claims about transfer to unseen
   sites or regions. Prevent records from the same site crossing training and
   test partitions in site-transfer experiments.
-- The recorded validation design uses five outer and four inner folds grouped
-  by 1° spatial blocks, with seed `20260804`. Reuse the mappings under
+- The proposed primary design in `fig/workflow/workflow.md` uses an approximately
+  80/20 random site split stratified by country and common-period mean annual
+  temperature, with four grouped inner calibration folds. Keep all records of
+  each site and sites sharing an ERA5-Land cell in one partition. Use identical
+  site assignments across model and temperature-input comparisons. This is a
+  design specification; new split mappings have not been generated.
+- The previously recorded validation design uses five outer and four inner
+  folds grouped by 1° spatial blocks, with seed `20260804`. Preserve the mappings under
   `data/phenology/derived/modeling/france_germany_four_stage/validation/` for
-  matched comparisons, keeping sites, ERA5 cells, and spatial blocks together.
+  a separate spatial-transfer benchmark, keeping sites, ERA5 cells, and spatial
+  blocks together. Do not label these existing mappings as the proposed random
+  stratified split or overwrite them silently.
 - Use separate temporal or country-transfer evaluations when making claims
   about future years or transfer between countries.
 - Report stage-specific MAE, RMSE, and mean signed error in days, with the error
@@ -308,6 +320,29 @@ the temperature input while holding parameters fixed.
   these distinctions when reporting counts and selecting analysis records.
 - Do not fabricate results, references, dataset counts, or statistical support.
   Clearly distinguish established findings from proposed analyses.
+
+## Climate-Change Experiments
+
+- Compare paired future-minus-baseline DOY shifts under identical climate
+  inputs across phenology configurations, in addition to historical accuracy.
+- Compare these shifts across stage-specific model rankings based on held-out,
+  site-balanced baseline MAE, with separate warm-climate transfer rankings and
+  rank uncertainty. Stronger adaptability implying greater climate-projection
+  credibility is a hypothesis; baseline accuracy or ensemble agreement alone
+  does not establish future accuracy. If held-out ranks select or weight models,
+  use additional untouched data to evaluate the resulting ensemble.
+- Distinguish idealised temperature perturbations from dated climate-scenario
+  projections. ERA5-Land provides historical forcing, not future scenarios;
+  scenario datasets and their processing require separate provenance.
+- Freeze historically calibrated process parameters, residual learners and
+  preprocessing during baseline/future comparisons. Separate model-structure
+  variation from calibration-parameter and climate-ensemble variation.
+- Retain spatial and warm-year/environmental holdouts as transfer tests. Flag
+  future predictors outside the calibration domain, especially for residual ML;
+  present-climate accuracy alone does not establish future projection skill.
+- Report unmet chilling/forcing requirements separately from finite date shifts.
+  Preserve phase order, prior-season spin-up, and fixed cultivar/management
+  assumptions. BBCH89 projections remain conditional on the harvest endpoint.
 
 ## Repository Organization and Reproducibility
 
