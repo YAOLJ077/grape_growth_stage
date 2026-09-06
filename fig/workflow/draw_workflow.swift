@@ -166,7 +166,7 @@ arrow([(297.5,484),(297.5,495)])
 
 // (d) A single directional link separates calibration and independent testing.
 section("d", "Calibration and testing", 499, 145, accent: green, fill: "EFF8F3")
-text("Random site split · stratified by country × mean annual temperature",
+text("Random site split · stratified by clustered temperature zones",
      44, 509, 507, size: 10.5, align: .center, height: 17)
 box(44, 533, 225, 77, stroke: color("99BFAF"), dash: true)
 box(326, 533, 225, 77, stroke: color("99BFAF"), dash: true)
@@ -218,4 +218,6 @@ for term in catalogue.flatMap({ [$0.2, $0.3] }) + ["TEMPO", "DWD", "BBCH07", "Ca
 for absent in ["Grapevine phenology modelling", "Wergifosse", "Beta chilling:", "F forcing", "5 outer", "Γ"] {
     precondition(!contents.contains(absent), "Removed heading/footer remains: \(absent)")
 }
+precondition(contents.contains("clustered temperature zones"), "Missing temperature-zone stratification")
+precondition(!contents.contains("stratified by country"), "Obsolete country stratification remains")
 print("Exported vertically cropped vector PDF and PNG (595.28 × 728 pt); page size, climate scenarios and all 12 model names verified.")

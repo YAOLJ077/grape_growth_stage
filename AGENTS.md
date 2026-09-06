@@ -10,6 +10,30 @@ Prioritize scientifically defensible analyses, reproducibility, and
 publication-ready text, figures, and tables. Keep manuscript claims consistent
 with the data, implemented methods, and verified results.
 
+## Current Workflow
+
+Use `fig/workflow/workflow.md` as the detailed specification of the current
+study design, with `fig/workflow/workflow.pdf` and `workflow.png` as its figure
+and preview. Keep these documents, the drawing source and manuscript methods
+consistent. The workflow is a design, not evidence of completed analyses.
+
+1. **(a) Data:** harmonize and quality-control TEMPO/DWD BBCH07, 65, 81 and 89
+   observations; match daily ERA5-Land weather and terrain to site–year records.
+2. **(b) Temperature:** compare raw forcing with DEM-based elevation correction,
+   using official ERA5-Land grid elevation and elevations in metres.
+3. **(c) Models:** cross forcing function, chilling function and residual learning
+   using the model catalogue below; run both temperature-input variants.
+4. **(d) Calibration and testing:** calibrate all adjustable process parameters
+   and residual ML within the calibration set; evaluate locked models on the
+   matched held-out sites. Randomly split whole sites within temperature zones
+   derived by clustering site temperature profiles, not by country. Include
+   separate spatial and warm-year holdouts.
+5. **(e) Climate-change impacts:** compare baseline-to-future phenological shifts
+   under shared SSP2-4.5 and SSP5-8.5 scenarios, ordered by held-out baseline MAE
+   rank and checked against warm-climate transfer skill. Keep historically fitted
+   parameters fixed. Greater credibility for stronger environmental transfer
+   remains a hypothesis, not an established consequence of low baseline MAE.
+
 ## Study Context and Data
 
 - Geographic scope: Germany (DE) and France (FR), within Europe. Findings from
@@ -160,6 +184,9 @@ definitions and provenance.
 5. How do forcing functions, chilling formulations, residual learning and
    temperature correction alter projected phenological shifts under matched
    climate-change inputs?
+6. How do projected shifts differ across models ranked by environmental
+   adaptability, and does stronger observed transfer skill support greater
+   credibility of their climate-impact estimates?
 
 Improvements are hypotheses to test. Report negligible changes, performance
 degradation, and heterogeneous effects as well as improvements.
@@ -178,6 +205,38 @@ degradation, and heterogeneous effects as well as improvements.
   Record and justify material deviations from the source equations.
 - Calibrate and compare models by stage using a consistent validation design.
   Select models and tune parameters without access to held-out test outcomes.
+
+### Current Workflow Model Catalogue
+
+Forcing is the first column. Preserve these identifiers in analysis outputs,
+figures and manuscript tables.
+
+| Forcing | Chilling | Process model | With residual ML |
+| --- | --- | --- | --- |
+| Linear | None | FL | FL-ML |
+| Linear | Piecewise linear | CL-FL | CL-FL-ML |
+| Linear | Beta | CB-FL | CB-FL-ML |
+| Beta | None | FB | FB-ML |
+| Beta | Piecewise linear | CL-FB | CL-FB-ML |
+| Beta | Beta | CB-FB | CB-FB-ML |
+
+- Cross each of the 12 combinations with RAW and DEM temperatures: 24 candidate
+  configurations per BBCH stage. Use `BBCH{stage}-{model}[-ML]-{RAW|DEM}`, for
+  example `BBCH07-CB-FL-ML-DEM`. F denotes forcing, C chilling, L linear, B beta,
+  and ML additive residual learning. CL specifically means piecewise-linear
+  triangular chilling, not an unrestricted linear response.
+- Fila et al. (2014) supports beta chilling and linear/beta forcing. Its Table 1
+  does not supply a linear chilling response. The candidate triangular chilling
+  comparator follows de Wergifosse et al. (2020), Eq. (1),
+  DOI `10.5194/gmd-13-1459-2020`, with attribution there to Hänninen (1990).
+  That source concerns forest trees; grapevine use is an adaptation requiring
+  independent calibration and testing. The equation is in `workflow.md`.
+- Distinguish these component-combination identifiers from Fila's original
+  nine model names and parameter-sharing variants below. Do not imply a one-to-one
+  equivalence or that every candidate has already been implemented.
+- Recalibrate each RAW/DEM configuration on matched historical calibration
+  observations. Freeze that configuration's fitted parameters for its own
+  baseline/future comparison. Complexity is not evidence of improved accuracy.
 
 ### Fila et al. (2014), Table 1: Model Summary
 
@@ -293,11 +352,22 @@ the temperature input while holding parameters fixed.
   sites or regions. Prevent records from the same site crossing training and
   test partitions in site-transfer experiments.
 - The proposed primary design in `fig/workflow/workflow.md` uses an approximately
-  80/20 random site split stratified by country and common-period mean annual
-  temperature, with four grouped inner calibration folds. Keep all records of
+  80/20 random site split stratified by clustered temperature zones, with four
+  grouped inner calibration folds. Form zones across the combined France–Germany
+  domain from common-period, temperature-only climatological features. Country
+  is not a clustering input, stratification variable or allocation quota.
+  Fixed temperature-quantile bins are not a substitute for clustering.
+  Keep all records of
   each site and sites sharing an ERA5-Land cell in one partition. Use identical
   site assignments across model and temperature-input comparisons. This is a
   design specification; new split mappings have not been generated.
+- Use raw ERA5-Land climate profiles for shared RAW/DEM zone labels. Document
+  the normal period, features, scaling, clustering algorithm and cluster count,
+  fitted clustering representation, seeds and `temperature_zone_id` assignments.
+  Determine zoning from eligible sites' climate covariates before partitioning,
+  without phenology outcomes or model errors; fit predictive preprocessing only
+  within calibration. Resolve sparse zones by temperature similarity or cluster
+  count, not country boundaries, before evaluating errors.
 - The previously recorded validation design uses five outer and four inner
   folds grouped by 1° spatial blocks, with seed `20260804`. Preserve the mappings under
   `data/phenology/derived/modeling/france_germany_four_stage/validation/` for
@@ -309,7 +379,8 @@ the temperature input while holding parameters fixed.
 - Report stage-specific MAE, RMSE, and mean signed error in days, with the error
   sign convention stated. Include sample sizes and uncertainty in model
   comparisons; account for repeated observations and spatial grouping.
-- Summarize performance by country and relevant terrain groups when sample
+- Summarize performance by clustered temperature zone, country and relevant
+  terrain groups when sample
   sizes support the comparison. Distinguish pooled performance from subgroup
   performance and flag sparse groups.
 - Document missing data, duplicate handling, BBCH harmonization, chronology
@@ -334,6 +405,14 @@ the temperature input while holding parameters fixed.
 - Distinguish idealised temperature perturbations from dated climate-scenario
   projections. ERA5-Land provides historical forcing, not future scenarios;
   scenario datasets and their processing require separate provenance.
+- The figure specifies SSP2-4.5 and SSP5-8.5 as the future pathways. Daily climate
+  ensemble products remain an additional data requirement. Baseline 1991–2020
+  and future periods 2041–2070 and 2071–2100 are proposed implementation choices,
+  subject to coverage and calendar checks, not completed projection runs.
+- Define climate impact as mean future DOY minus mean baseline DOY; negative
+  values indicate earlier occurrence. Pair configurations on the same site,
+  stage, climate member, scenario and period. Do not confuse baseline model
+  test MAE with future-minus-baseline change or with future projection error.
 - Freeze historically calibrated process parameters, residual learners and
   preprocessing during baseline/future comparisons. Separate model-structure
   variation from calibration-parameter and climate-ensemble variation.
@@ -345,6 +424,26 @@ the temperature input while holding parameters fixed.
   assumptions. BBCH89 projections remain conditional on the harvest endpoint.
 
 ## Repository Organization and Reproducibility
+
+### Workflow Figure Conventions
+
+- Preserve five pastel panels in the sequence (a)–(e): blue data, ochre
+  temperature, purple models, green calibration/testing and rose climate-change
+  impacts. Panel letters are in parentheses; headings are outside the left
+  edges, rotated counterclockwise to read bottom-to-top.
+- Retain the forcing-first matrix, named model combinations, site-level split,
+  locked calibration/test separation, explicit future climate scenarios and
+  skill-ranked climate-impact comparison. Keep the credibility statement labelled
+  as a hypothesis within panel (e).
+- No overall figure title, subtitle or explanatory footer. Use a portrait,
+  A4-width export cropped above and below the content, with small margins;
+  the current page is 595.28 × 728 pt, not full-height A4.
+- Rebuild with `swift -module-cache-path /tmp/grape-workflow-swift-cache fig/workflow/draw_workflow.swift`
+  from the repository root. Check PDF text, page size, model names and the PNG
+  preview after changes. `fig/bak/` contains archived figures, not the active
+  workflow source.
+
+### Repository Paths
 
 - `paper/`: manuscript source, bibliography, and compiled manuscript.
 - `reference/`: supporting literature, including `Fila et al.pdf`.
