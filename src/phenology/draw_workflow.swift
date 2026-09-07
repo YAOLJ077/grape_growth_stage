@@ -1,12 +1,14 @@
 // Run from the repository root:
-// swift -module-cache-path /tmp/grape-workflow-swift-cache fig/workflow/draw_workflow.swift
+// swift -module-cache-path /tmp/grape-workflow-swift-cache src/phenology/draw_workflow.swift
+// Run from the repository root with Swift; exports to fig/workflow/.
 import Foundation
 import AppKit
 import PDFKit
 
 let output = URL(fileURLWithPath: "fig/workflow/workflow.pdf")
 let W: CGFloat = 595.2756, H: CGFloat = 841.8898 // Original A4 layout coordinates
-let exportHeight: CGFloat = 728, topTrim: CGFloat = 73
+let modelExtraHeight: CGFloat = 12
+let exportHeight: CGFloat = 728 + modelExtraHeight, topTrim: CGFloat = 73
 var media = CGRect(x: 0, y: 0, width: W, height: exportHeight)
 let ctx = CGContext(output as CFURL, mediaBox: &media, [
     kCGPDFContextTitle: "Grapevine phenology modelling workflow",
@@ -97,15 +99,20 @@ ctx.translateBy(x: 8, y: 0)
 // (a) Concise source cards preserve the accepted data content.
 section("a", "Data", 85, 98, accent: blue, fill: "EFF6FC")
 let dataCards: [(CGFloat, String, String, String)] = [
-    (44, "Phenology", "FR: TEMPO · DE: DWD", "BBCH07 · 65 · 81 · 89"),
+    (44, "Phenology", "European · all countries", "BBCH07 · 65 · 81 · 89"),
     (216, "Weather", "ERA5-Land daily", "0.1° grid"),
     (388, "Terrain", "Copernicus GLO-30 (~30 m)", "ERA5 grid geopotential")
 ]
 for (x,title,l1,l2) in dataCards {
     box(x, 99, 163, 56, stroke: color("B9D0E4"))
     text(title, x+10, 105, 143, size: 11, weight: .semibold, color: blue)
-    text(l1, x+10, 124, 143, size: 10, height: 15)
-    text(l2, x+10, 138, 143, size: 10, height: 15)
+    if x == 44 {
+        text(l1, x+10, 121, 143, size: 9.3, height: 13)
+        text(l2, x+10, 134, 143, size: 9.0, height: 12)
+    } else {
+        text(l1, x+10, 124, 143, size: 10, height: 15)
+        text(l2, x+10, 138, 143, size: 10, height: 15)
+    }
     arrow([(x+81.5,156),(x+81.5,163)], color: blue)
 }
 text("BBCH harmonization  →  quality control  →  site–year matching",
@@ -134,35 +141,64 @@ precondition(equation.size().width < 507 && equation.size().height < 24)
 equation.draw(at: NSPoint(x: (W-equation.size().width)/2, y: 247))
 arrow([(297.5,275),(297.5,286)])
 
-// (c) Forcing is the first column. Names retain the previously defined C–F codes.
-section("c", "Models", 290, 193, accent: purple, fill: "F5F0FA")
-let tableX: CGFloat = 44, tableY: CGFloat = 304, rowH: CGFloat = 23
-box(tableX, tableY, 507, 162, fill: .white, stroke: color("CFBEDF"))
-box(409, tableY+1, 141, 160, fill: color("EDE3F6"), stroke: color("EDE3F6"), radius: 0)
-text("Forcing", 56, tableY+6, 90, weight: .semibold, color: purple)
-text("Chilling", 158, tableY+6, 127, weight: .semibold, color: purple)
-text("Process", 303, tableY+6, 99, weight: .semibold, color: purple)
-text("+ Residual ML", 423, tableY+6, 117, weight: .semibold, color: purple)
-path([(45,tableY+23),(550,tableY+23)], color: color("CFBEDF"), width: 0.6)
-let catalogue = [
-    ("Linear", "None", "FL", "FL-ML"),
-    ("Linear", "Piecewise linear", "CL-FL", "CL-FL-ML"),
-    ("Linear", "Beta", "CB-FL", "CB-FL-ML"),
-    ("Beta", "None", "FB", "FB-ML"),
-    ("Beta", "Piecewise linear", "CL-FB", "CL-FB-ML"),
-    ("Beta", "Beta", "CB-FB", "CB-FB-ML")
-]
-for (i, row) in catalogue.enumerated() {
-    let y = tableY + 27 + CGFloat(i)*rowH
-    text(row.0, 56, y, 90, height: 17)
-    text(row.1, 158, y, 137, height: 17)
-    text(row.2, 303, y, 99, weight: .medium, height: 17)
-    text(row.3, 423, y, 117, weight: .medium, color: purple, height: 17)
-    if i == 2 { path([(45,y+19),(550,y+19)], color: color("CFBEDF"), width: 0.6) }
+// (c) Factor-based design; each row crosses its function, ML and temperature options.
+section("c", "Models", 290, 193 + modelExtraHeight, accent: purple, fill: "F5F0FA")
+let tableX: CGFloat = 44, tableY: CGFloat = 304, rowH: CGFloat = 37
+box(tableX, tableY, 507, 135, fill: .white, stroke: color("CFBEDF"))
+box(377, tableY+1, 173, 133, fill: color("EDE3F6"), stroke: color("EDE3F6"), radius: 0)
+let columnX: [CGFloat] = [52, 152, 297, 385, 451]
+let columnWidths: [CGFloat] = [84, 129, 72, 50, 92]
+let factorHeaders = ["Process", "Function", "Interaction", "ML", "T"]
+for i in factorHeaders.indices {
+    text(factorHeaders[i], columnX[i], tableY+6, columnWidths[i], weight: .semibold, color: purple)
 }
-text("12 combinations × 2 inputs = 24 configurations per BBCH stage",
-     44, 467, 507, size: 10.5, weight: .semibold, color: purple, align: .center, height: 16)
-arrow([(297.5,484),(297.5,495)])
+path([(45,tableY+23),(550,tableY+23)], color: color("CFBEDF"), width: 0.6)
+let factorRows = [
+    ["Forcing", "Linear / beta", "—", "No / Yes", "Original /\nDEM-corrected"],
+    ["Chilling +\nforcing", "F: linear / beta\nC: triangular / beta", "Sequential", "No / Yes", "Original /\nDEM-corrected"],
+    ["Chilling +\nforcing", "F: linear / beta\nC: triangular / beta", "Parallel", "No / Yes", "Original /\nDEM-corrected"]
+]
+let structuresPerFamily = [2, 4, 4]
+let catalogue = [
+    ("Linear", "None", "—", "FL", "FL-ML"),
+    ("Linear", "Piecewise linear", "Sequential", "CL-FL-S", "CL-FL-S-ML"),
+    ("Linear", "Piecewise linear", "Parallel", "CL-FL-P", "CL-FL-P-ML"),
+    ("Linear", "Beta", "Sequential", "CB-FL-S", "CB-FL-S-ML"),
+    ("Linear", "Beta", "Parallel", "CB-FL-P", "CB-FL-P-ML"),
+    ("Beta", "None", "—", "FB", "FB-ML"),
+    ("Beta", "Piecewise linear", "Sequential", "CL-FB-S", "CL-FB-S-ML"),
+    ("Beta", "Piecewise linear", "Parallel", "CL-FB-P", "CL-FB-P-ML"),
+    ("Beta", "Beta", "Sequential", "CB-FB-S", "CB-FB-S-ML"),
+    ("Beta", "Beta", "Parallel", "CB-FB-P", "CB-FB-P-ML")
+]
+let structureCount = catalogue.count
+let configurationCount = structureCount * 2 * 2 // temperature inputs × residual-ML options
+precondition(structureCount == 10 && configurationCount == 40)
+precondition(structuresPerFamily.reduce(0, +) == structureCount && factorRows.count == structuresPerFamily.count)
+precondition(Set(catalogue.map { $0.3 }).count == 10, "Duplicate process-model names")
+precondition(Set(catalogue.map { $0.4 }).count == 10, "Duplicate residual-model names")
+for row in catalogue {
+    let suffix = row.2 == "Sequential" ? "-S" : "-P"
+    precondition(row.1 == "None" ? row.2 == "—" && ["FL", "FB"].contains(row.3) : row.3.hasSuffix(suffix), "Interaction/name mismatch")
+    precondition(row.4 == row.3 + "-ML", "Incorrect residual-ML suffix")
+}
+for (i, row) in factorRows.enumerated() {
+    let y = tableY + 28 + CGFloat(i)*rowH
+    for j in row.indices {
+        text(row[j], columnX[j], y, columnWidths[j], size: 10, color: j >= 3 ? purple : ink, height: 31)
+    }
+    if i < factorRows.count-1 { path([(45,y+32),(550,y+32)], color: color("CFBEDF"), width: 0.4) }
+}
+text("FL · FB · CL-FL-S · CL-FL-P · CB-FL-S · CB-FL-P",
+     44, 443, 507, size: 10, color: purple, align: .center, height: 15)
+text("CL-FB-S · CL-FB-P · CB-FB-S · CB-FB-P    (add -ML for residual learning)",
+     44, 458, 507, size: 10, color: purple, align: .center, height: 15)
+let catalogueSummary = "\(structureCount) structures × 2 inputs × 2 ML options = \(configurationCount) per BBCH stage"
+text(catalogueSummary,
+     44, 467 + modelExtraHeight, 507, size: 10.5, weight: .semibold, color: purple, align: .center, height: 16)
+arrow([(297.5,484 + modelExtraHeight),(297.5,495 + modelExtraHeight)])
+ctx.saveGState()
+ctx.translateBy(x: 0, y: modelExtraHeight)
 
 // (d) A single directional link separates calibration and independent testing.
 section("d", "Calibration and testing", 499, 145, accent: green, fill: "EFF8F3")
@@ -184,22 +220,23 @@ text("Keep each site intact · Additional spatial and warm-year holdouts",
      44, 622, 507, size: 10.5, align: .center, height: 17)
 arrow([(297.5,645),(297.5,656)])
 
-// (e) Paired climate responses; no recalibration to future climate.
-section("e", "Climate-change impacts", 660, 129, accent: rose, fill: "FCF0F3")
-text("Baseline climate → future climate scenarios (SSP2-4.5 / SSP5-8.5)",
+// (e) Paired temperature-treatment contrasts across terrain conditions.
+section("e", "Terrain effects", 660, 129, accent: rose, fill: "FCF0F3")
+text("Paired test errors · same sites, years and stages",
      44, 672, 507, size: 10.5, weight: .medium, color: rose, align: .center, height: 17)
 box(44, 697, 225, 62, stroke: color("D6A5B2"))
 box(326, 697, 225, 62, stroke: color("D6A5B2"))
-text("Rank model adaptability", 56, 703, 201, size: 11, weight: .semibold, color: rose)
-text("Baseline test MAE → skill rank", 56, 724, 201, size: 10)
-text("Check warm-climate transfer", 56, 738, 201, size: 10)
-text("Project phenology shifts", 338, 703, 201, size: 11, weight: .semibold, color: rose)
-text("Shared scenarios; fixed parameters", 338, 724, 201, size: 10)
-text("Future − baseline DOY by skill rank", 338, 738, 201, size: 10)
+text("Terrain descriptors", 56, 703, 201, size: 11, weight: .semibold, color: rose)
+text("Site-to-grid elevation difference", 56, 724, 201, size: 10)
+text("Elevation · slope · aspect · relief", 56, 738, 201, size: 10)
+text("Temperature-correction benefit", 338, 703, 201, size: 11, weight: .semibold, color: rose)
+text("MAE(RAW) − MAE(DEM)", 338, 724, 201, size: 10)
+text("Compare without / with residual ML", 338, 738, 201, size: 10)
 arrow([(272,728),(323,728)], color: rose)
-text("Hypothesis: stronger environmental transfer → greater projection credibility",
+text("Positive difference = improvement · Paired site-group uncertainty",
      44, 769, 507, size: 10, align: .center, height: 17)
 
+ctx.restoreGState()
 NSGraphicsContext.restoreGraphicsState()
 ctx.endPDFPage(); ctx.closePDF()
 let pdf = PDFDocument(url: output)!
@@ -211,13 +248,14 @@ let image = page.thumbnail(of: NSSize(width: W*3, height: exportHeight*3), for: 
 let bitmap = NSBitmapImageRep(data: image.tiffRepresentation!)!
 try bitmap.representation(using: .png, properties: [:])!.write(
     to: URL(fileURLWithPath: "fig/workflow/workflow.png"))
-let contents = page.string ?? ""
-for term in catalogue.flatMap({ [$0.2, $0.3] }) + ["TEMPO", "DWD", "BBCH07", "Calibration set", "Test set", "0.0065", "80%", "20%", "Random site split", "Climate-change impacts", "Rank model adaptability", "SSP2-4.5", "SSP5-8.5", "fixed parameters", "Future − baseline DOY by skill rank", "Hypothesis:"] {
+let contents = (page.string ?? "").components(separatedBy: .whitespacesAndNewlines)
+    .filter { !$0.isEmpty }.joined(separator: " ")
+for term in catalogue.map({ $0.3 }) + factorHeaders + ["Sequential", "Parallel", "Original", "DEM-corrected", "No / Yes", "C: triangular / beta", "add -ML for residual learning", catalogueSummary, "European", "all countries", "BBCH07 · 65 · 81 · 89", "Calibration set", "Test set", "0.0065", "80%", "20%", "Random site split", "Terrain effects", "Terrain descriptors", "Temperature-correction benefit", "MAE(RAW) − MAE(DEM)", "Paired site-group uncertainty"] {
     precondition(contents.contains(term), "Missing PDF text: \(term)")
 }
-for absent in ["Grapevine phenology modelling", "Wergifosse", "Beta chilling:", "F forcing", "5 outer", "Γ"] {
+for absent in ["Grapevine phenology modelling", "Wergifosse", "Beta chilling:", "F forcing", "5 outer", "Γ", "24 configurations", "Climate-change impacts", "SSP2-4.5", "SSP5-8.5", "Future", "Hypothesis:"] {
     precondition(!contents.contains(absent), "Removed heading/footer remains: \(absent)")
 }
 precondition(contents.contains("clustered temperature zones"), "Missing temperature-zone stratification")
 precondition(!contents.contains("stratified by country"), "Obsolete country stratification remains")
-print("Exported vertically cropped vector PDF and PNG (595.28 × 728 pt); page size, climate scenarios and all 12 model names verified.")
+print("Exported vertically cropped vector PDF and PNG (595.28 × \(Int(exportHeight)) pt); five-factor table, ten structure names, terrain-effect comparisons and 40 configurations verified.")

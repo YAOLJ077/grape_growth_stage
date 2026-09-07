@@ -1,0 +1,58 @@
+{
+  "policy": "paper-targets-v3-four-stages",
+  "source": "data/phenology/phenology_data.csv",
+  "source_sha256": "2a1ad04af179b1056cd26373b0c9a5b274cc70b9a3cf577dd41d23de9b9066e5",
+  "source_rows": 259998,
+  "source_quality": "data/phenology/phenology_data_quality.json",
+  "inherited_qc": "chronology-v2",
+  "columns": [
+    "site",
+    "variety",
+    "country",
+    "lat",
+    "lon",
+    "Date",
+    "BBCH"
+  ],
+  "geography": "All countries present in the cleaned inventory",
+  "eligibility": "At least one observation of any selected stage; no complete site or site-year sequence required",
+  "preprocessing": "Selection only; preserve source order, fields, missing varieties and repeated accepted observations",
+  "readiness": "Phenology-eligible observations; weather matching, event preparation and calibration/test assignment remain separate",
+  "combined": {
+    "stages": [
+      "07",
+      "65",
+      "81",
+      "89"
+    ],
+    "rows": 75233,
+    "source_qualified_sites": 3198,
+    "distinct_coordinate_pairs": 3023,
+    "countries": 11,
+    "counts_by_stage": {
+      "07": 25303,
+      "65": 26657,
+      "81": 18734,
+      "89": 4539
+    },
+    "counts_by_country": {
+      "BA": 51,
+      "CH": 2292,
+      "CZ": 94,
+      "DE": 56045,
+      "ES": 83,
+      "FR": 14084,
+      "HR": 1062,
+      "LU": 72,
+      "ME": 18,
+      "SE": 1,
+      "SK": 1431
+    },
+    "first_date": "1951-04-15",
+    "last_date": "2026-06-23",
+    "file": "data/phenology/derived/paper_targets/observations.csv",
+    "sha256": "3811d638f73c4ae0360d369d7dcd8d1e8795414b38b228192e1de955e85331b3"
+  },
+  "non_target_rows": 184765,
+  "non_target_interpretation": "Retained in the full inventory; not excluded as data-quality errors"
+}

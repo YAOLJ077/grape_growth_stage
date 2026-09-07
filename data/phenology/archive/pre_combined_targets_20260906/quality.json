@@ -1,0 +1,82 @@
+{
+  "policy": "paper-targets-v1",
+  "source": "data/phenology/phenology_data.csv",
+  "source_sha256": "2a1ad04af179b1056cd26373b0c9a5b274cc70b9a3cf577dd41d23de9b9066e5",
+  "source_rows": 259998,
+  "source_quality": "data/phenology/phenology_data_quality.json",
+  "inherited_qc": "chronology-v2",
+  "columns": [
+    "site",
+    "variety",
+    "country",
+    "lat",
+    "lon",
+    "Date",
+    "BBCH"
+  ],
+  "geography": "All countries present in the cleaned inventory",
+  "eligibility": "At least one observation of any selected stage; no complete site or site-year sequence required",
+  "preprocessing": "Selection only; preserve source order, fields, missing varieties and repeated accepted observations",
+  "readiness": "Phenology-eligible observations; weather matching, event preparation and calibration/test assignment remain separate",
+  "subsets": {
+    "primary": {
+      "file": "data/phenology/derived/paper_targets/primary.csv",
+      "stages": [
+        "07",
+        "65",
+        "81"
+      ],
+      "rows": 70694,
+      "sha256": "ca6ce3b08bf1006cb0b01ff5ffe07351fca966d51ad6081381270876ac794daa",
+      "source_qualified_sites": 3106,
+      "distinct_coordinate_pairs": 2950,
+      "countries": 11,
+      "counts_by_stage": {
+        "07": 25303,
+        "65": 26657,
+        "81": 18734
+      },
+      "counts_by_country": {
+        "BA": 35,
+        "CH": 2066,
+        "CZ": 94,
+        "DE": 56045,
+        "ES": 62,
+        "FR": 9815,
+        "HR": 1061,
+        "LU": 72,
+        "ME": 12,
+        "SE": 1,
+        "SK": 1431
+      },
+      "first_date": "1951-04-15",
+      "last_date": "2026-06-23"
+    },
+    "maturity_secondary": {
+      "file": "data/phenology/derived/paper_targets/maturity_secondary.csv",
+      "stages": [
+        "89"
+      ],
+      "rows": 4539,
+      "sha256": "e31d535e691fc6e98944a582dabeb15bc5386e70c2bc3ca1d230c887bb8a9690",
+      "source_qualified_sites": 828,
+      "distinct_coordinate_pairs": 809,
+      "countries": 6,
+      "counts_by_stage": {
+        "89": 4539
+      },
+      "counts_by_country": {
+        "BA": 16,
+        "CH": 226,
+        "ES": 21,
+        "FR": 4269,
+        "HR": 1,
+        "ME": 6
+      },
+      "first_date": "1951-09-07",
+      "last_date": "2022-10-01"
+    }
+  },
+  "non_target_rows": 184765,
+  "non_target_interpretation": "Retained in the full inventory; not excluded as data-quality errors"
+}

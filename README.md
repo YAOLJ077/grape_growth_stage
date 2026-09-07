@@ -49,6 +49,7 @@ data/       Phenology, terrain, weather metadata, and derived analysis tables
 fig/        Workflow, spatial validation, descriptive, and manuscript figures
 paper/      Manuscript source, compiled manuscript, and bibliography
 reference/  Supporting literature files
+model/      Ten process-only models, shared prediction/calibration code and usage documentation
 results/    Model-selection outputs, validation summaries, and result tables
 src/        Data preparation, modelling, validation, and plotting code
 tests/      Unit tests for core data-processing and modelling components
@@ -70,6 +71,13 @@ The main analysis produces:
 - Manuscript-ready figures and tables.
 
 ## Reproducibility
+
+The current ten-model process implementation is documented in
+[model/README.md](model/README.md). It supports joint four-stage calibration,
+saved-parameter prediction and evaluation without ML. Its minimal environment
+is defined in `model/requirements.txt`; tests run with `python -m pytest tests`.
+Daily weather and independently prepared calibration/test inputs are required
+for real-data runs. The older `src/modeling/` workflows below remain unchanged.
 
 The analysis environment is defined by the Python dependency files in the
 repository. The modelling and figure-generation code is organized under `src/`,

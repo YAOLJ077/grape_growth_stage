@@ -1,51 +1,9 @@
-\begin{thebibliography}{55}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Alikadic et~al.(2019)Alikadic, Pertot, Eccel, Dolci, Zarbo, Caffarra,
-  De~Filippi, and Furlanello]{alikadicImpactClimateChange2019}
-Azra Alikadic, Ilaria Pertot, Emanuele Eccel, Claudia Dolci, Calogero Zarbo,
-  Amelia Caffarra, Riccardo De~Filippi, and Cesare Furlanello.
-\newblock The impact of climate change on grapevine phenology and the influence
-  of altitude: {{A}} regional study.
-\newblock \emph{Agricultural and Forest Meteorology}, 271:\penalty0 73--82,
-  June 2019.
-\newblock ISSN 01681923.
-\newblock \doi{10.1016/j.agrformet.2019.02.030}.
-
-\bibitem[Allen et~al.(1998)Allen, Pereira, Raes, and
-  Smith]{allenCropEvapotranspirationGuidelines1998}
-Richard~G. Allen, Luis~S. Pereira, Dirk Raes, and Martin Smith.
-\newblock \emph{Crop Evapotranspiration: Guidelines for Computing Crop Water
-  Requirements}.
-\newblock Number~56 in FAO Irrigation and Drainage Paper. Food and Agriculture
-  Organization of the United Nations, Rome, 1998.
-
-\bibitem[Breiman(2001)]{breimanRandomForests2001}
-Leo Breiman.
-\newblock Random forests.
-\newblock \emph{Machine Learning}, 45\penalty0 (1):\penalty0 5--32, 2001.
-\newblock \doi{10.1023/A:1010933404324}.
-
-\bibitem[Cameron et~al.(2022)Cameron, Petrie, and
-  Barlow]{cameronEffectTemperatureGrapevine2022}
-W.~Cameron, P.R. Petrie, and E.W.R. Barlow.
-\newblock The effect of temperature on grapevine phenological intervals:
-  {{Sensitivity}} of budburst to flowering.
-\newblock \emph{Agricultural and Forest Meteorology}, 315:\penalty0 108841,
-  March 2022.
-\newblock ISSN 01681923.
-\newblock \doi{10.1016/j.agrformet.2022.108841}.
-
-\bibitem[Chen and Guestrin(2016)]{chenXGBoostScalableTree2016}
-Tianqi Chen and Carlos Guestrin.
-\newblock {{XGBoost}}: A scalable tree boosting system.
-\newblock In \emph{Proceedings of the 22nd ACM SIGKDD International Conference
-  on Knowledge Discovery and Data Mining}, pages 785--794, 2016.
-\newblock \doi{10.1145/2939672.2939785}.
 
 \bibitem[Chuine(2000)]{chuineUnifiedModelBudburst2000}
 Isabelle Chuine.
@@ -63,23 +21,6 @@ Isabelle Chuine and Jacques R{\'e}gni{\`e}re.
   48:\penalty0 159--182, 2017.
 \newblock \doi{10.1146/annurev-ecolsys-110316-022706}.
 
-\bibitem[{Copernicus Climate Change
-  Service}(2019)]{copernicusClimateChangeServiceERA5LandHourly2019}
-{Copernicus Climate Change Service}.
-\newblock {{ERA5-Land}} hourly data from 1950 to present, 2019.
-\newblock URL
-  \url{https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview}.
-
-\bibitem[Daly et~al.(2008)Daly, Halbleib, Smith, Gibson, Doggett, Taylor,
-  Curtis, and Pasteris]{dalyPhysiographicallySensitiveMapping2008}
-Christopher Daly, Michael Halbleib, Joseph~I. Smith, Wayne~P. Gibson,
-  Matthew~K. Doggett, George~H. Taylor, Jan Curtis, and Phillip~P. Pasteris.
-\newblock Physiographically sensitive mapping of climatological temperature and
-  precipitation across the conterminous {{United States}}.
-\newblock \emph{International Journal of Climatology}, 28\penalty0
-  (15):\penalty0 2031--2064, 2008.
-\newblock \doi{10.1002/joc.1688}.
-
 \bibitem[de~Ress{\'e}guier et~al.(2020)de~Ress{\'e}guier, Mary, Le~Roux,
   Petitjean, Qu{\'e}nol, and van
   Leeuwen]{deresseguierTemperatureVariabilityLocal2020}
@@ -90,57 +31,27 @@ Laure de~Ress{\'e}guier, S{\'e}verine Mary, Renan Le~Roux, Th{\'e}o Petitjean,
 \newblock \emph{Frontiers in Plant Science}, 11:\penalty0 515, 2020.
 \newblock \doi{10.3389/fpls.2020.00515}.
 
-\bibitem[de~Ress{\'e}guier et~al.(2026)de~Ress{\'e}guier, Parker, Petitjean,
-  Garc{\'i}a~de Cort{\'a}zar-Atauri, and van
-  Leeuwen]{deresseguierModelingGrapevinePhenology2026}
-Laure de~Ress{\'e}guier, Amber~K. Parker, Th{\'e}o Petitjean, I{\~n}aki
-  Garc{\'i}a~de Cort{\'a}zar-Atauri, and Cornelis van Leeuwen.
-\newblock Modeling grapevine phenology at local scale in the context of climate
-  change: An example in the bordeaux area.
-\newblock \emph{Agricultural and Forest Meteorology}, 376:\penalty0 110831,
-  2026.
-\newblock \doi{10.1016/j.agrformet.2025.110831}.
+\bibitem[de~Wergifosse et~al.(2020)de~Wergifosse, Andr{\'e}, Beudez,
+  de~Coligny, Goosse, Jonard, Ponette, Titeux, Vincke, and
+  Jonard]{deWergifosseHETEROFOR2020}
+Laetitia de~Wergifosse, Fr{\'e}d{\'e}ric Andr{\'e}, Nicolas Beudez,
+  Fran{\c{c}}ois de~Coligny, Hugues Goosse, Fran{\c{c}}ois Jonard, Quentin
+  Ponette, Hugues Titeux, Caroline Vincke, and Mathieu Jonard.
+\newblock {{HETEROFOR}} 1.0: A spatially explicit model for exploring the
+  response of structurally complex forests to uncertain future
+  conditions---part 2: Phenology and water cycle.
+\newblock \emph{Geoscientific Model Development}, 13:\penalty0 1459--1498,
+  2020.
+\newblock \doi{10.5194/gmd-13-1459-2020}.
 
-\bibitem[Dormann et~al.(2013)Dormann, Elith, Bacher, Buchmann, Carl, Carr{\'e},
-  Marqu{\'e}z, Gruber, Lafourcade, Leit{\~a}o, M{\"u}nkem{\"u}ller, McClean,
-  Osborne, Reineking, Schr{\"o}der, Skidmore, Zurell, and
-  Lautenbach]{dormannCollinearityReviewMethods2013}
-Carsten~F. Dormann, Jane Elith, Sven Bacher, Carsten Buchmann, Gudrun Carl,
-  Gabriel Carr{\'e}, Jaime R.~Garc{\'i}a Marqu{\'e}z, Bernd Gruber, Bruno
-  Lafourcade, Pedro~J. Leit{\~a}o, Tamara M{\"u}nkem{\"u}ller, Colin McClean,
-  Patrick~E. Osborne, Bj{\"o}rn Reineking, Boris Schr{\"o}der, Andrew~K.
-  Skidmore, Damaris Zurell, and Sven Lautenbach.
-\newblock Collinearity: A review of methods to deal with it and a simulation
-  study evaluating their performance.
-\newblock \emph{Ecography}, 36\penalty0 (1):\penalty0 27--46, 2013.
-\newblock \doi{10.1111/j.1600-0587.2012.07348.x}.
-
-\bibitem[Fad{\'o}n et~al.(2020)Fad{\'o}n, Fernandez, Behn, and
-  Luedeling]{fadonConceptualFrameworkWinter2020}
-Erica Fad{\'o}n, Eduardo Fernandez, Helen Behn, and Eike Luedeling.
-\newblock A conceptual framework for winter dormancy in deciduous trees.
-\newblock \emph{Agronomy}, 10\penalty0 (2):\penalty0 241, 2020.
-\newblock \doi{10.3390/agronomy10020241}.
-
-\bibitem[Feigl et~al.(2022)Feigl, Roesky, Herrnegger, Schulz, and
-  Hayashi]{feiglLearningMistakesAssessing2022}
-Moritz Feigl, Benjamin Roesky, Mathew Herrnegger, Karsten Schulz, and Masaki
-  Hayashi.
-\newblock Learning from mistakes: Assessing the performance and uncertainty in
-  process-based models.
-\newblock \emph{Hydrological Processes}, 36\penalty0 (2):\penalty0 e14515,
-  2022.
-\newblock \doi{10.1002/hyp.14515}.
-
-\bibitem[Fernandez et~al.(2022)Fernandez, Schiffers, Urbach, and
-  Luedeling]{fernandezUnusuallyWarmWinter2022}
-Eduardo Fernandez, Katja Schiffers, Carsten Urbach, and Eike Luedeling.
-\newblock Unusually warm winter seasons may compromise the performance of
-  current phenology models---predicting bloom dates in young apple trees with
-  {PhenoFlex}.
-\newblock \emph{Agricultural and Forest Meteorology}, 322:\penalty0 109020,
-  2022.
-\newblock \doi{10.1016/j.agrformet.2022.109020}.
+\bibitem[{Deutscher Wetterdienst}(2017)]{dwdNationalClimateReport}
+{Deutscher Wetterdienst}.
+\newblock National climate report: Climate---yesterday, today and in future.
+\newblock 3rd revised edition, Deutscher Wetterdienst, Offenbach am Main,
+  Germany, 2017.
+\newblock URL
+  \url{https://www.dwd.de/EN/ourservices/nationalclimatereport/download_report_edition-3.pdf?__blob=publicationFile&v=4}.
+\newblock 46 pp.
 
 \bibitem[Fila et~al.(2014)Fila, Gardiman, Belvini, Meggio, and
   Pitacco]{filaComparisonDifferentModelling2014}
@@ -152,17 +63,6 @@ Gianni Fila, Massimo Gardiman, Paolo Belvini, Franco Meggio, and Andrea
   192--205, September 2014.
 \newblock ISSN 01681923.
 \newblock \doi{10.1016/j.agrformet.2014.05.011}.
-
-\bibitem[Fraga et~al.(2016)Fraga, Garc{\'i}a De Cort{\'a}zar~Atauri, Malheiro,
-  and Santos]{fragaModellingClimateChange2016}
-Helder Fraga, I{\~n}aki Garc{\'i}a De Cort{\'a}zar~Atauri, Aureliano~C.
-  Malheiro, and Jo{\~a}o~A. Santos.
-\newblock Modelling climate change impacts on viticultural yield, phenology and
-  stress conditions in {{Europe}}.
-\newblock \emph{Global Change Biology}, 22\penalty0 (11):\penalty0 3774--3788,
-  November 2016.
-\newblock ISSN 1354-1013, 1365-2486.
-\newblock \doi{10.1111/gcb.13382}.
 
 \bibitem[{Garc{\'i}a de Cort{\'a}zar-Atauri} et~al.(2009){Garc{\'i}a de
   Cort{\'a}zar-Atauri}, Brisson, and
@@ -176,31 +76,6 @@ I{\~n}aki {Garc{\'i}a de Cort{\'a}zar-Atauri}, Nadine Brisson, and Jean~Pierre
 \newblock ISSN 0020-7128, 1432-1254.
 \newblock \doi{10.1007/s00484-009-0217-4}.
 
-\bibitem[{Garc{\'i}a de Cort{\'a}zar-Atauri} et~al.(2017){Garc{\'i}a de
-  Cort{\'a}zar-Atauri}, Duch{\^e}ne, {Destrac-Irvine}, Barbeau,
-  De~Ress{\'e}guier, Lacombe, Parker, Saurin, and
-  Van~Leeuwen]{garciadecortazar-atauriGrapevinePhenologyFrance2017}
-I{\~n}aki {Garc{\'i}a de Cort{\'a}zar-Atauri}, Eric Duch{\^e}ne, Agnes
-  {Destrac-Irvine}, G{\'e}rard Barbeau, Laure De~Ress{\'e}guier, Thierry
-  Lacombe, Amber~Kaye Parker, Nicolas Saurin, and Cornelis Van~Leeuwen.
-\newblock Grapevine phenology in {{France}}: From past observations to future
-  evolutions in the context of climate change.
-\newblock \emph{OENO One}, 51\penalty0 (2):\penalty0 115, May 2017.
-\newblock ISSN 2494-1271.
-\newblock \doi{10.20870/oeno-one.2016.0.0.1622}.
-
-\bibitem[Hoerl and Kennard(1970)]{hoerlRidgeRegressionBiased1970}
-Arthur~E. Hoerl and Robert~W. Kennard.
-\newblock Ridge regression: Biased estimation for nonorthogonal problems.
-\newblock \emph{Technometrics}, 12\penalty0 (1):\penalty0 55--67, 1970.
-\newblock \doi{10.1080/00401706.1970.10488634}.
-
-\bibitem[{International Organization for
-  Standardization}(1975)]{isoStandardAtmosphere1975}
-{International Organization for Standardization}.
-\newblock \emph{{{ISO}} 2533:1975 Standard Atmosphere}.
-\newblock International Organization for Standardization, Geneva, 1975.
-
 \bibitem[Jones and Davis(2000)]{jonesClimateInfluencesGrapevine2000}
 Gregory~V. Jones and Robert~E. Davis.
 \newblock Climate {{Influences}} on {{Grapevine Phenology}}, {{Grape
@@ -211,32 +86,23 @@ Gregory~V. Jones and Robert~E. Davis.
 \newblock ISSN 0002-9254.
 \newblock \doi{10.5344/ajev.2000.51.3.249}.
 
-\bibitem[Kang et~al.(2024)Kang, Wu, Tan, Wang, Ma, Yang, Wang, Huo, Tian, and
-  Yu]{kangPerformanceNineMaize2024}
-Xiaofeng Kang, Dingrong Wu, Jiaojiao Tan, Peijuan Wang, Yuping Ma, Jianying
-  Yang, Chunyi Wang, Zhiguo Huo, Qi~Tian, and Qiang Yu.
-\newblock Performance of nine maize phenology models in china under historical
-  climate change conditions.
-\newblock \emph{Agricultural and Forest Meteorology}, 358:\penalty0 110234,
-  2024.
-\newblock \doi{10.1016/j.agrformet.2024.110234}.
+\bibitem[Kaspar et~al.(2014)Kaspar, Zimmermann, and
+  Polte-Rudolf]{kasparPhenologicalNetworkDWD2014}
+F.~Kaspar, K.~Zimmermann, and C.~Polte-Rudolf.
+\newblock An overview of the phenological observation network and the
+  phenological database of {Germany}'s national meteorological service
+  ({Deutscher Wetterdienst}).
+\newblock \emph{Advances in Science and Research}, 11:\penalty0 93--99, 2014.
+\newblock \doi{10.5194/asr-11-93-2014}.
 
-\bibitem[Ke et~al.(2017)Ke, Meng, Finley, Wang, Chen, Ma, Ye, and
-  Liu]{keLightGBMHighlyEfficient2017}
-Guolin Ke, Qi~Meng, Thomas Finley, Taifeng Wang, Wei Chen, Weidong Ma, Qiwei
-  Ye, and Tie-Yan Liu.
-\newblock {{LightGBM}}: A highly efficient gradient boosting decision tree.
-\newblock In \emph{Advances in Neural Information Processing Systems},
-  volume~30, 2017.
-
-\bibitem[Keller and Tarara(2010)]{kellerWarmSpringTemperatures2010}
-Markus Keller and Julie~M. Tarara.
-\newblock Warm spring temperatures induce persistent season-long changes in
-  shoot development in grapevines.
-\newblock \emph{Annals of Botany}, 106\penalty0 (1):\penalty0 131--141, July
-  2010.
-\newblock ISSN 1095-8290, 0305-7364.
-\newblock \doi{10.1093/aob/mcq091}.
+\bibitem[Liu et~al.(2018)Liu, Fu, Liu, Janssens, and
+  Piao]{liuSimulatingOnsetSpring2018}
+Qiang Liu, Yongshuo~H. Fu, Yongwen Liu, Ivan~A. Janssens, and Shilong Piao.
+\newblock Simulating the onset of spring vegetation growth across the northern
+  hemisphere.
+\newblock \emph{Global Change Biology}, 24\penalty0 (3):\penalty0 1342--1356,
+  2018.
+\newblock \doi{10.1111/gcb.13954}.
 
 \bibitem[Lorenz et~al.(1995)Lorenz, Eichhorn, Bleiholder, Klose, Meier, and
   Weber]{lorenzGrowthStagesGrapevine1995}
@@ -249,56 +115,21 @@ D.H. Lorenz, K.W. Eichhorn, H.~Bleiholder, R.~Klose, U.~Meier, and E.~Weber.
 \newblock ISSN 1322-7130, 1755-0238.
 \newblock \doi{10.1111/j.1755-0238.1995.tb00085.x}.
 
-\bibitem[Luedeling et~al.(2021)Luedeling, Schiffers, Fohrmann, and
-  Urbach]{luedelingPhenoFlexIntegratedModel2021}
-Eike Luedeling, Katja Schiffers, Till Fohrmann, and Carsten Urbach.
-\newblock {PhenoFlex}---an integrated model to predict spring phenology in
-  temperate fruit trees.
-\newblock \emph{Agricultural and Forest Meteorology}, 307:\penalty0 108491,
-  2021.
-\newblock \doi{10.1016/j.agrformet.2021.108491}.
+\bibitem[Maury et~al.(2023)Maury, Quidoz, Garcia~de Cortazar~Atauri, Chuine,
+  El~Hasnaoui, and Tromel]{mauryTempoDataPortal2023}
+Olivier Maury, Marie-Claude Quidoz, I{\~n}aki Garcia~de Cortazar~Atauri,
+  Isabelle Chuine, Mohamed El~Hasnaoui, and Louis Tromel.
+\newblock Portail de donn{\'e}es ph{\'e}nologiques du r{\'e}seau {TEMPO} /
+  {TEMPO Data Portal}.
+\newblock Recherche Data Gouv, 2023.
+\newblock URL \url{https://doi.org/10.57745/NQ9HRV}.
 
-\bibitem[Lundberg and Lee(2017)]{lundbergUnifiedApproachInterpreting2017}
-Scott~M. Lundberg and Su-In Lee.
-\newblock A unified approach to interpreting model predictions.
-\newblock In \emph{Advances in Neural Information Processing Systems},
-  volume~30, 2017.
-
-\bibitem[Mojahid et~al.(2025)Mojahid, Caspersen, Delgado, Dapena, Luedeling,
-  Schiffers, and Fernandez]{mojahidCrossRegionalValidation2025}
-Hajar Mojahid, Lars Caspersen, Alvaro Delgado, Enrique Dapena, Eike Luedeling,
-  Katja Schiffers, and Eduardo Fernandez.
-\newblock Cross-regional validation of the {PhenoFlex} framework for flowering
-  date prediction in apple: A study across germany and spain.
-\newblock \emph{Agricultural and Forest Meteorology}, 373:\penalty0 110746,
-  2025.
-\newblock \doi{10.1016/j.agrformet.2025.110746}.
-
-\bibitem[Molitor et~al.(2014)Molitor, Junk, Evers, Hoffmann, and
-  Beyer]{molitorHighResolutionCumulativeDegree2014}
-Daniel Molitor, J{\"u}rgen Junk, Dani{\`e}le Evers, Lucien Hoffmann, and Marco
-  Beyer.
-\newblock A {{High-Resolution Cumulative Degree Day-Based Model}} to {{Simulate
-  Phenological Development}} of {{Grapevine}}.
-\newblock \emph{American Journal of Enology and Viticulture}, 65\penalty0
-  (1):\penalty0 72--80, March 2014.
-\newblock ISSN 0002-9254.
-\newblock \doi{10.5344/ajev.2013.13066}.
-
-\bibitem[{Mu{\~n}oz-Sabater} et~al.(2021){Mu{\~n}oz-Sabater}, Dutra,
-  Agust{\'i}-Panareda, Albergel, Arduini, Balsamo, Boussetta, Choulga,
-  Harrigan, Hersbach, Martens, Miralles, Piles, Rodr{\'i}guez-Fern{\'a}ndez,
-  Zsoter, Buontempo, and Th{\'e}paut]{munozSabaterERA5Land2021}
-Joaqu{\'i}n {Mu{\~n}oz-Sabater}, Emanuel Dutra, Anna Agust{\'i}-Panareda,
-  Cl{\'e}ment Albergel, Gabriele Arduini, Gianpaolo Balsamo, Souhail Boussetta,
-  Margarita Choulga, Shaun Harrigan, Hans Hersbach, Brecht Martens, Diego~G.
-  Miralles, Maria Piles, Nemesio~J. Rodr{\'i}guez-Fern{\'a}ndez, Ervin Zsoter,
-  Carlo Buontempo, and Jean-No{\"e}l Th{\'e}paut.
-\newblock {{ERA5-Land}}: A state-of-the-art global reanalysis dataset for land
-  applications.
-\newblock \emph{Earth System Science Data}, 13\penalty0 (9):\penalty0
-  4349--4383, 2021.
-\newblock \doi{10.5194/essd-13-4349-2021}.
+\bibitem[{M\'et\'eo-France}(2023)]{meteofranceClimateFrance2023}
+{M\'et\'eo-France}.
+\newblock Le climat en {France} hexagonale et {Corse}, September 2023.
+\newblock URL
+  \url{https://meteofrance.com/changement-climatique/le-climat-en-france-hexagonale-et-corse}.
+\newblock Accessed 7 September 2026.
 
 \bibitem[Neethling et~al.(2019)Neethling, Barbeau, Coulon-Leroy, and
   Qu{\'e}nol]{neethlingSpatialComplexityTemporal2019}
@@ -310,31 +141,6 @@ Etienne Neethling, G{\'e}rard Barbeau, C{\'e}cile Coulon-Leroy, and Herv{\'e}
   107618, 2019.
 \newblock \doi{10.1016/j.agrformet.2019.107618}.
 
-\bibitem[O'Brien(2007)]{obrienCautionRegardingRules2007}
-Robert~M. O'Brien.
-\newblock A caution regarding rules of thumb for variance inflation factors.
-\newblock \emph{Quality \& Quantity}, 41\penalty0 (5):\penalty0 673--690, 2007.
-\newblock \doi{10.1007/s11135-006-9018-6}.
-
-\bibitem[{Ortega-Farias} and
-  {Riveros-Burgos}(2019)]{ortega-fariasModelingPhenologyFour2019}
-S.~{Ortega-Farias} and C.~{Riveros-Burgos}.
-\newblock Modeling phenology of four grapevine cultivars (vitis vinifera
-  {{L}}.) in mediterranean climate conditions.
-\newblock \emph{Scientia Horticulturae}, 250:\penalty0 38--44, May 2019.
-\newblock ISSN 03044238.
-\newblock \doi{10.1016/j.scienta.2019.02.025}.
-
-\bibitem[Ou et~al.(2025)Ou, Chen, Zhang, Batchelor, Wang, Wu, Ma, Zhang, Hu,
-  and Feng]{ouContinuousLearningFramework2025}
-Junji Ou, Fangzheng Chen, Min Zhang, William~David Batchelor, Bin Wang,
-  Dingrong Wu, Xiaodong Ma, Zengguang Zhang, Kelin Hu, and Puyu Feng.
-\newblock A continuous learning framework based on physics-guided deep learning
-  for crop phenology simulation.
-\newblock \emph{Agricultural and Forest Meteorology}, 368:\penalty0 110562,
-  2025.
-\newblock \doi{10.1016/j.agrformet.2025.110562}.
-
 \bibitem[Parker et~al.(2011)Parker, {De Cort{\'a}zar-Atauri}, Van~Leeuwen, and
   Chuine]{parkerGeneralPhenologicalModel2011a}
 A.K. Parker, I.G. {De Cort{\'a}zar-Atauri}, C.~Van~Leeuwen, and I.~Chuine.
@@ -345,37 +151,6 @@ A.K. Parker, I.G. {De Cort{\'a}zar-Atauri}, C.~Van~Leeuwen, and I.~Chuine.
   (2):\penalty0 206--216, June 2011.
 \newblock ISSN 13227130.
 \newblock \doi{10.1111/j.1755-0238.2011.00140.x}.
-
-\bibitem[Parker et~al.(2020)Parker, Garc{\'i}a~de Cort{\'a}zar-Atauri, Trought,
-  Destrac, Agnew, Sturman, and van Leeuwen]{parkerAdaptationClimateChange2020}
-Amber~K. Parker, I{\~n}aki Garc{\'i}a~de Cort{\'a}zar-Atauri, Michael C.~T.
-  Trought, Agn{\`e}s Destrac, Rob Agnew, Andrew Sturman, and Cornelis van
-  Leeuwen.
-\newblock Adaptation to climate change by determining grapevine cultivar
-  differences using temperature-based phenology models.
-\newblock \emph{OENO One}, 54\penalty0 (4), 2020.
-\newblock \doi{10.20870/oeno-one.2020.54.4.3861}.
-
-\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
-  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
-  Cournapeau, Brucher, Perrot, and Duchesnay]{pedregosaScikitLearnMachine2011}
-Fabian Pedregosa, Ga{\"e}l Varoquaux, Alexandre Gramfort, Vincent Michel,
-  Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron
-  Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau,
-  Matthieu Brucher, Matthieu Perrot, and {\'E}douard Duchesnay.
-\newblock Scikit-learn: Machine learning in python.
-\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830,
-  2011.
-
-\bibitem[Picornell et~al.(2025)Picornell, Caspersen, and
-  Luedeling]{picornellInfluenceCalibrationData2025}
-A.~Picornell, L.~Caspersen, and E.~Luedeling.
-\newblock The influence of calibration data diversity on the performance of
-  temperature-based spring phenology models for forest tree species in central
-  europe.
-\newblock \emph{Agricultural and Forest Meteorology}, 360:\penalty0 110302,
-  2025.
-\newblock \doi{10.1016/j.agrformet.2024.110302}.
 
 \bibitem[Reichstein et~al.(2019)Reichstein, Camps-Valls, Stevens, Jung,
   Denzler, Carvalhais, and Prabhat]{reichsteinDeepLearningProcess2019}
@@ -398,53 +173,22 @@ David~R. Roberts, Volker Bahn, Simone Ciuti, Mark~S. Boyce, Jane Elith,
 \newblock \emph{Ecography}, 40\penalty0 (8):\penalty0 913--929, 2017.
 \newblock \doi{10.1111/ecog.02881}.
 
-\bibitem[Sadras and Moran(2013)]{sadrasNonlinearEffectsElevated2013}
-V.O. Sadras and M.A. Moran.
-\newblock Nonlinear effects of elevated temperature on grapevine phenology.
-\newblock \emph{Agricultural and Forest Meteorology}, 173:\penalty0 107--115,
-  May 2013.
-\newblock ISSN 01681923.
-\newblock \doi{10.1016/j.agrformet.2012.10.003}.
-
-\bibitem[Schratz et~al.(2019)Schratz, Muenchow, Iturritxa, Richter, and
-  Brenning]{schratzHyperparameterTuningPerformance2019}
-Patrick Schratz, Jannes Muenchow, Eider Iturritxa, Jakob Richter, and Alexander
-  Brenning.
-\newblock Hyperparameter tuning and performance assessment of statistical and
-  machine-learning algorithms using spatial data.
-\newblock \emph{Ecological Modelling}, 406:\penalty0 109--120, 2019.
-\newblock \doi{10.1016/j.ecolmodel.2019.06.002}.
-
-\bibitem[Shahhosseini et~al.(2021)Shahhosseini, Hu, Huber, and
-  Archontoulis]{shahhosseiniCouplingMachineLearning2021}
-Mohsen Shahhosseini, Guiping Hu, Isaiah Huber, and Sotirios~V. Archontoulis.
-\newblock Coupling machine learning and crop modeling improves crop yield
-  prediction in the {{US Corn Belt}}.
-\newblock \emph{Scientific Reports}, 11\penalty0 (1):\penalty0 1606, 2021.
-\newblock \doi{10.1038/s41598-020-80820-1}.
-
-\bibitem[Tan et~al.(2024)Tan, Zhao, Tian, Zheng, Kang, He, Shi, Chen, Wu, Yao,
-  He, Srivastava, Li, He, Feng, and
-  Yu]{tanOvercomingMechanisticLimitations2024a}
-Jiaojiao Tan, Gang Zhao, Qi~Tian, Lei Zheng, Xiaofeng Kang, Qinsi He, Yu~Shi,
-  Bin Chen, Dingrong Wu, Ning Yao, Liang He, Amit~Kumar Srivastava, Yi~Li,
-  Jianqiang He, Hao Feng, and Qiang Yu.
-\newblock Overcoming mechanistic limitations of process-based phenological
-  models: {{A}} data clustering method for large-scale applications.
-\newblock \emph{Agricultural and Forest Meteorology}, 356:\penalty0 110167,
-  September 2024.
-\newblock ISSN 01681923.
-\newblock \doi{10.1016/j.agrformet.2024.110167}.
-
-\bibitem[Thomas et~al.(2026)Thomas, Cameron, Hayman, Bonada, Sadras, Gambetta,
-  Jolley, and Petrie]{thomasDevelopingTestingWinegrape2026}
-Dane~S. Thomas, Wendy Cameron, Peter~T. Hayman, Marcos Bonada, Victor~O.
-  Sadras, Joanna~M. Gambetta, Jessica Y.~C. Jolley, and Paul~R. Petrie.
-\newblock Developing and testing of a winegrape phenology model for australian
-  conditions.
-\newblock \emph{Agricultural and Forest Meteorology}, 382:\penalty0 111131,
-  2026.
-\newblock \doi{10.1016/j.agrformet.2026.111131}.
+\bibitem[Templ et~al.(2018)Templ, Koch, Bolmgren, Ungersb{\"o}ck, Paul,
+  Scheifinger, Rutishauser, Busto, Chmielewski, H{\'a}jkov{\'a}, Hodzi{\'c},
+  Kaspar, Pietragalla, Romero-Fresneda, Tolvanen, Vu{\v c}eti{\v c},
+  Zimmermann, and Zust]{templPanEuropeanPhenological2018}
+Barbara Templ, Elisabeth Koch, Kjell Bolmgren, Markus Ungersb{\"o}ck, Anita
+  Paul, Helfried Scheifinger, This Rutishauser, Montserrat Busto, Frank-M.
+  Chmielewski, Lenka H{\'a}jkov{\'a}, Sabina Hodzi{\'c}, Frank Kaspar, Barbara
+  Pietragalla, Ramiro Romero-Fresneda, Anne Tolvanen, Vi{\v s}nja Vu{\v
+  c}eti{\v c}, Kirsten Zimmermann, and Ana Zust.
+\newblock Pan european phenological database ({PEP725}): a single point of
+  access for {European} data.
+\newblock \emph{International Journal of Biometeorology}, 62:\penalty0
+  1109--1113, 2018.
+\newblock \doi{10.1007/s00484-018-1512-8}.
+\newblock URL \url{https://pep725.eu}.
+\newblock Dataset accessed 1 July 2026.
 
 \bibitem[Tomasi et~al.(2011)Tomasi, Jones, Giust, Lovat, and
   Gaiotti]{tomasiGrapevinePhenologyClimate2011}
@@ -457,17 +201,6 @@ Diego Tomasi, Gregory~V. Jones, Mirella Giust, Lorenzo Lovat, and Federica
 \newblock ISSN 0002-9254.
 \newblock \doi{10.5344/ajev.2011.10108}.
 
-\bibitem[Valavi et~al.(2019)Valavi, Elith, Lahoz-Monfort, and
-  Guillera-Arroita]{valaviBlockCVPackageGenerating2019}
-Roozbeh Valavi, Jane Elith, Jos{\'e}~J. Lahoz-Monfort, and Gurutzeta
-  Guillera-Arroita.
-\newblock {{blockCV}}: An {{R}} package for generating spatially or
-  environmentally separated folds for {$k$}-fold cross-validation of species
-  distribution models.
-\newblock \emph{Methods in Ecology and Evolution}, 10\penalty0 (2):\penalty0
-  225--232, 2019.
-\newblock \doi{10.1111/2041-210X.13107}.
-
 \bibitem[Van~Leeuwen et~al.(2024)Van~Leeuwen, Sgubin, Bois, Ollat, Swingedouw,
   Zito, and Gambetta]{vanleeuwenClimateChangeImpacts2024}
 Cornelis Van~Leeuwen, Giovanni Sgubin, Benjamin Bois, Nathalie Ollat, Didier
@@ -477,60 +210,5 @@ Cornelis Van~Leeuwen, Giovanni Sgubin, Benjamin Bois, Nathalie Ollat, Didier
   258--275, March 2024.
 \newblock ISSN 2662-138X.
 \newblock \doi{10.1038/s43017-024-00521-5}.
-
-\bibitem[{Verdugo-V{\'a}squez} et~al.(2020){Verdugo-V{\'a}squez},
-  {Acevedo-Opazo}, {Vald{\'e}s-G{\'o}mez}, Ingram, {Garc{\'i}a De
-  Cort{\'a}zar-Atauri}, and
-  Tisseyre]{verdugo-vasquezEmpiricalModelEstimate2020}
-N.~{Verdugo-V{\'a}squez}, C.~{Acevedo-Opazo}, H.~{Vald{\'e}s-G{\'o}mez},
-  B.~Ingram, I.~{Garc{\'i}a De Cort{\'a}zar-Atauri}, and B.~Tisseyre.
-\newblock Towards an empirical model to estimate the spatial variability of
-  grapevine phenology at the within field scale.
-\newblock \emph{Precision Agriculture}, 21\penalty0 (1):\penalty0 107--130,
-  February 2020.
-\newblock ISSN 1385-2256, 1573-1618.
-\newblock \doi{10.1007/s11119-019-09657-7}.
-
-\bibitem[Wang et~al.(2020)Wang, Wu, Ciais, Pe{\~n}uelas, Dai, Fu, and
-  Ge]{wangOverestimationEffectClimatic2020}
-Huanjiong Wang, Chaoyang Wu, Philippe Ciais, Josep Pe{\~n}uelas, Junhu Dai,
-  Yongshuo Fu, and Quansheng Ge.
-\newblock Overestimation of the effect of climatic warming on spring phenology
-  due to misrepresentation of chilling.
-\newblock \emph{Nature Communications}, 11\penalty0 (1):\penalty0 4945, 2020.
-\newblock \doi{10.1038/s41467-020-18743-8}.
-
-\bibitem[Wood(2017)]{woodGeneralizedAdditiveModels2017}
-Simon~N. Wood.
-\newblock \emph{Generalized Additive Models: An Introduction with {{R}}}.
-\newblock Chapman and Hall/CRC, Boca Raton, 2 edition, 2017.
-
-\bibitem[Wu et~al.(2024)Wu, Gao, Wang, Yang, Ma, Huo, and
-  Yu]{wuNecessityCouplingLegacy2024}
-Dingrong Wu, Jing Gao, Peijuan Wang, Jianying Yang, Yuping Ma, Zhiguo Huo, and
-  Qiang Yu.
-\newblock The necessity of coupling the legacy effect with temperature response
-  in crop phenology models.
-\newblock \emph{Global and Planetary Change}, 240:\penalty0 104545, 2024.
-\newblock \doi{10.1016/j.gloplacha.2024.104545}.
-
-\bibitem[Zapata et~al.(2017)Zapata, {Salazar-Gutierrez}, Chaves, Keller, and
-  Hoogenboom]{zapataPredictingKeyPhenological2017}
-Diana Zapata, Melba {Salazar-Gutierrez}, Bernardo Chaves, Markus Keller, and
-  Gerrit Hoogenboom.
-\newblock Predicting {{Key Phenological Stages}} for 17 {{Grapevine Cultivars}}
-  ( {{{\emph{Vitis}}}}{\emph{ vinifera}} {{L}}.).
-\newblock \emph{American Journal of Enology and Viticulture}, 68\penalty0
-  (1):\penalty0 60--72, January 2017.
-\newblock ISSN 0002-9254.
-\newblock \doi{10.5344/ajev.2016.15077}.
-
-\bibitem[Zuur et~al.(2010)Zuur, Ieno, and
-  Elphick]{zuurProtocolDataExploration2010}
-Alain~F. Zuur, Elena~N. Ieno, and Chris~S. Elphick.
-\newblock A protocol for data exploration to avoid common statistical problems.
-\newblock \emph{Methods in Ecology and Evolution}, 1\penalty0 (1):\penalty0
-  3--14, 2010.
-\newblock \doi{10.1111/j.2041-210X.2009.00001.x}.
 
 \end{thebibliography}

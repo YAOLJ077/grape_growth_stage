@@ -2,38 +2,35 @@
 
 ## Scientific workflow
 
-The study compares historical predictive accuracy and projected climate-change
-impacts across grapevine phenology models of different structural complexity.
-DEM-based temperature correction and residual learning are crossed experimental
-factors. Environmental adaptability is assessed through held-out prediction
-errors and warm-climate transfer, with model-ranked phenological shifts as the
-climate-impact comparison.
+The study compares predictive accuracy across grapevine phenology models of
+different structural complexity. DEM-based temperature correction is a separate
+input factor crossed with every process-only and residual-learning model.
+Terrain-associated variation in correction benefits is assessed through paired
+held-out errors. Spatial and warm-climate holdouts assess transferability.
 
 | Panel | Inputs and comparison | Output |
 | --- | --- | --- |
-| (a) Data | French TEMPO and German DWD BBCH observations; daily ERA5-Land weather; Copernicus GLO-30 and official grid geopotential | Harmonized, quality-controlled site–year records |
+| (a) Data | All-country European observations of the four equal target stages BBCH07, 65, 81 and 89; daily ERA5-Land weather; Copernicus GLO-30 and official grid geopotential | Harmonized, quality-controlled site–year records |
 | (b) Temperature | Raw and elevation-corrected temperatures | Two paired temperature-input variants |
-| (c) Models | Linear/beta forcing × no/piecewise-linear/beta chilling × without/with residual ML | 12 model combinations; 24 configurations per BBCH stage across the two inputs |
+| (c) Models | Linear/beta forcing × no/piecewise-linear/beta chilling; sequential/parallel interaction when chilling is present; without/with residual ML | 10 process structures; 40 configurations per BBCH stage across the two inputs and two residual-ML options |
 | (d) Calibration and testing | Cluster site temperature profiles into temperature zones; randomly allocate whole sites within each zone to 80% calibration and 20% testing | Locked-model MAE, RMSE and bias, with spatial and warm-year transfer tests |
-| (e) Climate-change impacts | Shared baseline and future SSP2-4.5 / SSP5-8.5 scenarios; historically calibrated parameters fixed | Future-minus-baseline DOY compared across models ranked by baseline test MAE, with warm-climate transfer checks |
+| (e) Terrain effects | Paired RAW/DEM errors at matched sites, years and stages; elevation mismatch, elevation, slope, aspect and local relief | Correction benefit by terrain condition, without/with residual ML, and paired site-group uncertainty |
 
-Stronger environmental transfer implying greater projection credibility is the
-central climate-impact hypothesis. Baseline accuracy is an initial indicator,
-not direct evidence of accuracy under unobserved future climates. The workflow
-defines the study design; candidate models, new split mappings and future
-scenario datasets require implementation or availability checks before results
-can be reported.
+The ten process-only structures are implemented in `model/` and verified with
+synthetic tests. Real-data calibration, residual learning, new split mappings
+and terrain-effect analyses remain prospective. Climate-change projections and
+GCM downscaling are outside the current study scope.
 
 ## Figure design
 
 One portrait figure at A4 width, cropped vertically to approximately
-210 × 256.8 mm (595.28 × 728 pt), with five full-width sections connected
+210 × 261.1 mm (595.28 × 740 pt), with five full-width sections connected
 vertically. Panel letters and short headings sit outside the left edge of each
 section, with letters in parentheses: (a), (b), (c), (d), (e). Headings are
 rotated 90° counterclockwise to read bottom-to-top and centred on the panel
 height. No internal heading row or title badge is present. Removing the
 heading rows saves 18 pt per panel, with body text unchanged. Panel (e) includes
-additional height for an explicit baseline-to-future climate-scenario input row.
+a paired-test comparison row above the terrain descriptors and correction-benefit cards.
 A model matrix carries the model catalogue.
 Top and bottom blank space is cropped to approximately 12 pt around the panels;
 the content scale and horizontal margins are unchanged.
@@ -46,33 +43,85 @@ and abbreviation definitions are retained in this file and the caption.
 | (b) | Temperature | Ochre |
 | (c) | Models | Purple |
 | (d) | Calibration and testing | Green |
-| (e) | Climate-change impacts | Rose |
+| (e) | Terrain effects | Rose |
 
-Forcing is the first column of the model matrix. Rows are grouped by forcing
-function, followed by chilling option. Existing model identifiers remain stable.
+The model matrix has five columns: Process, Function, Interaction, ML and T.
+Its three rows describe forcing-only, sequential chilling–forcing and parallel
+chilling–forcing families, with alternatives fully crossed within each row.
+The ten model names are retained below the matrix; -S and -P distinguish
+interactions, and -ML identifies residual learning. Forcing-only names remain
+FL and FB. T denotes original (RAW) or DEM-corrected temperature.
 
 ## Model catalogue
 
-| Forcing | Chilling | Process model | With residual ML |
-| --- | --- | --- | --- |
-| Linear | None | FL | FL-ML |
-| Linear | Piecewise linear | CL-FL | CL-FL-ML |
-| Linear | Beta | CB-FL | CB-FL-ML |
-| Beta | None | FB | FB-ML |
-| Beta | Piecewise linear | CL-FB | CL-FB-ML |
-| Beta | Beta | CB-FB | CB-FB-ML |
+The workflow figure uses the compact factor table below. Manuscript Table 4
+lists all 20 model names, with ML off/on as separate rows. Original (RAW) and
+DEM-corrected (DEM) temperature are levels of a separate input factor crossed
+with every model, giving 40 experimental configurations per stage. Temperature
+labels are not part of model names. The temperature factor is described in the
+manuscript methods, without an extra block at the end of Table 4.
 
-F = forcing; C = chilling; L = linear; B = beta; ML = residual machine learning.
+| Process | Function | Interaction | ML | T |
+| --- | --- | --- | --- | --- |
+| Forcing | Linear / beta | — | No / Yes | Original / DEM-corrected |
+| Chilling + forcing | F: linear / beta; C: triangular / beta | Sequential | No / Yes | Original / DEM-corrected |
+| Chilling + forcing | F: linear / beta; C: triangular / beta | Parallel | No / Yes | Original / DEM-corrected |
+
+Alternatives within each row are fully crossed. The rows contain 2, 4 and 4
+process structures, respectively. Original temperature is the RAW input;
+DEM-corrected temperature is the DEM input. No / Yes denotes absence or presence
+of residual machine learning. The ten structure names remain FL, FB, CL-FL-S,
+CL-FL-P, CB-FL-S, CB-FL-P, CL-FB-S, CL-FB-P, CB-FB-S and CB-FB-P; residual
+variants append -ML (for example CL-FL-S-ML and CL-FL-P-ML).
+
+F = forcing; C = chilling; L = linear; B = beta; S = sequential interaction;
+P = parallel interaction; ML = residual machine learning.
 In CL, “linear” specifically denotes the triangular, piecewise-linear chilling
 response defined below. It is not an unrestricted straight-line chilling response.
 
-Each of the 12 combinations has a raw-temperature (-RAW) and a DEM-corrected
-(-DEM) variant: 24 candidate configurations per BBCH stage.
-The complete identifier is `BBCH{stage}-{model}[-ML]-{RAW|DEM}`;
-for example, `BBCH07-CB-FL-ML-DEM`.
+The three rows represent two forcing-only structures and eight chilling–forcing
+structures (four function combinations × two interactions): ten process
+structures in total. Each receives raw (RAW) or DEM-corrected (DEM)
+temperature, without or with residual learning: 10 × 2 × 2 = 40 candidate
+configurations per BBCH stage. All structures enter the factorial comparison;
+there is no preliminary selection of a single best process model.
+Model names comprise the process structure and optional -ML suffix only;
+record RAW or DEM separately as `temperature_input`. A run identifier may
+retain `BBCH{stage}-{model}[-ML]-{RAW|DEM}` for provenance, where `model`
+includes -S or -P for chilling–forcing structures, for example
+`BBCH07-CL-FL-S-DEM` and `BBCH07-CL-FL-P-ML-DEM`. The interaction suffix
+precedes -ML. Forcing-only examples remain `BBCH65-FL-RAW` and
+`BBCH65-FL-ML-RAW`. An accompanying `interaction` field (`none`, `sequential`
+or `parallel`) must agree with the model name. Historical unsuffixed outputs
+are not silently renamed; their interaction must first be verified from run metadata.
 
-These are proposed candidate structures. Their inclusion in the figure does
-not establish that they have been implemented, calibrated or validated.
+Chilling begins on 1 September of the preceding year. Sequential models start
+forcing on the day after the chilling requirement is fulfilled. Parallel
+models multiply daily budburst forcing by
+`K = Kmin + (1-Kmin)*min(C_before_day/Ccrit, 1)`, with fitted `Kmin` in [0,1].
+This competence response follows Liu et al. (2018), Eq. (7), adapted to the
+selected forcing and chilling functions; chilling and forcing overlap and
+budburst does not require a separate full-chilling gate. These alternatives
+concern dormancy release and budburst, not simultaneous progression of the four
+target stages. Later stages retain the ordered BBCH07→65→81→89 development
+sequence, restarting unmodified forcing on the next day after each predicted
+stage and discarding overshoot. Observed dates never initialize later stages.
+Forcing-only models have no chilling–forcing interaction (—). The interaction
+applies to both ML options in each chilling–forcing row. Parallel variants
+are proposed adaptations, not models evaluated by Fila et al. (2014).
+
+Interaction reference: Chuine, I. (2000). A unified model for budburst of trees.
+*Journal of Theoretical Biology*, 207, 337–347.
+[DOI: 10.1006/jtbi.2000.2178](https://doi.org/10.1006/jtbi.2000.2178).
+Local source: `reference/Chuine et al.pdf`.
+
+Parallel competence reference: Liu, Q., Fu, Y. H., Liu, Y., Janssens, I. A.,
+and Piao, S. (2018). Simulating the onset of spring vegetation growth across
+the Northern Hemisphere. *Global Change Biology*, 24, 1342–1356.
+[DOI: 10.1111/gcb.13954](https://doi.org/10.1111/gcb.13954).
+
+The process structures are implemented but not yet calibrated or evaluated on
+the matched study data. Residual-ML variants remain unimplemented.
 Complexity reflects component inclusion and response-function flexibility,
 not a universal ranking of parameter counts or expected accuracy.
 
@@ -134,7 +183,7 @@ calibration. The figure uses typographic subscripts and metres throughout.
 
 The primary comparison uses a proposed **80% calibration / 20% test split of
 whole sites**, randomly allocated within **temperature zones derived by
-clustering site temperature profiles** across the combined France–Germany
+clustering site temperature profiles** across the eligible multi-country
 domain. Country is not a clustering feature, stratum or allocation quota;
 temperature zones can cross national borders. Stratification balances the
 sampled climate domain but does not establish extrapolation skill.
@@ -150,7 +199,7 @@ sampled climate domain but does not establish extrapolation skill.
   Do not substitute country groups or fixed temperature-quantile bins for clusters.
 - Define the clustering on the eligible sites' climate covariates before random
   site allocation, without using observed phenological dates, process residuals,
-  model errors or future impact estimates. This use of covariates defines the
+  or model errors. This use of covariates defines the
   sampling strata; it is distinct from fitting predictive preprocessing, which
   remains calibration-only. Keep the resulting zones fixed across comparisons.
 - Require adequate independent site/grid groups per zone for both partitions
@@ -193,9 +242,24 @@ or modelling results are changed by this workflow specification.
   including response temperatures, accumulation requirements and applicable
   start-date parameters. Fixed units and structural constraints are not fitted
   parameters. If the lapse rate is tuned, tune it only within calibration.
-- For each stage, structure and temperature input, use matched observations and
-  identical site-group splits. Specify phase sequencing and any parameter sharing
-  explicitly in the methods.
+- Fit four stages jointly for each structure and temperature input, using
+  matched observations and identical site-group splits. Each stage has its own
+  forcing response temperature and requirement, pooled across sites, years and
+  cultivars. Chilling parameters and parallel competence apply only to budburst.
+  A site may supply any one stage; all four stages must occur somewhere in the
+  calibration dataset. Keep repeated accepted observations without aggregation.
+- Minimize the mean of the four stage-specific site-balanced RMSEs using
+  differential evolution. Within each stage, average squared errors within
+  sites and then equally across sites before taking the square root. Unattained
+  observed events receive a 1000-day fitting penalty, without assigning a false
+  prediction date. A fit with no finite prediction for any stage is rejected.
+- Default optimizer settings are three seeds (20260907, 20260908, 20260909),
+  population multiplier 15, maximum 300 generations, tolerance 0.001, one worker
+  and no polishing. Forcing-only start DOY is integer [-60,90]; default beta
+  forcing limits are fixed at 0 and 40 °C. Full parameter bounds and scientific
+  provenance are in `model/README.md`. Save settings, input fingerprints,
+  convergence and boundary diagnostics. No real-data fit or split is generated
+  automatically by the model implementation.
 - Train residual ML on out-of-fold process residuals generated within the
   calibration set: residual = observed DOY − process-predicted DOY.
 - Restrict preprocessing, hyperparameter tuning and model selection to the
@@ -212,135 +276,37 @@ or modelling results are changed by this workflow specification.
   validation outcomes from entering residual training indirectly. After tuning,
   regenerate calibration-only out-of-fold residuals for final residual fitting
   and refit the process model on the complete calibration set.
-- BBCH07, 65, 81 and 89 represent budburst, flowering, veraison and
-  maturity/harvest. Fila uses BBCH09 for budburst and does not define a BBCH89
-  model. Those adaptations require separate methodological justification.
+- BBCH07, 65, 81 and 89 are equal targets for budburst, flowering, veraison and
+  maturity/harvest, ordered as 07→65→81→89. Any one stage qualifies a site or
+  year; a complete sequence is not required. Fila uses BBCH09 for budburst and
+  does not define a BBCH89 model; BBCH09 is
+  not substituted for BBCH07. Those adaptations require separate methodological
+  justification.
 
-## Climate-change comparison
+## Terrain effects
 
-**Research question.** How much do projected phenological shifts differ among
-forcing functions, chilling formulations and residual-ML variants, and does
-DEM-based temperature correction change those differences? How do these shifts
-vary across models ranked by environmental adaptability, and is stronger
-observed transfer skill associated with more credible climate-impact estimates?
+Manuscript Section 2.5 contains (2.5.1) Calibration and test partitioning,
+(2.5.2) Terrain effects, and (2.5.3) Predictive performance and uncertainty.
 
-**Hypothesis.** Models with stronger environmental transfer skill provide more
-credible climate-impact estimates. Held-out baseline MAE is an initial skill
-indicator, not a direct validation of climate-change response. Warm-climate
-transfer tests provide additional evidence relevant to this hypothesis.
-
-### Skill-ranked climate-impact comparison
-
-- Rank all configurations separately for each BBCH stage by increasing
-  site-balanced MAE on the same held-out baseline observations. Lower MAE
-  indicates better baseline predictive skill. Report clustered temperature-zone
-  performance and descriptive country summaries alongside the pooled metric so
-  that dense or easy environments do not
-  determine the interpretation of adaptability.
-- Quantify uncertainty in MAE differences and rank stability with paired
-  site-group resampling. Avoid treating nearly tied ranks as clear evidence
-  that one model transfers better than another.
-- Assess environmental adaptability independently through climate-defined
-  warm-site and warm-year holdouts, reporting both their absolute MAE and
-  performance degradation relative to baseline. Keep baseline and transfer
-  rankings separate; do not invent an arbitrary combined adaptability score.
-- Plot future-minus-baseline DOY against baseline skill rank, with the warm-climate
-  transfer rank available as a complementary ordering. Pair models on the same
-  sites, climate members, scenarios and periods. Include all candidate structures,
-  distinguishing forcing, chilling, residual-ML and temperature-input variants.
-- Assess whether higher-skill groups differ systematically in projected shift,
-  and whether their shifts are stable across calibration resamples and climate
-  members. Prespecify any top-ranked group before examining climate-impact
-  patterns. Smaller inter-model spread or agreement is not evidence of accuracy
-  by itself; structurally similar models can share biases.
-- Test response credibility with observed warm-period anomalies where possible:
-  fit on non-held-out data, predict both reference and warm-period phenology,
-  and compare predicted and observed changes at matched sites/stages. Such
-  hindcast tests support transfer within observed conditions, not verification
-  of unobserved future climates or attribution of observed changes solely to
-  temperature. Account for changes in cultivar, management and observation mix.
-- Baseline test outcomes can define a descriptive ranking after all fitting is
-  locked. If this ranking selects models or determines ensemble weights, that
-  test set becomes selection data: use separate untouched evaluation data for
-  claims about the selected or weighted ensemble. Do not treat inverse-MAE
-  weights as probabilities of future correctness.
-
-Present-climate prediction errors and future-climate responses are separate
-endpoints. Similar historical accuracy does not guarantee similar future
-responses; Fila et al. (2014) explicitly evaluates model structure and calibration
-data as influences on future behaviour. All configurations receive the same
-calibration information and climate inputs for paired comparisons.
-
-### Controlled warming sensitivity
-
-- Use the same complete historical daily sequences for every configuration,
-  with temperature perturbations of 0, +1, +2, +3 and +4 °C applied to mean,
-  minimum and maximum temperature, including the preceding chilling season.
-  These are idealised sensitivity experiments, not dated climate projections.
-- Add separate winter-only and forcing-season perturbations to distinguish
-  reduced chilling from accelerated forcing. Define seasonal windows in advance.
-  Keep site properties and non-temperature drivers fixed for the temperature-only
-  experiment; consistently recompute all temperature-derived ML predictors.
-- Freeze every process parameter, residual learner and fitted preprocessing
-  transformation after calibration. RAW and DEM configurations each retain
-  their own historical calibration. Neither future climate nor test outcomes
-  trigger recalibration.
-- Compare stage shifts, temperature sensitivity in days per °C, stage intervals
-  and the frequency of unmet chilling or forcing requirements. A missing event
-  has no finite DOY shift; report its frequency separately, with paired shifts
-  calculated only where both baseline and perturbed events occur. Do not replace
-  missing events with the last day of the simulation.
-
-### Climate-scenario ensemble
-
-Future scenario inputs are an additional data requirement; ERA5-Land is the
-historical forcing and does not provide future projections. A proposed extension
-uses a documented, bias-adjusted daily multi-climate-model ensemble under
-SSP2-4.5 and SSP5-8.5, comparing 2041–2070 and 2071–2100 with 1991–2020.
-These periods and pathways are design candidates, subject to data availability.
-
-Use each climate model's consistently processed historical and future series
-for its paired change estimate. Historical comparisons against ERA5-Land check
-forcing compatibility; subtracting an ERA5-driven baseline directly from a
-different model's unaligned future climatology would confound climate change
-with forcing-source differences. Preserve calendars, accumulation windows and
-temperature-variable consistency, with sufficient preceding-season spin-up.
-Avoid double elevation correction: anomalies already mapped to the ERA5 grid
-receive the site-to-ERA5 correction once; other products require their own
-documented orography and downscaling convention.
-
-For phenology configuration m, climate model g and scenario s:
-
-\[
-\Delta D_{m,g,s} = \overline{D}^{\mathrm{future}}_{m,g,s}
-                 - \overline{D}^{\mathrm{baseline}}_{m,g}.
-\]
-
-Negative values indicate earlier occurrence. Paired differences
-\(\Delta D_{m_1,g,s}-\Delta D_{m_2,g,s}\) isolate configuration contrasts under
-the same climate member, scenario, site and stage. Report contrasts for forcing
-shape, chilling inclusion/shape, residual ML and DEM correction, with interactions
-where supported. Separate variation across phenology structures, calibration
-parameter resamples, climate models and scenarios; a raw ensemble range is not
-a calibrated confidence interval.
-
-### Climate-transfer safeguards
-
-- Evaluate warm-year holdouts using climate-defined anomalies and a preregistered
-  threshold, without using phenology outcomes to select the years. Keep held-out
-  years out of all calibration and residual fitting. A warm-site/environmental
-  holdout is a separate test, with all records of those sites excluded. Report
-  these separately from the within-domain primary test.
-- Compare future predictor ranges and combinations with the calibration domain,
-  especially for residual ML. Better interpolation accuracy alone does not
-  validate a future residual correction. Retain process-only projections as
-  references and label unsupported hybrid extrapolation explicitly.
-- Do not provide a hybrid DOY when the process model fails to reach the event;
-  an additive residual cannot supply the missing process prediction. Record
-  chronological violations and assess stage ordering separately.
-- Hold cultivar and management assumptions fixed for climate-only comparisons.
-  BBCH89 may incorporate management-driven harvest timing; its projected shift
-  is conditional on the endpoint definition and these assumptions.
+- Compare original and DEM-corrected temperature for every process-only and
+  residual-learning model using identical held-out sites, years and stages.
+  Both temperature treatments are calibrated independently on the same
+  calibration observations; no test-set recalibration is allowed.
+- Define correction benefit as MAE(RAW) − MAE(DEM), in days. Positive values
+  indicate improved phenological prediction. Compare this benefit without and
+  with residual learning to assess complementarity.
+- Examine signed and absolute site-to-grid elevation differences, site elevation,
+  slope, aspect (northness/eastness) and local elevation variability. Document
+  terrain summaries and any class boundaries before inspecting test errors.
+- Report stage-specific, site-balanced paired contrasts with sample sizes and
+  temperature-zone composition. Use paired independent-site-group resampling
+  for uncertainty and within-zone comparisons for broad climatic context.
+- Interpret terrain associations as descriptive, not causal. Better phenology
+  predictions alone do not validate corrected temperature; independent
+  temperature observations are required for temperature-accuracy claims.
+- Report unmet chilling/forcing requirements separately from finite prediction
+  errors. Residual ML cannot supply a date if the process prediction is missing.
+  Keep warm-year and warm-site holdouts independent of fitting and tuning.
 
 Additional methodological reference: Roberts, D. R., et al. (2017).
 Cross-validation strategies for data with temporal, spatial, hierarchical, or
@@ -351,7 +317,8 @@ phylogenetic structure. *Ecography*, 40, 913–929.
 
 ### (a) Data
 
-Three source cards contain phenology (FR: TEMPO; DE: DWD; BBCH07/65/81/89),
+Three source cards contain phenology (European all-country observations;
+BBCH07/65/81/89 targets),
 weather (ERA5-Land daily; 0.1° grid), and terrain (Copernicus GLO-30 ~30 m;
 ERA5 grid geopotential). Their shared preparation sequence is
 “BBCH harmonization → quality control → site–year matching”.
@@ -364,10 +331,16 @@ The correction equation uses typographic subscripts and the unit label
 
 ### (c) Models
 
-The forcing-first, six-row catalogue contains all twelve model names.
-Linear and beta forcing each have no-chilling, piecewise-linear and beta-chilling
-rows. The residual-ML column has stronger purple shading. The matrix summary is
-“12 combinations × 2 inputs = 24 configurations per BBCH stage”.
+The five-factor table uses Process, Function, Interaction, ML and T columns.
+Forcing-only models use linear or beta forcing and no interaction. The sequential
+and parallel rows independently cross linear/beta forcing with triangular/beta
+chilling. Every row includes “No / Yes” under ML and “Original / DEM-corrected”
+under T. The ML and T columns have stronger purple shading. Two compact lines
+below the matrix retain all ten process-model names and the instruction to append
+-ML for residual learning. The models panel is 12 pt taller than the original
+193-pt panel; panels (d) and (e) shift by the same amount, preserving their
+layouts and the outer margins. The summary is
+“10 structures × 2 inputs × 2 ML options = 40 per BBCH stage”.
 
 ### (d) Calibration and testing
 
@@ -384,19 +357,19 @@ Two cards are connected by a one-way “Lock” arrow:
 The transfer-test label is “Keep each site intact · Additional spatial and
 warm-year holdouts”.
 
-### (e) Climate-change impacts
+### (e) Terrain effects
 
-The climate input row is “Baseline climate → future climate scenarios
-(SSP2-4.5 / SSP5-8.5)”. These pathways require future scenario data distinct
-from historical ERA5-Land forcing.
+The input row is “Paired test errors · same sites, years and stages”.
 
-| Rank model adaptability | Project phenology shifts |
+| Terrain descriptors | Temperature-correction benefit |
 | --- | --- |
-| Baseline test MAE → skill rank | Shared scenarios; fixed parameters |
-| Check warm-climate transfer | Future − baseline DOY by skill rank |
+| Site-to-grid elevation difference | MAE(RAW) − MAE(DEM) |
+| Elevation · slope · aspect · relief | Compare without / with residual ML |
 
-The left card connects to the right card. The hypothesis within the panel is
-“Hypothesis: stronger environmental transfer → greater projection credibility”.
+The left card connects to the right card. The bottom line within the panel is
+“Positive difference = improvement · Paired site-group uncertainty”.
+Relief denotes local elevation variability, with its spatial support documented
+in the terrain-processing metadata.
 
 ## Rendering and verification
 
@@ -405,17 +378,17 @@ cards and short arrows. External headings are 9.5 pt; body text is approximately
 10–11 pt. Rotated labels remain within page margins and do not overlap adjacent
 labels; up to 6 pt of extension into the 16-pt panel gaps is permitted.
 
-The exported PDF is a single 595.28 × 728 pt page, with approximately 12 pt
+The exported PDF is a single 595.28 × 740 pt page, with approximately 12 pt
 of blank margin above and below the panels. The complete model catalogue,
-parenthesized panel letters, temperature equation, 80/20 split, future pathways
-and skill-ranked impact comparison remain legible at the intended print scale.
+parenthesized panel letters, temperature equation, 80/20 split and paired
+terrain-effect comparison remain legible at the intended print scale.
 References and abbreviation definitions are outside the figure; no overall
 title, subtitle or explanatory footer is present.
 
 Reproduction command from the repository root:
 
 ```sh
-swift -module-cache-path /tmp/grape-workflow-swift-cache fig/workflow/draw_workflow.swift
+swift -module-cache-path /tmp/grape-workflow-swift-cache src/phenology/draw_workflow.swift
 ```
 
 The drawing source checks page size and required PDF text, then exports the PNG
@@ -424,26 +397,29 @@ the current specification; historical prompt wording is superseded.
 
 ## Caption
 
-Workflow for comparing grapevine phenology models in France and Germany.
-(a) BBCH observations, daily weather and terrain data are harmonized and matched.
+Workflow for comparing grapevine phenology models across the eligible
+multi-country European domain. (a) All-country BBCH observations, daily weather
+and terrain data are harmonized and matched; BBCH07, 65, 81 and 89 have equal
+target status.
 (b) Raw and elevation-corrected ERA5-Land temperatures define paired input
-variants. (c) Forcing function, chilling response and residual learning define
-twelve model combinations, evaluated under both inputs. Beta chilling follows
+variants. (c) Six forcing/chilling function combinations, with sequential and
+parallel interactions for chilling–forcing models, define ten process structures.
+Each is evaluated under both temperature inputs with and without residual
+learning, giving 40 configurations per stage. Beta chilling follows
 Fila et al. (2014); the piecewise-linear chilling comparator uses the triangular
 response in de Wergifosse et al. (2020), Eq. (1), as a candidate adaptation for
-grapevine. (d) Random allocation within temperature zones derived by clustering
+grapevine. Sequential models start forcing after chilling completion; parallel
+models allow overlap, following the interaction concepts of Chuine (2000).
+(d) Random allocation within temperature zones derived by clustering
 site temperature profiles reserves approximately 20% of sites for testing,
 retaining repeated site records and
 shared weather-grid groups within partitions. All adjustable process and ML
 parameters are calibrated within the remaining data. Separate spatial and
-warm-year holdouts assess transfer. (e) Held-out baseline MAE ranks model skill,
-with warm-climate tests assessing environmental transfer. Fixed calibrated
-configurations receive matched baseline and future climate-scenario inputs under
-SSP2-4.5 and SSP5-8.5; future-minus-baseline phenological shifts are compared
-across the ranked models. Controlled warming perturbations provide a separate
-sensitivity analysis.
-Greater projection credibility for models with stronger environmental transfer
-is a hypothesis, not a consequence established by baseline MAE alone.
+warm-year holdouts assess transfer. (e) Paired prediction errors quantify the
+benefit of DEM-based temperature correction across site-to-grid elevation
+differences, elevation, slope, aspect and local relief. Contrasts compare
+process-only and residual-learning models, with uncertainty from paired
+site-group resampling. Positive MAE(RAW) − MAE(DEM) indicates improved prediction.
 ML denotes additive residual machine learning. The diagram specifies the
 experimental design, not completed modelling results.
 
@@ -451,4 +427,4 @@ experimental design, not completed modelling results.
 
 - `workflow.pdf`: A4-width vector figure with cropped top and bottom margins.
 - `workflow.png`: rendered preview.
-- `draw_workflow.swift`: reproducible drawing source.
+- `../../src/phenology/draw_workflow.swift`: reproducible drawing source.
