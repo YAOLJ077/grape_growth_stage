@@ -1,0 +1,44 @@
+{
+  "source": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/ten_site_calibration_20260907/metrics.csv",
+  "source_sha256": "2e39688e1f7e603ea1006441230f5376cf9c5f5f9ab7472a00672870448cf2d7",
+  "metric": "Equal-stage mean of site_balanced_mae from all calibrated RAW test observations",
+  "n_models": 10,
+  "n_test_observations_per_model": 22,
+  "bin_width_days": 0.5,
+  "bins": [
+    {
+      "left": 9.0,
+      "right": 9.5,
+      "count": 1
+    },
+    {
+      "left": 9.5,
+      "right": 10.0,
+      "count": 1
+    },
+    {
+      "left": 10.0,
+      "right": 10.5,
+      "count": 2
+    },
+    {
+      "left": 10.5,
+      "right": 11.0,
+      "count": 4
+    },
+    {
+      "left": 11.0,
+      "right": 11.5,
+      "count": 2
+    }
+  ],
+  "bin_convention": "Left closed, right open; final bin includes its right edge",
+  "x_axis": "Calibrated test MAE (days)",
+  "y_axis": "Number of models",
+  "visible_title": false,
+  "palette": {
+    "fill": "#326C9C",
+    "ink": "#27333D"
+  },
+  "caution": "Ten dependent model evaluations at four French test sites; budget-limited, nonconverged fits, not a population error distribution"
+}

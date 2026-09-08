@@ -1,0 +1,20 @@
+{
+  "calibration_sites": 6,
+  "test_sites": 4,
+  "observations": 151,
+  "verified_models": [
+    "FL",
+    "FB",
+    "CL-FL-S",
+    "CL-FL-P",
+    "CB-FL-S",
+    "CB-FL-P",
+    "CL-FB-S",
+    "CL-FB-P",
+    "CB-FB-S",
+    "CB-FB-P"
+  ],
+  "checks": "Frozen checksums, split independence, calibration-only observation/weather hashes, regenerated predictions, preserved observed records, errors and metrics",
+  "combined_tables_checked": true,
+  "verified_utc": "2026-09-07T11:49:39.108874+00:00"
+}

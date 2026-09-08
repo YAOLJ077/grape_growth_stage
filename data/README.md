@@ -108,6 +108,14 @@ Study-period convention:
 
 ## Weather
 
+Current per-site files and reuse/download commands are documented in
+[`weather/README.md`](weather/README.md). They use the explicitly selected
+France–Germany site inventory and export `Date,Tmean` (Celsius) to
+`data/weather/sites/<site_name>.csv`. The local coverage audit is available;
+daily values still require the existing exports or authenticated Earth Engine
+access. The historical storage descriptions below are not evidence that those
+data files are currently present.
+
 Complete daily weather data:
 
 - `data/weather/processed/era5_land_daily_complete/`

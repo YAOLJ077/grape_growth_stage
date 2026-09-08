@@ -1,0 +1,17 @@
+{
+  "seed": 20260907,
+  "created_utc": "2026-09-07T11:25:45.741365+00:00",
+  "inventory": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/derived/modeling/france_germany_four_stage/site_inventory.csv",
+  "inventory_sha256": "ec49429ed6d469194c5de1637e078f87de75bb1158eaa087cdea7645ab824df6",
+  "observations": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/derived/paper_targets/observations.csv",
+  "observations_sha256": "3811d638f73c4ae0360d369d7dcd8d1e8795414b38b228192e1de955e85331b3",
+  "weather_dir": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/weather/sites",
+  "selection": "Seeded site sampling; one site per transitive location/grid group; collective four-stage coverage in both partitions",
+  "scope": "10-site availability-conditioned pilot, not clustered-temperature-zone European validation",
+  "snapshot_sha256": {
+    "sites": "27accd6555ef05d6f5794850a56f0f35353311d10bff90ff6bb111779ba71fdf",
+    "observations": "2bc800cd795f92ee0d1aef0cf46e29c81d7b51555ddfadc858fa821fac41f7a4",
+    "weather": "d13b3f0337db12c7a0197473a26c47ac6b437cc69f30663073cd9e885cbd9a26",
+    "eligibility": "84f4d5c21a704cb14df8faaf9378638f0de69a4c569460322d83cb0937d00cc7"
+  }
+}

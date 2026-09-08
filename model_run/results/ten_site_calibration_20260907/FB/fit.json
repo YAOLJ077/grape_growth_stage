@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "model_name": "FB",
+  "definition_version": "1.0.0",
+  "parameters": {
+    "forcing_minimum": 0.0,
+    "forcing_maximum": 40.0,
+    "start_doy": 48,
+    "forcing_optimum_07": 12.516734435527331,
+    "forcing_requirement_07": 43.269842261881635,
+    "forcing_optimum_65": 18.3549449153049,
+    "forcing_requirement_65": 57.30848433213185,
+    "forcing_optimum_81": 12.962301040108615,
+    "forcing_requirement_81": 48.682502436304844,
+    "forcing_optimum_89": 32.28614279748047,
+    "forcing_requirement_89": 16.8592890347347
+  },
+  "temperature_input": "RAW",
+  "temperature_column": "Tmean",
+  "objective_value": 8.495356068683062,
+  "optimizer_converged": false,
+  "bounds": {
+    "start_doy": [
+      -60.0,
+      90.0
+    ],
+    "forcing_optimum_07": [
+      10.0,
+      39.9
+    ],
+    "forcing_requirement_07": [
+      0.001,
+      200.0
+    ],
+    "forcing_optimum_65": [
+      10.0,
+      39.9
+    ],
+    "forcing_requirement_65": [
+      0.001,
+      200.0
+    ],
+    "forcing_optimum_81": [
+      10.0,
+      39.9
+    ],
+    "forcing_requirement_81": [
+      0.001,
+      200.0
+    ],
+    "forcing_optimum_89": [
+      10.0,
+      39.9
+    ],
+    "forcing_requirement_89": [
+      0.001,
+      200.0
+    ]
+  },
+  "settings": {
+    "bounds": null,
+    "fixed_parameters": null,
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "calibration_hash": "fb55240ea07dd0ce9ea61cd637fcfb86bd507befab1e47cd4983221cda8a2282",
+  "weather_hash": "38208644948f5825fd1b6d98b441a338e144909664203eda1415d82e5172645e",
+  "diagnostics": {
+    "objective": "mean_stage_site_balanced_rmse",
+    "unattained_penalty_days": 1000.0,
+    "n_observations": 129,
+    "n_sites": 6,
+    "n_seasons": 30,
+    "attained_by_stage": {
+      "07": 22,
+      "65": 18,
+      "81": 60,
+      "89": 29
+    },
+    "boundary_hits": [],
+    "fixed_by_equal_bounds": [],
+    "restarts": [
+      {
+        "seed": 20260907,
+        "objective_value": 8.807768000705101,
+        "converged": false,
+        "message": "Maximum number of iterations has been exceeded.",
+        "nfev": 40635,
+        "nit": 300
+      },
+      {
+        "seed": 20260908,
+        "objective_value": 8.653141629917675,
+        "converged": false,
+        "message": "Maximum number of iterations has been exceeded.",
+        "nfev": 40635,
+        "nit": 300
+      },
+      {
+        "seed": 20260909,
+        "objective_value": 8.495356068683062,
+        "converged": false,
+        "message": "Maximum number of iterations has been exceeded.",
+        "nfev": 40635,
+        "nit": 300
+      }
+    ]
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1"
+  }
+}

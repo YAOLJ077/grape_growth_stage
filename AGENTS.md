@@ -327,6 +327,40 @@ products and full-inventory QC/provenance are not cleanup targets.
 
 ### ERA5-Land Weather
 
+- The current per-site reuse/download entry point is
+  `src/weather_processing/site_weather.py`, documented in `data/weather/README.md`.
+  Its explicitly selected input is the historical France–Germany
+  `data/phenology/derived/modeling/france_germany_four_stage/site_inventory.csv`
+  (2,324 sites), not the all-country paper inventory. Do not substitute another
+  inventory or migrate identifiers implicitly.
+- Per-site output is `data/weather/sites/<site_name>.csv`, with exactly `Date,Tmean`:
+  ISO dates and mean daily 2-m temperature in Celsius. Retain full names in the
+  metadata manifest; sanitize path-unsafe characters, hash-suffix overlong names
+  and reject filename collisions. Download January 1 of `first_year - 1` through
+  December 31 of `last_year`, inclusive. Missing years between observations are
+  included. Keep unavailable dates, including future year-end dates, explicitly
+  missing in the coverage audit; never invent temperatures or publish empty
+  files as completed weather data.
+- Reuse actual daily CSV values in `data/gee/`, explicitly supplied additional
+  paths and existing per-site outputs before fetching gaps. Extraction indexes
+  are not weather data. Match source-qualified IDs or unique names/filenames,
+  never bare cross-source site IDs. Convert raw `temperature_2m` from Kelvin;
+  the explicitly Celsius columns are `Tmean`, `temperature_2m_c` and `tmean_c`.
+  Reject conflicting duplicate temperatures. Preserve originals and refuse to
+  truncate or change previously saved destination values.
+- New downloads use authenticated Earth Engine, the native ERA5-Land projection
+  and transform, point sampling and year-bounded missing intervals. Reused
+  exports retain their original extraction provenance; do not describe earlier
+  buffered values as new native-grid samples. The coverage manifest, missing
+  periods and run/source fingerprints are in `data/weather/sites/metadata/`;
+  filtered runs have separate audit subfolders. The initial 2026-09-07 local
+  audit found no daily values and all 8,455,301 requested site-days missing.
+  Live extraction was subsequently verified with project `smart-soil-erosion`:
+  site `France|france_tempo|100354` has 1,096 days covering 2018-01-01 through
+  2020-12-31. The full download was started with progress logged in
+  `data/weather/sites/metadata/download-20260907.log`; verify its completion
+  before treating the full inventory as downloaded. The old project
+  `glossy-essence-477012-s7` is not accessible to the authenticated account.
 - The documented extraction uses Google Earth Engine collection
   `ECMWF/ERA5_LAND/DAILY_AGGR`, point sampling with `ee.Reducer.first()`, and
   `SAMPLE_SCALE = 11132` m. The grid crosswalk uses the official regular 0.1°
@@ -480,7 +514,47 @@ variants append -ML (for example CL-FL-S-ML and CL-FL-P-ML).
   observations. Freeze that configuration's fitted parameters during testing.
   Complexity is not evidence of improved accuracy.
 
-### Current Process-Model Implementation
+### Active Structure Comparison: Literature-Fixed Responses
+
+This experiment supersedes unrestricted response-parameter fitting for the
+paper's primary comparison. The general-purpose API and earlier ten-site pilot
+remain unchanged for reproducibility; do not relabel their results.
+
+- Use `model/structure_comparison.py::threshold_only_settings` explicitly.
+  Equivalent generated CLI settings are in
+  `fig/model_functions/calibration_settings/<model>.json`.
+- Fix linear forcing base at 0 °C (Parker et al. 2011); beta forcing minimum,
+  optimum and maximum at 0, 25.4 and 35 °C (Fila et al. 2014, Fbeta5*, Table 8
+  and §3.2). Both chilling functions share −1.7, 1.7 and 13.2 °C (Fila CF10*,
+  Table 7). Reuse corresponding response parameters across stages, sites and
+  models. Forcing and chilling do not share the same cardinal temperatures.
+- The triangular equation follows de Wergifosse et al. (2020), Eq. 1. Its
+  grapevine cardinals are transferred from Fila's beta model, not attributed to
+  the forest-tree source. Published calibrated parameters are not universal
+  physiological constants. Record Chardonnay/region/stage transfer limits and
+  Fila's caution about chilling efficacy above 10 °C.
+- Calibrate four forcing requirements jointly and one additional chilling
+  requirement where chilling is present. Each threshold is shared across all
+  calibration sites, years and cultivars; estimate it separately for each model
+  and temperature input. Keep the existing site-balanced four-stage objective.
+- Fix forcing-only start at January 1 and parallel minimum competence at 0.2.
+  The latter is a project control, not a literature-derived grapevine constant.
+  Temperature, start-date and competence sensitivity belongs within calibration.
+- Free-parameter counts are four for FL/FB and five for all chilling–forcing
+  structures. Linear forcing sums have search bounds 0.001–3000 °C d; beta and
+  chilling sums 0.001–200 daily response units. These are numerical allowances,
+  not physiological bounds. Investigate boundary hits within calibration only.
+- `fig/model_functions/temperature_responses.pdf` is manuscript Fig. 3. Preserve
+  two panels: (a) linear/beta forcing displayed as R(T)/R(25.4 °C), and (b)
+  triangular/beta chilling in native daily response units. Normalization is
+  display-only; do not alter model rates or threshold units. Preserve identical
+  chilling cardinals, 15-pt standalone legends, no overall title, and solid/dashed
+  distinction. Sources and caveats are
+  in its README; shared parameters feed both the figure and calibration profile.
+  Rebuild with `model_run/src/plot_temperature_responses.py` into a new output
+  directory. No full-site threshold-only calibration has yet been performed.
+
+### General-Purpose Process-Model Implementation (Unrestricted Profile)
 
 - Shared prediction, calibration, response functions, validation, evaluation and
   command-line code reside directly in `model/`. Each of the ten named structures
@@ -528,8 +602,117 @@ variants append -ML (for example CL-FL-S-ML and CL-FL-P-ML).
   output files are exclusive-create and existing files are not overwritten.
   Run `python -m pytest tests -q` with `model/requirements.txt` installed.
   Synthetic and regression tests establish implementation behavior, not
-  empirical grapevine accuracy. Real-data calibration requires matched weather
-  and approved site partitions and has not been performed for these models.
+  empirical grapevine accuracy. Full European calibration has not been performed.
+  The approved ten-site real-data pilot is a separate, limited experiment below.
+
+### Interim Calibration on All Weather-Complete Sites
+
+The larger, user-authorized interim run uses
+`model_run/src/calibrate_available_sites.py`, with frozen inputs in
+`model_run/results/available_site_cohort_20260907/`. It retains all 1,460
+weather-complete French sites from the availability snapshot: 5,647 site-years
+and 10,921 observations, divided into 1,168 calibration and 292 test sites.
+Keep transitive shared-grid/coordinate groups intact, targeting 80/20 site counts
+with seed 20260907 and collective four-stage coverage in both partitions.
+Do not subsample one site per group for this larger run. Individual sites still
+need only one stage. This user-approved interim split is not temperature-zone
+stratified and must not replace or be labelled as the manuscript's planned
+multi-country validation. Complete common-period temperature normals are still
+required for that design.
+
+Use the literature-fixed response profile explicitly, fitting only four forcing
+thresholds and, where present, the chilling threshold, shared across sites and
+years. The uncalibrated comparator retains the same fixed responses; only its
+illustrative thresholds differ. Use RAW weather without ML or DEM correction.
+Keep all accepted observations and every observed year at qualifying sites;
+exclude an entire site if any required September-to-December simulation window
+is incomplete. Retain exclusion reasons and the count of canonical sites absent
+from the historical download inventory. Do not silently treat a French
+availability snapshot as all European sites.
+
+Run outputs belong in a new, exclusive-create directory such as
+`model_run/results/available_site_calibration_20260907/`, with three optimizer
+restarts and at most two concurrent models. Save per-model fits and comparisons
+as they complete; verify frozen hashes, fixed parameters, calibration-only data,
+group independence and regenerated errors before interpreting combined outputs.
+`--verify-only` performs the larger-cohort audit without refitting. A launched
+process is not a completed analysis. Continue the existing historical-inventory
+weather download independently; later downloads do not change the frozen cohort.
+Preserve all earlier pilot artifacts and behavior below.
+
+The partial calibration/test figure for the first six completed structures is
+`fig/model_evaluation/available_six_20260908/calibration_test_mae.pdf`, generated
+by `model_run/src/plot_calibration_test.py` and `draw_calibration_test.swift`.
+Select model names explicitly and verify their saved predictions and metrics
+before plotting; omitted or unfinished models are not zero-error results.
+Use four stage panels, paired calibration/test bars, common zero-based
+site-balanced MAE axes, 15-point legend and no overall title. Mark unattained
+observations explicitly: MAE uses finite predictions only, so unmatched
+attainment is not hidden. Preserve the plotted CSV, source hashes and subset
+verification alongside the figure. This partial figure does not establish a
+completed ten-model comparison or replace the earlier pilot figures.
+
+### Ten-Site Calibration Pilot
+
+- `model_run/src/calibrate_ten_sites.py` implements the approved six-site
+  calibration/four-site test pilot for all ten process models, RAW temperature
+  only, without residual ML. Keep this pilot separate from the manuscript's
+  clustered-temperature-zone validation and do not change that study design.
+- Freeze downloaded-weather availability before selection. Require canonical
+  observations, matching coordinates and complete finite Celsius weather from
+  the preceding September 1 through December 31 of every observed year. Audit
+  missing files, weather gaps, absent observations and coordinate mismatches.
+  Do not fill gaps or drop isolated observations to make a site qualify.
+- Build transitive groups across the inventory from shared ERA5 grid cells or
+  coordinates rounded to four decimals. Seeded site permutations (20260907)
+  retain at most one site per group. Allocate six to calibration and four to
+  testing; repeat permutations until all four stages occur collectively in both
+  partitions. Any single stage still qualifies an individual site. No country
+  quotas or error-dependent selection occur. The current availability-conditioned
+  snapshot contains ten French sites, 129 calibration and 22 test observations
+  during 2013–2022; budburst testing comprises three observations at one site.
+- Frozen inputs and checksums are in
+  `model_run/results/ten_site_cohort_20260907/`; model artifacts are in
+  `model_run/results/ten_site_calibration_20260907/`. Reuse the frozen cohort
+  explicitly with `--cohort` and always select a new output directory.
+- Fit each model using only calibration-site observations and weather. Preserve
+  the shared objective, bounds and three-restart default optimizer budget. Select
+  parameters by calibration loss only. Save exact default and fitted parameters,
+  restart diagnostics, convergence, source/input hashes and site assignments.
+- Compare default and calibrated predictions on the same held-out observations.
+  Preserve repeated records and empty cultivar labels. Report paired finite-event,
+  site-balanced stage MAE/RMSE/bias alongside all-event attainment and sample
+  counts. Positive improvement means default minus calibrated error. Overall
+  summaries give equal weight to the four stages and never silently omit a
+  missing stage. Defaults are illustrative, not literature-calibrated baselines.
+  Report deterioration and nonconvergence; do not infer European performance
+  or precise model rankings from four test sites. No pilot results are inserted
+  into the manuscript without a further request.
+- The 2026-09-07 pilot completed all ten models and 30 optimizer restarts.
+  All restarts reached 300 generations without convergence. All calibrated
+  models attained 22/22 test observations; FB, CL-FB-S and CB-FB-S defaults
+  attained 21/22, so their paired comparisons have 21 observations. Mean
+  stage-balanced paired test MAE decreased for every model, but three of 40
+  model–stage MAE comparisons worsened. Use the result README and CSVs for
+  exact values. `--verify-only --output <run-directory>` checks frozen input
+  hashes, calibration-only observation/weather hashes, regenerated predictions,
+  retained records, model-level metrics and combined summary tables without
+  refitting or changing files.
+- `model_run/src/plot_mae_histogram.py` and its Swift renderer generate
+  `fig/model_evaluation/mae_histogram.pdf` and `.png`. Use one calibrated RAW
+  test MAE per model, averaging the four site-balanced stage MAEs equally
+  from `metrics.csv`. Require complete attainment and identical stage counts
+  across all ten models; this figure uses all 22 test observations rather than
+  the default/calibrated paired subsets. Use 0.5-day numeric bins, model counts
+  on a zero-based y-axis, and no figure title. Preserve values, bin counts and
+  source hashes alongside the figure; do not interpret ten related model
+  evaluations as independent samples.
+- The plotting script's `--by-stage` option exports `mae_by_stage_model.pdf`
+  and `.png` in the same folder, retaining all 40 stage/model metrics in
+  a 2×2 bar chart. Panels (a)–(d) correspond to BBCH07, 65, 81 and 89.
+  Use the same catalogue model order and zero-based MAE scale in every panel,
+  with no overall title. Keep the original histogram and save the stage-level
+  source rows and plot metadata under the new figure stem.
 
 ### Fila et al. (2014), Table 1: Model Summary
 
@@ -779,6 +962,19 @@ the temperature input while holding parameters fixed.
 - `data/`: observations, weather and terrain metadata, and derived tables.
 - `model/`: active ten-model process-only library, shared code and named model
   folders; calibration and prediction interface documented in `model/README.md`.
+- `model_run/src/run_first_site.py`: single-script, first-inventory-site example
+  using downloaded `Date,Tmean` weather and canonical cleaned observations.
+  Results and instructions are in `model_run/`. Default FL parameters are
+  explicitly uncalibrated; the first site has only two observed events, so no
+  four-stage calibration is performed. A saved RAW fit can be supplied without
+  refitting. Preserve observed rows, use predicted preceding-stage dates, and
+  report delta as predicted minus observed calendar date in days. Demonstration
+  errors are not independently validated model accuracy. Existing outputs are
+  not overwritten; select a new run directory when rerunning the example.
+  `--model all` runs the ten process structures on identical observations and
+  weather, with `model` as the first column in the combined comparison,
+  prediction and metric CSVs. `model_run/results/first_site_all/` contains the
+  uncalibrated demonstration; per-model parameters are recorded in `run.json`.
 - `src/`: data preparation, historical modelling, evaluation, and plotting.
   `src/phenology/` contains all active phenology preparation, audits and paper
   figure scripts; other subfolders retain historical or separate workflows.

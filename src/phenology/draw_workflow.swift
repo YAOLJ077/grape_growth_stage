@@ -207,7 +207,7 @@ text("Random site split · stratified by clustered temperature zones",
 box(44, 533, 225, 77, stroke: color("99BFAF"), dash: true)
 box(326, 533, 225, 77, stroke: color("99BFAF"), dash: true)
 text("Calibration set · 80%", 56, 539, 201, size: 11, weight: .semibold, color: green)
-text("Calibrate all process parameters", 56, 559, 201, size: 10)
+text("Calibrate stage / chilling thresholds", 56, 559, 201, size: 10)
 text("Fit ML on out-of-fold residuals", 56, 574, 201, size: 10)
 text("Tune within grouped inner folds", 56, 589, 201, size: 10)
 text("Test set · 20%", 338, 539, 201, size: 11, weight: .semibold, color: green)

@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "model_name": "FL",
+  "definition_version": "1.0.0",
+  "parameters": {
+    "start_doy": 1,
+    "forcing_base_07": 0.0,
+    "forcing_requirement_07": 686.3344853580984,
+    "forcing_base_65": 0.0,
+    "forcing_requirement_65": 859.9265104596196,
+    "forcing_base_81": 0.0,
+    "forcing_requirement_81": 1086.3019005570084,
+    "forcing_base_89": 0.0,
+    "forcing_requirement_89": 661.4264042457202
+  },
+  "temperature_input": "RAW",
+  "temperature_column": "Tmean",
+  "objective_value": 13.651537191747282,
+  "optimizer_converged": true,
+  "bounds": {
+    "start_doy": [
+      1.0,
+      1.0
+    ],
+    "forcing_base_07": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_07": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_65": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_65": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_81": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_81": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_89": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_89": [
+      0.001,
+      3000.0
+    ]
+  },
+  "settings": {
+    "bounds": {
+      "start_doy": [
+        1,
+        1
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "calibration_hash": "ab205bb1b70ab7ad8e7c693d4761ad3e0e021b4ee11d08fe714ebb1a2c35312b",
+  "weather_hash": "14841e8573bb46eda476378958729a8e30c91c66bcb846afc8e98ca19301e5e7",
+  "diagnostics": {
+    "objective": "mean_stage_site_balanced_rmse",
+    "unattained_penalty_days": 1000.0,
+    "n_observations": 9080,
+    "n_sites": 1168,
+    "n_seasons": 4658,
+    "attained_by_stage": {
+      "07": 1547,
+      "65": 1455,
+      "81": 3312,
+      "89": 2766
+    },
+    "boundary_hits": [],
+    "fixed_by_equal_bounds": [
+      "start_doy",
+      "forcing_base_07",
+      "forcing_base_65",
+      "forcing_base_81",
+      "forcing_base_89"
+    ],
+    "restarts": [
+      {
+        "seed": 20260907,
+        "objective_value": 13.656389257888854,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 8925,
+        "nit": 118
+      },
+      {
+        "seed": 20260908,
+        "objective_value": 13.651537191747282,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 10275,
+        "nit": 136
+      },
+      {
+        "seed": 20260909,
+        "objective_value": 13.654567644143953,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 8550,
+        "nit": 113
+      }
+    ]
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1"
+  }
+}

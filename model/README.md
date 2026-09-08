@@ -5,7 +5,40 @@ The model-named folders define the component combinations; shared Python
 modules live directly in this directory. No residual ML, data downloads,
 automatic splitting or full-data calibration are performed at import time.
 
+## Active paper experiment: fixed responses, fitted thresholds
+
+The paper's structure comparison now uses the explicit
+`model.structure_comparison.threshold_only_settings(model_name)` profile.
+Temperature responses are fixed from literature and reused across stages,
+sites and all models containing the same component: linear forcing base 0 °C;
+beta forcing cardinals 0/25.4/35 °C; triangular and beta chilling cardinals
+−1.7/1.7/13.2 °C. References, qualifications and the plotted curves are in
+`fig/model_functions/README.md` and `temperature_responses.pdf` there.
+
+Only four stage-specific forcing requirements and, where present, one chilling
+requirement are calibrated, each shared across sites, years and cultivars.
+The forcing-only start is fixed at January 1 and parallel minimum competence at
+0.2 (an explicit project control, not a literature-derived temperature parameter).
+Thus the active experiment has four or five free parameters, not the counts
+for the unrestricted API below. The helper uses equality bounds, leaving the
+general API, saved fits and historical pilot unchanged. Call it explicitly:
+
+```python
+from model import fit
+from model.structure_comparison import threshold_only_settings
+
+fitted = fit("CB-FB-P", calibration_observations, weather,
+             threshold_only_settings("CB-FB-P", temperature_column="Tmean"))
+```
+
+Equivalent CLI JSON files are in `fig/model_functions/calibration_settings/`.
+Do not pass held-out observations to `fit`. This profile has not yet undergone
+full-site calibration; the existing ten-site results used unrestricted fitting.
+
 ## Models
+
+The counts below describe the general-purpose, unrestricted calibration API,
+retained for reproducibility and sensitivity work, not the active paper profile.
 
 | Model | Forcing | Chilling | Interaction | Fitted parameters |
 | --- | --- | --- | --- | --- |

@@ -1,5 +1,12 @@
 # Google Earth Engine weather export inputs
 
+The current per-site reuse/download workflow is described in
+[`../weather/README.md`](../weather/README.md). It reuses daily weather exports
+placed here, ignores index-only tables, and downloads remaining gaps when
+Earth Engine access is configured. Final files contain only `Date,Tmean` and
+are named from each site's `site_name`. The historical indexes below remain
+unchanged.
+
 This directory stores the prepared site-year weather extraction indexes and
 Google Earth Engine export instructions used to build the complete ERA5-Land
 daily weather dataset under `data/weather/processed/era5_land_daily_complete/`.

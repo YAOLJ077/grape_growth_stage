@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "model_name": "CL-FL-S",
+  "definition_version": "1.0.0",
+  "parameters": {
+    "chilling_minimum": 2.8765762000246244,
+    "chilling_optimum": 3.129766739884863,
+    "chilling_maximum": 19.972140701510206,
+    "chilling_requirement": 88.46153853772293,
+    "forcing_base_07": 2.258457285637764,
+    "forcing_requirement_07": 242.54733887490931,
+    "forcing_base_65": 0.3037146849968133,
+    "forcing_requirement_65": 822.1497322178657,
+    "forcing_base_81": 2.6733806825663127,
+    "forcing_requirement_81": 985.5553960972846,
+    "forcing_base_89": 2.2548767101520193,
+    "forcing_requirement_89": 865.7151976360767
+  },
+  "temperature_input": "RAW",
+  "temperature_column": "Tmean",
+  "objective_value": 9.367644693883738,
+  "optimizer_converged": false,
+  "bounds": {
+    "chilling_minimum": [
+      -5.0,
+      5.0
+    ],
+    "chilling_optimum": [
+      0.0,
+      10.0
+    ],
+    "chilling_maximum": [
+      0.0,
+      20.0
+    ],
+    "chilling_requirement": [
+      0.001,
+      200.0
+    ],
+    "forcing_base_07": [
+      0.0,
+      15.0
+    ],
+    "forcing_requirement_07": [
+      0.001,
+      1000.0
+    ],
+    "forcing_base_65": [
+      0.0,
+      15.0
+    ],
+    "forcing_requirement_65": [
+      0.001,
+      1000.0
+    ],
+    "forcing_base_81": [
+      0.0,
+      15.0
+    ],
+    "forcing_requirement_81": [
+      0.001,
+      1000.0
+    ],
+    "forcing_base_89": [
+      0.0,
+      15.0
+    ],
+    "forcing_requirement_89": [
+      0.001,
+      1000.0
+    ]
+  },
+  "settings": {
+    "bounds": null,
+    "fixed_parameters": null,
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "calibration_hash": "fb55240ea07dd0ce9ea61cd637fcfb86bd507befab1e47cd4983221cda8a2282",
+  "weather_hash": "b5273e8d7002691c9f7d65f86d92392253fccab4fa445263b0242e9cfa49a6f6",
+  "diagnostics": {
+    "objective": "mean_stage_site_balanced_rmse",
+    "unattained_penalty_days": 1000.0,
+    "n_observations": 129,
+    "n_sites": 6,
+    "n_seasons": 30,
+    "attained_by_stage": {
+      "07": 22,
+      "65": 18,
+      "81": 60,
+      "89": 29
+    },
+    "boundary_hits": [],
+    "fixed_by_equal_bounds": [],
+    "restarts": [
+      {
+        "seed": 20260907,
+        "objective_value": 10.101579580319305,
+        "converged": false,
+        "message": "Maximum number of iterations has been exceeded.",
+        "nfev": 51455,
+        "nit": 300
+      },
+      {
+        "seed": 20260908,
+        "objective_value": 9.397353015050573,
+        "converged": false,
+        "message": "Maximum number of iterations has been exceeded.",
+        "nfev": 50830,
+        "nit": 300
+      },
+      {
+        "seed": 20260909,
+        "objective_value": 9.367644693883738,
+        "converged": false,
+        "message": "Maximum number of iterations has been exceeded.",
+        "nfev": 43985,
+        "nit": 300
+      }
+    ]
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1"
+  }
+}

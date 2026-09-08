@@ -1,0 +1,639 @@
+{
+  "FL": {
+    "bounds": {
+      "start_doy": [
+        1,
+        1
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "FB": {
+    "bounds": {
+      "start_doy": [
+        1,
+        1
+      ],
+      "forcing_optimum_07": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_65": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_81": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_89": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        200
+      ]
+    },
+    "fixed_parameters": {
+      "forcing_minimum": 0.0,
+      "forcing_maximum": 35.0
+    },
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "CL-FL-S": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "CL-FL-P": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "minimum_response": [
+        0.2,
+        0.2
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "CB-FL-S": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "CB-FL-P": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "minimum_response": [
+        0.2,
+        0.2
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "CL-FB-S": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_07": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_65": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_81": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_89": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        200
+      ]
+    },
+    "fixed_parameters": {
+      "forcing_minimum": 0.0,
+      "forcing_maximum": 35.0
+    },
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "CL-FB-P": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "minimum_response": [
+        0.2,
+        0.2
+      ],
+      "forcing_optimum_07": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_65": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_81": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_89": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        200
+      ]
+    },
+    "fixed_parameters": {
+      "forcing_minimum": 0.0,
+      "forcing_maximum": 35.0
+    },
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "CB-FB-S": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_07": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_65": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_81": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_89": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        200
+      ]
+    },
+    "fixed_parameters": {
+      "forcing_minimum": 0.0,
+      "forcing_maximum": 35.0
+    },
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "CB-FB-P": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "minimum_response": [
+        0.2,
+        0.2
+      ],
+      "forcing_optimum_07": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_65": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_81": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_89": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        200
+      ]
+    },
+    "fixed_parameters": {
+      "forcing_minimum": 0.0,
+      "forcing_maximum": 35.0
+    },
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  }
+}

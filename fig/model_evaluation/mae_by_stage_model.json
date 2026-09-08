@@ -1,0 +1,97 @@
+{
+  "model_order": [
+    "FL",
+    "FB",
+    "CL-FL-S",
+    "CL-FL-P",
+    "CB-FL-S",
+    "CB-FL-P",
+    "CL-FB-S",
+    "CL-FB-P",
+    "CB-FB-S",
+    "CB-FB-P"
+  ],
+  "stage_order": [
+    "07",
+    "65",
+    "81",
+    "89"
+  ],
+  "y_min": 0,
+  "y_max": 15.0,
+  "y_tick_step": 5,
+  "y_axis": "Calibrated test MAE (days)",
+  "x_axis": "Model",
+  "visible_title": false,
+  "panels": [
+    {
+      "BBCH": "07",
+      "values": [
+        7.666666666666667,
+        10.666666666666666,
+        5.0,
+        5.666666666666667,
+        5.666666666666667,
+        6.0,
+        11.666666666666666,
+        10.666666666666666,
+        7.666666666666667,
+        8.666666666666666
+      ]
+    },
+    {
+      "BBCH": "65",
+      "values": [
+        10.166666666666666,
+        8.5,
+        12.833333333333334,
+        13.0,
+        12.333333333333334,
+        12.833333333333334,
+        11.0,
+        10.666666666666666,
+        12.333333333333334,
+        10.166666666666668
+      ]
+    },
+    {
+      "BBCH": "81",
+      "values": [
+        13.444444444444445,
+        8.444444444444445,
+        13.388888888888893,
+        14.555555555555555,
+        14.0,
+        14.555555555555555,
+        8.222222222222221,
+        10.888888888888888,
+        8.555555555555555,
+        10.22222222222222
+      ]
+    },
+    {
+      "BBCH": "89",
+      "values": [
+        10.375,
+        10.25,
+        12.125,
+        12.375,
+        11.5,
+        12.375,
+        11.25,
+        11.0,
+        12.125,
+        9.5
+      ]
+    }
+  ],
+  "source": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/ten_site_calibration_20260907/metrics.csv",
+  "source_sha256": "2e39688e1f7e603ea1006441230f5376cf9c5f5f9ab7472a00672870448cf2d7",
+  "metric": "Stage-specific site_balanced_mae; all calibrated RAW test observations",
+  "layout": "2 by 2; identical model order and y-axis scale",
+  "palette": {
+    "fill": "#326C9C",
+    "ink": "#27333D"
+  },
+  "caution": "Small France-only pilot; stage sample sizes differ; all fits reached generation limit"
+}

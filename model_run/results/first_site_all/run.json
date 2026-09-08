@@ -1,0 +1,235 @@
+{
+  "site_uid": "France|france_tempo|100354",
+  "observation_site": "FR:tempo:100354",
+  "site_name": "16369-27875-2852-36032-2505",
+  "lat": 44.05517,
+  "lon": 4.64178,
+  "parameter_source": "illustrative_uncalibrated",
+  "temperature_input": "RAW",
+  "weather_column": "Tmean",
+  "weather_units": "degrees Celsius",
+  "n_observations": 2,
+  "seasons": [
+    2019,
+    2020
+  ],
+  "delta_definition": "predicted calendar date minus observed calendar date, in days",
+  "calibration_performed": false,
+  "independent_validation_established": false,
+  "note": "Illustrative comparison, not estimated predictive skill; no parameters fitted to these observations.",
+  "inputs": {
+    "inventory": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/derived/modeling/france_germany_four_stage/site_inventory.csv",
+    "observations": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/derived/paper_targets/observations.csv",
+    "weather": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/weather/sites/16369-27875-2852-36032-2505.csv"
+  },
+  "input_sha256": {
+    "inventory": "ec49429ed6d469194c5de1637e078f87de75bb1158eaa087cdea7645ab824df6",
+    "observations": "3811d638f73c4ae0360d369d7dcd8d1e8795414b38b228192e1de955e85331b3",
+    "weather": "d4844eb3df0adbb5e4839a5ee205f2f379c6e5d1ba7e340e2ca60a418f85a4d2"
+  },
+  "saved_fit": null,
+  "saved_fit_sha256": null,
+  "optimizer_converged": null,
+  "model_names": [
+    "FL",
+    "FB",
+    "CL-FL-S",
+    "CL-FL-P",
+    "CB-FL-S",
+    "CB-FL-P",
+    "CL-FB-S",
+    "CL-FB-P",
+    "CB-FB-S",
+    "CB-FB-P"
+  ],
+  "models": {
+    "FL": {
+      "parameters": {
+        "start_doy": 1,
+        "forcing_base_07": 5.0,
+        "forcing_requirement_07": 300.0,
+        "forcing_base_65": 5.0,
+        "forcing_requirement_65": 300.0,
+        "forcing_base_81": 5.0,
+        "forcing_requirement_81": 300.0,
+        "forcing_base_89": 5.0,
+        "forcing_requirement_89": 300.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "FB": {
+      "parameters": {
+        "start_doy": 1,
+        "forcing_minimum": 0.0,
+        "forcing_maximum": 40.0,
+        "forcing_optimum_07": 25.0,
+        "forcing_requirement_07": 30.0,
+        "forcing_optimum_65": 25.0,
+        "forcing_requirement_65": 60.0,
+        "forcing_optimum_81": 25.0,
+        "forcing_requirement_81": 60.0,
+        "forcing_optimum_89": 25.0,
+        "forcing_requirement_89": 40.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "CL-FL-S": {
+      "parameters": {
+        "chilling_minimum": -5.0,
+        "chilling_optimum": 5.0,
+        "chilling_maximum": 15.0,
+        "chilling_requirement": 60.0,
+        "forcing_base_07": 5.0,
+        "forcing_requirement_07": 300.0,
+        "forcing_base_65": 5.0,
+        "forcing_requirement_65": 300.0,
+        "forcing_base_81": 5.0,
+        "forcing_requirement_81": 300.0,
+        "forcing_base_89": 5.0,
+        "forcing_requirement_89": 300.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "CL-FL-P": {
+      "parameters": {
+        "chilling_minimum": -5.0,
+        "chilling_optimum": 5.0,
+        "chilling_maximum": 15.0,
+        "chilling_requirement": 60.0,
+        "minimum_response": 0.2,
+        "forcing_base_07": 5.0,
+        "forcing_requirement_07": 300.0,
+        "forcing_base_65": 5.0,
+        "forcing_requirement_65": 300.0,
+        "forcing_base_81": 5.0,
+        "forcing_requirement_81": 300.0,
+        "forcing_base_89": 5.0,
+        "forcing_requirement_89": 300.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "CB-FL-S": {
+      "parameters": {
+        "chilling_minimum": -5.0,
+        "chilling_optimum": 5.0,
+        "chilling_maximum": 15.0,
+        "chilling_requirement": 60.0,
+        "forcing_base_07": 5.0,
+        "forcing_requirement_07": 300.0,
+        "forcing_base_65": 5.0,
+        "forcing_requirement_65": 300.0,
+        "forcing_base_81": 5.0,
+        "forcing_requirement_81": 300.0,
+        "forcing_base_89": 5.0,
+        "forcing_requirement_89": 300.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "CB-FL-P": {
+      "parameters": {
+        "chilling_minimum": -5.0,
+        "chilling_optimum": 5.0,
+        "chilling_maximum": 15.0,
+        "chilling_requirement": 60.0,
+        "minimum_response": 0.2,
+        "forcing_base_07": 5.0,
+        "forcing_requirement_07": 300.0,
+        "forcing_base_65": 5.0,
+        "forcing_requirement_65": 300.0,
+        "forcing_base_81": 5.0,
+        "forcing_requirement_81": 300.0,
+        "forcing_base_89": 5.0,
+        "forcing_requirement_89": 300.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "CL-FB-S": {
+      "parameters": {
+        "chilling_minimum": -5.0,
+        "chilling_optimum": 5.0,
+        "chilling_maximum": 15.0,
+        "chilling_requirement": 60.0,
+        "forcing_minimum": 0.0,
+        "forcing_maximum": 40.0,
+        "forcing_optimum_07": 25.0,
+        "forcing_requirement_07": 30.0,
+        "forcing_optimum_65": 25.0,
+        "forcing_requirement_65": 60.0,
+        "forcing_optimum_81": 25.0,
+        "forcing_requirement_81": 60.0,
+        "forcing_optimum_89": 25.0,
+        "forcing_requirement_89": 40.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "CL-FB-P": {
+      "parameters": {
+        "chilling_minimum": -5.0,
+        "chilling_optimum": 5.0,
+        "chilling_maximum": 15.0,
+        "chilling_requirement": 60.0,
+        "minimum_response": 0.2,
+        "forcing_minimum": 0.0,
+        "forcing_maximum": 40.0,
+        "forcing_optimum_07": 25.0,
+        "forcing_requirement_07": 30.0,
+        "forcing_optimum_65": 25.0,
+        "forcing_requirement_65": 60.0,
+        "forcing_optimum_81": 25.0,
+        "forcing_requirement_81": 60.0,
+        "forcing_optimum_89": 25.0,
+        "forcing_requirement_89": 40.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "CB-FB-S": {
+      "parameters": {
+        "chilling_minimum": -5.0,
+        "chilling_optimum": 5.0,
+        "chilling_maximum": 15.0,
+        "chilling_requirement": 60.0,
+        "forcing_minimum": 0.0,
+        "forcing_maximum": 40.0,
+        "forcing_optimum_07": 25.0,
+        "forcing_requirement_07": 30.0,
+        "forcing_optimum_65": 25.0,
+        "forcing_requirement_65": 60.0,
+        "forcing_optimum_81": 25.0,
+        "forcing_requirement_81": 60.0,
+        "forcing_optimum_89": 25.0,
+        "forcing_requirement_89": 40.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    },
+    "CB-FB-P": {
+      "parameters": {
+        "chilling_minimum": -5.0,
+        "chilling_optimum": 5.0,
+        "chilling_maximum": 15.0,
+        "chilling_requirement": 60.0,
+        "minimum_response": 0.2,
+        "forcing_minimum": 0.0,
+        "forcing_maximum": 40.0,
+        "forcing_optimum_07": 25.0,
+        "forcing_requirement_07": 30.0,
+        "forcing_optimum_65": 25.0,
+        "forcing_requirement_65": 60.0,
+        "forcing_optimum_81": 25.0,
+        "forcing_requirement_81": 60.0,
+        "forcing_optimum_89": 25.0,
+        "forcing_requirement_89": 40.0
+      },
+      "definition_version": "1.0.0",
+      "parameter_source": "illustrative_uncalibrated"
+    }
+  }
+}

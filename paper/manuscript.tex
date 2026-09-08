@@ -241,38 +241,110 @@ T_{\mathrm{DEM},d}=T_{\mathrm{RAW},d}-0.0065\left(z_{\mathrm{site}}-z_{\mathrm{g
 \label{eq:temperature_adjustment}
 \end{equation}
 
-where temperature is expressed in $^{\circ}$C, $z_{\mathrm{site}}$ is the GLO-30 site elevation and $z_{\mathrm{grid}}$ is the ERA5-Land grid elevation, both in metres. A lapse rate of 6.5~$^{\circ}$C~km$^{-1}$ gives a $-0.65~^{\circ}$C adjustment for a site 100~m above the grid elevation. Other meteorological variables are unchanged. Any alternative lapse rate estimated from observations will be fitted within the calibration folds. Process parameters are recalibrated separately for raw and corrected temperatures using the same observations. The comparison therefore assesses prediction after recalibration, rather than the temperature correction alone. Improved phenology predictions would not, by themselves, demonstrate greater accuracy of the corrected temperatures.
+where temperature is expressed in $^{\circ}$C, $z_{\mathrm{site}}$ is the GLO-30 site elevation and $z_{\mathrm{grid}}$ is the ERA5-Land grid elevation, both in metres. A lapse rate of 6.5~$^{\circ}$C~km$^{-1}$ gives a $-0.65~^{\circ}$C adjustment for a site 100~m above the grid elevation. Other meteorological variables are unchanged. Any alternative lapse rate estimated from observations will be fitted within the calibration folds. Forcing and chilling requirements are recalibrated separately for raw and corrected temperatures using the same observations, while temperature-response parameters remain identical. The comparison therefore assesses prediction after threshold recalibration, rather than the temperature correction alone. Improved phenology predictions would not, by themselves, demonstrate greater accuracy of the corrected temperatures.
 
 \subsection{Models}
 
 \subsubsection{Process-based phenology models}
 
-Six function combinations pair two forcing functions with three chilling options (Table~\ref{tab:model_catalogue}). The two forcing-only combinations and sequential and parallel variants of the four chilling--forcing combinations give ten process-model structures. Linear forcing (FL) accumulates thermal time above a fitted base temperature. Beta forcing (FB) represents a nonlinear response that peaks at an optimum temperature and declines to zero at the upper temperature limit. Beta forcing and beta chilling (CB) follow the response families examined by \citet{filaComparisonDifferentModelling2014}. Piecewise-linear chilling (CL) uses the triangular response described by \citet{deWergifosseHETEROFOR2020}, following H\"anninen (1990). This chilling function was developed for forest trees; its application to grapevine requires calibration and independent evaluation.
+Six function combinations pair two forcing functions with three chilling options (Table~\ref{tab:model_catalogue}). The two forcing-only combinations and sequential and parallel variants of the four chilling--forcing combinations give ten process-model structures. Linear forcing (FL) accumulates thermal time above a fixed base temperature. Beta forcing (FB) represents a nonlinear response that peaks at an optimum temperature and declines to zero at the upper temperature limit. Beta forcing and beta chilling (CB) follow the response families examined by \citet{filaComparisonDifferentModelling2014}. Piecewise-linear chilling (CL) uses the triangular response described by \citet{deWergifosseHETEROFOR2020}, following H\"anninen (1990). This chilling function was developed for forest trees; its application to grapevine is an adaptation. Temperature-response parameters are fixed from literature and shared across stages, sites and models wherever the same component occurs; only accumulation requirements are calibrated.
 
-For daily temperature $T$, the CL response is
+\paragraph{Daily temperature responses.}
+All process models use daily mean air temperature $T_t$ in $^{\circ}$C. For target stage $s\in\mathcal{S}=\{07,65,81,89\}$, linear forcing is
 
 \begin{equation}
-R_c(T)=
+R^{\mathrm{FL}}_{f,s}(T_t)=\max(T_t-T_b,0),
+\label{eq:linear_forcing}
+\end{equation}
+
+where $T_b=0$~$^{\circ}$C for all stages, following the base temperature of the GFV model \citep{parkerGeneralPhenologicalModel2011a}. GFV originally targets flowering and veraison; use of this base for the complete four-stage sequence is an extension, not an exact reproduction of GFV. Summation over daily time steps gives thermal time in $^{\circ}$C\,d. The normalized beta response is
+
+\begin{equation}
+B(T;a,b,c)=
 \begin{cases}
-0, & T\leq T_{\min}\ \text{or}\ T\geq T_{\max},\\
-\dfrac{T-T_{\min}}{T_{\mathrm{opt}}-T_{\min}}, & T_{\min}<T\leq T_{\mathrm{opt}},\\
-\dfrac{T_{\max}-T}{T_{\max}-T_{\mathrm{opt}}}, & T_{\mathrm{opt}}<T<T_{\max}.
+\displaystyle\frac{c-T}{c-b}
+\left(\frac{T-a}{b-a}\right)^{\!\frac{b-a}{c-b}}, & a<T<c,\\[6pt]
+0, & T\leq a\ \text{or}\ T\geq c,
+\end{cases}
+\label{eq:beta_response}
+\end{equation}
+
+where $a<b<c$ are the minimum, optimum and maximum temperatures, respectively, and $B(b;a,b,c)=1$ \citep{filaComparisonDifferentModelling2014}. Beta forcing uses $R^{\mathrm{FB}}_{f,s}(T_t)=B(T_t;0,25.4,35)$ for every stage. The optimum of 25.4~$^{\circ}$C is the shared forcing optimum of Fila et al.'s Fbeta5* model (Table~8), calibrated using field and growth-room observations; the lower and upper limits of 0 and 35~$^{\circ}$C follow their adopted beta formulation. Beta chilling uses $R^{\mathrm{CB}}_c(T_t)=B(T_t;T_{c,\min},T_{c,\mathrm{opt}},T_{c,\max})$. Its fixed cardinal temperatures are $-1.7$, 1.7 and 13.2~$^{\circ}$C, respectively, from the CF10* parameterization informed by field and growth-room observations in their Table~7. The alternative CL response is
+
+\begin{equation}
+R^{\mathrm{CL}}_c(T)=
+\begin{cases}
+0, & T\leq T_{c,\min}\ \text{or}\ T\geq T_{c,\max},\\[3pt]
+\dfrac{T-T_{c,\min}}{T_{c,\mathrm{opt}}-T_{c,\min}}, & T_{c,\min}<T\leq T_{c,\mathrm{opt}},\\[6pt]
+\dfrac{T_{c,\max}-T}{T_{c,\max}-T_{c,\mathrm{opt}}}, & T_{c,\mathrm{opt}}<T<T_{c,\max}.
 \end{cases}
 \label{eq:triangular_chilling}
 \end{equation}
 
-Forcing-only models begin accumulation on a fitted calendar date. In chilling--forcing models, chilling accumulates from 1 September of the preceding year. Sequential forcing begins the day after the fitted chilling requirement is reached. Parallel models allow chilling and forcing to overlap \citep{chuineUnifiedModelBudburst2000}, multiplying daily budburst forcing by a chilling-dependent competence factor adapted from \citet{liuSimulatingOnsetSpring2018}:
+CL uses the same three chilling temperatures as CB, so the contrast changes curve shape without changing its temperature limits or optimum (Fig.~\ref{fig:temperature_responses}). These cardinals originate from grapevine beta chilling, not from the forest-tree parameterization of the triangular function. Both chilling responses are bounded between zero and one. Their cumulative sums, and those of beta forcing, are expressed as accumulated daily response units; they are not interchangeable with the degree-day sums of linear forcing.
+
+\paragraph{Accumulation and stage progression.}
+Each site--year is simulated independently through 31 December of the observation year. Forcing-only models start on 1 January ($t_0=1$), a common calendar convention discussed by \citet{filaComparisonDifferentModelling2014}. This date is fixed across sites, years and forcing functions, and differs from the day-60 origin of the original GFV model. The first day contributes to accumulation. Calendar start dates are not calibrated in the structure comparison.
+
+For a stage starting on date $\tau_s$, cumulative effective forcing and its predicted occurrence date are
+
 \begin{equation}
-K_t = K_{\min} + (1-K_{\min})\min\!\left(\frac{C_{t-1}}{C_{\mathrm{crit}}},1\right),
+F_s(t)=\sum_{u=\tau_s}^{t}w_{s,u}R_{f,s}(T_u),\qquad
+\widehat{D}_s=\min\{t\geq\tau_s:F_s(t)\geq H_s\},
+\label{eq:stage_accumulation}
+\end{equation}
+
+where $H_s>0$ is the stage-specific forcing requirement and $w_{s,u}=1$ except during budburst forcing in parallel models. After each predicted stage, the forcing sum is reset to zero and accumulation for the next stage begins on the following day: $\tau_{65}=\widehat{D}_{07}+1$, $\tau_{81}=\widehat{D}_{65}+1$ and $\tau_{89}=\widehat{D}_{81}+1$. Threshold overshoot is discarded, and no day's forcing contributes to two stages. The four requirements therefore describe successive developmental intervals, not cumulative thresholds from a common starting date. Observed preceding-stage dates never initialize predictions, including during calibration or when intermediate observations are missing.
+
+\paragraph{Chilling--forcing interaction.}
+Chilling accumulates from $t_c$, 1 September of the preceding year, with zero initial chilling:
+
+\begin{equation}
+C(t)=\sum_{u=t_c}^{t}R_c(T_u),\qquad
+t_C=\min\{t\geq t_c:C(t)\geq C_{\mathrm{crit}}\},
+\label{eq:chilling_accumulation}
+\end{equation}
+
+where $C_{\mathrm{crit}}>0$ is the fitted chilling requirement. In sequential models, budburst forcing begins on $\tau_{07}=t_C+1$; forcing before chilling completion is excluded. In parallel models, chilling and budburst forcing both start on $t_c$, allowing the two processes to overlap \citep{chuineUnifiedModelBudburst2000}. Daily budburst forcing is multiplied by a competence factor adapted from \citet{liuSimulatingOnsetSpring2018}:
+\begin{equation}
+K_t = K_{\min} + (1-K_{\min})\min\!\left(\frac{C(t-1)}{C_{\mathrm{crit}}},1\right),
 \label{eq:parallel_competence}
 \end{equation}
-where $C_{t-1}$ is chilling accumulated before the current day, $C_{\mathrm{crit}}$ is the requirement for full competence, and $K_{\min}\in[0,1]$ is fitted. Parallel budburst can occur before full chilling is attained. Chilling affects budburst only. Development proceeds through BBCH07, BBCH65, BBCH81 and BBCH89; forcing restarts on the day after each predicted stage, with accumulated overshoot discarded. Observed preceding-stage dates never initialize predictions, including during calibration. Substitution of BBCH07 for the BBCH09 target of \citet{filaComparisonDifferentModelling2014}, extension to BBCH89 and the parallel variants are adaptations requiring independent evaluation.
 
-All four stages are calibrated jointly, with separate forcing response temperatures and requirements for each stage, pooled across sites, years and cultivars. Default search bounds are 0--15~$^{\circ}$C for linear forcing bases and 10--39.9~$^{\circ}$C for beta forcing optima; beta forcing limits are fixed at 0 and 40~$^{\circ}$C. Chilling minimum, optimum and maximum temperatures range over $[-5,5]$, $[0,10]$ and $[0,20]$~$^{\circ}$C, respectively, with adjacent cardinals separated by at least 0.1~$^{\circ}$C. Linear forcing requirements range from 0.001 to 1000 degree-days, and beta forcing and chilling requirements from 0.001 to 200 accumulated daily response units. The integer forcing-only start date ranges from day $-60$ to 90, with 1 January as day 1. These ranges adapt the search domain of \citet{filaComparisonDifferentModelling2014}. Forcing-only, sequential and parallel structures have 9, 12 and 13 fitted parameters, respectively.
+with $w_{07,t}=K_t$ in Eq.~\ref{eq:stage_accumulation}. Here $C(t-1)$ is chilling accumulated before the current day and $C(t_c-1)=0$. The minimum competence is fixed at $K_{\min}=0.2$ across parallel models as an experimental control, not as a literature-established grapevine constant. Full chilling marks full forcing competence, not an additional condition for budburst; parallel models can therefore predict budburst before $C_{\mathrm{crit}}$ is reached. Chilling does not modify forcing after budburst, and the stage sequence remains identical under sequential and parallel interactions.
 
-Calibration minimizes the mean of four stage-specific, site-balanced root mean squared errors. For each stage, squared errors are averaged within sites and then equally across sites before taking the square root. Sites can contribute any one stage, but all four stages must be represented in the calibration dataset. Differential evolution uses three independent seeds, a population multiplier of 15, at most 300 generations, tolerance 0.001 and no local polishing. A stage is predicted on the first day its forcing requirement is reached; an unattained stage remains missing, as do subsequent stages. An unattained observed event receives a 1000-day error penalty during fitting, without assigning a synthetic prediction date. Fits with no finite predictions for any one stage are rejected. Convergence and parameter-boundary diagnostics accompany fitted parameters. Historical screening windows do not constrain predictions, and dates outside the target year remain unaltered.
+\paragraph{Parameter sharing and search bounds.}
+The four stage-specific forcing requirements $H_{07}$, $H_{65}$, $H_{81}$ and $H_{89}$ are calibrated jointly for each model. Each requirement is shared across sites, years and cultivars, rather than estimated separately for individual locations. Chilling models additionally calibrate one $C_{\mathrm{crit}}$ for dormancy release, also shared across sites and years. Thresholds can differ among model structures and temperature treatments, but temperature-response parameters remain identical wherever the corresponding component is present. Repeated accepted observations at the same site--year--stage are compared with the same simulated date and remain separate contributions to the fitting loss.
 
-The ten process structures are FL, FB, CL-FL-S, CL-FL-P, CB-FL-S, CB-FL-P, CL-FB-S, CL-FB-P, CB-FB-S and CB-FB-P. All structures enter the paired comparisons in Table~\ref{tab:model_catalogue} without preliminary selection of a single best process model. These names identify the process components and their interaction, rather than the parameter-sharing variants compared by \citet{filaComparisonDifferentModelling2014}.
+Linear forcing requirements are searched between 0.001 and 3000~$^{\circ}$C\,d; beta forcing and chilling requirements are searched between 0.001 and 200 daily response units. The larger allowance for linear forcing accommodates accumulation above a fixed 0~$^{\circ}$C base. These are numerical search limits, not physiological bounds. Parameter-boundary hits require calibration-only investigation before test evaluation. Forcing-only models therefore have four fitted parameters, and both sequential and parallel chilling--forcing models have five. No temperature-response, calendar-start or competence parameters are fitted in this comparison.
+
+The fixed temperatures provide literature-based controls for comparing model structures, not universal physiological constants. The Fila parameter sets were estimated for Chardonnay in northeastern Italy, whereas the observation collection spans multiple cultivars and climates. In particular, chilling effectiveness above 10~$^{\circ}$C remained uncertain in that study, and transfer of its cardinals to triangular chilling and of its forcing response to BBCH89 requires independent evaluation. Structural comparisons are therefore conditional on the selected response parameters. Sensitivity to these fixed settings, calendar origin and minimum competence must be assessed within calibration data, without choosing them from test errors.
+
+\begin{figure}[!p]
+\centering
+\includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]{fig/model_functions/temperature_responses.pdf}
+\caption{Fixed temperature-response functions: (a) linear forcing with a 0~$^{\circ}$C base \citep{parkerGeneralPhenologicalModel2011a} and beta forcing with cardinals of 0, 25.4 and 35~$^{\circ}$C; (b) triangular and beta chilling with identical cardinals of $-1.7$, 1.7 and 13.2~$^{\circ}$C. Forcing curves are displayed as $R(T)/R(25.4\,^{\circ}\mathrm{C})$, so both equal one at 25.4~$^{\circ}$C; linear forcing remains uncapped. This display-only normalization does not change model equations or threshold units. Chilling retains native daily response units. Beta parameters follow Fbeta5* and CF10* in \citet{filaComparisonDifferentModelling2014}; transfer to the triangular function of \citet{deWergifosseHETEROFOR2020} is an adaptation. Temperature-axis ranges differ between panels. Accumulation thresholds are calibrated separately and are not shown.}
+\label{fig:temperature_responses}
+\end{figure}
+
+\paragraph{Joint calibration and numerical safeguards.}
+For parameter vector $\symbf{\theta}$ and stage $s$, let $M_s$ denote the number of calibration sites with observations, $n_{js}$ the number of accepted observations at site $j$, and $e_{jsi}(\symbf{\theta})$ the predicted minus observed date for observation $i$, in days. Calibration minimizes
+
+\begin{equation}
+L(\symbf{\theta})=\frac{1}{4}\sum_{s\in\mathcal{S}}
+\left[\frac{1}{M_s}\sum_{j=1}^{M_s}
+\frac{1}{n_{js}}\sum_{i=1}^{n_{js}}
+\widetilde{e}_{jsi}(\symbf{\theta})^2\right]^{1/2},
+\label{eq:calibration_loss}
+\end{equation}
+
+where $\widetilde{e}_{jsi}=e_{jsi}$ for an attained stage and $\widetilde{e}_{jsi}=1000$~d otherwise. Squared errors are averaged within each site and stage, then equally across sites before taking the square root. The four stage-specific RMSEs receive equal weight, regardless of their observation counts. A site or year can contribute any one stage, but all four stages must be represented collectively in the calibration set. Equal weighting does not impose equal errors across stages, and joint fitting can involve trade-offs between budburst and subsequent development.
+
+The implemented optimizer is differential evolution, with three independent restarts using seeds 20260907, 20260908 and 20260909. Each restart uses a population multiplier of 15, a maximum of 300 generations, relative convergence tolerance 0.001, one evaluation worker and no local polishing. Only the four or five continuous accumulation thresholds vary; the fixed response parameters are excluded from optimization through equality bounds or fixed settings. The feasible parameter set with the lowest calibration loss across restarts is retained, without reference to test errors. Restart losses, convergence status, evaluation counts and parameter-boundary proximity are recorded. A saved best candidate is not necessarily a converged solution; convergence and stability under additional calibration-only optimization are prerequisites for interpreting differences as model-structure effects.
+
+Daily weather must be complete and finite throughout the required simulation window. Forcing-only models require coverage from 1 January; chilling models require the preceding 1 September. A common comparison cohort requires coverage sufficient for all ten structures. Missing temperatures are not interpolated. If a stage's forcing requirement is not reached by 31 December, that stage and all subsequent stages remain unpredicted. Unmet chilling also prevents budburst in sequential models, but is not a separate failure condition in parallel models. Fits with no finite prediction for any one observed calibration stage are rejected. The 1000-day penalty enters only the fitting loss, never a synthetic event date or the reported prediction-error metrics. Calendar-date arithmetic preserves leap years and signed dates relative to the target year; previous-year predictions remain visible and are not clipped to January or to the observation-screening windows.
+
+All ten structures enter the paired comparisons in Table~\ref{tab:model_catalogue} without preliminary selection of a single best process model. Their names identify process components and interactions, rather than the parameter-sharing variants compared by \citet{filaComparisonDifferentModelling2014}. Substitution of BBCH07 for that study's BBCH09 target, extension to BBCH89, triangular chilling and the parallel formulations are adaptations requiring independent evaluation. The process-only implementation is available; full-cohort comparisons, residual learning and terrain-effect evaluation remain prospective.
 
 \subsubsection{Residual machine learning}
 
@@ -364,6 +436,8 @@ Paired errors are examined against signed and absolute site-to-grid elevation di
 \subsubsection{Predictive performance and uncertainty}
 
 All parameters are estimated from the calibration set and remain fixed during testing. Temperature input is a separate experimental factor: each of the 20 models in Table~\ref{tab:model_catalogue} is evaluated with original and DEM-corrected temperature, yielding 40 configurations per stage. Paired comparisons use four treatments: process models with raw temperature, hybrid models with raw temperature, process models with corrected temperature and hybrid models with corrected temperature. These comparisons estimate the individual and combined contributions of temperature correction and residual learning, including their interaction. Test observations are used only for performance assessment and subsequent model rankings.
+
+The primary contrasts concern model structure: linear versus beta forcing, absence versus presence of chilling, triangular versus beta chilling, and sequential versus parallel interaction. Corresponding response parameters remain fixed, while accumulation thresholds are recalibrated on identical observations. Function and interaction comparisons within a process family retain the same number of fitted thresholds; including chilling adds one requirement. Calibration and test errors are reported separately for each stage, together with convergence diagnostics. These comparisons quantify predictive differences conditional on the fixed parameterization, rather than assuming that additional processes or parameters guarantee lower error. Lower held-out error supports a benefit from a structural alternative under the specified controls.
 
 With error $e_i=\widehat{DOY}_i-DOY_i$, stage-specific performance is summarized as
 

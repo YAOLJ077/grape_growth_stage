@@ -98,7 +98,8 @@ are not silently renamed; their interaction must first be verified from run meta
 Chilling begins on 1 September of the preceding year. Sequential models start
 forcing on the day after the chilling requirement is fulfilled. Parallel
 models multiply daily budburst forcing by
-`K = Kmin + (1-Kmin)*min(C_before_day/Ccrit, 1)`, with fitted `Kmin` in [0,1].
+`K = Kmin + (1-Kmin)*min(C_before_day/Ccrit, 1)`, with `Kmin` fixed at 0.2
+as an experimental control, not a literature-established grapevine constant.
 This competence response follows Liu et al. (2018), Eq. (7), adapted to the
 selected forcing and chilling functions; chilling and forcing overlap and
 budburst does not require a separate full-chilling gate. These alternatives
@@ -238,14 +239,21 @@ or modelling results are changed by this workflow specification.
 
 ## Calibration and test protocol
 
-- Calibrate all adjustable process-model parameters in the calibration set,
-  including response temperatures, accumulation requirements and applicable
-  start-date parameters. Fixed units and structural constraints are not fitted
-  parameters. If the lapse rate is tuned, tune it only within calibration.
+- Fix temperature responses from literature: linear forcing base 0 °C
+  (Parker et al. 2011), beta forcing 0/25.4/35 °C (Fila et al. 2014, Fbeta5*)
+  and both chilling responses −1.7/1.7/13.2 °C (Fila CF10*). The triangular
+  transfer is an adaptation. Reuse these values across stages, sites, models
+  and temperature treatments. See `fig/model_functions/README.md` for exact
+  citations, original target stages and transfer limitations.
+- Calibrate four stage-specific forcing requirements and, when present, one
+  chilling requirement. Fix forcing-only start at January 1 and minimum
+  parallel competence at 0.2. If the lapse rate is tuned, tune it only within
+  calibration. No test errors determine fixed settings or search ranges.
 - Fit four stages jointly for each structure and temperature input, using
   matched observations and identical site-group splits. Each stage has its own
-  forcing response temperature and requirement, pooled across sites, years and
-  cultivars. Chilling parameters and parallel competence apply only to budburst.
+  forcing requirement, pooled across sites, years and cultivars. Temperature
+  response parameters are shared and fixed. The fitted chilling requirement
+  and fixed parallel competence apply only to budburst.
   A site may supply any one stage; all four stages must occur somewhere in the
   calibration dataset. Keep repeated accepted observations without aggregation.
 - Minimize the mean of the four stage-specific site-balanced RMSEs using
@@ -255,9 +263,11 @@ or modelling results are changed by this workflow specification.
   prediction date. A fit with no finite prediction for any stage is rejected.
 - Default optimizer settings are three seeds (20260907, 20260908, 20260909),
   population multiplier 15, maximum 300 generations, tolerance 0.001, one worker
-  and no polishing. Forcing-only start DOY is integer [-60,90]; default beta
-  forcing limits are fixed at 0 and 40 °C. Full parameter bounds and scientific
-  provenance are in `model/README.md`. Save settings, input fingerprints,
+  and no polishing. The active threshold-only profile has four free parameters
+  for forcing-only structures and five for chilling–forcing structures. Use
+  `model.structure_comparison.threshold_only_settings` explicitly; unrestricted
+  API defaults and previous pilot outputs are not this experiment. Full bounds
+  and scientific provenance are in `model/README.md`. Save settings, input fingerprints,
   convergence and boundary diagnostics. No real-data fit or split is generated
   automatically by the model implementation.
 - Train residual ML on out-of-fold process residuals generated within the
@@ -350,7 +360,7 @@ Two cards are connected by a one-way “Lock” arrow:
 
 | Calibration set · 80% | Test set · 20% |
 | --- | --- |
-| Calibrate all process parameters | Apply locked process / hybrid models |
+| Calibrate stage / chilling thresholds | Apply locked process / hybrid models |
 | Fit ML on out-of-fold residuals | MAE · RMSE · Bias (days) |
 | Tune within grouped inner folds | Identical held-out sites for all models |
 
