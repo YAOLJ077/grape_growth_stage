@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.0_lon+18.3",
+  "filename": "SK_pep725_601_6878.csv",
+  "first_date": "1999-01-01",
+  "last_date": "2013-12-31",
+  "max_absolute_old_dem_change_c": 0.0057442321777365635,
+  "n_finite_raw": 5479,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 5479,
+  "n_old_dem_finite": 5479,
+  "n_rows": 5479,
+  "output_sha256": "1f736c0b03c67752fa7c5388d9a352cfc5138295449b19b8f62fe898c3382234",
+  "record_sha256": "ec3eb541aca5ec96daece4493596297946e5a1117bebed1e9d195cf1e88e34f9",
+  "site": "SK:pep725:601:6878",
+  "source_had_dem": true,
+  "source_sha256": "d62046f959d1e94ddd07d3fc74f679c8e343fb6c4c63cf102e00a3b86f4fe838",
+  "status": "completed",
+  "temperature_offset_c": 1.1730083655719288
+}

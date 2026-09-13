@@ -1,0 +1,33 @@
+{
+  "feature_columns": [
+    "pbm_doy",
+    "phase_duration_days",
+    "Tmean_mean_7",
+    "Tmean_std_7",
+    "Tmean_min_7",
+    "Tmean_max_7",
+    "Tmean_mean_30",
+    "Tmean_std_30",
+    "Tmean_min_30",
+    "Tmean_max_30",
+    "Tmean_mean_90",
+    "Tmean_std_90",
+    "Tmean_min_90",
+    "Tmean_max_90",
+    "daylength_hours",
+    "dem_elevation_m",
+    "slope_deg",
+    "northness",
+    "eastness",
+    "dem_local_std_m"
+  ],
+  "predictions_hash": "b81a26fed3fa15017412bdf688c873a00a146425cccd52257af3d74e25ad631a",
+  "source_hashes": {
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model/data.py": "7c7f7964f9faa48e68e9d1d9038a1c12b2961966086cd6cdc6122397863398a3",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model/residual/data.py": "6833940481cb484ca69929198e8e878af81b7cd75d3fdaaa977343468baf285f",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/factorial/features.py": "ff6b4c67b2d138edfd6cc704223ff17d6c2bc01c9268f2049ec2121a2f1b4b2e",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_cohort_20260910/sites.csv": "c312392d321d96b4e965220699f5c24d98122f68942511be9e1cb5cd61b27da2",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_cohort_20260910/weather.csv.gz": "6c7743f6b989b1f670a300af1ef6f7e3d53be157123e19e625d6615ad955fcf7"
+  },
+  "temperature": "RAW"
+}

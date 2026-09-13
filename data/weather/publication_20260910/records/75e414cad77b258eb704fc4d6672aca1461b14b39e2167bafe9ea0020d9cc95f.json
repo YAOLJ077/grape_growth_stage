@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+48.4_lon+13.2",
+  "filename": "Bayerbach.csv",
+  "first_date": "1982-01-01",
+  "last_date": "1993-12-31",
+  "max_absolute_old_dem_change_c": 0.27564088327033787,
+  "n_finite_raw": 4383,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 4383,
+  "n_old_dem_finite": 4383,
+  "n_rows": 4383,
+  "output_sha256": "1e7b7138f2712ad961069f28d2371cb0153b4078b22e59b1afc83ddd5f83f49a",
+  "record_sha256": "f6c5cb43731377d3e839a8af37a89532f0e8732953880aca2f5ca6fb2e8ae861",
+  "site": "DE:dwd:11195",
+  "source_had_dem": true,
+  "source_sha256": "94967533141d7c0fe8e16b4ee617f8616c699fde4d952b3505a86e48855a5d99",
+  "status": "completed",
+  "temperature_offset_c": 0.28129466445962276
+}

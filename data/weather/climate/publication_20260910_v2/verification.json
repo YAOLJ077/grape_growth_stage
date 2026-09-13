@@ -1,0 +1,26 @@
+{
+  "n_sites": 3171,
+  "n_grids": 1792,
+  "normal_period": [
+    1991,
+    2020
+  ],
+  "n_months_per_grid": 12,
+  "n_summer_years_per_grid": 75,
+  "n_grid_years": 134400,
+  "normal_min_c": -11.293779692427677,
+  "normal_max_c": 26.953664776928576,
+  "summer_min_c": 2.30032800351339,
+  "summer_max_c": 23.58206091361404,
+  "all_values_finite": true,
+  "exact_native_grid_coverage": true,
+  "files": {
+    "request.json": "89a41a9a8785c598f7a8722b133886e174d11a602412353efed909e621e0069b",
+    "grids.csv": "ad74f70b0aa718819b01d01738dd890e645719bd1e6f33e53c98507c308d980f",
+    "monthly_normals.csv": "298beae77aeae573af86b931ba0653efdc78ec610aa9d86e044ef71f06b918e6",
+    "annual_summer.csv": "9978b7c3835a4fc038901774e2899c00413df4dcdc12c4ba43232f9345f2b463",
+    "export.csv": "bb5459b6886fa57be264c670c4101eaf26a5704f1faca610714d7ed3b76d88ad",
+    "export_source.py": "0c4329a1bb7f66f84dc454f70b81f95438ea2b4702244c19f13b728e202fa895",
+    "export_provenance.json": "5cdd42514778848ce29690cffb99fb15a3454d6012b489f8d0f65ba605941187"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+43.4_lon+3.0",
+  "filename": "puisserguier.csv",
+  "first_date": "1999-01-01",
+  "last_date": "2003-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 1826,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 1826,
+  "n_rows": 1826,
+  "output_sha256": "c0da1329273c58771e6e49e6903e1f2c5753ce7f9cf3b3035f7191c58a2ec90f",
+  "record_sha256": "02d78f6c97f1c20d95de2474208486cf95db32ecdf6c1d8e1e9049f5a11f54fb",
+  "site": "FR:tempo:5863",
+  "source_had_dem": true,
+  "source_sha256": "c0da1329273c58771e6e49e6903e1f2c5753ce7f9cf3b3035f7191c58a2ec90f",
+  "status": "completed",
+  "temperature_offset_c": 0.2989706173223324
+}

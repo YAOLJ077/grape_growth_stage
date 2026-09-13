@@ -1,0 +1,49 @@
+{
+  "verified_utc": "2026-09-13T15:07:38.770405+00:00",
+  "status": "passed",
+  "final_population": {
+    "observations": 74618,
+    "sites": 3169,
+    "groups": 1791,
+    "calibration_observations": 59472,
+    "test_observations": 15146
+  },
+  "canonical_input_rebuild": {
+    "retained_qc_rows": 75738,
+    "excluded_qc_rows": 1575,
+    "endpoint_support_checks": 104138,
+    "retained_and_membership_tables_byte_identical": true,
+    "quarantine_and_provenance_records_exactly_equal": true
+  },
+  "historical_figure_2": {
+    "observations": 74341,
+    "sites": 3171,
+    "all_rows_and_order_reproduced": true
+  },
+  "portable_checkout": {
+    "tracked_files_only": true,
+    "distinct_directory": true,
+    "population_and_model_verification": "passed",
+    "model_report": "reproducibility/model_verification.json"
+  },
+  "tests": {
+    "command": "NUMBA_NUM_THREADS=1 .venv/bin/python -m pytest -q",
+    "passed": 356,
+    "failed": 0,
+    "warnings": 29
+  },
+  "figures": {
+    "count": 15,
+    "command": ".venv/bin/python src/visualization/reproduce.py --build-documents",
+    "numerical_recomputation": "passed",
+    "bootstrap_replicates": 2000,
+    "detail": "fig/paper_figures/verification.json"
+  },
+  "documents": {
+    "isolated_word_rebuild": "passed",
+    "semantic_text_math_citations_images": "exact match",
+    "detail": "paper/evidence/documents/final_verification.json"
+  },
+  "full_model_retraining_performed": false,
+  "live_zotero_refresh_tested": false
+}

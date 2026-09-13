@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+51.6_lon+14.7",
+  "filename": "Jerischke.csv",
+  "first_date": "2015-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 2.220446049250313e-16,
+  "n_finite_raw": 4018,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 4018,
+  "n_rows": 4018,
+  "output_sha256": "aa9359bcdc988889d831a8f216186812a32bdaf165926395461ed0dd711b5b0c",
+  "record_sha256": "552fa3613297116c9cf1d374fc2102398a5c816303c33dfb2e0a5c1e4bc012c2",
+  "site": "DE:dwd:12268",
+  "source_had_dem": true,
+  "source_sha256": "98ac70c721d5bc5a1ddf50a2c05c72060918e79e3f03d260d2b4eaf672f6c3a6",
+  "status": "completed",
+  "temperature_offset_c": 0.05951849835444443
+}

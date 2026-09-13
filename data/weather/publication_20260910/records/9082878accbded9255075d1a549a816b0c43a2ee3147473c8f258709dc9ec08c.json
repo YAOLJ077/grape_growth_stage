@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.1_lon+9.2",
+  "filename": "Lauffen.csv",
+  "first_date": "1955-01-01",
+  "last_date": "2015-12-31",
+  "max_absolute_old_dem_change_c": 0.05259813956124937,
+  "n_finite_raw": 22280,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 22280,
+  "n_old_dem_finite": 22280,
+  "n_rows": 22280,
+  "output_sha256": "6fdbeea91391bba4a45ccf3f9c89f3c1c1240ba1e11aabbe362ed7ecd5b9a045",
+  "record_sha256": "fdbc1004ccfc6a82dfdb6ea9d158bb62c45c66590f3ef4e095993732feb6f06f",
+  "site": "DE:dwd:10406",
+  "source_had_dem": true,
+  "source_sha256": "5bf4648218aa4eb192d13ea43f14aa08af3aff3567bf5251bc7985d3f749d107",
+  "status": "completed",
+  "temperature_offset_c": 0.1635758962753953
+}

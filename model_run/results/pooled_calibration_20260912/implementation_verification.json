@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-09-12T07:45:19.989156+00:00",
+  "test_command": "NUMBA_NUM_THREADS=2 .venv/bin/python -m pytest -q tests/test_pooled_calibration.py tests/test_cleaned_reevaluation.py tests/test_cleaned_temperature_zones.py",
+  "passed": 31,
+  "failed": 0,
+  "sources": {
+    "model_run/src/calibrate_pooled_sites.py": "6b5db80b5980f8533149502942c611a9aba6c8a81b9c8539282734002cd0e6e8",
+    "model_run/src/pooled_calibration.py": "c9336ba38a335927a1d7cbf3db23bf596dc7303fe3b760dfc1b402ca5bde15bc",
+    "model_run/src/pooled_calibration_report.py": "e5458fa43eff6b2ec9334335f430f0709a692e94d3a4abc0a2350c0e4a721d29",
+    "tests/test_pooled_calibration.py": "ebc42984e3c89b7a1bd5bafeaa0beef73750f10bff2d98dfb02102d8abd5c97d",
+    "model_run/src/diagnose_pooled_coverage_bound.py": "c430ff817d571fdeb8482aaa4b35da0523bde9c766408e018182cafc7aa0dad4"
+  },
+  "reference_comparisons": "10 structures x 12 randomized parameter sets x 3 seasons, plus all-zero forcing, leap-year and chained-stage cases",
+  "smoke_scope": "FL RAW; complete cleaned calibration and test cohorts; reduced optimizer budget; canonical replay and independent metrics passed",
+  "full_budget_run": "running; this record does not establish completion",
+  "run_log": "../pooled_calibration_20260912.log",
+  "report_smoke_validation": {
+    "figure_pages": 10,
+    "all_artifact_hashes_valid": true,
+    "all_readme_links_valid": true,
+    "coverage_certificate_section_exercised": true
+  },
+  "full_budget_checkpoint_scope": "FL RAW complete, including canonical replay and independent calibration/test metrics; remaining units running"
+}

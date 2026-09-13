@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "cohort_observations": 15105,
+  "sites": 633,
+  "groups": 355,
+  "zone_metric_estimates_verified": 180,
+  "model_metric_estimates_verified": 300,
+  "source_hashes_verified": 23,
+  "equal_site_and_stage_weighting": true,
+  "sparse_intervals_missing": true,
+  "site_improvement_counts_verified": true,
+  "unit_tests": "10 passed: test_raw_structure_spatial.py and test_final_cutoff_analysis.py"
+}

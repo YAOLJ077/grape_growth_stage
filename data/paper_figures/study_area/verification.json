@@ -1,0 +1,44 @@
+{
+  "verified_utc": "2026-09-12T19:43:27.081826+00:00",
+  "observations": 74341,
+  "sites": 3171,
+  "countries": 11,
+  "panels": [
+    {
+      "panel": "a",
+      "sampled_sites": 3171,
+      "finite_site_elevations": 3171,
+      "background_dpi": [
+        600.0,
+        599.917808219178
+      ],
+      "land_missing_pixels": 0
+    },
+    {
+      "panel": "b",
+      "sampled_sites": 2678,
+      "finite_site_elevations": 2678,
+      "background_dpi": [
+        557.2747252747253,
+        557.2682926829268
+      ],
+      "land_missing_pixels": 0
+    }
+  ],
+  "tests_passed": 7,
+  "test_output": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/lib/python3.12/site-packages/rasterio/transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication\n  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)\n/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/lib/python3.12/site-packages/rasterio/merge.py:341: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication\n  output_transform = Affine.translation(dst_w, dst_n) * Affine.scale(\n/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/lib/python3.12/site-packages/rasterio/windows.py:387: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication\n  left, bottom = transform * (col_min, row_max)\n/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/lib/python3.12/site-packages/rasterio/windows.py:388: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication\n  right, top = transform * (col_max, row_min)\n/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/lib/python3.12/site-packages/rasterio/windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication\n  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)\n/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/lib/python3.12/site-packages/rasterio/windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication\n  return Affine.translation(\n/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/lib/python3.12/site-packages/rasterio/transform.py:189: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication\n  return Affine.translation(west, north) * Affine.scale(\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.295s\n\nOK\n",
+  "source_hashes": {
+    "src/phenology/plot_study_area.py": "681b4d0a5e4429d1e46f5ce94e61e04378c46c30a0d25383a41313d9191fceba",
+    "src/phenology/study_area_relief.py": "62dd869932423966a453a4ffbe355b7c0dc9eab8b06f81b5ac279196d81abb88",
+    "src/phenology/draw_map.swift": "4f664d92c132d959cc3f1b2908581b8d48551d8aeda6abcca822f3d32e28868d",
+    "data/phenology/derived/paper_targets/observations.csv": "07031bef0551209b01c1eb5b0b040f0103135089b3b5450f69eff18b49d9ebb3"
+  },
+  "artifact_sha256": {
+    "study_area.pdf": "c72c68e335dbeed14cc8b364e60aada42fdce5a746882e11de26ca056b0a1aa6",
+    "study_area.png": "201dc75f2cc749294346ce21a320c10257b7bfd3e3b4aa8cc99dbc3c893a0dec",
+    "study_area.tiff": "a0f3f611a1f9eb6f0d850d1518aaf3439a3bdc3c7683f73677efcd101ecee459",
+    "site_inventory.csv": "8e214031c4596d9a757f464804a087200f3bc0ffcf9d692e6ad1fb3e35a355ab",
+    "typography_verification.json": "bdc5bfd3e32dc01e65a573ac3291dbe9ae151cff16958018da321f74c7c2fc43"
+  },
+  "checks": "Independent source identity/year reconciliation, DEM coverage/hash/spacing checks, opaque raster exports, seven unit/integration tests and source/artifact hashes. PDF text/font/layout checks are enforced by the renderer."
+}

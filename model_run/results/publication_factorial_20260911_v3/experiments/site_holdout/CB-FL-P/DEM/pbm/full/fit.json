@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "model_name": "CB-FL-P",
+  "definition_version": "1.0.0",
+  "parameters": {
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_maximum": 13.2,
+    "minimum_response": 0.2,
+    "forcing_base_07": 0.0,
+    "forcing_base_65": 0.0,
+    "forcing_base_81": 0.0,
+    "forcing_base_89": 0.0,
+    "chilling_requirement": 129.66421060021568,
+    "forcing_requirement_07": 792.5567704108515,
+    "forcing_requirement_65": 742.8453211811731,
+    "forcing_requirement_81": 1258.4266647240734,
+    "forcing_requirement_89": 495.33618813640373
+  },
+  "temperature_input": "DEM",
+  "temperature_column": "Tmean_DEM",
+  "objective_value": 19.12460880140476,
+  "optimizer_converged": true,
+  "bounds": {
+    "chilling_minimum": [
+      -1.7,
+      -1.7
+    ],
+    "chilling_optimum": [
+      1.7,
+      1.7
+    ],
+    "chilling_maximum": [
+      13.2,
+      13.2
+    ],
+    "chilling_requirement": [
+      0.001,
+      200.0
+    ],
+    "minimum_response": [
+      0.2,
+      0.2
+    ],
+    "forcing_base_07": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_07": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_65": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_65": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_81": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_81": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_89": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_89": [
+      0.001,
+      3000.0
+    ]
+  },
+  "settings": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "minimum_response": [
+        0.2,
+        0.2
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean_DEM",
+    "temperature_input": "DEM"
+  },
+  "calibration_hash": "5c8b22335f5e336f632a8734e55804069e9f48c40132477cff69523fe3aaee6e",
+  "weather_hash": "3de9b121f2adb1a9881188521a111b430cd81f501b841b7ef0d588a2987ec484",
+  "diagnostics": {
+    "objective": "mean_stage_site_balanced_rmse",
+    "unattained_penalty_days": 1000.0,
+    "n_observations": 59199,
+    "n_sites": 2535,
+    "n_seasons": 21046,
+    "attained_by_stage": {
+      "07": 19896,
+      "65": 20998,
+      "81": 14837,
+      "89": 3467
+    },
+    "boundary_hits": [],
+    "fixed_by_equal_bounds": [
+      "chilling_minimum",
+      "chilling_optimum",
+      "chilling_maximum",
+      "minimum_response",
+      "forcing_base_07",
+      "forcing_base_65",
+      "forcing_base_81",
+      "forcing_base_89"
+    ],
+    "restarts": [
+      {
+        "seed": 20260907,
+        "objective_value": 19.12460880140476,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 22275,
+        "nit": 296
+      },
+      {
+        "seed": 20260908,
+        "objective_value": 19.128983774383695,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 22350,
+        "nit": 297
+      },
+      {
+        "seed": 20260909,
+        "objective_value": 19.1649584592628,
+        "converged": false,
+        "message": "Maximum number of iterations has been exceeded.",
+        "nfev": 22575,
+        "nit": 300
+      }
+    ],
+    "engine": "numba",
+    "compiled_backend": true
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1"
+  }
+}

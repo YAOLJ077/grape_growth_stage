@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.3_lon+8.8",
+  "filename": "Tairnbach.csv",
+  "first_date": "1950-01-02",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.28363047408976527,
+  "n_finite_raw": 27758,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 27758,
+  "n_old_dem_finite": 27758,
+  "n_rows": 27758,
+  "output_sha256": "b05e6f2dba41fcdf31163ea250bc0c554113bb9570057360fe4e5e557fed0f18",
+  "record_sha256": "80d47a79b55b98774f527cc34ffc28129f72f42efcd0d6d21ddaa64621ef0a22",
+  "site": "DE:dwd:10564",
+  "source_had_dem": true,
+  "source_sha256": "09a144d9ff5e1bacdd89d99eed5db6ad1bc1121f7e12bb9fad1bdcb3483a9da7",
+  "status": "completed",
+  "temperature_offset_c": -0.08487577309463844
+}

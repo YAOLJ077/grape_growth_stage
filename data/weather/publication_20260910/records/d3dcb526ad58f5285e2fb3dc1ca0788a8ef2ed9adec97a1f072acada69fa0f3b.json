@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.2_lon+10.2",
+  "filename": "Ellrichshausen.csv",
+  "first_date": "1986-01-01",
+  "last_date": "1999-12-31",
+  "max_absolute_old_dem_change_c": 0.04860334415153389,
+  "n_finite_raw": 5113,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 5113,
+  "n_old_dem_finite": 5113,
+  "n_rows": 5113,
+  "output_sha256": "04d1b24ca59fbcd970f597879f8501a8891d00c8f2ec6d57523b922597e8008f",
+  "record_sha256": "29023a43454b21c432df6983f8bac32b1603867d1ca21caf157a34e2b2aa041d",
+  "site": "DE:dwd:10358",
+  "source_had_dem": true,
+  "source_sha256": "6e3e4307138aadd301609ae0339fb27037c18fde91fcdfac8182a35d3c9d4a06",
+  "status": "completed",
+  "temperature_offset_c": -0.014432571846395972
+}

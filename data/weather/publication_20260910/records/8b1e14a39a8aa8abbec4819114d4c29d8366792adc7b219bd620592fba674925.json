@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+48.1_lon+7.4",
+  "filename": "colmar.csv",
+  "first_date": "1971-01-01",
+  "last_date": "2005-12-31",
+  "max_absolute_old_dem_change_c": 0.14447843398469473,
+  "n_finite_raw": 12784,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 12784,
+  "n_old_dem_finite": 12784,
+  "n_rows": 12784,
+  "output_sha256": "b92c8787db18e354a4d02b244c23636761554533f744cfbf8dc2618d745f9493",
+  "record_sha256": "46564a24d2088f8bfe6ef4097515cfa05195da2e30df5ae8a3608a66fa0820de",
+  "site": "FR:tempo:5713",
+  "source_had_dem": true,
+  "source_sha256": "98757153e7dfe16ed12c1391cbf6dd7d28b1266aa99afe7cef23da42f3c6209f",
+  "status": "completed",
+  "temperature_offset_c": 0.16545277396623637
+}

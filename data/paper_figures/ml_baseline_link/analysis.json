@@ -1,0 +1,42 @@
+{
+  "source_sha256": {
+    "paper/ml_results_20260913/model_effects.csv": "86f22719e48e3e7a7334807e42d4042082af4d81414b9f9817ab5434e2c34d51",
+    "paper/ml_results_20260913/zone_effects.csv": "8cb2780ab4c6eb66287e64ae6a1e70d8286bc68b0a316d5e0451fe01b1e49ee9",
+    "paper/ml_results_20260913/cohort_membership.csv": "7f60f71faa030206ef18c95fff5f37854d1286934d53b5bc0ab27ecdd1eb7e09",
+    "paper/ml_results_20260913/site_stage_effects.csv": "ab962eccdb8e0c7d733649b1aff2719f525e6b6687cdc3784eaa842a4cbd0cfb",
+    "paper/dem_results_20260913/site_stage_effects.csv": "f83303c2dfd695cdaa2de3ea1303d9b2de04da7acc51c1aad810081f54b441ea",
+    "paper/dem_results_20260913/paired_observation_metrics.csv.gz": "4f2eb8749d47b6426e83b9b43907823e945b29475d4a32971add60336df00c41",
+    "paper/dem_results_20260913/paired_effects.csv": "9ff375b21ce099ab99acdd4164459bb2e604342be6d34fe4b44d665922a54588",
+    "model_run/src/analyze_ml_baseline_link.py": "8fb917595004c7c62c0f2172ac9f8cbbae19c3b3ce2949abaf4328fb6892af19",
+    "model_run/src/analyze_raw_structure_spatial.py": "b9fc3abe32a27450d5f36f8c59bce67667e969b91590a3af80ae3de83656cbde"
+  },
+  "cohort": {
+    "observations": 15105,
+    "sites": 633,
+    "groups": 355,
+    "exact_identity_match": true
+  },
+  "baseline_mae_range": [
+    11.27437083697136,
+    14.610122752774494
+  ],
+  "hybrid_mae_range": [
+    8.295110283921098,
+    8.75126857200138
+  ],
+  "dem_gain_reduction_percent": 88.68977057025424,
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 20260913,
+    "resampling": "Original groups; identical group draws for process and hybrid gains",
+    "estimand": "DEM gain without ML minus DEM gain with ML"
+  },
+  "interpretation": "Descriptive baseline/gain association; gain includes baseline arithmetically. Fitted-workflow contrast, not causal mechanism identification.",
+  "existing_estimates_and_intervals_reproduced": true,
+  "output_sha256": {
+    "paired_site_stage_gains.csv": "c1f7ccfa08b34aeb61396e21cc126e2bb9a27c8834663e271f511e2683a9fda1",
+    "claim_evidence.csv": "7625ef2e273d05ea8d096ca30032413b82e7b50b8f2904f7d427255468f16956",
+    "baseline_hybrid_gain.csv": "690f546fc4251c10ad7a49b7864f70860689cdbae33797db38f79c87c322120c",
+    "paired_dem_gain_decrease.csv": "244f633c0e0448821db4df9e823f757985ef010fd8a6501f3351b13e227894bc"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+48.5_lon+8.0",
+  "filename": "Offenburg.csv",
+  "first_date": "1967-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.6531490494884054,
+  "n_finite_raw": 21550,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 21550,
+  "n_old_dem_finite": 21550,
+  "n_rows": 21550,
+  "output_sha256": "e9280b7add35aece0d94d0fff628c62f13b0c4d8af55dcb6d2a12cd9e63c363a",
+  "record_sha256": "15cbe89c44e659ae113ef65feaf6853567dc0c9c6c03cfec6548ee30c403e984",
+  "site": "DE:dwd:10752",
+  "source_had_dem": true,
+  "source_sha256": "25ec9be6bdf60dd2daf818483174d622c4c03081db030f282aee9aeaec8f02c2",
+  "status": "completed",
+  "temperature_offset_c": 0.6584820631036931
+}

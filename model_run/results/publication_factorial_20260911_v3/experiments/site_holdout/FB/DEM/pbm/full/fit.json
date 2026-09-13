@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "model_name": "FB",
+  "definition_version": "1.0.0",
+  "parameters": {
+    "start_doy": 1,
+    "forcing_minimum": 0.0,
+    "forcing_maximum": 35.0,
+    "forcing_optimum_07": 25.4,
+    "forcing_optimum_65": 25.4,
+    "forcing_optimum_81": 25.4,
+    "forcing_optimum_89": 25.4,
+    "forcing_requirement_07": 11.648666940279952,
+    "forcing_requirement_65": 25.24903880494159,
+    "forcing_requirement_81": 42.35000660495879,
+    "forcing_requirement_89": 12.639549625161678
+  },
+  "temperature_input": "DEM",
+  "temperature_column": "Tmean_DEM",
+  "objective_value": 25.412765819939718,
+  "optimizer_converged": true,
+  "bounds": {
+    "start_doy": [
+      1.0,
+      1.0
+    ],
+    "forcing_optimum_07": [
+      25.4,
+      25.4
+    ],
+    "forcing_requirement_07": [
+      0.001,
+      200.0
+    ],
+    "forcing_optimum_65": [
+      25.4,
+      25.4
+    ],
+    "forcing_requirement_65": [
+      0.001,
+      200.0
+    ],
+    "forcing_optimum_81": [
+      25.4,
+      25.4
+    ],
+    "forcing_requirement_81": [
+      0.001,
+      200.0
+    ],
+    "forcing_optimum_89": [
+      25.4,
+      25.4
+    ],
+    "forcing_requirement_89": [
+      0.001,
+      200.0
+    ]
+  },
+  "settings": {
+    "bounds": {
+      "start_doy": [
+        1,
+        1
+      ],
+      "forcing_optimum_07": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_65": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_81": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        200
+      ],
+      "forcing_optimum_89": [
+        25.4,
+        25.4
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        200
+      ]
+    },
+    "fixed_parameters": {
+      "forcing_minimum": 0.0,
+      "forcing_maximum": 35.0
+    },
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean_DEM",
+    "temperature_input": "DEM"
+  },
+  "calibration_hash": "5c8b22335f5e336f632a8734e55804069e9f48c40132477cff69523fe3aaee6e",
+  "weather_hash": "faaf05fa3e81432d5bc27b244667b611cd3c4fc91b59dea847c38f3df31b2bde",
+  "diagnostics": {
+    "objective": "mean_stage_site_balanced_rmse",
+    "unattained_penalty_days": 1000.0,
+    "n_observations": 59199,
+    "n_sites": 2535,
+    "n_seasons": 21046,
+    "attained_by_stage": {
+      "07": 19896,
+      "65": 20998,
+      "81": 14832,
+      "89": 3461
+    },
+    "boundary_hits": [],
+    "fixed_by_equal_bounds": [
+      "start_doy",
+      "forcing_optimum_07",
+      "forcing_optimum_65",
+      "forcing_optimum_81",
+      "forcing_optimum_89"
+    ],
+    "restarts": [
+      {
+        "seed": 20260907,
+        "objective_value": 25.448008083122787,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 10575,
+        "nit": 140
+      },
+      {
+        "seed": 20260908,
+        "objective_value": 25.412765819939718,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 10575,
+        "nit": 140
+      },
+      {
+        "seed": 20260909,
+        "objective_value": 25.413202053247748,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 11850,
+        "nit": 157
+      }
+    ],
+    "engine": "numba",
+    "compiled_backend": true
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1"
+  }
+}

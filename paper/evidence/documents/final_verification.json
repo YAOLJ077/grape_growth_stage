@@ -1,0 +1,38 @@
+{
+  "verified_utc": "2026-09-13T15:07:38.770405+00:00",
+  "status": "passed",
+  "pdfs": [
+    {
+      "document": "paper/manuscript.pdf",
+      "sha256": "a2d62c4c936b9b7f519ab56e131f1285f5cd0b9ef4f3fb58f6d44c3d39884638",
+      "pages": 53,
+      "scientific_text_matches_reproduction": true,
+      "normalized_text_sha256": "e50b3fb8c39350abe62b8b556a95bade724f94e2fb040923dfa77b5626c2e3a7"
+    },
+    {
+      "document": "paper/supplementary.pdf",
+      "sha256": "29d004bb723528260ac3eb97116be1dcea8ddfe754b2f09d383534667f45b3e7",
+      "pages": 27,
+      "scientific_text_matches_reproduction": true,
+      "normalized_text_sha256": "35bad73ed31daac1a35532d79775c0cbda3a676c41ec7ce84f0aa933059a8e5a"
+    },
+    {
+      "document": "paper/eja_submission/cover_letter.pdf",
+      "sha256": "86baf8c07740a99d33a12ad151d245a125cbc19aee0fe2bdfff02ce4adf8ac96",
+      "pages": 1,
+      "scientific_text_matches_reproduction": true,
+      "normalized_text_sha256": "f1eaee6717391f84cd35f34d8a0aafe854df2e06bdfcaa22d61bfd4f804b60e0"
+    }
+  ],
+  "expanded_tex_sha256": {
+    "manuscript": "ce9d8f48732257a0f604c240f95d957599a7d9bab87990828251aabea54ba864",
+    "supplementary": "508cdd30b87990d58c46c3484a4b7344c7892d85518314fb784dc843b613e280"
+  },
+  "word_content_math_fields_images_preferences_match_reproduction": true,
+  "word_verification": "paper/evidence/documents/verification.json",
+  "citation_verification": "paper/evidence/documents/citations.json",
+  "content_fingerprints": "paper/evidence/documents/content_fingerprints.json",
+  "new_native_word_rendering_performed": false,
+  "live_zotero_refresh_tested": false,
+  "layout_scope": "Scientific text is preserved by the PDF build. Paragraph page breaks and vertical placement may reflow during recompilation; binary PDF identity is not required."
+}

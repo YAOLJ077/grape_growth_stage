@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.2_lon+8.8",
+  "filename": "Michelfeld.csv",
+  "first_date": "1950-01-02",
+  "last_date": "1995-12-31",
+  "max_absolute_old_dem_change_c": 1.7763568394002505e-15,
+  "n_finite_raw": 16800,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 16800,
+  "n_rows": 16800,
+  "output_sha256": "b10ceef3b95e511ef73226cc41436aebe8c8b650e46d1c58a58217028d2d468f",
+  "record_sha256": "2f1229434b59e5ab88a58c1fea664dfc50c2e673bfcd2ec85c6108eb13ab8180",
+  "site": "DE:dwd:10623",
+  "source_had_dem": true,
+  "source_sha256": "4913ba3b52140088f73c654c61652dd6945e512223be6528708d601b4c466adf",
+  "status": "completed",
+  "temperature_offset_c": 0.21775059584444917
+}

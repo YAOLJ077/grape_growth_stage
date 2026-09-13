@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.7_lon+9.7",
+  "filename": "Werbach.csv",
+  "first_date": "1961-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.038616355627247856,
+  "n_finite_raw": 23741,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 23741,
+  "n_old_dem_finite": 23741,
+  "n_rows": 23741,
+  "output_sha256": "3a4c040b9c92319bd5a1de41a8e59f9869f2d5bfa84b43bd57644a45f7b92a28",
+  "record_sha256": "378698fd543f52b2e8d985acdf8f202f9b1c8242608b9eb1c3638af2e6fee901",
+  "site": "DE:dwd:10643",
+  "source_had_dem": true,
+  "source_sha256": "8e5394bc7ace4c84058c6dff0c6d5964e14d0a8b16ea03a6cb0d71a79607a214",
+  "status": "completed",
+  "temperature_offset_c": 0.7536490863186938
+}

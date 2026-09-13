@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+46.2_lon+6.2",
+  "filename": "CH_tempo_5747.csv",
+  "first_date": "1968-01-01",
+  "last_date": "2005-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 13880,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 0,
+  "n_rows": 13880,
+  "output_sha256": "6213ca3fe7f6bab9643604ad53932a45cede225f5a5ee37c3dbe989923203760",
+  "record_sha256": "35146f80deef1aa06db5a08e69be4aa53384426d5688ee3664b8740123c68325",
+  "site": "CH:tempo:5747",
+  "source_had_dem": false,
+  "source_sha256": "65e3148052a6823ac87a404db12612db2e1dec350d55328c8b3deee329ceb675",
+  "status": "completed",
+  "temperature_offset_c": 0.5962948503034338
+}

@@ -1,0 +1,9 @@
+family,level,display_label,mae_days
+forcing_response,FL,Linear,11.955185506702469
+forcing_response,FB,Beta,13.21297005139966
+chilling_response,CL,Triangular,12.574482736648248
+chilling_response,CB,Beta,12.284298192384083
+interaction,S,Sequential,11.722091220573812
+interaction,P,Parallel,13.136689708458515
+chilling_addition,F,Forcing-only,13.205175736348142
+chilling_addition,C + F,Chilling–forcing,12.428803289726797

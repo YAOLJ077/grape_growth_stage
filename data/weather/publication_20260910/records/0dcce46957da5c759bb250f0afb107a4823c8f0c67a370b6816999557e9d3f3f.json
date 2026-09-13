@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+46.9_lon+5.8",
+  "filename": "pupillin.csv",
+  "first_date": "1950-01-02",
+  "last_date": "1976-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 9861,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 9861,
+  "n_rows": 9861,
+  "output_sha256": "1ac6ed8b09657f741dc90fe84509d351648b7a73fb4181e327324968e2cf6ecf",
+  "record_sha256": "c2b53527a81332f14130a7410f8f2894f7c6a0375065813df06c41f1fdb9ec00",
+  "site": "FR:tempo:5866",
+  "source_had_dem": true,
+  "source_sha256": "1ac6ed8b09657f741dc90fe84509d351648b7a73fb4181e327324968e2cf6ecf",
+  "status": "completed",
+  "temperature_offset_c": -0.1659523038247989
+}

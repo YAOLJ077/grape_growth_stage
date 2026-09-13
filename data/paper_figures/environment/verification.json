@@ -1,0 +1,19 @@
+{
+  "verified": true,
+  "site_rows": 3169,
+  "calibration_sites": 2534,
+  "test_sites": 635,
+  "all_coordinates_match_frozen_cohort": true,
+  "all_zone_and_partition_assignments_match_original_protocol": true,
+  "centroid_bytes_unchanged": true,
+  "counts_independently_reconciled": true,
+  "all_sites_inside_map_extent": true,
+  "manuscript_figure_visually_inspected": true,
+  "manuscript_figure_page": 19,
+  "data_sha256": {
+    "environmental_zone_stage_partition_counts.csv": "78d1692c5b0285e380d4236a9ecfcf0feed3a71905ae7bac80331b787a909c99",
+    "environmental_zone_partition_counts.csv": "1d72ea2c7916fee38e091ae808aa79e8a30a674d971ea3fbd37d124e79e66423",
+    "environmental_zone_monthly_centres.csv": "ec7ec4f0f7795441a4d514883a348afd4234ed07bc6c6b769a60dec9932d2ec8",
+    "environmental_zone_sites.csv": "dc31e39de19e562274b04685c4d64af5f71fb3872a1b64dec92ac122a6ab3dec"
+  }
+}

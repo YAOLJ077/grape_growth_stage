@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+47.3_lon+9.4",
+  "filename": "CH_pep725_501_6717.csv",
+  "first_date": "2019-01-01",
+  "last_date": "2022-12-31",
+  "max_absolute_old_dem_change_c": 1.7763568394002505e-15,
+  "n_finite_raw": 1461,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 1461,
+  "n_rows": 1461,
+  "output_sha256": "a1dfd8ebc1a55e72f3987e588ccaf356b6a66fad0b992f3c44e92177c73f0ab0",
+  "record_sha256": "b127e145cfd9b002fbf1667dc32b78b7cd9f37d24d246845c44cbb1db35ab2de",
+  "site": "CH:pep725:501:6717",
+  "source_had_dem": true,
+  "source_sha256": "797bda9a92e1006f41e98c99db60174fbd5134818d1cfca44a1ec3393647c8ea",
+  "status": "completed",
+  "temperature_offset_c": 1.4794096428083876
+}

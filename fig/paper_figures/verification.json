@@ -1,0 +1,402 @@
+{
+  "verified": true,
+  "built_utc": "2026-09-13T14:59:20.583589+00:00",
+  "scope": "Recompute published scoring-error statistics and figures from locked predictions, frozen covariates, observations and map inputs; no model retraining",
+  "figures": [
+    {
+      "id": "Fig_01",
+      "width_inches": 7.800000000000001,
+      "height_inches": 9.696349375,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 1.9373973333333334,
+      "png_reference_correlation_500px": 0.9878895347362171,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_02",
+      "width_inches": 7.800000000000001,
+      "height_inches": 5.719999791666667,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 1.631368,
+      "png_reference_correlation_500px": 0.9887634295939784,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_03",
+      "width_inches": 7.800000000000001,
+      "height_inches": 3.380000708333333,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 0.597968,
+      "png_reference_correlation_500px": 0.9929816596976372,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_04",
+      "width_inches": 7.800000000000001,
+      "height_inches": 6.283333333333334,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 1.454556,
+      "png_reference_correlation_500px": 0.9861136140800553,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_05",
+      "width_inches": 7.800000000000001,
+      "height_inches": 5.720000000000001,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 1.5592253333333332,
+      "png_reference_correlation_500px": 0.9955241819959318,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_06",
+      "width_inches": 7.800000000000001,
+      "height_inches": 3.466666666666667,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 0.4331413333333333,
+      "png_reference_correlation_500px": 0.992909242737226,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_07",
+      "width_inches": 7.800000000000001,
+      "height_inches": 6.5,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 0.9843253333333334,
+      "png_reference_correlation_500px": 0.9840700328571691,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_08",
+      "width_inches": 7.800000000000001,
+      "height_inches": 7.583333333333333,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 0.8889346666666667,
+      "png_reference_correlation_500px": 0.9851966644084269,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_09",
+      "width_inches": 7.800000000000001,
+      "height_inches": 7.800000000000001,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 1.798528,
+      "png_reference_correlation_500px": 0.9910804804769455,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_10",
+      "width_inches": 7.800000000000001,
+      "height_inches": 7.0633333333333335,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 1.2025106666666667,
+      "png_reference_correlation_500px": 0.9867417279368487,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_S01",
+      "width_inches": 7.800000000000001,
+      "height_inches": 5.720000000000001,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 0.8236306666666666,
+      "png_reference_correlation_500px": 0.9934909390990535,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_S02",
+      "width_inches": 7.800000000000001,
+      "height_inches": 3.986666666666667,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 0.903952,
+      "png_reference_correlation_500px": 0.9932320320611897,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_S03",
+      "width_inches": 7.800000000000001,
+      "height_inches": 8.233333333333334,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 0.4788,
+      "png_reference_correlation_500px": 0.9937177945163149,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_S04",
+      "width_inches": 7.800000000000001,
+      "height_inches": 3.683333333333333,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 0.7459026666666667,
+      "png_reference_correlation_500px": 0.979552392685764,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    },
+    {
+      "id": "Fig_S05",
+      "width_inches": 7.800000000000001,
+      "height_inches": 6.89,
+      "text_glyphs_match_original": true,
+      "editable_vector_text": true,
+      "png_reference_mean_absolute_pixel_error_500px": 1.8618386666666666,
+      "png_reference_correlation_500px": 0.9900792093559474,
+      "png_width_px": 2340,
+      "png_dpi": 300
+    }
+  ],
+  "numerical_row_checks": [
+    {
+      "output": "plotted_values.csv",
+      "reference": "pbm/plotted_values.csv",
+      "rows": 180,
+      "matched": true
+    },
+    {
+      "output": "function_plotted_values.csv",
+      "reference": "structure/function_plotted_values.csv",
+      "rows": 8,
+      "matched": true
+    },
+    {
+      "output": "cb_fl_s_zone_plotted_values.csv",
+      "reference": "structure/cb_fl_s_zone_plotted_values.csv",
+      "rows": 17,
+      "matched": true
+    },
+    {
+      "output": "dem_figure_values.csv",
+      "reference": "dem/figure_values.csv",
+      "rows": 39,
+      "matched": true
+    },
+    {
+      "population_observations": 74618,
+      "population_sites": 3169,
+      "primary_partitions_and_groups_verified": true,
+      "cohort_membership_rows": 15146
+    }
+  ],
+  "statistical_recomputation": [
+    {
+      "table": "process/hybrid scoring metrics",
+      "rows": 360,
+      "verified": true
+    },
+    {
+      "table": "structure/function_performance.csv",
+      "rows": 140,
+      "matched_columns": [
+        "family",
+        "BBCH",
+        "metric",
+        "value",
+        "ci_low",
+        "ci_high",
+        "ci_status",
+        "n_observations",
+        "n_sites",
+        "n_groups"
+      ],
+      "verified": true
+    },
+    {
+      "table": "structure/cb_fl_s_zone_metrics.csv",
+      "rows": 75,
+      "matched_columns": [
+        "temperature_zone_id",
+        "BBCH",
+        "metric",
+        "value",
+        "ci_low",
+        "ci_high",
+        "ci_status",
+        "n_observations",
+        "n_sites",
+        "n_groups"
+      ],
+      "verified": true
+    },
+    {
+      "table": "dem/model_effects.csv",
+      "rows": 800,
+      "matched_columns": [
+        "cohort",
+        "model",
+        "BBCH",
+        "metric",
+        "value",
+        "ci_low",
+        "ci_high",
+        "ci_status",
+        "n_observations",
+        "n_sites",
+        "n_groups"
+      ],
+      "verified": true
+    },
+    {
+      "table": "dem/paired_effects.csv",
+      "rows": 2360,
+      "matched_columns": [
+        "stratum",
+        "level",
+        "BBCH",
+        "metric",
+        "value",
+        "ci_low",
+        "ci_high",
+        "ci_status",
+        "n_observations",
+        "n_sites",
+        "n_groups"
+      ],
+      "verified": true
+    },
+    {
+      "table": "ml/zone_effects.csv",
+      "rows": 180,
+      "matched_columns": [
+        "comparison",
+        "zone",
+        "BBCH",
+        "metric",
+        "value",
+        "ci_low",
+        "ci_high",
+        "ci_status",
+        "n_observations",
+        "n_sites",
+        "n_groups"
+      ],
+      "verified": true
+    },
+    {
+      "table": "ml/model_effects.csv",
+      "rows": 300,
+      "matched_columns": [
+        "comparison",
+        "model",
+        "BBCH",
+        "metric",
+        "value",
+        "ci_low",
+        "ci_high",
+        "ci_status",
+        "n_observations",
+        "n_sites",
+        "n_groups"
+      ],
+      "verified": true
+    },
+    {
+      "table": "ml/support.csv",
+      "rows": 8,
+      "all_counts_recomputed": true
+    }
+  ],
+  "data_manifest_sha256": "6dfe9eb46001a998d2bdf2707c7b72478640a6758d25a9577db243648158e4d7",
+  "code_sha256": {
+    "src/visualization/draw_map.swift": "4f664d92c132d959cc3f1b2908581b8d48551d8aeda6abcca822f3d32e28868d",
+    "src/visualization/pack_predictions.py": "532fd06396cbd12df04f529e28f98483b9fa4d7c5d53517dd404291e9bf12090",
+    "src/visualization/draw_workflow.swift": "4b566512a7bb958fd55e9c341cc11a722941f2d059bfab82909ca77c43d7699c",
+    "src/visualization/render_coverage.py": "dba020c5788fbadc4c2dd877428f04ba2be5e6945d82f7ffaa162934114e7d5a",
+    "src/visualization/render_environment.py": "537d463b52026eac1b3ad0a6791e7f7d234f8cfa37a5bde40fde4c3ef76cea36",
+    "src/visualization/reproduce.py": "5c72e18bae4536a316d4228af9f474f475e8df2d3207bc11a03d63c4f9e6b09c",
+    "src/visualization/render_ml.py": "a59dcedf34d30de83724e6c7f01569dab90b4e9511bd2a512daa5b9efc6d4425",
+    "src/visualization/audit_pdf.swift": "03bd915fab1455d93912bdff7855ff6756befe89c8afc54547324ac33eb0e89d",
+    "src/visualization/recompute_results.py": "406b4eb8d019eadd5c36dacbc37c3934c5d22956b5d473fb3089933afec066d1",
+    "src/visualization/render_dem.py": "6c2f211bacc10355415078061c49b54aa08098339d8e9f2ad53e2a2d4f8b96c9",
+    "src/visualization/export_figures.swift": "7e932da396a2a0bcb4c2a81a6358152eb9d288566fa7001e5160dec3347445bb",
+    "src/visualization/render_pbm.py": "b9afdb4b96e004e7fe724e2eac83fae2da0ea6afdc51c95e62465cfc0dfebdce",
+    "src/visualization/draw_temperature_responses.swift": "ec6ab2088075504a6469c720c2ed617d0e6a5fb7f3afd9789e08042de570be0d",
+    "src/visualization/render_zone_distribution.py": "1171072966b28210abb9690507e389c54a9800168c38ba9ca9c01fcd66d8e0e7",
+    "src/visualization/group_bootstrap.py": "ee4885f1c825c117f3588014980a36b7073dc7b317ed0b64cc01e5b3527338df",
+    "src/visualization/render_structure.py": "f600e4543a3690b4080a223e4d0d1929e2bec96ac8c7965bad14c35aa507b44d",
+    "src/visualization/common.py": "8fd86375457486ecc793cfe8617e338c54afe18defe0a6d7d1cc936e7b9ef2eb"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 14 2026, 15:24:41) [Clang 22.1.3 ]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "matplotlib": "3.11.1",
+    "Pillow": "12.3.0",
+    "pypdf": "6.18.1",
+    "platform": "darwin"
+  },
+  "artifacts": {
+    "Fig_05.png": "79bfe097d1d3127e2bf79d7fbdb84db4dc550993934ba8c850553ff990fbf6f0",
+    "Fig_07.pdf": "b87d7761a7f47839f49455e8cea4462e3c99dcb7c40d88ef5742841eca19cf5f",
+    "Fig_06.pdf": "75324aaf3bd2a7c7de9c8473eb1214375eb6e3e14cf93e08e77756a0f395e2de",
+    "Fig_10.png": "73b7e49f54f4cd6b5d8675471c02b6ede397a36c0c4c627fd525acdda1237d27",
+    "Fig_04.png": "b2d1a267f24f19dd3b4cd37ba39bcce83105d671022562c8d4867a39eb85ac37",
+    "Fig_06.png": "53fbc39c137c17fe704d0d87261273996b8031b1cb8f1f829aeab095cbd5a884",
+    "Fig_04.pdf": "b7c18d42ad46d48fcd46a70c6fad07efe653669687983d9999bc1593c91c90b4",
+    "Fig_10.pdf": "d683e836144414ff2c93c2ba35c043f4d6b1c5172b96aea2c269b3dcbaaa90b3",
+    "Fig_05.pdf": "adc285993810d11dbdc97b5bcf95f2873c99f3e79c1f0cdc62697bbf07916df3",
+    "Fig_07.png": "dcbcaa7898e993d09e6e61b416336589acd73586b1fa60d37bb9d469cb942075",
+    "Fig_03.png": "2fd7f80bf767f1c8f138ecf783b12dbedfaea5456b79044da3de82b4599567d3",
+    "Fig_01.pdf": "e98b05d09e2ef12d169931ede8df9d807e209f1e16dc0ba6b137817e419b4d0f",
+    "Fig_02.png": "f7c4b2d400546aefdaf59440a9a9dbb253f5a5cfb6928a482fa4e01ba555b4df",
+    "Fig_02.pdf": "4c318358efd873983bab5ecd16ac25ad15f753521a4c6bb04453ad56846c61c1",
+    "Fig_03.pdf": "697ea4b728431851c55d6ba80d062a4c225e1694c8bcde15e10f7f5956319073",
+    "Fig_01.png": "0e72243a6d35279359bba66752bf47e69de446bb7e3369fbf1f26c8d05738425",
+    "Fig_S04.png": "7ea22efa1c61627de30bab8545b1e08641caac805345a9689235e99518c588e3",
+    "Fig_S05.png": "451fdf45e69f12104048279aae885fdf256dc9692008383d8295565fe52b1eb7",
+    "Fig_S05.pdf": "69c076e51427caa2d3c791ded8bf7789065b2896c0408620c5000ce78c650a1c",
+    "Fig_S04.pdf": "6016b747227c431c58d7c751ee5fcc35b8cbef2ae6b7918c0fe631daa9321db8",
+    "Fig_S02.png": "e8005e70accaab960322353de4fa708dd5ea15893aa269ea87acaa039922f7be",
+    "Fig_S03.png": "964f3f7580b54a702e5186bb2401e6fc9e1ce4bb79a8d861e577d141da8f5348",
+    "Fig_S01.pdf": "b8750362ff87819cd93f7b44309833bd1669b6374f4dfdc695df2a768e45dd40",
+    "Fig_S03.pdf": "cbee24e72ee2b7d0a8f529f065f56253839e5185074cf5292490f8645ae5bb67",
+    "Fig_S01.png": "8c053c30e46f0f7f5aa2818c9fa7184775101efd3d19d856d396661040d69a62",
+    "Fig_S02.pdf": "f926a0e857a00a13efd1213591e91094e5e4014670c6656c4a591abd089654b3",
+    "Fig_08.pdf": "9f5656c54f4662227602107646412e8ac6d0c1237998b22da0f624b9c7fccb86",
+    "Fig_09.pdf": "975a129e5e03e27205d0182782ea553f7be9039cc4b646f9fa58cbae288fb26d",
+    "Fig_09.png": "65600a4a0fafadb9d1ec393ad91e97198da38d88293305f3a0e308fd5ce2e3f3",
+    "Fig_08.png": "2cbd25150ab47c10aeecbb3da3197ac9f247fbaed98699bc9e5cdbb39412478d"
+  },
+  "documents": {
+    "manuscript": {
+      "pages": 53,
+      "pdf_sha256": "a2d62c4c936b9b7f519ab56e131f1285f5cd0b9ef4f3fb58f6d44c3d39884638",
+      "source_sha256": "ce9d8f48732257a0f604c240f95d957599a7d9bab87990828251aabea54ba864",
+      "figure_count": 10,
+      "numbering_verified": true,
+      "no_undefined_references_or_overfull_boxes": true
+    },
+    "supplementary": {
+      "pages": 27,
+      "pdf_sha256": "29d004bb723528260ac3eb97116be1dcea8ddfe754b2f09d383534667f45b3e7",
+      "source_sha256": "047eb1344c9c9d9deda361bd5dba2639c756e062062f7446b60547ffe9f43d9e",
+      "figure_count": 5,
+      "numbering_verified": true,
+      "no_undefined_references_or_overfull_boxes": true
+    }
+  },
+  "elapsed_seconds": 39.43
+}

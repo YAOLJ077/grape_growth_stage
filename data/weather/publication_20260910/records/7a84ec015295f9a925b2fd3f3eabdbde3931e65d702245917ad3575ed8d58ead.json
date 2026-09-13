@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.3_lon+8.2",
+  "filename": "Freimersheim.csv",
+  "first_date": "1975-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 18628,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 18628,
+  "n_rows": 18628,
+  "output_sha256": "298b40d4d58abfda8068b2903f643472837834427ea512c946587717063a1506",
+  "record_sha256": "5026aa58f176bfe4fa14e672a173347bad27917c4d6ccd595b10d3fd009db75c",
+  "site": "DE:dwd:10261",
+  "source_had_dem": true,
+  "source_sha256": "298b40d4d58abfda8068b2903f643472837834427ea512c946587717063a1506",
+  "status": "completed",
+  "temperature_offset_c": 0.3235428765792296
+}

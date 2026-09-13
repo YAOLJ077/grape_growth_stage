@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.7_lon+10.0",
+  "filename": "Winterhausen.csv",
+  "first_date": "1950-01-02",
+  "last_date": "2016-12-31",
+  "max_absolute_old_dem_change_c": 8.881784197001252e-16,
+  "n_finite_raw": 24471,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 24471,
+  "n_rows": 24471,
+  "output_sha256": "37ce03140b465f0451ea447d6d465c953389dad3b69e4a074596b14c48b6be27",
+  "record_sha256": "c14be9be05bc1e0eae97f0b25ff7ec423bda9b18f221a6cadb070aa04c884a7e",
+  "site": "DE:dwd:11897",
+  "source_had_dem": true,
+  "source_sha256": "0d3726345e6e23446cd28139b58e180838c9da672147d414dc2b45ec26ea0b80",
+  "status": "completed",
+  "temperature_offset_c": 0.5024030887691455
+}

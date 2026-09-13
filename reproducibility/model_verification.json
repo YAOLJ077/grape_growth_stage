@@ -1,0 +1,179 @@
+{
+  "verified": true,
+  "distinct_hashed_files": 7451,
+  "process_units": 20,
+  "hybrid_units": 20,
+  "population": {
+    "observations": 74618,
+    "sites": 3169,
+    "groups": 1791
+  },
+  "metric_arithmetic": true,
+  "canonical_process_replay_units": 0,
+  "checks": {
+    "median_cutoff_calibration_20260912": {
+      "FL/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "FL/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "FB/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "FB/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FL-S/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FL-S/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FL-P/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FL-P/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FL-S/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FL-S/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FL-P/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FL-P/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FB-S/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FB-S/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FB-P/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FB-P/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FB-S/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FB-S/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FB-P/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FB-P/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      }
+    },
+    "median_cutoff_ml_20260912": {
+      "FL/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "FL/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "FB/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "FB/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FL-S/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FL-S/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FL-P/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FL-P/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FL-S/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FL-S/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FL-P/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FL-P/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FB-S/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FB-S/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FB-P/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CL-FB-P/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FB-S/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FB-S/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FB-P/RAW": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      },
+      "CB-FB-P/DEM": {
+        "prediction_rows": 149236,
+        "metric_rows": 32
+      }
+    }
+  }
+}

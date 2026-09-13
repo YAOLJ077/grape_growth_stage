@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+48.4_lon+13.3",
+  "filename": "Pocking.csv",
+  "first_date": "2018-01-01",
+  "last_date": "2019-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 730,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 730,
+  "n_rows": 730,
+  "output_sha256": "cca98e6c862a3ddc663ae721506742d6e5c6a56d5ff900d315fc4ea6a040e75d",
+  "record_sha256": "976f13718988ed48945fd9e82ce3371ff959dff071a3b63fbb3a0a23345a6830",
+  "site": "DE:dwd:11203",
+  "source_had_dem": true,
+  "source_sha256": "cca98e6c862a3ddc663ae721506742d6e5c6a56d5ff900d315fc4ea6a040e75d",
+  "status": "completed",
+  "temperature_offset_c": 0.08751781130202436
+}

@@ -1,0 +1,18 @@
+{
+  "pid": 47447,
+  "started_at": "2026-09-12T18:02:21.756856+00:00",
+  "command": [
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/bin/python",
+    "-u",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/src/calibrate_median_cutoff.py",
+    "--threads",
+    "7",
+    "--output",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/median_cutoff_calibration_20260912"
+  ],
+  "log": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/median_cutoff_calibration_20260912.log",
+  "maximum_combined_compute_threads": 7,
+  "competing_pid": null,
+  "reserved_threads": 0,
+  "resumed_from": "execution_history/threads_3_to_7"
+}

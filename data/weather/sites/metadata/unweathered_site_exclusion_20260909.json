@@ -1,0 +1,42 @@
+{
+  "reason": "No ERA5-Land daily values returned after authenticated retry",
+  "missing_manifest": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/weather/sites/metadata/subsets/17cf5d2d428c8db8/manifest.csv",
+  "missing_manifest_sha256": "131718f02d3f949d7642d395b53ee6e77a364c25bcc9fab9853b8d9f4d4676ae",
+  "removed_site_uids": [
+    "DE:pep725:101:1009",
+    "DE:pep725:101:1028",
+    "DE:pep725:101:308",
+    "DE:pep725:101:332",
+    "DE:pep725:101:797",
+    "DE:pep725:101:823",
+    "DE:pep725:101:904",
+    "FR:tempo:201764",
+    "FR:tempo:25766",
+    "FR:tempo:25881",
+    "FR:tempo:26632",
+    "FR:tempo:28587",
+    "FR:tempo:28611",
+    "FR:tempo:28655",
+    "FR:tempo:28658",
+    "FR:tempo:37174",
+    "FR:tempo:40363",
+    "FR:tempo:414350",
+    "FR:tempo:44308",
+    "FR:tempo:45350",
+    "FR:tempo:45424",
+    "FR:tempo:48863",
+    "FR:tempo:48886",
+    "FR:tempo:55707",
+    "FR:tempo:7464",
+    "FR:tempo:75776",
+    "HR:pep725:2101:19299"
+  ],
+  "removed_sites": 27,
+  "removed_observations": 892,
+  "remaining_sites": 3171,
+  "remaining_observations": 74341,
+  "source_sha256_after": {
+    "sites": "0f7ce7d02c1cd26f73ab43cc00671312a39c6254af3e262475124774d7068eb1",
+    "observations": "07031bef0551209b01c1eb5b0b040f0103135089b3b5450f69eff18b49d9ebb3"
+  }
+}

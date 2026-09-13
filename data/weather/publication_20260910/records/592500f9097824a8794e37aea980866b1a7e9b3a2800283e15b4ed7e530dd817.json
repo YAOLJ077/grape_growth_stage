@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.8_lon+6.8",
+  "filename": "Kirsch.csv",
+  "first_date": "1965-01-01",
+  "last_date": "2012-12-31",
+  "max_absolute_old_dem_change_c": 0.2569985046916674,
+  "n_finite_raw": 17532,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 17532,
+  "n_old_dem_finite": 17532,
+  "n_rows": 17532,
+  "output_sha256": "77f232c3a87cbe5ace0681d39113348765bff6981d4dac262c231ecf31e9363c",
+  "record_sha256": "6b256ad8859dc9bc30c99ad1e76a4a01549d68bf4c8726b997f5d33ca270de70",
+  "site": "DE:dwd:10123",
+  "source_had_dem": true,
+  "source_sha256": "38fadb6ba0f30652c67a2b9bdb90890e7b6350f1f87e127ebfe48e27f3f97d4b",
+  "status": "completed",
+  "temperature_offset_c": 1.2139307181910068
+}

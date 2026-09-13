@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.6_lon+10.4",
+  "filename": "Berolzheim.csv",
+  "first_date": "1964-01-01",
+  "last_date": "2007-12-31",
+  "max_absolute_old_dem_change_c": 0.31558883736748555,
+  "n_finite_raw": 16071,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 16071,
+  "n_old_dem_finite": 16071,
+  "n_rows": 16071,
+  "output_sha256": "d0a3cb836eaf91fca8f326ce472f09a24f503d091ec535d176af9971ec555b5c",
+  "record_sha256": "97c88d3164b08a5854686f92ab18efc739fc6004a550403ac005774d52749d52",
+  "site": "DE:dwd:11719",
+  "source_had_dem": true,
+  "source_sha256": "2dd3dd56b461fb710249b30a416e65c1c6b1547d0bd23a8bbe6c6d8e9acfd9d8",
+  "status": "completed",
+  "temperature_offset_c": 0.13128928428673617
+}

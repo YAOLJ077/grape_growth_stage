@@ -1,0 +1,60 @@
+{
+  "model": "CL-FB-P",
+  "temperature": "DEM",
+  "calibration_observations": 59472,
+  "test_observations": 15146,
+  "residual_definition": "observed date minus raw fold-specific process date",
+  "feature_columns": [
+    "pbm_doy",
+    "phase_duration_days",
+    "Tmean_mean_7",
+    "Tmean_std_7",
+    "Tmean_min_7",
+    "Tmean_max_7",
+    "Tmean_mean_30",
+    "Tmean_std_30",
+    "Tmean_min_30",
+    "Tmean_max_30",
+    "Tmean_mean_90",
+    "Tmean_std_90",
+    "Tmean_min_90",
+    "Tmean_max_90",
+    "daylength_hours",
+    "dem_elevation_m",
+    "slope_deg",
+    "northness",
+    "eastness",
+    "dem_local_std_m"
+  ],
+  "excluded_features": [
+    "observed date",
+    "site",
+    "country",
+    "year",
+    "variety"
+  ],
+  "early_stopping": "four nested calibration folds; no outer test tuning",
+  "seeds": [
+    20260907,
+    20260908,
+    20260909
+  ],
+  "configuration": {
+    "n_blocks": 2,
+    "d_block": 128,
+    "k": 16,
+    "dropout": 0.1,
+    "n_bins": 16,
+    "d_embedding": 16,
+    "lr": 0.002,
+    "weight_decay": 0.0003,
+    "batch_size": 256,
+    "max_epochs": 300,
+    "patience": 30,
+    "threads": 7
+  },
+  "scoring_cutoff": "11-04",
+  "calibration_metrics": "apparent full-fit predictions, not out-of-fold accuracy",
+  "nonattainment": "no residual for unattained PBM; 81/89 retain cutoff scoring",
+  "prediction_context": "retrospective; weather windows end at raw PBM predicted date"
+}

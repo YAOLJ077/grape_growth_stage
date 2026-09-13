@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.4_lon+8.2",
+  "filename": "Deidesheim.csv",
+  "first_date": "1984-01-01",
+  "last_date": "2026-08-25",
+  "max_absolute_old_dem_change_c": 1.7763568394002505e-15,
+  "n_finite_raw": 15578,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 15578,
+  "n_rows": 15578,
+  "output_sha256": "aef6cf01ff02e20905fecd7395aebf81f19e89d2dc47609bfa091cc86683bda1",
+  "record_sha256": "0edd54b2b463f3cb5b24755d9bc9c44a67608bb2ef3191b5c9452c2b88bb8772",
+  "site": "DE:dwd:10272",
+  "source_had_dem": true,
+  "source_sha256": "9dd937f50e2b1d2d4f81b1b49d70e7ca0533769f15d60a5deb23276f76c8def7",
+  "status": "completed",
+  "temperature_offset_c": 0.30526622202652026
+}

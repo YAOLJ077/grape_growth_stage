@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.0_lon+10.6",
+  "filename": "Ziegelanger.csv",
+  "first_date": "1950-01-02",
+  "last_date": "1999-12-31",
+  "max_absolute_old_dem_change_c": 0.007982376098635058,
+  "n_finite_raw": 18261,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 18261,
+  "n_old_dem_finite": 18261,
+  "n_rows": 18261,
+  "output_sha256": "5a20bebddd72192e895b81bae41f0b142ad388867004895ba0a55ff4bb5030b8",
+  "record_sha256": "5ca86dcab711d2024a9c28c6a4bf85e9872c6aebb0c876711dab994756b534f4",
+  "site": "DE:dwd:11826",
+  "source_had_dem": true,
+  "source_sha256": "de7a136d089107e16feb868a136d114e0f71fd33901d5a63d45c39ca6163963a",
+  "status": "completed",
+  "temperature_offset_c": 0.601708920892461
+}

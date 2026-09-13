@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "canonical_replay": true,
+  "independent_metrics": true,
+  "artifacts": {
+    "original_objective.json": "9c534baace53b3cc61f9040f21112a9b39fa98a727372ef1aa513e063621a31b",
+    "predictions.csv.gz": "7427d8cefe8a4a4650774855b21e38eb3cd7c804ba4d9411c3547b9a1e09a6bc",
+    "metrics.csv": "5b6a0bbdf21671c0b17ec23d27078d19fa012cfa96f2408becde454c53a410ad",
+    "low_bias_mae.json": "62b2e766581b0ec0afd2f295ef22f085da72586e42b5e0e7b927f546ca8b2b44",
+    "matched_metrics.csv": "435ecfa0b5c6ca3e26d054d1239186ec3d6e82008f4ed089fdb2277d8027302f",
+    "coverage_changes.csv": "2cf10919cc411018921b281b6087e5d7966551a8ad8465a09e18ca71f789259a",
+    "calibration_lock.json": "fa067e74c9da24598c31f00b0051a21d4bf64a87d4dc19f7521da2443e371b26"
+  }
+}

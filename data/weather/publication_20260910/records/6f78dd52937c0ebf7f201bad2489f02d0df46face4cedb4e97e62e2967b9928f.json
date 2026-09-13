@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.4_lon+10.1",
+  "filename": "Schonach.csv",
+  "first_date": "2016-01-01",
+  "last_date": "2020-12-31",
+  "max_absolute_old_dem_change_c": 1.7763568394002505e-15,
+  "n_finite_raw": 1827,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 1827,
+  "n_rows": 1827,
+  "output_sha256": "7feb416c4558e3d7ef866b84224b91063cc9740a12b29fcd9897225e1c93f815",
+  "record_sha256": "aba62738b09a78fa7352fc4f80d86e5e5ae248085455a13ea63b855b98f5c8a7",
+  "site": "DE:dwd:10444",
+  "source_had_dem": true,
+  "source_sha256": "369ba28ad87508f3b0de3fa8ff9746e33bddcd023e67a3545c8f94dcbb2697c5",
+  "status": "completed",
+  "temperature_offset_c": -0.04003155501946853
+}

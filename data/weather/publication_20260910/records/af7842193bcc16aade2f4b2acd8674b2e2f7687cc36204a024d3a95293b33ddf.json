@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.1_lon+7.8",
+  "filename": "Kaub.csv",
+  "first_date": "1976-01-01",
+  "last_date": "1993-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 6575,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 6575,
+  "n_rows": 6575,
+  "output_sha256": "d3139517c09f9ea0960c123770cec15043720ae83a4474164160aeae118bab32",
+  "record_sha256": "48d481545b42fd78ff7348b084e2871119a03b3706143e6069724bc98b54326b",
+  "site": "DE:dwd:10150",
+  "source_had_dem": true,
+  "source_sha256": "d3139517c09f9ea0960c123770cec15043720ae83a4474164160aeae118bab32",
+  "status": "completed",
+  "temperature_offset_c": 1.865278556041307
+}

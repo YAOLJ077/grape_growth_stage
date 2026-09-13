@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.3_lon+7.5",
+  "filename": "Oberfell.csv",
+  "first_date": "1977-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.07190631737487152,
+  "n_finite_raw": 17897,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 17897,
+  "n_old_dem_finite": 17897,
+  "n_rows": 17897,
+  "output_sha256": "4e05012e805ab962d102bccbbabc10c83ddcab35176cc5013c7c5df8f6705a9b",
+  "record_sha256": "2ed4552ee2cf3671824814aaf213b5419afc88eb5102474ebc8fdbeb45c589d1",
+  "site": "DE:dwd:10029",
+  "source_had_dem": true,
+  "source_sha256": "d33b519d1f2706b544ee571f7778e0d7a3b6b3410dc7397bcbdb48a613af76f3",
+  "status": "completed",
+  "temperature_offset_c": 0.8410875104979859
+}

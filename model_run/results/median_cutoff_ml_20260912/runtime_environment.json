@@ -1,0 +1,21 @@
+{
+  "pid": 52034,
+  "threads": 7,
+  "worker_count": 1,
+  "numba_threads": 7,
+  "config": {
+    "n_blocks": 2,
+    "d_block": 128,
+    "k": 16,
+    "dropout": 0.1,
+    "n_bins": 16,
+    "d_embedding": 16,
+    "lr": 0.002,
+    "weight_decay": 0.0003,
+    "batch_size": 256,
+    "max_epochs": 300,
+    "patience": 30,
+    "threads": 7
+  },
+  "started_at": "2026-09-12T19:26:54.994335+00:00"
+}

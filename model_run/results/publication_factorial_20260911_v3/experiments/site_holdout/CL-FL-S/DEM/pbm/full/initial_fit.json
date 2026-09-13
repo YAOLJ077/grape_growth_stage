@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "model_name": "CL-FL-S",
+  "definition_version": "1.0.0",
+  "parameters": {
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_maximum": 13.2,
+    "forcing_base_07": 0.0,
+    "forcing_base_65": 0.0,
+    "forcing_base_81": 0.0,
+    "forcing_base_89": 0.0,
+    "chilling_requirement": 18.412814906706444,
+    "forcing_requirement_07": 746.6130695950906,
+    "forcing_requirement_65": 766.2772291710058,
+    "forcing_requirement_81": 1229.6177645793741,
+    "forcing_requirement_89": 481.44123151586234
+  },
+  "temperature_input": "DEM",
+  "temperature_column": "Tmean_DEM",
+  "objective_value": 20.86342190883667,
+  "optimizer_converged": true,
+  "bounds": {
+    "chilling_minimum": [
+      -1.7,
+      -1.7
+    ],
+    "chilling_optimum": [
+      1.7,
+      1.7
+    ],
+    "chilling_maximum": [
+      13.2,
+      13.2
+    ],
+    "chilling_requirement": [
+      0.001,
+      200.0
+    ],
+    "forcing_base_07": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_07": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_65": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_65": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_81": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_81": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_89": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_89": [
+      0.001,
+      3000.0
+    ]
+  },
+  "settings": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean_DEM",
+    "temperature_input": "DEM"
+  },
+  "calibration_hash": "5c8b22335f5e336f632a8734e55804069e9f48c40132477cff69523fe3aaee6e",
+  "weather_hash": "3de9b121f2adb1a9881188521a111b430cd81f501b841b7ef0d588a2987ec484",
+  "diagnostics": {
+    "objective": "mean_stage_site_balanced_rmse",
+    "unattained_penalty_days": 1000.0,
+    "n_observations": 59199,
+    "n_sites": 2535,
+    "n_seasons": 21046,
+    "attained_by_stage": {
+      "07": 19896,
+      "65": 20998,
+      "81": 14837,
+      "89": 3467
+    },
+    "boundary_hits": [],
+    "fixed_by_equal_bounds": [
+      "chilling_minimum",
+      "chilling_optimum",
+      "chilling_maximum",
+      "forcing_base_07",
+      "forcing_base_65",
+      "forcing_base_81",
+      "forcing_base_89"
+    ],
+    "restarts": [
+      {
+        "seed": 20260907,
+        "objective_value": 20.873949259722217,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 17550,
+        "nit": 233
+      },
+      {
+        "seed": 20260908,
+        "objective_value": 20.86342190883667,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 16125,
+        "nit": 214
+      },
+      {
+        "seed": 20260909,
+        "objective_value": 20.866662537041705,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 18675,
+        "nit": 248
+      }
+    ],
+    "engine": "numba",
+    "compiled_backend": true
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1"
+  }
+}

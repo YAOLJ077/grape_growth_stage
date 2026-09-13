@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.8_lon+8.0",
+  "filename": "Wonsheim.csv",
+  "first_date": "2010-01-01",
+  "last_date": "2015-12-31",
+  "max_absolute_old_dem_change_c": 8.881784197001252e-16,
+  "n_finite_raw": 2191,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 2191,
+  "n_rows": 2191,
+  "output_sha256": "013d59c048dd95058ec69bd24f7939471b737facf4a0e9796d1d4287f7021362",
+  "record_sha256": "ea3b4dac451141ca33d2cb242ae792f68295da6bc78277ae6dbc1d2b77233175",
+  "site": "DE:dwd:15042",
+  "source_had_dem": true,
+  "source_sha256": "e3010fdf624a499bdd8e8c192bb166a90048055ab8c30e71352e189821d71b0a",
+  "status": "completed",
+  "temperature_offset_c": 0.2435419501179878
+}

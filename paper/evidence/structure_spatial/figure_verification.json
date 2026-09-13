@@ -1,0 +1,39 @@
+{
+  "verified": true,
+  "component_point_labels": 8,
+  "stage_specific_component_panels": false,
+  "zone_median_labels": 17,
+  "labels_match_saved_results": true,
+  "site_errors_displayed": 1414,
+  "site_errors_above_30_displayed": 45,
+  "summary_marker": "median site MAE",
+  "horizontal_range": "0\u201330 d expanded; 30\u201385 d in adjacent narrow strip; no omission",
+  "whiskers": "25th\u201375th percentiles of site MAEs, linear interpolation; not confidence intervals",
+  "legend_rows": 1,
+  "figure_pages": {
+    "function_performance": 25,
+    "cb_fl_s_spatial": 27
+  },
+  "supplementary_support_table_page": 18,
+  "observation_coverage_figure": "Supplementary S2, page 19",
+  "manuscript_pages": 36,
+  "supplementary_pages": 25,
+  "visual_inspection_performed": true,
+  "native_typography": "Helvetica 8 pt; bold 9 pt panel letters; 180 mm width",
+  "native_figures_verified": 9,
+  "methods_staging_tests_passed": 3,
+  "analysis_manifest_sha256": "ee92137f426493c96aeda54331467b8dda90eeedf8e0fa114d25d641ef15e55c",
+  "published_pdf_sha256": {
+    "manuscript.pdf": "417ad952b1d804d76d2cbf65862551e3ee8a274d66a876ea1e7094acb345dca4",
+    "supplementary.pdf": "6628e15425cc9a8f202a3c73f0f310094b1925d0156edc8c2c8aa4e48ef5c2e7"
+  },
+  "scientific_component_labels": [
+    "Forcing response",
+    "Chilling response",
+    "Chilling\u2013forcing interaction",
+    "Process structure"
+  ],
+  "figure_6_within_section": "3.2",
+  "section_float_boundaries_verified": true,
+  "previous_reporting_tests_passed": 22
+}

@@ -1,0 +1,158 @@
+{
+  "parameters": {
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_maximum": 13.2,
+    "minimum_response": 0.2,
+    "forcing_base_07": 0.0,
+    "forcing_base_65": 0.0,
+    "forcing_base_81": 0.0,
+    "forcing_base_89": 0.0,
+    "chilling_requirement": 144.18646881238428,
+    "forcing_requirement_07": 756.8098598443889,
+    "forcing_requirement_65": 502.0217920774111,
+    "forcing_requirement_81": 1345.0308737994485,
+    "forcing_requirement_89": 517.4539598841505
+  },
+  "calibration_metrics": [
+    [
+      10.609042685069394,
+      14.098370677678131,
+      4.954594911955068,
+      1.0,
+      1.0,
+      14.098370677678131
+    ],
+    [
+      16.840703631981235,
+      20.300950998945936,
+      -11.804530744792126,
+      0.9989615293839981,
+      0.9993841675064383,
+      32.04808296423692
+    ],
+    [
+      14.509428725794018,
+      18.755950986714904,
+      -8.244505265717862,
+      0.9994566324797935,
+      0.9998971862282945,
+      21.316410500960714
+    ],
+    [
+      19.15871044296976,
+      22.877057819001443,
+      -18.04789316679153,
+      1.0,
+      1.0,
+      22.877057819001443
+    ]
+  ],
+  "restarts": [
+    {
+      "seed": 20260907,
+      "maxiter": 300,
+      "converged": true,
+      "feasible": true,
+      "objective": 22.585596147780436,
+      "nit": 261,
+      "nfev": 19650,
+      "elapsed_seconds": 288.49029112499557,
+      "message": "Optimization terminated successfully.",
+      "parameters": {
+        "chilling_minimum": -1.7,
+        "chilling_optimum": 1.7,
+        "chilling_maximum": 13.2,
+        "minimum_response": 0.2,
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "chilling_requirement": 144.23025074500603,
+        "forcing_requirement_07": 756.7113182866982,
+        "forcing_requirement_65": 502.0240204240903,
+        "forcing_requirement_81": 1344.9974446988715,
+        "forcing_requirement_89": 517.4569310810979
+      }
+    },
+    {
+      "seed": 20260908,
+      "maxiter": 300,
+      "converged": true,
+      "feasible": true,
+      "objective": 22.58520732676299,
+      "nit": 218,
+      "nfev": 16425,
+      "elapsed_seconds": 240.68825758399907,
+      "message": "Optimization terminated successfully.",
+      "parameters": {
+        "chilling_minimum": -1.7,
+        "chilling_optimum": 1.7,
+        "chilling_maximum": 13.2,
+        "minimum_response": 0.2,
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "chilling_requirement": 144.2010662595822,
+        "forcing_requirement_07": 756.786656083147,
+        "forcing_requirement_65": 502.02580351299844,
+        "forcing_requirement_81": 1344.992865622431,
+        "forcing_requirement_89": 517.4245172911228
+      }
+    },
+    {
+      "seed": 20260909,
+      "maxiter": 300,
+      "converged": true,
+      "feasible": true,
+      "objective": 22.5849804904693,
+      "nit": 160,
+      "nfev": 12075,
+      "elapsed_seconds": 172.01882320799632,
+      "message": "Optimization terminated successfully.",
+      "parameters": {
+        "chilling_minimum": -1.7,
+        "chilling_optimum": 1.7,
+        "chilling_maximum": 13.2,
+        "minimum_response": 0.2,
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "chilling_requirement": 144.18646881238428,
+        "forcing_requirement_07": 756.8098598443889,
+        "forcing_requirement_65": 502.0217920774111,
+        "forcing_requirement_81": 1345.0308737994485,
+        "forcing_requirement_89": 517.4539598841505
+      }
+    }
+  ],
+  "coverage_preserved": true,
+  "bias_target_met": false,
+  "maximum_bias_excess_days": 17.04789316679153,
+  "target_status": "bias target not reached within the search budget",
+  "threshold_bounds": {
+    "chilling_requirement": [
+      0.001,
+      200
+    ],
+    "forcing_requirement_07": [
+      0.001,
+      3000.0
+    ],
+    "forcing_requirement_65": [
+      0.001,
+      3000.0
+    ],
+    "forcing_requirement_81": [
+      0.001,
+      3000.0
+    ],
+    "forcing_requirement_89": [
+      0.001,
+      3000.0
+    ]
+  },
+  "boundary_hits": []
+}

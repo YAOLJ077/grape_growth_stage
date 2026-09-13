@@ -1,0 +1,30 @@
+{
+  "verified": true,
+  "test": "Only src/paper_figures and data/paper_figures copied to a temporary root; reproduced from another working directory without historical folders",
+  "figures": 15,
+  "elapsed_seconds": 19.03,
+  "statistics_verified": 8,
+  "png_previews_verified_against_independent_pdf_rendering": true,
+  "code_sha256": {
+    "src/paper_figures/draw_map.swift": "4f664d92c132d959cc3f1b2908581b8d48551d8aeda6abcca822f3d32e28868d",
+    "src/paper_figures/pack_predictions.py": "532fd06396cbd12df04f529e28f98483b9fa4d7c5d53517dd404291e9bf12090",
+    "src/paper_figures/draw_workflow.swift": "4b566512a7bb958fd55e9c341cc11a722941f2d059bfab82909ca77c43d7699c",
+    "src/paper_figures/render_coverage.py": "dba020c5788fbadc4c2dd877428f04ba2be5e6945d82f7ffaa162934114e7d5a",
+    "src/paper_figures/render_environment.py": "537d463b52026eac1b3ad0a6791e7f7d234f8cfa37a5bde40fde4c3ef76cea36",
+    "src/paper_figures/reproduce.py": "d5ddd7d091766a7c3cb6fa6d0b1612395cab860507ca570f2fd575e53335e3f8",
+    "src/paper_figures/render_ml.py": "e7bb7d90266fc9532b67bf52e2bb491367e84f0bce21e358df0ec8fe0f3a9278",
+    "src/paper_figures/audit_pdf.swift": "03bd915fab1455d93912bdff7855ff6756befe89c8afc54547324ac33eb0e89d",
+    "src/paper_figures/recompute_results.py": "406b4eb8d019eadd5c36dacbc37c3934c5d22956b5d473fb3089933afec066d1",
+    "src/paper_figures/render_dem.py": "47326fe8909265074cf09559fa181cf26e46a62ccfe312bcf93d4fd954434d30",
+    "src/paper_figures/export_figures.swift": "7e932da396a2a0bcb4c2a81a6358152eb9d288566fa7001e5160dec3347445bb",
+    "src/paper_figures/render_pbm.py": "b9afdb4b96e004e7fe724e2eac83fae2da0ea6afdc51c95e62465cfc0dfebdce",
+    "src/paper_figures/draw_temperature_responses.swift": "ec6ab2088075504a6469c720c2ed617d0e6a5fb7f3afd9789e08042de570be0d",
+    "src/paper_figures/render_zone_distribution.py": "1171072966b28210abb9690507e389c54a9800168c38ba9ca9c01fcd66d8e0e7",
+    "src/paper_figures/group_bootstrap.py": "ee4885f1c825c117f3588014980a36b7073dc7b317ed0b64cc01e5b3527338df",
+    "src/paper_figures/render_structure.py": "f600e4543a3690b4080a223e4d0d1929e2bec96ac8c7965bad14c35aa507b44d",
+    "src/paper_figures/common.py": "8fd86375457486ecc793cfe8617e338c54afe18defe0a6d7d1cc936e7b9ef2eb"
+  },
+  "data_manifest_sha256": "6dfe9eb46001a998d2bdf2707c7b72478640a6758d25a9577db243648158e4d7",
+  "document_compilation": "Verified in primary launcher run",
+  "checked_utc": "2026-09-13T11:03:50.510659+00:00"
+}

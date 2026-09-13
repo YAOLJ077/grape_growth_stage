@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.3_lon+8.3",
+  "filename": "Weingarten_Pfalz.csv",
+  "first_date": "1984-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.075901112784587,
+  "n_finite_raw": 15341,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 15341,
+  "n_old_dem_finite": 15341,
+  "n_rows": 15341,
+  "output_sha256": "fe80e9e877de06175a9272bef2834a5805dc9cd4ab319c720feb36b208e345ba",
+  "record_sha256": "a44a02132ed8c55a110a8f89e9ad738c6c84bea4d1430541a95c8893714afcb6",
+  "site": "DE:dwd:10229",
+  "source_had_dem": true,
+  "source_sha256": "bc2df21f79cee5826f538fb9b63259245520b9b66e9da7bfc4ab0443436c8ceb",
+  "status": "completed",
+  "temperature_offset_c": -0.07501146719380743
+}

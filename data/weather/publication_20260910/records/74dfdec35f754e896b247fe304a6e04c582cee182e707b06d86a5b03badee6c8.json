@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+44.1_lon+0.9",
+  "filename": "52190.csv",
+  "first_date": "2018-01-01",
+  "last_date": "2021-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 1461,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 1461,
+  "n_rows": 1461,
+  "output_sha256": "c82acfaca37b57ccd66a4e9e9a8cb3d453bdd3344bce760e98ca1c0707cd8e07",
+  "record_sha256": "fb5dac8a0750149f68209f3665ff3b1c44e663596e712cac8176b8ac31486911",
+  "site": "FR:tempo:30016",
+  "source_had_dem": true,
+  "source_sha256": "c82acfaca37b57ccd66a4e9e9a8cb3d453bdd3344bce760e98ca1c0707cd8e07",
+  "status": "completed",
+  "temperature_offset_c": -0.06948026648908505
+}

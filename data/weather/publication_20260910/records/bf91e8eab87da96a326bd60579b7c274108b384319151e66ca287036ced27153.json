@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.0_lon+10.4",
+  "filename": "Traustadt.csv",
+  "first_date": "1993-01-01",
+  "last_date": "2011-12-31",
+  "max_absolute_old_dem_change_c": 0.0978724875380177,
+  "n_finite_raw": 6939,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 6939,
+  "n_old_dem_finite": 6939,
+  "n_rows": 6939,
+  "output_sha256": "b9ffa2e639abc87e3703885a111dbb18bd8e54471df9a5f71cc568743d0228bd",
+  "record_sha256": "d99afae44f731eb3c63237104b6a8ca655274c6136e56084a7996bf5dfea98fe",
+  "site": "DE:dwd:11805",
+  "source_had_dem": true,
+  "source_sha256": "46b9adb129ee90bc42f7c568eea8ece0617b6c44822028c0db4be34dcf0bc1b6",
+  "status": "completed",
+  "temperature_offset_c": -0.138572506893142
+}

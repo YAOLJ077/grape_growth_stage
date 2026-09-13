@@ -1,0 +1,42 @@
+{
+  "n_input_observations": 74341,
+  "n_retained_observations": 74311,
+  "n_excluded_observations": 30,
+  "n_sites": 3170,
+  "n_independence_groups": 1792,
+  "n_countries": 11,
+  "n_site_seasons": 26460,
+  "n_excluded_site_seasons": 12,
+  "stages": {
+    "07": 24934,
+    "65": 26427,
+    "81": 18644,
+    "89": 4306
+  },
+  "years": [
+    1951,
+    2025
+  ],
+  "protocols": [
+    "site_holdout",
+    "unstratified_site_holdout",
+    "spatial_0",
+    "spatial_1",
+    "spatial_2",
+    "spatial_3",
+    "spatial_4",
+    "warm_year",
+    "warm_site"
+  ],
+  "excluded_reasons": {
+    "incomplete_weather_window": 30
+  },
+  "cohort_artifact_hashes": {
+    "eligibility.csv": "402b9af7419c8adf1aeb41e94c9d9b459837b421c52f26a092ccd026d19b53b6",
+    "observations.csv": "5f4c44017dfbd93cf99d751558c10e2f67e49386226fcf585f5aeafa197e62ea",
+    "sites.csv": "c312392d321d96b4e965220699f5c24d98122f68942511be9e1cb5cd61b27da2",
+    "weather.csv.gz": "6c7743f6b989b1f670a300af1ef6f7e3d53be157123e19e625d6615ad955fcf7"
+  },
+  "cohort_source_sha256": "080ae79a27919b09ee4c7e1df1cb43cdfed36ff181b6dbc65129cd99a4a3e621",
+  "protocol_source_sha256": "b795bbc5b38a9ad1a05620f05d3679ae0e1a408389770888aa6463db73204ef7"
+}

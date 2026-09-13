@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.8_lon+9.3",
+  "filename": "Freudenberg_Baden.csv",
+  "first_date": "1950-01-02",
+  "last_date": "2006-12-31",
+  "max_absolute_old_dem_change_c": 0.16711560797308067,
+  "n_finite_raw": 20818,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 20818,
+  "n_old_dem_finite": 20818,
+  "n_rows": 20818,
+  "output_sha256": "4d30e18a4c8ac98330d1ed9cade914e67a26009ca553d97f50610763ea822190",
+  "record_sha256": "b6b31a096a6deee32764bfbd6f5a615a65542ba2c3781fab1c008c8f7d15c585",
+  "site": "DE:dwd:10634",
+  "source_had_dem": true,
+  "source_sha256": "dd860815d1ffbe0a75e45abdac65b53fc1bb5de797498e8927127ea28a493c1f",
+  "status": "completed",
+  "temperature_offset_c": 0.8765060039550105
+}

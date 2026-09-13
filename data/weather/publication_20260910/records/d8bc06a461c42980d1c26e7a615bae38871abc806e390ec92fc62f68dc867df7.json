@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.1_lon+8.7",
+  "filename": "Heidelsheim.csv",
+  "first_date": "1967-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.25966170163147595,
+  "n_finite_raw": 21550,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 21550,
+  "n_old_dem_finite": 21550,
+  "n_rows": 21550,
+  "output_sha256": "e26897c1e84d4872363ba55ed27e3afe12c6c1840a130595161a42958cf28738",
+  "record_sha256": "1cb04292629a35de1a91bdb894a4dc31eae326952b0671d31eaf302d166540da",
+  "site": "DE:dwd:10526",
+  "source_had_dem": true,
+  "source_sha256": "1884e5fbdd916118ea5540e2d1ed3827e7b27e3cfeb1774c1217ecdbebcb896c",
+  "status": "completed",
+  "temperature_offset_c": 0.3914352524444337
+}

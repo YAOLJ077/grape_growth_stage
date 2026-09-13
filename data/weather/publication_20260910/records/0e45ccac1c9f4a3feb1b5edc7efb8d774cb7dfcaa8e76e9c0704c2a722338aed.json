@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.1_lon+7.8",
+  "filename": "Bornich.csv",
+  "first_date": "1980-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.17111040338279437,
+  "n_finite_raw": 16802,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 16802,
+  "n_old_dem_finite": 16802,
+  "n_rows": 16802,
+  "output_sha256": "e7acfc2efaca10b794fb1a225d41c6cfab51c28f06cfe8a6cccd96932bbf5164",
+  "record_sha256": "aa14dab0553008543ccbc785cd341a7a868d7f4b31c4efa5d05f3935f6397cd3",
+  "site": "DE:dwd:10149",
+  "source_had_dem": true,
+  "source_sha256": "a98dc8d12191b65cb3ee6bd20f4984ab070aaf440ecb4c7526cd9ae828eb7862",
+  "status": "completed",
+  "temperature_offset_c": 0.5709634773059556
+}

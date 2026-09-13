@@ -1,0 +1,5 @@
+- Forty configurations compare grapevine phenology across four developmental stages.
+- Elevation correction lowers process-model mean absolute error by 1.06 days.
+- Residual learning lowers mean absolute error by 4.10 days under raw forcing.
+- Elevation correction adds only 0.12 days of improvement after residual learning.
+- Phenology model selection requires joint assessment of both corrections.

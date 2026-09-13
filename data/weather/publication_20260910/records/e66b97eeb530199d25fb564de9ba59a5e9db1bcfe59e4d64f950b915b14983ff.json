@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.6_lon+8.7",
+  "filename": "Hemsbach_Bergstr.csv",
+  "first_date": "1950-01-02",
+  "last_date": "1991-12-31",
+  "max_absolute_old_dem_change_c": 0.6624702387777397,
+  "n_finite_raw": 15339,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 15339,
+  "n_old_dem_finite": 15339,
+  "n_rows": 15339,
+  "output_sha256": "1a8d5653ebac120d1bbe46be403058f02403d3bbe7a5a735d05622f187edd5fb",
+  "record_sha256": "090b18557beda52589e38a25be73bb60185764b97bd256396ab85c32cbba2a5b",
+  "site": "DE:dwd:10585",
+  "source_had_dem": true,
+  "source_sha256": "5de3791f855176ca14691e2e3f89027d7cf062a2f361fb1f8a9d1eeb8971daf6",
+  "status": "completed",
+  "temperature_offset_c": 1.0914120237575375
+}

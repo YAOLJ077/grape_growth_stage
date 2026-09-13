@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.9_lon+8.1",
+  "filename": "Stadecken-Elsheim.csv",
+  "first_date": "1975-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 18628,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 18628,
+  "n_rows": 18628,
+  "output_sha256": "a1971900550429f05742dddf50fa9761467a48719d273f1286cdf64516618083",
+  "record_sha256": "cd66f0fd33c2541d8f9a33d2e80346ba6ae3049e609ff032ba176443fcd99c0a",
+  "site": "DE:dwd:10187",
+  "source_had_dem": true,
+  "source_sha256": "a1971900550429f05742dddf50fa9761467a48719d273f1286cdf64516618083",
+  "status": "completed",
+  "temperature_offset_c": 0.13364226687829284
+}

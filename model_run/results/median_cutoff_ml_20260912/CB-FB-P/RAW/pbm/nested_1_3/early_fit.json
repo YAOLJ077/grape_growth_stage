@@ -1,0 +1,253 @@
+{
+  "diagnostics": {
+    "early_bias_target_met": false,
+    "early_coverage_met": true,
+    "early_maximum_bias_excess_days": 10.995732287784765,
+    "early_raw_metrics": [
+      [
+        15.87405999414906,
+        19.16394825521687,
+        10.829344849606336,
+        1.0,
+        1.0,
+        19.16394825521687
+      ],
+      [
+        13.328766612032643,
+        18.66244557464174,
+        7.975337516361765,
+        0.9943342776203966,
+        0.9973750263904854,
+        54.36212681850701
+      ],
+      [
+        17.155016671241928,
+        21.717183307762888,
+        -12.008185307590965,
+        0.9901901599758527,
+        0.9976895673387743,
+        52.69667307571247
+      ]
+    ],
+    "early_scoring_metrics": [
+      [
+        15.87405999414906,
+        19.16394825521687,
+        10.829344849606336,
+        1.0,
+        1.0,
+        19.16394825521687
+      ],
+      [
+        13.328766612032643,
+        18.66244557464174,
+        7.975337516361765,
+        0.9943342776203966,
+        0.9973750263904854,
+        54.36212681850701
+      ],
+      [
+        17.16142447202729,
+        21.695479687509017,
+        -11.995732287784765,
+        1.0,
+        1.0,
+        21.695479687509017
+      ]
+    ],
+    "early_status": "bias target not reached within search budget",
+    "restarts": [
+      {
+        "converged": true,
+        "elapsed_seconds": 21.732393667043652,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 4486,
+        "nit": 209,
+        "objective": 11.282463665784162,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 141.97788527560738,
+          "forcing_maximum": 35.0,
+          "forcing_minimum": 0.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_07": 19.013600624773545,
+          "forcing_requirement_65": 25.667546170062266,
+          "forcing_requirement_81": 37.0520210670243,
+          "forcing_requirement_89": 0.001000001,
+          "minimum_response": 0.2
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260907
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 29.073804415995255,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 4785,
+        "nit": 272,
+        "objective": 10.995732287784765,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 132.38417850022145,
+          "forcing_maximum": 35.0,
+          "forcing_minimum": 0.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_07": 19.059650748777642,
+          "forcing_requirement_65": 26.445242783697026,
+          "forcing_requirement_81": 37.05185479310098,
+          "forcing_requirement_89": 0.001000001,
+          "minimum_response": 0.2
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260908
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 30.950840416015126,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 4867,
+        "nit": 291,
+        "objective": 10.995732287784765,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 132.38417850022145,
+          "forcing_maximum": 35.0,
+          "forcing_minimum": 0.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_07": 19.059650748777642,
+          "forcing_requirement_65": 26.445242783697026,
+          "forcing_requirement_81": 37.05185479310098,
+          "forcing_requirement_89": 0.001000001,
+          "minimum_response": 0.2
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260909
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 14.562140458030626,
+        "feasible": true,
+        "maxiter": 600,
+        "message": "Optimization terminated successfully.",
+        "nfev": 2814,
+        "nit": 133,
+        "objective": 10.995732287784765,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 132.38417850022145,
+          "forcing_maximum": 35.0,
+          "forcing_minimum": 0.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_07": 19.059650748777642,
+          "forcing_requirement_65": 26.445242783697026,
+          "forcing_requirement_81": 37.05198507670992,
+          "forcing_requirement_89": 0.001000001,
+          "minimum_response": 0.2
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260907
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 10.79665545898024,
+        "feasible": true,
+        "maxiter": 600,
+        "message": "Optimization terminated successfully.",
+        "nfev": 2577,
+        "nit": 99,
+        "objective": 10.995732287784765,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 132.38417850022145,
+          "forcing_maximum": 35.0,
+          "forcing_minimum": 0.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_07": 19.059650748777642,
+          "forcing_requirement_65": 26.445242783697026,
+          "forcing_requirement_81": 37.05209295583532,
+          "forcing_requirement_89": 0.001000001,
+          "minimum_response": 0.2
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260908
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 11.7750696670264,
+        "feasible": true,
+        "maxiter": 600,
+        "message": "Optimization terminated successfully.",
+        "nfev": 2371,
+        "nit": 110,
+        "objective": 10.995732287784765,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 132.38417850022145,
+          "forcing_maximum": 35.0,
+          "forcing_minimum": 0.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_07": 19.059650748777642,
+          "forcing_requirement_65": 26.445242783697026,
+          "forcing_requirement_81": 37.05178969992324,
+          "forcing_requirement_89": 0.001000001,
+          "minimum_response": 0.2
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260909
+      }
+    ]
+  },
+  "parameters": {
+    "chilling_maximum": 13.2,
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_requirement": 132.38417850022145,
+    "forcing_maximum": 35.0,
+    "forcing_minimum": 0.0,
+    "forcing_optimum_07": 25.4,
+    "forcing_optimum_65": 25.4,
+    "forcing_optimum_81": 25.4,
+    "forcing_optimum_89": 25.4,
+    "forcing_requirement_07": 19.059650748777642,
+    "forcing_requirement_65": 26.445242783697026,
+    "forcing_requirement_81": 37.05185479310098,
+    "forcing_requirement_89": 0.001000001,
+    "minimum_response": 0.2
+  }
+}

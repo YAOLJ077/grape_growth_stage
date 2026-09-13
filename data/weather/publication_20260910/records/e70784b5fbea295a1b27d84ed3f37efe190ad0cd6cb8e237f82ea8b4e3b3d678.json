@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+42.6_lon+2.8",
+  "filename": "haro 3.csv",
+  "first_date": "1969-01-01",
+  "last_date": "2007-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 14244,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 14244,
+  "n_rows": 14244,
+  "output_sha256": "a1a97ea6415686b699bc1af235627fa11d84be2c556b0b8cb7e764e075204280",
+  "record_sha256": "a485eb0616b3ac48e7661c124dec5bfc7e81912b3df7ca61738184554d938b35",
+  "site": "FR:tempo:5760",
+  "source_had_dem": true,
+  "source_sha256": "a1a97ea6415686b699bc1af235627fa11d84be2c556b0b8cb7e764e075204280",
+  "status": "completed",
+  "temperature_offset_c": 0.1383506558652717
+}

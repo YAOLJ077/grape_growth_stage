@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.9_lon+8.1",
+  "filename": "Sulzheim.csv",
+  "first_date": "2010-01-01",
+  "last_date": "2026-08-25",
+  "max_absolute_old_dem_change_c": 0.27963567868005157,
+  "n_finite_raw": 6081,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 6081,
+  "n_old_dem_finite": 6081,
+  "n_rows": 6081,
+  "output_sha256": "5159ec169a8d74e1b5d7232efa1e569444e917dcbcd6319b0e0add3d41fdc81b",
+  "record_sha256": "3f0508e1e27b4419616d19fe1642fdff1e4cc18605650de6dc6d56cd6b98a7af",
+  "site": "DE:dwd:15020",
+  "source_had_dem": true,
+  "source_sha256": "cfef7b851c3eb7ffc9274101d188f898cf24922a76cae760a261f8b64e2e17b0",
+  "status": "completed",
+  "temperature_offset_c": -0.30181786190588683
+}

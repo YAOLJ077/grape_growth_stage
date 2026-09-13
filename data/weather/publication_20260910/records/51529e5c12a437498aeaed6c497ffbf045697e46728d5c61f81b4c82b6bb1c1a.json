@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+48.3_lon+7.9",
+  "filename": "Lahr (Ph).csv",
+  "first_date": "1965-01-01",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 22280,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 22280,
+  "n_rows": 22280,
+  "output_sha256": "79130382169597c03cad25ad00ad230dc9010968438c53eb1dfe3ad837528c07",
+  "record_sha256": "e8bf7a95856d98c60fc8547fd462febace1ac0b2f5e2939c9a68d069f7d96d53",
+  "site": "DE:dwd:10708",
+  "source_had_dem": true,
+  "source_sha256": "79130382169597c03cad25ad00ad230dc9010968438c53eb1dfe3ad837528c07",
+  "status": "completed",
+  "temperature_offset_c": 0.1625824115890619
+}

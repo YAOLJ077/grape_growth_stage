@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.2_lon+6.5",
+  "filename": "Weinsheim.csv",
+  "first_date": "2021-01-01",
+  "last_date": "2023-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 1095,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 1095,
+  "n_rows": 1095,
+  "output_sha256": "cb7a211e4d3edc25be4ed9cea8de51f5f5f8b74a53807fb6a68c3ae885c44400",
+  "record_sha256": "04ceadbbdf3b581c5dc3faddb789efca04bc7cca50d2cbdedf78a78cf17ab7af",
+  "site": "DE:dwd:10100",
+  "source_had_dem": true,
+  "source_sha256": "cb7a211e4d3edc25be4ed9cea8de51f5f5f8b74a53807fb6a68c3ae885c44400",
+  "status": "completed",
+  "temperature_offset_c": -0.7058612591711121
+}

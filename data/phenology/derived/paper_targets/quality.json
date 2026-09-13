@@ -25,24 +25,24 @@
       "81",
       "89"
     ],
-    "rows": 75233,
-    "source_qualified_sites": 3198,
-    "distinct_coordinate_pairs": 3023,
+    "rows": 74341,
+    "source_qualified_sites": 3171,
+    "distinct_coordinate_pairs": 2996,
     "countries": 11,
     "counts_by_stage": {
-      "07": 25303,
-      "65": 26657,
-      "81": 18734,
-      "89": 4539
+      "07": 24951,
+      "65": 26440,
+      "81": 18644,
+      "89": 4306
     },
     "counts_by_country": {
       "BA": 51,
       "CH": 2292,
       "CZ": 94,
-      "DE": 56045,
+      "DE": 56021,
       "ES": 83,
-      "FR": 14084,
-      "HR": 1062,
+      "FR": 13342,
+      "HR": 936,
       "LU": 72,
       "ME": 18,
       "SE": 1,
@@ -51,8 +51,9 @@
     "first_date": "1951-04-15",
     "last_date": "2026-06-23",
     "file": "data/phenology/derived/paper_targets/observations.csv",
-    "sha256": "3811d638f73c4ae0360d369d7dcd8d1e8795414b38b228192e1de955e85331b3"
+    "sha256": "07031bef0551209b01c1eb5b0b040f0103135089b3b5450f69eff18b49d9ebb3"
   },
   "non_target_rows": 184765,
-  "non_target_interpretation": "Retained in the full inventory; not excluded as data-quality errors"
+  "non_target_interpretation": "Retained in the full inventory; not excluded as data-quality errors",
+  "weather_exclusion": "27 sites with zero ERA5-Land coverage removed on 2026-09-09; see data/weather/sites/metadata/unweathered_site_exclusion_20260909.json"
 }

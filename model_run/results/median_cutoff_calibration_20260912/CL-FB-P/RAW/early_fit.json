@@ -1,0 +1,253 @@
+{
+  "parameters": {
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_maximum": 13.2,
+    "minimum_response": 0.2,
+    "forcing_minimum": 0.0,
+    "forcing_maximum": 35.0,
+    "forcing_optimum_07": 25.4,
+    "forcing_optimum_65": 25.4,
+    "forcing_optimum_81": 25.4,
+    "forcing_optimum_89": 25.4,
+    "forcing_requirement_89": 13.390163825017979,
+    "chilling_requirement": 86.2095956120806,
+    "forcing_requirement_07": 17.166751863784995,
+    "forcing_requirement_65": 21.48366455959713,
+    "forcing_requirement_81": 49.95201121677757
+  },
+  "diagnostics": {
+    "early_bias_target_met": false,
+    "early_coverage_met": true,
+    "early_maximum_bias_excess_days": 5.425434353016374,
+    "early_scoring_metrics": [
+      [
+        14.998398146758383,
+        19.149693970452397,
+        0.682341246373974,
+        1.0,
+        1.0,
+        19.149693970452397
+      ],
+      [
+        13.56113953179585,
+        18.433744631565705,
+        -4.624676529393215,
+        0.9944300212414444,
+        0.9970825067641413,
+        56.90221903390285
+      ],
+      [
+        15.508103948969236,
+        19.82010113012117,
+        -6.425434353016374,
+        1.0,
+        1.0,
+        19.82010113012117
+      ]
+    ],
+    "early_raw_metrics": [
+      [
+        14.998398146758383,
+        19.149693970452397,
+        0.682341246373974,
+        1.0,
+        1.0,
+        19.149693970452397
+      ],
+      [
+        13.56113953179585,
+        18.433744631565705,
+        -4.624676529393215,
+        0.9944300212414444,
+        0.9970825067641413,
+        56.90221903390285
+      ],
+      [
+        15.467119656014566,
+        19.748622706690654,
+        -6.469222620322439,
+        0.9900835427562318,
+        0.9962377790837926,
+        64.3749122467299
+      ]
+    ],
+    "restarts": [
+      {
+        "phase": "early_bias_feasibility",
+        "seed": 20260907,
+        "maxiter": 300,
+        "converged": true,
+        "feasible": true,
+        "objective": 5.426557456847269,
+        "nit": 247,
+        "nfev": 4597,
+        "elapsed_seconds": 94.86754341601045,
+        "message": "Optimization terminated successfully.",
+        "parameters": {
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_maximum": 13.2,
+          "minimum_response": 0.2,
+          "forcing_minimum": 0.0,
+          "forcing_maximum": 35.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_89": 13.390163825017979,
+          "chilling_requirement": 86.1915630806373,
+          "forcing_requirement_07": 17.167763268033056,
+          "forcing_requirement_65": 21.483617711898802,
+          "forcing_requirement_81": 49.94963828179531
+        }
+      },
+      {
+        "phase": "early_bias_feasibility",
+        "seed": 20260908,
+        "maxiter": 300,
+        "converged": false,
+        "feasible": true,
+        "objective": 5.426557456847269,
+        "nit": 300,
+        "nfev": 4911,
+        "elapsed_seconds": 112.30333749999409,
+        "message": "Maximum number of iterations has been exceeded.",
+        "parameters": {
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_maximum": 13.2,
+          "minimum_response": 0.2,
+          "forcing_minimum": 0.0,
+          "forcing_maximum": 35.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_89": 13.390163825017979,
+          "chilling_requirement": 86.1915630806373,
+          "forcing_requirement_07": 17.167763268033056,
+          "forcing_requirement_65": 21.483617711898802,
+          "forcing_requirement_81": 49.94963828179531
+        }
+      },
+      {
+        "phase": "early_bias_feasibility",
+        "seed": 20260909,
+        "maxiter": 300,
+        "converged": true,
+        "feasible": true,
+        "objective": 5.42566347760592,
+        "nit": 136,
+        "nfev": 3015,
+        "elapsed_seconds": 50.51549129199702,
+        "message": "Optimization terminated successfully.",
+        "parameters": {
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_maximum": 13.2,
+          "minimum_response": 0.2,
+          "forcing_minimum": 0.0,
+          "forcing_maximum": 35.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_89": 13.390163825017979,
+          "chilling_requirement": 86.18067615747229,
+          "forcing_requirement_07": 17.168290552957885,
+          "forcing_requirement_65": 21.48356466236656,
+          "forcing_requirement_81": 49.952192299347914
+        }
+      },
+      {
+        "phase": "early_bias_feasibility",
+        "seed": 20260907,
+        "maxiter": 600,
+        "converged": true,
+        "feasible": true,
+        "objective": 5.425586716274047,
+        "nit": 237,
+        "nfev": 3825,
+        "elapsed_seconds": 88.3383099999919,
+        "message": "Optimization terminated successfully.",
+        "parameters": {
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_maximum": 13.2,
+          "minimum_response": 0.2,
+          "forcing_minimum": 0.0,
+          "forcing_maximum": 35.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_89": 13.390163825017979,
+          "chilling_requirement": 86.20698438774971,
+          "forcing_requirement_07": 17.166902144143847,
+          "forcing_requirement_65": 21.483650087274327,
+          "forcing_requirement_81": 49.951853992803784
+        }
+      },
+      {
+        "phase": "early_bias_feasibility",
+        "seed": 20260908,
+        "maxiter": 600,
+        "converged": true,
+        "feasible": true,
+        "objective": 5.425434353016374,
+        "nit": 82,
+        "nfev": 1913,
+        "elapsed_seconds": 37.83909670799039,
+        "message": "Optimization terminated successfully.",
+        "parameters": {
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_maximum": 13.2,
+          "minimum_response": 0.2,
+          "forcing_minimum": 0.0,
+          "forcing_maximum": 35.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_89": 13.390163825017979,
+          "chilling_requirement": 86.2095956120806,
+          "forcing_requirement_07": 17.166751863784995,
+          "forcing_requirement_65": 21.48366455959713,
+          "forcing_requirement_81": 49.95201121677757
+        }
+      },
+      {
+        "phase": "early_bias_feasibility",
+        "seed": 20260909,
+        "maxiter": 600,
+        "converged": true,
+        "feasible": true,
+        "objective": 5.425434353016374,
+        "nit": 69,
+        "nfev": 1679,
+        "elapsed_seconds": 34.89107304098434,
+        "message": "Optimization terminated successfully.",
+        "parameters": {
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_maximum": 13.2,
+          "minimum_response": 0.2,
+          "forcing_minimum": 0.0,
+          "forcing_maximum": 35.0,
+          "forcing_optimum_07": 25.4,
+          "forcing_optimum_65": 25.4,
+          "forcing_optimum_81": 25.4,
+          "forcing_optimum_89": 25.4,
+          "forcing_requirement_89": 13.390163825017979,
+          "chilling_requirement": 86.20861579252797,
+          "forcing_requirement_07": 17.16680467157329,
+          "forcing_requirement_65": 21.48366560887915,
+          "forcing_requirement_81": 49.95201121677757
+        }
+      }
+    ],
+    "early_status": "bias target not reached within search budget"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+47.2_lon+0.2",
+  "filename": "chinon 1.csv",
+  "first_date": "1950-01-02",
+  "last_date": "1976-12-31",
+  "max_absolute_old_dem_change_c": 0.04660594644667526,
+  "n_finite_raw": 9861,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 9861,
+  "n_old_dem_finite": 9861,
+  "n_rows": 9861,
+  "output_sha256": "2d99026a9188e9c5deb18da80c4c672c9550f67b369843c1703dd7b847dca094",
+  "record_sha256": "01eec4fc4316375f380bf32cddeaf48f738a04c3cfed59a71ed5b75132b9283b",
+  "site": "FR:tempo:5706",
+  "source_had_dem": true,
+  "source_sha256": "268ccf72141088f277f7576b0526917421c085a328d977b8659fedb806e12579",
+  "status": "completed",
+  "temperature_offset_c": 0.1653416423281571
+}

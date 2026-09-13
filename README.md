@@ -1,124 +1,61 @@
-# Grape Growth Stage
+# Grapevine phenology: final reproducible study
 
-This repository supports a regional grapevine phenology prediction study using
-French TEMPO and German DWD phenological observations, ERA5-Land daily weather
-data, Copernicus DEM terrain information, process-based phenology models, and
-machine-learning residual correction.
+Process models, DEM temperature correction and TabM residual learning for European grapevine stages BBCH07, 65, 81 and 89. The final analysis contains **74,618 observations, 3,169 reported sites and 1,791 independent groups**. Calibration uses 59,472 observations; held-out testing uses 15,146. The final manuscript and submission documents are in [`paper/`](paper/README.md).
 
-The current main analysis focuses on four major BBCH phenological stages:
-BBCH07 (budburst), BBCH65 (flowering), BBCH81 (veraison), and BBCH89
-(maturity or harvest). The study evaluates whether stage-specific process
-models transfer across unseen spatial regions, whether terrain-adjusted
-temperature forcing improves prediction, and whether machine-learning residual
-correction provides spatially stable gains.
+## Repository layout
 
-## Study Focus
+| Stage | Entry point | Inputs and outputs |
+| --- | --- | --- |
+| Data preparation | [`src/data_preparation/`](src/data_preparation/README.md) | Source records, screening, weather eligibility and frozen partitions |
+| Model calibration | [`src/calibration/`](src/calibration/README.md) | Pooled initialization, constrained process calibration and nested TabM training |
+| Model validation | [`src/validation/`](src/validation/README.md) | Saved source/artifact hashes, prediction dates, attainment and metrics |
+| Visualization | [`src/visualization/`](src/visualization/README.md) | All 10 main and 5 supplementary figures; numerical checks from locked predictions |
+| Manuscript and Word | [`src/documents/`](src/documents/README.md) | PDFs, Zotero-field DOCX, cover letter, highlights and graphical abstract |
+| Numerical engines | `model/`, `model_run/factorial/`, `model_run/src/` | Original model code and calibration engines with frozen source fingerprints |
+| Source data | [`data/`](data/README.md) | Canonical observations, weather, terrain, climate and figure inputs |
+| Frozen model results | [`model_run/results/`](model_run/README.md) | Fitted parameters, folds, checkpoints, raw/scoring predictions and completion markers |
+| Publication artifacts | `fig/paper_figures/`, `fig/graphical_abstract/`, `paper/` | Final figures, manuscripts and submission files |
 
-The repository is organized around three linked components of the manuscript:
+The small numerical engines retain their physical paths and original bytes because the completed runs fingerprint them. Classified entry points call those engines. Dated result directory names identify frozen scientific inputs; they are dependencies of the final run. Superseded pilots, old model-comparison assemblies, partial-run snapshots, drafting archives and duplicate historical figure exports are excluded.
 
-- Stage-specific process-model calibration and selection for the four target
-  grapevine phenological stages.
-- Raw versus terrain-adjusted temperature forcing, using ERA5-Land weather data
-  and DEM-derived site elevation information.
-- Hybrid phenology prediction, where machine-learning models learn
-  spatially out-of-fold process-model residuals and are evaluated under strict
-  held-out spatial validation.
+## Setup
 
-The analysis is designed to separate the baseline performance of process
-models, the effect of terrain-aware temperature representation, and the added
-value of residual correction.
+Install **Git LFS** before retrieving the large data and model objects:
 
-## Data Sources
-
-The main analysis uses:
-
-- Phenological observations from France TEMPO and Germany DWD.
-- ERA5-Land daily meteorological forcing.
-- Copernicus DEM GLO-30 terrain information.
-- Standardized target stages mapped to the extended BBCH grapevine scale.
-
-The repository also contains intermediate harmonization products and supporting
-data-processing artifacts. These are retained for reproducibility, but the
-current manuscript-level analysis is the France-Germany four-stage modelling
-framework described above.
-
-## Repository Structure
-
-```text
-data/       Phenology, terrain, weather metadata, and derived analysis tables
-fig/        Workflow, spatial validation, descriptive, and manuscript figures
-paper/      Manuscript source, compiled manuscript, and bibliography
-reference/  Supporting literature files
-model/      Ten process-only models, shared prediction/calibration code and usage documentation
-results/    Model-selection outputs, validation summaries, and result tables
-src/        Data preparation, modelling, validation, and plotting code
-tests/      Unit tests for core data-processing and modelling components
-```
-
-Large gridded weather products and local temporary outputs are intentionally
-kept outside normal Git tracking.
-
-## Main Outputs
-
-The main analysis produces:
-
-- Terrain-temperature correction diagnostics and spatial maps.
-- Selected stage-specific process models and process-model predictions.
-- Hybrid day-of-year predictions after machine-learning residual correction.
-- Spatial validation summaries across held-out outer test sets.
-- Process versus hybrid-model accuracy gains.
-- Mechanism-group ablation and SHAP-based residual interpretation outputs.
-- Manuscript-ready figures and tables.
-
-## Reproducibility
-
-The current ten-model process implementation is documented in
-[model/README.md](model/README.md). It supports joint four-stage calibration,
-saved-parameter prediction and evaluation without ML. Its minimal environment
-is defined in `model/requirements.txt`; tests run with `python -m pytest tests`.
-Daily weather and independently prepared calibration/test inputs are required
-for real-data runs. The older `src/modeling/` workflows below remain unchanged.
-
-The analysis environment is defined by the Python dependency files in the
-repository. The modelling and figure-generation code is organized under `src/`,
-with manuscript-ready outputs stored under `fig/`, `results/`, and `paper/`.
-
-For a fresh environment:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
-
-Development and validation tests can be run with:
-
-```bash
-python -m pip install -r requirements-dev.txt
-pytest
-```
-
-Some geospatial dependencies may require platform-specific binary libraries.
-When installation from PyPI is inconvenient, conda-forge is usually the most
-practical option.
-
-## Large Files
-
-Selected large analysis tables are managed with Git LFS. Install Git LFS before
-cloning or pulling the full repository:
-
-```bash
+```sh
 git lfs install
-git clone <repository-url>
+git lfs pull
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
 ```
 
-Very large weather-processing products are not tracked in Git and can be
-recreated from the documented processing workflow when needed.
+The recorded environment uses Python 3.12.14. Statistical verification and training use Python; publication rendering also requires macOS, Swift/Xcode command-line tools, Helvetica and Tectonic. Put `tectonic` on PATH or at `.venv/bin/tectonic`. Pinned Python dependencies are retained with each component. Earth Engine authentication is needed only for renewed acquisition, not replay of the included snapshots. Provider-specific data licences remain applicable; see [`data/README.md`](data/README.md).
 
-## Manuscript
+## Verify and reproduce the published results
 
-The manuscript source is located in `paper/manuscript.tex`, with the compiled
-PDF stored as `paper/manuscript.pdf`. The manuscript describes the study
-framework, data sources, candidate process models, residual-learning models,
-spatial validation design, and resulting stage-specific prediction performance.
+Run from the repository root:
+
+```sh
+.venv/bin/python src/data_preparation/reproduce.py --verify
+.venv/bin/python src/validation/verify.py
+NUMBA_NUM_THREADS=1 .venv/bin/python -m pytest -q
+.venv/bin/python src/visualization/reproduce.py --build-documents
+.venv/bin/python src/documents/build.py --word-only
+```
+
+The visualization command recomputes the plotted statistics and 2,000 original-group bootstrap draws from locked predictions, verifies the saved values, redraws all 15 figures and compiles both PDFs. On macOS, `src/visualization/reproduce.command` provides the same figure/PDF workflow. The document command produces `paper/manuscript.docx`, `paper/supplementary.docx` and `paper/submission_complete.docx`. Temporary files go under ignored `build/`.
+
+The combined Word file places the cover letter, highlights and graphical abstract before the manuscript title, with supplementary material after the manuscript. Body text is double spaced, manuscript line numbers are continuous, tables have borders, and equations are centered. Citations carry embedded Zotero field data; they are not linked to an installed personal Zotero library.
+
+## Recalibrate from the frozen data
+
+```sh
+.venv/bin/python src/calibration/run.py --help
+.venv/bin/python src/calibration/run.py --output build/recalibration --threads 7
+```
+
+The calibration guide distinguishes upstream initialization, process fitting and hybrid fitting. New runs use new output directories; frozen results must not be overwritten. Full optimization and neural fitting are substantial computations. Recalibration has recorded seeds and settings, but timestamps and hardware-dependent stochastic training can prevent byte-identical new model files. The saved artifacts support exact validation without refitting.
+
+The final screening can also be rebuilt from the four included canonical source tables; commands are in the data-preparation guide. These tables already contain provider-level assembly. Prepared terrain donors and map backgrounds are retained; rebuilding all original terrain rasters requires renewed acquisition. Fig. 2 uses the separately documented earlier 3,171-site phenology-only snapshot. Historical screening sensitivity in supplementary Table S4 is retained as a documented comparison, with its available population evidence; it is not the final modelling population.
+
+Main results report MAE and signed bias. All uncertainty and correction contrasts preserve paired finite errors, equal site/stage weights and original independence groups. Raw developmental attainment remains separate from the administrative 4 November scoring assignment for BBCH81/89. Terrain associations do not establish causal effects, and weather features ending at predicted dates support retrospective evaluation.

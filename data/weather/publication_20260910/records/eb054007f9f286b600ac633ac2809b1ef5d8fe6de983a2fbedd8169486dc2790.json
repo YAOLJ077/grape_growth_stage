@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.7_lon+6.7",
+  "filename": "Trier-Heiligkreuz.csv",
+  "first_date": "1990-01-01",
+  "last_date": "2023-12-31",
+  "max_absolute_old_dem_change_c": 0.327573223596632,
+  "n_finite_raw": 12418,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 12418,
+  "n_old_dem_finite": 12418,
+  "n_rows": 12418,
+  "output_sha256": "1e6338c9f98ad99befb88fd926ca0f49f67c882f943609bc11d343e098a6e941",
+  "record_sha256": "05d8ed6e0717d3576b6edacc79cb2c17d33fced57be5c5f277b274e623e4fa80",
+  "site": "DE:dwd:10050",
+  "source_had_dem": true,
+  "source_sha256": "a77fec75a96b275893268ea710fb72990e7eff57e8d4ed94589879278da2bffe",
+  "status": "completed",
+  "temperature_offset_c": 0.9850716630337302
+}

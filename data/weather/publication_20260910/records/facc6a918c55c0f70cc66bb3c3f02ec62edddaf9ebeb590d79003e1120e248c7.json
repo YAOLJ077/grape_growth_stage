@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.2_lon+9.4",
+  "filename": "Willsbach.csv",
+  "first_date": "1950-01-02",
+  "last_date": "2004-12-31",
+  "max_absolute_old_dem_change_c": 0.3402234090607301,
+  "n_finite_raw": 20088,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 20088,
+  "n_old_dem_finite": 20088,
+  "n_rows": 20088,
+  "output_sha256": "3e38bc4a03c7e108738a8982466cd55cbb9207fa6dbff5274dc192ce940a095f",
+  "record_sha256": "580d66ad074a19a7080bcdd982f288feb6a5b3f880f4bacab20d3e01b417d353",
+  "site": "DE:dwd:10412",
+  "source_had_dem": true,
+  "source_sha256": "17a09a14487a0a7b389614e2a4fc9dd4f42134091356e7083bbc2e9e64c4446d",
+  "status": "completed",
+  "temperature_offset_c": 0.4079596004466177
+}

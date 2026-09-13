@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.8_lon+8.1",
+  "filename": "Wallertheim.csv",
+  "first_date": "1976-01-01",
+  "last_date": "2000-12-31",
+  "max_absolute_old_dem_change_c": 0.02130557551848078,
+  "n_finite_raw": 9132,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 9132,
+  "n_old_dem_finite": 9132,
+  "n_rows": 9132,
+  "output_sha256": "3268a1816f73acf05eeb8ec599c2fd0791903992f4d7d7c288a71d4309fec5e0",
+  "record_sha256": "41efae4d116b124ba3f3d01287b30889e0edd70dd828eb05f141f12c7533c95a",
+  "site": "DE:dwd:10184",
+  "source_had_dem": true,
+  "source_sha256": "42d9210882f7233372a763b68497b58f88bf1002c36ccf32e39ec4048b429206",
+  "status": "completed",
+  "temperature_offset_c": 0.45542742447069623
+}

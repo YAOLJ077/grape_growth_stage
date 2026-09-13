@@ -1,0 +1,17 @@
+{
+  "complete": false,
+  "finished": false,
+  "completed": [
+    "FL/RAW"
+  ],
+  "failed": [],
+  "expected": 20,
+  "active": {
+    "unit": "FB/RAW",
+    "phase": "calibration",
+    "numba_threads": 3
+  },
+  "smoke": false,
+  "cutoff_month_day": "11-04",
+  "final_sources_verified": false
+}

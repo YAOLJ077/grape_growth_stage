@@ -1,0 +1,232 @@
+{
+  "diagnostics": {
+    "early_bias_target_met": true,
+    "early_coverage_met": true,
+    "early_maximum_bias_excess_days": 0.0,
+    "early_raw_metrics": [
+      [
+        9.53458125007361,
+        12.77936036315768,
+        0.6928000945827233,
+        0.9967756794104099,
+        0.9973160642174727,
+        53.35111417088944
+      ],
+      [
+        9.70654053764939,
+        14.96073432372989,
+        0.9636099409554478,
+        0.9984957083443943,
+        0.9975797643797645,
+        51.385576963643175
+      ],
+      [
+        12.951849174097259,
+        16.806566792135705,
+        -1.1169874152486519,
+        0.9951834012597258,
+        0.9984782321026862,
+        42.47165216517822
+      ]
+    ],
+    "early_scoring_metrics": [
+      [
+        9.53458125007361,
+        12.77936036315768,
+        0.6928000945827233,
+        0.9967756794104099,
+        0.9973160642174727,
+        53.35111417088944
+      ],
+      [
+        9.70654053764939,
+        14.96073432372989,
+        0.9636099409554478,
+        0.9984957083443943,
+        0.9975797643797645,
+        51.385576963643175
+      ],
+      [
+        13.074048099982283,
+        17.19282038812346,
+        -0.9883148134833198,
+        1.0,
+        1.0,
+        17.19282038812346
+      ]
+    ],
+    "early_status": "met",
+    "restarts": [
+      {
+        "converged": true,
+        "elapsed_seconds": 3.870555041998159,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 2101,
+        "nit": 44,
+        "objective": 0.0,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 57.183443325189124,
+          "forcing_base_07": 0.0,
+          "forcing_base_65": 0.0,
+          "forcing_base_81": 0.0,
+          "forcing_base_89": 0.0,
+          "forcing_requirement_07": 519.1447364863343,
+          "forcing_requirement_65": 753.9192295014659,
+          "forcing_requirement_81": 1302.2669150970407,
+          "forcing_requirement_89": 0.001000001
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260907
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 3.1629612909746356,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 1607,
+        "nit": 35,
+        "objective": 0.0,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 54.555900622485794,
+          "forcing_base_07": 0.0,
+          "forcing_base_65": 0.0,
+          "forcing_base_81": 0.0,
+          "forcing_base_89": 0.0,
+          "forcing_requirement_07": 532.5668323605476,
+          "forcing_requirement_65": 737.0728605623067,
+          "forcing_requirement_81": 1310.227335906879,
+          "forcing_requirement_89": 0.001000001
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260908
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 2.8200242909952067,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 1517,
+        "nit": 32,
+        "objective": 0.0,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 59.4006085461976,
+          "forcing_base_07": 0.0,
+          "forcing_base_65": 0.0,
+          "forcing_base_81": 0.0,
+          "forcing_base_89": 0.0,
+          "forcing_requirement_07": 506.54331870291344,
+          "forcing_requirement_65": 760.8287407477948,
+          "forcing_requirement_81": 1308.2684600989805,
+          "forcing_requirement_89": 0.001000001
+        },
+        "phase": "early_bias_feasibility",
+        "seed": 20260909
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 8.172502833011094,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 1076,
+        "nit": 98,
+        "objective": 10.772955943968917,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 55.30957066731332,
+          "forcing_base_07": 0.0,
+          "forcing_base_65": 0.0,
+          "forcing_base_81": 0.0,
+          "forcing_base_89": 0.0,
+          "forcing_requirement_07": 538.0217154509459,
+          "forcing_requirement_65": 758.7518016808465,
+          "forcing_requirement_81": 1274.9699859082418,
+          "forcing_requirement_89": 0.001000001
+        },
+        "phase": "early_mae",
+        "seed": 20260907
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 6.889724749955349,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 623,
+        "nit": 83,
+        "objective": 10.772955943968917,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 55.30957066731332,
+          "forcing_base_07": 0.0,
+          "forcing_base_65": 0.0,
+          "forcing_base_81": 0.0,
+          "forcing_base_89": 0.0,
+          "forcing_requirement_07": 538.0217154509459,
+          "forcing_requirement_65": 758.7518016808465,
+          "forcing_requirement_81": 1274.9699859082418,
+          "forcing_requirement_89": 0.001000001
+        },
+        "phase": "early_mae",
+        "seed": 20260908
+      },
+      {
+        "converged": true,
+        "elapsed_seconds": 5.666764500027057,
+        "feasible": true,
+        "maxiter": 300,
+        "message": "Optimization terminated successfully.",
+        "nfev": 400,
+        "nit": 65,
+        "objective": 10.77172329590176,
+        "parameters": {
+          "chilling_maximum": 13.2,
+          "chilling_minimum": -1.7,
+          "chilling_optimum": 1.7,
+          "chilling_requirement": 55.30957066731332,
+          "forcing_base_07": 0.0,
+          "forcing_base_65": 0.0,
+          "forcing_base_81": 0.0,
+          "forcing_base_89": 0.0,
+          "forcing_requirement_07": 538.0217154509459,
+          "forcing_requirement_65": 758.9892529158598,
+          "forcing_requirement_81": 1274.9699859082418,
+          "forcing_requirement_89": 0.001000001
+        },
+        "phase": "early_mae",
+        "seed": 20260909
+      }
+    ]
+  },
+  "parameters": {
+    "chilling_maximum": 13.2,
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_requirement": 55.30957066731332,
+    "forcing_base_07": 0.0,
+    "forcing_base_65": 0.0,
+    "forcing_base_81": 0.0,
+    "forcing_base_89": 0.0,
+    "forcing_requirement_07": 538.0217154509459,
+    "forcing_requirement_65": 758.9892529158598,
+    "forcing_requirement_81": 1274.9699859082418,
+    "forcing_requirement_89": 0.001000001
+  }
+}

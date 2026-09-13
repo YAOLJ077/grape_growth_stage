@@ -1,0 +1,102 @@
+{
+  "n_sites": 3169,
+  "n_observations": 74618,
+  "n_independent_groups": 1791,
+  "n_unique_grids": 1791,
+  "normal_period": [
+    1991,
+    2020
+  ],
+  "temperature_input": "RAW",
+  "primary_site_counts": {
+    "calibration": 2534,
+    "test": 635
+  },
+  "primary_group_counts": {
+    "calibration": 1434,
+    "test": 357
+  },
+  "zone_order": [
+    "TZ01",
+    "TZ02",
+    "TZ03",
+    "TZ04",
+    "TZ05"
+  ],
+  "profiles_weight_unit": "each represented ERA5-Land grid once",
+  "site_count_unit": "unique source-qualified site identifier; not necessarily independent physical vineyard",
+  "observation_count_unit": "all retained records, including repeated accepted observations",
+  "uncertainty": "not applicable: fixed descriptive centroid profiles and complete frozen allocation counts",
+  "centroid_reconciliation_max_absolute_difference_c": 1.5987211554602254e-14,
+  "source_hashes": {
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/pooled_calibration_20260912/calibration_observations.csv.gz": "2ab02de5acb25d4b9bf9026a85e083ed0b22c68a8408d138427aa11f7eb06794",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/pooled_calibration_20260912/test_observations.csv.gz": "e692e2fda7b12fa717f014d414493a835a91a7f956e4ca51f9491477eb8aa204",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_cohort_20260910/sites.csv": "c312392d321d96b4e965220699f5c24d98122f68942511be9e1cb5cd61b27da2",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/fig/model_evaluation/environmental_design_20260912/environmental_zone_monthly_centres.csv": "ec7ec4f0f7795441a4d514883a348afd4234ed07bc6c6b769a60dec9932d2ec8",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/topography/metadata/countries.geojson": "45f41865adec4f86602c2cd05c0e29cd8b437614bf2f5b5a863d12463202cae4",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/src/plot_environmental_design.py": "b9117e37c23a62f7b791e9ccd442cbeac9e7ecfe2911036697bd0f1833b143fd",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/src/plot_publication_design.py": "1ead62ffc0663a565eddc426c57a8670a5fa7adfbf88a19e2cf255391eba714e"
+  },
+  "display_zone_labels": {
+    "TZ01": "EZ01",
+    "TZ02": "EZ02",
+    "TZ03": "EZ03",
+    "TZ04": "EZ04",
+    "TZ05": "EZ05"
+  },
+  "terminology": "Environmental zones derived from monthly temperature profiles",
+  "zones_recomputed": false,
+  "figure_source_sha256": "b9117e37c23a62f7b791e9ccd442cbeac9e7ecfe2911036697bd0f1833b143fd",
+  "artifacts": {
+    "environmental_zone_stage_partition_counts.csv": "78d1692c5b0285e380d4236a9ecfcf0feed3a71905ae7bac80331b787a909c99",
+    "caption.md": "8a2d2ecb2769bd5dbe7f6248cbdcc49a38a0f8574fb9c2d3d25f8a261f1c37a1",
+    "environmental_zone_partition_counts.csv": "1d72ea2c7916fee38e091ae808aa79e8a30a674d971ea3fbd37d124e79e66423",
+    "environmental_zone_monthly_centres.csv": "ec7ec4f0f7795441a4d514883a348afd4234ed07bc6c6b769a60dec9932d2ec8",
+    "environmental_zones_and_split.png": "ef0ed3b4008745d908c73f24bd611a503a4a32ab5d431632e7b70d84ae540482",
+    "environmental_zones_and_split.pdf": "d4a6b779fed026ea594137986f6abe2c318ca7effe1755b802abf97cc45dd2a8",
+    "environmental_zone_sites.csv": "dc31e39de19e562274b04685c4d64af5f71fb3872a1b64dec92ac122a6ab3dec",
+    "verification.json": "4144e00d71ada94b72ed826fa524a2699841ddf6a1417e4f79782c26ca3465d3"
+  },
+  "typography": {
+    "family": "Helvetica",
+    "text_pt": 8,
+    "panel_pt": 9,
+    "width_mm": 180,
+    "height_mm": 145,
+    "panel_labels": [
+      "(a)",
+      "(b)",
+      "(c)"
+    ],
+    "subplot_titles": false
+  },
+  "original_clustering_source_hashes": {
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_cohort_20260910/sites.csv": "c312392d321d96b4e965220699f5c24d98122f68942511be9e1cb5cd61b27da2",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_cohort_20260910/observations.csv": "5f4c44017dfbd93cf99d751558c10e2f67e49386226fcf585f5aeafa197e62ea",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_cohort_20260910/manifest.json": "31d0b6fa784d9c37405bf0ab597dc2896c3c5704e1ac7dbdbf0031beb5092002",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_design_20260910/protocols.csv": "8bf3880f8273a5828e0456f3dd7999e5547c2549230d543a523ed108dab535e0",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_design_20260910/protocol_metadata.json": "52785a483db49c552e328455e90ebdb401e998ef96f64372fa5b8b9af465957e",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/weather/climate/publication_20260910_v2/monthly_normals.csv": "298beae77aeae573af86b931ba0653efdc78ec610aa9d86e044ef71f06b918e6",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/weather/climate/publication_20260910_v2/request.json": "89a41a9a8785c598f7a8722b133886e174d11a602412353efed909e621e0069b",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/weather/climate/publication_20260910_v2/export_provenance.json": "5cdd42514778848ce29690cffb99fb15a3454d6012b489f8d0f65ba605941187",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/src/plot_publication_design.py": "1ead62ffc0663a565eddc426c57a8670a5fa7adfbf88a19e2cf255391eba714e"
+  },
+  "centroids_changed": false,
+  "centroid_source_sha256": "ec7ec4f0f7795441a4d514883a348afd4234ed07bc6c6b769a60dec9932d2ec8",
+  "clustering_original_unique_grid_count": 1792,
+  "map": {
+    "coordinate_source": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_cohort_20260910/sites.csv",
+    "representation": "Observed sites by frozen EZ; no interpolation",
+    "projection": "Equidistant cylindrical with standard parallel 50 degrees north",
+    "boundaries": "Natural Earth via geo-countries; existing repository GeoJSON",
+    "extent": [
+      -7,
+      26,
+      36.5,
+      61
+    ],
+    "site_records": 3169,
+    "distinct_coordinates": 2994,
+    "coincident_sites_overlap": true
+  }
+}

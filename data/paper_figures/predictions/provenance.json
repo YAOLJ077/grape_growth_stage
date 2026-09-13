@@ -1,0 +1,51 @@
+{
+  "shape": [
+    74618,
+    10,
+    4
+  ],
+  "models": [
+    "FL",
+    "FB",
+    "CL-FL-S",
+    "CL-FL-P",
+    "CB-FL-S",
+    "CB-FL-P",
+    "CL-FB-S",
+    "CL-FB-P",
+    "CB-FB-S",
+    "CB-FB-P"
+  ],
+  "arms": [
+    "RAW_process",
+    "RAW_ML",
+    "DEM_process",
+    "DEM_ML"
+  ],
+  "row_identity": "identity.csv.gz, sorted by observation_id",
+  "unit": "days",
+  "definition": "scoring_date minus observed Date; fixed 4 November assignments retained",
+  "source_predictions_verified": {
+    "FL/RAW/predictions.csv.gz": "b3af3140aed090b5e0c1fd77de4371c0c818aa2c8cc62f55b22c1c988e9f316b",
+    "FL/DEM/predictions.csv.gz": "587aa4b65c42cf136450ea30b8f0ee42d05bb7bde39c66513fd3eb1ea2a463f8",
+    "FB/RAW/predictions.csv.gz": "a66af3236d900bee7541e507ddf4c456d6caad5c99035aaa3a27d0abdb9e19e5",
+    "FB/DEM/predictions.csv.gz": "ae0703bbde8a53b46caa88019c6593b4326c60ac9440699b52cd77cde169f6df",
+    "CL-FL-S/RAW/predictions.csv.gz": "358bae92df2c0fdf1049f56b46c114ebaa9fb3498960bdfee092e3574bc90e85",
+    "CL-FL-S/DEM/predictions.csv.gz": "28d65afd5eacc9af49652f55e41383986e52cacd101b670cd65925848a5c2a33",
+    "CL-FL-P/RAW/predictions.csv.gz": "26c4827711bab243d4cec61f39664f546db59796d3588fc5eaaa6384510efbe9",
+    "CL-FL-P/DEM/predictions.csv.gz": "1db64dcbfebb4cd49f842df375721d901bfbf931c3a9219e7bbd9b4937ad164f",
+    "CB-FL-S/RAW/predictions.csv.gz": "0d55837cccb05469d34fa4e5daf7fcd33865a52527f6d15f6173b2dc1a88714d",
+    "CB-FL-S/DEM/predictions.csv.gz": "3a7b9887f3f9090ff8ba27e9f56f0067832b86491522d5f34b0ed30bf11d8120",
+    "CB-FL-P/RAW/predictions.csv.gz": "4ff37cf03fa735f9dd25995abeabf82b6197e50c94b4e228370a745851f04aed",
+    "CB-FL-P/DEM/predictions.csv.gz": "385de5ce9fc6ebf598f59051cf4f0ee1a1db4963d5649b596aad6b4c64d39f77",
+    "CL-FB-S/RAW/predictions.csv.gz": "91e75a6160909d95d289f3e5c04bd98e09607773f96a2cae61059e75dd280ad6",
+    "CL-FB-S/DEM/predictions.csv.gz": "f6416500b247522461b44f920382450ba64524b04a7856feb319a5077eeda147",
+    "CL-FB-P/RAW/predictions.csv.gz": "2f6db6c9eb07b43c916146c04343faeb3a563b2a1fea14c6f991ba3945f65d82",
+    "CL-FB-P/DEM/predictions.csv.gz": "e6665ea1e911b50b1960ace594021ea1d713e38b60db09848055e46048f7a7b0",
+    "CB-FB-S/RAW/predictions.csv.gz": "3a53d51da11057189ddb9f1abb8689d2b9136ee62635b6edd7b285b55316bff6",
+    "CB-FB-S/DEM/predictions.csv.gz": "c95b187057efdcc936a294d881ad0be9b8341c1b4475d2ce9a35383b205eb855",
+    "CB-FB-P/RAW/predictions.csv.gz": "8ad55fa9b6fe7f3aefc48ca70d60c3960c185c2cc28de192c31185b80cf22783",
+    "CB-FB-P/DEM/predictions.csv.gz": "6d9b24bdcef1027490a2f4ac479ddf020719cfb6c78842ca8d82e59dba6a9478"
+  },
+  "errors_independently_recomputed_from_dates": true
+}

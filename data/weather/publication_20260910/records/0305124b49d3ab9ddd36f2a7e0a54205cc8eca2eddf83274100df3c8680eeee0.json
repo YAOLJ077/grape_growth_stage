@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.6_lon+8.1",
+  "filename": "Rennerod.csv",
+  "first_date": "1990-01-01",
+  "last_date": "1996-12-31",
+  "max_absolute_old_dem_change_c": 1.7763568394002505e-15,
+  "n_finite_raw": 2557,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 2557,
+  "n_rows": 2557,
+  "output_sha256": "8da4729f952fdded326d5739072b6c71e027fc64d4b859aa9085f90d75d12c08",
+  "record_sha256": "f14ba0240fee409ef988bc328952d9bde05269bde629e51282469204597555e9",
+  "site": "DE:dwd:10144",
+  "source_had_dem": true,
+  "source_sha256": "7ebdb0f8da8cf76d7000e75582f1f5cd5e7e730b9b7f939535c3505de5f553c2",
+  "status": "completed",
+  "temperature_offset_c": 0.10971190363423912
+}

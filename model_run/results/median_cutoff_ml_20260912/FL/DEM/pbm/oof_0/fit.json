@@ -1,0 +1,218 @@
+{
+  "cutoff_month_day": "11-04",
+  "early_bias_target_met": true,
+  "early_coverage_met": true,
+  "early_maximum_bias_excess_days": 0.0,
+  "early_predictions_unchanged_after_median": true,
+  "early_raw_metrics": [
+    [
+      11.470226421069016,
+      14.601731649991294,
+      0.15350147615083481,
+      1.0,
+      1.0,
+      14.601731649991294
+    ],
+    [
+      11.488702757998485,
+      14.942428642627956,
+      0.541154657575204,
+      1.0,
+      1.0,
+      14.942428642627956
+    ],
+    [
+      12.847893346514477,
+      16.108696579217654,
+      -0.19170936467301522,
+      0.9999121419785626,
+      0.9990167158308751,
+      35.24938470517483
+    ]
+  ],
+  "early_scoring_metrics": [
+    [
+      11.470226421069016,
+      14.601731649991294,
+      0.15350147615083481,
+      1.0,
+      1.0,
+      14.601731649991294
+    ],
+    [
+      11.488702757998485,
+      14.942428642627956,
+      0.541154657575204,
+      1.0,
+      1.0,
+      14.942428642627956
+    ],
+    [
+      12.922362685430524,
+      16.345150521303783,
+      -0.10441839083937918,
+      1.0,
+      1.0,
+      16.345150521303783
+    ]
+  ],
+  "early_status": "met",
+  "job_sha256": "b21635d6a33578de69d4fa46ac7708d6551d721eac855ccee89893d5fe938761",
+  "median_bound_adjusted": false,
+  "median_eligible_records": 2352,
+  "median_excluded_records": 11,
+  "median_threshold_status": "met",
+  "median_unbounded": 735.9518607631812,
+  "parameters": {
+    "forcing_base_07": 0.0,
+    "forcing_base_65": 0.0,
+    "forcing_base_81": 0.0,
+    "forcing_base_89": 0.0,
+    "forcing_requirement_07": 606.3045042898146,
+    "forcing_requirement_65": 782.317457321038,
+    "forcing_requirement_81": 1321.6488729368828,
+    "forcing_requirement_89": 735.9518607631812,
+    "start_doy": 1
+  },
+  "restarts": [
+    {
+      "converged": true,
+      "elapsed_seconds": 2.4941758339991793,
+      "feasible": true,
+      "maxiter": 300,
+      "message": "Optimization terminated successfully.",
+      "nfev": 1445,
+      "nit": 35,
+      "objective": 0.0,
+      "parameters": {
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "forcing_requirement_07": 595.6588380127595,
+        "forcing_requirement_65": 782.0131373526492,
+        "forcing_requirement_81": 1330.5877904195636,
+        "forcing_requirement_89": 0.001000001,
+        "start_doy": 1
+      },
+      "phase": "early_bias_feasibility",
+      "seed": 20260907
+    },
+    {
+      "converged": true,
+      "elapsed_seconds": 2.054279708012473,
+      "feasible": true,
+      "maxiter": 300,
+      "message": "Optimization terminated successfully.",
+      "nfev": 1006,
+      "nit": 25,
+      "objective": 0.0,
+      "parameters": {
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "forcing_requirement_07": 600.4963284590909,
+        "forcing_requirement_65": 790.7660268566018,
+        "forcing_requirement_81": 1330.9233672427006,
+        "forcing_requirement_89": 0.001000001,
+        "start_doy": 1
+      },
+      "phase": "early_bias_feasibility",
+      "seed": 20260908
+    },
+    {
+      "converged": true,
+      "elapsed_seconds": 1.675233667017892,
+      "feasible": true,
+      "maxiter": 300,
+      "message": "Optimization terminated successfully.",
+      "nfev": 836,
+      "nit": 20,
+      "objective": 0.0,
+      "parameters": {
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "forcing_requirement_07": 607.6454173191709,
+        "forcing_requirement_65": 774.9304481250362,
+        "forcing_requirement_81": 1342.8931730353208,
+        "forcing_requirement_89": 0.001000001,
+        "start_doy": 1
+      },
+      "phase": "early_bias_feasibility",
+      "seed": 20260909
+    },
+    {
+      "converged": true,
+      "elapsed_seconds": 2.6616706249769777,
+      "feasible": true,
+      "maxiter": 300,
+      "message": "Optimization terminated successfully.",
+      "nfev": 271,
+      "nit": 35,
+      "objective": 11.960430621499341,
+      "parameters": {
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "forcing_requirement_07": 606.3045042898146,
+        "forcing_requirement_65": 782.317457321038,
+        "forcing_requirement_81": 1321.6488729368828,
+        "forcing_requirement_89": 0.001000001,
+        "start_doy": 1
+      },
+      "phase": "early_mae",
+      "seed": 20260907
+    },
+    {
+      "converged": true,
+      "elapsed_seconds": 1.8802375419763848,
+      "feasible": true,
+      "maxiter": 300,
+      "message": "Optimization terminated successfully.",
+      "nfev": 246,
+      "nit": 24,
+      "objective": 11.960430621499341,
+      "parameters": {
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "forcing_requirement_07": 606.3045042898146,
+        "forcing_requirement_65": 782.317457321038,
+        "forcing_requirement_81": 1321.6488729368828,
+        "forcing_requirement_89": 0.001000001,
+        "start_doy": 1
+      },
+      "phase": "early_mae",
+      "seed": 20260908
+    },
+    {
+      "converged": true,
+      "elapsed_seconds": 1.8099445409607142,
+      "feasible": true,
+      "maxiter": 300,
+      "message": "Optimization terminated successfully.",
+      "nfev": 201,
+      "nit": 23,
+      "objective": 11.960430621499341,
+      "parameters": {
+        "forcing_base_07": 0.0,
+        "forcing_base_65": 0.0,
+        "forcing_base_81": 0.0,
+        "forcing_base_89": 0.0,
+        "forcing_requirement_07": 606.3045042898146,
+        "forcing_requirement_65": 782.317457321038,
+        "forcing_requirement_81": 1321.6488729368828,
+        "forcing_requirement_89": 0.001000001,
+        "start_doy": 1
+      },
+      "phase": "early_mae",
+      "seed": 20260909
+    }
+  ],
+  "test_labels_used": false
+}

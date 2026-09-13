@@ -1,0 +1,22 @@
+{
+  "locked_at": "2026-09-12T18:47:29.180403+00:00",
+  "parameters": {
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_maximum": 13.2,
+    "minimum_response": 0.2,
+    "forcing_base_07": 0.0,
+    "forcing_base_65": 0.0,
+    "forcing_base_81": 0.0,
+    "forcing_base_89": 0.0,
+    "forcing_requirement_89": 722.8196022057118,
+    "chilling_requirement": 127.82116366852352,
+    "forcing_requirement_07": 774.4330546933705,
+    "forcing_requirement_65": 780.373884752124,
+    "forcing_requirement_81": 1306.7238767798449
+  },
+  "fit_sha256": "4f034dfc311626dceca1ca63ddb8d6c9505e0aea41e9daf4c7925913b941128c",
+  "calibration_only": true,
+  "calibration_observations": 59472,
+  "cutoff_month_day": "11-04"
+}

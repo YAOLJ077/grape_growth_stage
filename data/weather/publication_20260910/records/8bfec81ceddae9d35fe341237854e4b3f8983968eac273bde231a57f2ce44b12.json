@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.0_lon+8.8",
+  "filename": "Maulbronn.csv",
+  "first_date": "1957-01-01",
+  "last_date": "1992-12-31",
+  "max_absolute_old_dem_change_c": 0.0025725860595713357,
+  "n_finite_raw": 13149,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 13149,
+  "n_old_dem_finite": 13149,
+  "n_rows": 13149,
+  "output_sha256": "349dc52e46c370bc86be211bcab092e4d218b935ab71a0a77281062ba0cfc0f4",
+  "record_sha256": "9e6b238def6ee9374ee4749d4f8caa4706799db44948c4ef3e01ee39838e4576",
+  "site": "DE:dwd:10500",
+  "source_had_dem": true,
+  "source_sha256": "6fe57e8512c904ee7bd539df946dd55d862ab1bf2fff82812f9b271d00e0d4e2",
+  "status": "completed",
+  "temperature_offset_c": -0.015339687752122272
+}

@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.6_lon+6.6",
+  "filename": "Oberemmel.csv",
+  "first_date": "2021-01-01",
+  "last_date": "2023-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 1095,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 1095,
+  "n_rows": 1095,
+  "output_sha256": "823bd3b6529bb012a85d95cda03aa60db112fa3b2c6916636ba896eca89b0744",
+  "record_sha256": "06b105093ca15d51cad68c8024daeb5942b687618e23ab35b236ae869398a0b7",
+  "site": "DE:dwd:19405",
+  "source_had_dem": true,
+  "source_sha256": "823bd3b6529bb012a85d95cda03aa60db112fa3b2c6916636ba896eca89b0744",
+  "status": "completed",
+  "temperature_offset_c": -0.03734538779774397
+}

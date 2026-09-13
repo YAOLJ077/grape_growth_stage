@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "model_name": "CB-FL-S",
+  "definition_version": "1.0.0",
+  "parameters": {
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_maximum": 13.2,
+    "forcing_base_07": 0.0,
+    "forcing_base_65": 0.0,
+    "forcing_base_81": 0.0,
+    "forcing_base_89": 0.0,
+    "chilling_requirement": 28.156925911131438,
+    "forcing_requirement_07": 708.3082879145069,
+    "forcing_requirement_65": 595.7858106666395,
+    "forcing_requirement_81": 1291.9905370241509,
+    "forcing_requirement_89": 505.7831413106542
+  },
+  "temperature_input": "RAW",
+  "temperature_column": "Tmean",
+  "objective_value": 22.913274033178595,
+  "optimizer_converged": true,
+  "bounds": {
+    "chilling_minimum": [
+      -1.7,
+      -1.7
+    ],
+    "chilling_optimum": [
+      1.7,
+      1.7
+    ],
+    "chilling_maximum": [
+      13.2,
+      13.2
+    ],
+    "chilling_requirement": [
+      0.001,
+      200.0
+    ],
+    "forcing_base_07": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_07": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_65": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_65": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_81": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_81": [
+      0.001,
+      3000.0
+    ],
+    "forcing_base_89": [
+      0.0,
+      0.0
+    ],
+    "forcing_requirement_89": [
+      0.001,
+      3000.0
+    ]
+  },
+  "settings": {
+    "bounds": {
+      "chilling_minimum": [
+        -1.7,
+        -1.7
+      ],
+      "chilling_optimum": [
+        1.7,
+        1.7
+      ],
+      "chilling_maximum": [
+        13.2,
+        13.2
+      ],
+      "chilling_requirement": [
+        0.001,
+        200
+      ],
+      "forcing_base_07": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_07": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_65": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_65": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_81": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_81": [
+        0.001,
+        3000.0
+      ],
+      "forcing_base_89": [
+        0.0,
+        0.0
+      ],
+      "forcing_requirement_89": [
+        0.001,
+        3000.0
+      ]
+    },
+    "fixed_parameters": {},
+    "seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "maxiter": 300,
+    "popsize": 15,
+    "tol": 0.001,
+    "temperature_column": "Tmean",
+    "temperature_input": "RAW"
+  },
+  "calibration_hash": "5c8b22335f5e336f632a8734e55804069e9f48c40132477cff69523fe3aaee6e",
+  "weather_hash": "e5ae7e99be5b9c59bc84f40db96408bfe4563e77b35f710a3e18d3716a3806f3",
+  "diagnostics": {
+    "objective": "mean_stage_site_balanced_rmse",
+    "unattained_penalty_days": 1000.0,
+    "n_observations": 59199,
+    "n_sites": 2535,
+    "n_seasons": 21046,
+    "attained_by_stage": {
+      "07": 19896,
+      "65": 20977,
+      "81": 14830,
+      "89": 3467
+    },
+    "boundary_hits": [],
+    "fixed_by_equal_bounds": [
+      "chilling_minimum",
+      "chilling_optimum",
+      "chilling_maximum",
+      "forcing_base_07",
+      "forcing_base_65",
+      "forcing_base_81",
+      "forcing_base_89"
+    ],
+    "restarts": [
+      {
+        "seed": 20260907,
+        "objective_value": 22.94420577155377,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 13350,
+        "nit": 177
+      },
+      {
+        "seed": 20260908,
+        "objective_value": 22.91749486976954,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 15600,
+        "nit": 207
+      },
+      {
+        "seed": 20260909,
+        "objective_value": 22.913274033178595,
+        "converged": true,
+        "message": "Optimization terminated successfully.",
+        "nfev": 19950,
+        "nit": 265
+      }
+    ],
+    "engine": "numba",
+    "compiled_backend": true
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.0_lon+7.0",
+  "filename": "\u00dcrzig.csv",
+  "first_date": "1950-01-02",
+  "last_date": "2025-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 27758,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 27758,
+  "n_rows": 27758,
+  "output_sha256": "819870064006fef773ac646466faed9bf93ae884cf2d3d472be8985fa9be3611",
+  "record_sha256": "c2b83c7827f30afd574df95e6fcdfa1eacbb610e23eeac9112f23096358a36a4",
+  "site": "DE:dwd:10134",
+  "source_had_dem": true,
+  "source_sha256": "819870064006fef773ac646466faed9bf93ae884cf2d3d472be8985fa9be3611",
+  "status": "completed",
+  "temperature_offset_c": 1.1061547818501618
+}

@@ -1,0 +1,10 @@
+{
+  "equation": "Tmean_DEM = Tmean - 0.0065 * site_minus_grid_elevation_m",
+  "lapse_rate_c_per_m": 0.0065,
+  "raw_preservation": "exact CSV field strings and record order; no missing-date insertion",
+  "schema_version": 1,
+  "source_sha256": "fc8d1f94ef751492f84bdeda658a4851bc5995c6d1e5531b6e8f7bb63e22f8ab",
+  "terrain_path": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/topography/processed/publication_terrain_20260910_v2/terrain_manifest.csv",
+  "terrain_sha256": "8cdc15d111b8e0964adf2d1c8c70e510ebf49ec69a2a6131de0af14d27275054",
+  "weather_dir": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/weather/sites"
+}

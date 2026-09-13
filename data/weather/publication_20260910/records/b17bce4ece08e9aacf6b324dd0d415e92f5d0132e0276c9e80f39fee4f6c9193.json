@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+43.5_lon+3.0",
+  "filename": "roquebrun.csv",
+  "first_date": "1998-01-01",
+  "last_date": "2001-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 1461,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 1461,
+  "n_rows": 1461,
+  "output_sha256": "ff9bee34bdb1387a49140acefea0325f992433745e91c92f0f1e8dbed7f6cd8d",
+  "record_sha256": "f9e9ec13ef7d2fb4b97483b4849bb1bd45e97e9792a51d7e459a8c60b1f439fb",
+  "site": "FR:tempo:5880",
+  "source_had_dem": true,
+  "source_sha256": "ff9bee34bdb1387a49140acefea0325f992433745e91c92f0f1e8dbed7f6cd8d",
+  "status": "completed",
+  "temperature_offset_c": 1.4048143996095048
+}

@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+46.0_lon+4.7",
+  "filename": "beaujolais.csv",
+  "first_date": "1950-01-02",
+  "last_date": "1976-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 9861,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 9861,
+  "n_rows": 9861,
+  "output_sha256": "eb1e72e896327b796ae28d06633173280d399360eb9b8097359964d7a102cd93",
+  "record_sha256": "f0c7d5432927c4f63160da5febae49e090055792a9ab105ee3e4d28bd0e3e26a",
+  "site": "FR:tempo:462049",
+  "source_had_dem": true,
+  "source_sha256": "eb1e72e896327b796ae28d06633173280d399360eb9b8097359964d7a102cd93",
+  "status": "completed",
+  "temperature_offset_c": 0.506632196854566
+}

@@ -1,0 +1,46 @@
+{
+  "source_sha256": {
+    "model_run/src/analyze_ml_zones.py": "3382f257db00088e34013c4cd4f19cdb2f19278673896c8eb9a693a2b244a6e0",
+    "model_run/src/analyze_raw_structure_spatial.py": "b9fc3abe32a27450d5f36f8c59bce67667e969b91590a3af80ae3de83656cbde",
+    "model_run/results/median_cutoff_ml_20260912/FL/RAW/predictions.csv.gz": "b3af3140aed090b5e0c1fd77de4371c0c818aa2c8cc62f55b22c1c988e9f316b",
+    "model_run/results/median_cutoff_ml_20260912/FL/DEM/predictions.csv.gz": "587aa4b65c42cf136450ea30b8f0ee42d05bb7bde39c66513fd3eb1ea2a463f8",
+    "model_run/results/median_cutoff_ml_20260912/FB/RAW/predictions.csv.gz": "a66af3236d900bee7541e507ddf4c456d6caad5c99035aaa3a27d0abdb9e19e5",
+    "model_run/results/median_cutoff_ml_20260912/FB/DEM/predictions.csv.gz": "ae0703bbde8a53b46caa88019c6593b4326c60ac9440699b52cd77cde169f6df",
+    "model_run/results/median_cutoff_ml_20260912/CL-FL-S/RAW/predictions.csv.gz": "358bae92df2c0fdf1049f56b46c114ebaa9fb3498960bdfee092e3574bc90e85",
+    "model_run/results/median_cutoff_ml_20260912/CL-FL-S/DEM/predictions.csv.gz": "28d65afd5eacc9af49652f55e41383986e52cacd101b670cd65925848a5c2a33",
+    "model_run/results/median_cutoff_ml_20260912/CL-FL-P/RAW/predictions.csv.gz": "26c4827711bab243d4cec61f39664f546db59796d3588fc5eaaa6384510efbe9",
+    "model_run/results/median_cutoff_ml_20260912/CL-FL-P/DEM/predictions.csv.gz": "1db64dcbfebb4cd49f842df375721d901bfbf931c3a9219e7bbd9b4937ad164f",
+    "model_run/results/median_cutoff_ml_20260912/CB-FL-S/RAW/predictions.csv.gz": "0d55837cccb05469d34fa4e5daf7fcd33865a52527f6d15f6173b2dc1a88714d",
+    "model_run/results/median_cutoff_ml_20260912/CB-FL-S/DEM/predictions.csv.gz": "3a7b9887f3f9090ff8ba27e9f56f0067832b86491522d5f34b0ed30bf11d8120",
+    "model_run/results/median_cutoff_ml_20260912/CB-FL-P/RAW/predictions.csv.gz": "4ff37cf03fa735f9dd25995abeabf82b6197e50c94b4e228370a745851f04aed",
+    "model_run/results/median_cutoff_ml_20260912/CB-FL-P/DEM/predictions.csv.gz": "385de5ce9fc6ebf598f59051cf4f0ee1a1db4963d5649b596aad6b4c64d39f77",
+    "model_run/results/median_cutoff_ml_20260912/CL-FB-S/RAW/predictions.csv.gz": "91e75a6160909d95d289f3e5c04bd98e09607773f96a2cae61059e75dd280ad6",
+    "model_run/results/median_cutoff_ml_20260912/CL-FB-S/DEM/predictions.csv.gz": "f6416500b247522461b44f920382450ba64524b04a7856feb319a5077eeda147",
+    "model_run/results/median_cutoff_ml_20260912/CL-FB-P/RAW/predictions.csv.gz": "2f6db6c9eb07b43c916146c04343faeb3a563b2a1fea14c6f991ba3945f65d82",
+    "model_run/results/median_cutoff_ml_20260912/CL-FB-P/DEM/predictions.csv.gz": "e6665ea1e911b50b1960ace594021ea1d713e38b60db09848055e46048f7a7b0",
+    "model_run/results/median_cutoff_ml_20260912/CB-FB-S/RAW/predictions.csv.gz": "3a53d51da11057189ddb9f1abb8689d2b9136ee62635b6edd7b285b55316bff6",
+    "model_run/results/median_cutoff_ml_20260912/CB-FB-S/DEM/predictions.csv.gz": "c95b187057efdcc936a294d881ad0be9b8341c1b4475d2ce9a35383b205eb855",
+    "model_run/results/median_cutoff_ml_20260912/CB-FB-P/RAW/predictions.csv.gz": "8ad55fa9b6fe7f3aefc48ca70d60c3960c185c2cc28de192c31185b80cf22783",
+    "model_run/results/median_cutoff_ml_20260912/CB-FB-P/DEM/predictions.csv.gz": "6d9b24bdcef1027490a2f4ac479ddf020719cfb6c78842ca8d82e59dba6a9478",
+    "model_run/results/publication_cohort_20260910/sites.csv": "c312392d321d96b4e965220699f5c24d98122f68942511be9e1cb5cd61b27da2"
+  },
+  "seed": 20260913,
+  "bootstrap_draws": 2000,
+  "comparisons": {
+    "ML_RAW": "RAW process minus RAW hybrid MAE; common finite observations across ten RAW process/hybrid pairs",
+    "DEM_ML": "RAW hybrid minus DEM hybrid MAE; common finite observations across ten hybrid RAW/DEM pairs"
+  },
+  "weighting": "Average absolute errors across ten fixed models at each observation, then within sites, then equally across sites. Overall means weight four stages equally.",
+  "uncertainty": "Pointwise 95% original-independence-group bootstrap percentile intervals. At least ten groups per stage and 95% finite draws. Models are not resampled.",
+  "zones": "Frozen TZ01-TZ05 displayed as EZ01-EZ05; subsets of primary held-out sites, not independent zone-holdout experiments",
+  "missing": "No interpolation or missing-stage renormalization; unsupported intervals remain missing",
+  "scoring": "Fixed 4 November scoring retained for BBCH81/89",
+  "output_sha256": {
+    "zone_effects.csv": "8cb2780ab4c6eb66287e64ae6a1e70d8286bc68b0a316d5e0451fe01b1e49ee9",
+    "model_effects.csv": "86f22719e48e3e7a7334807e42d4042082af4d81414b9f9817ab5434e2c34d51",
+    "claim_evidence.csv": "a4a19f73e7669efafb513917b040a18a5f58ff56b29013f3b55265161da39ec4",
+    "support.csv": "c36fe5bd0fd18181ae4718cc7eea44c634ce25679f4a330a12f6f5302315f426",
+    "site_stage_effects.csv": "ab962eccdb8e0c7d733649b1aff2719f525e6b6687cdc3784eaa842a4cbd0cfb",
+    "cohort_membership.csv": "7f60f71faa030206ef18c95fff5f37854d1286934d53b5bc0ab27ecdd1eb7e09"
+  }
+}

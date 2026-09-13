@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+50.3_lon+11.9",
+  "filename": "DE_pep725_101_4070.csv",
+  "first_date": "1979-01-01",
+  "last_date": "1990-12-31",
+  "max_absolute_old_dem_change_c": 0.11718066535163985,
+  "n_finite_raw": 4383,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 4383,
+  "n_old_dem_finite": 4383,
+  "n_rows": 4383,
+  "output_sha256": "efd2347232cbe7b977f9e6d387e78c1188958303f381dbbf805a6ced4e328bf6",
+  "record_sha256": "a8f10a7fd50a2ee91801558eebe56fd234a2902d409dbccd0f97d7d0630aa5d5",
+  "site": "DE:pep725:101:4070",
+  "source_had_dem": true,
+  "source_sha256": "63637fe0a07120f8879f28cbe3ad55dd92c18f1e6e5f656a6e30ce08b1478d4e",
+  "status": "completed",
+  "temperature_offset_c": 0.08112130516305273
+}

@@ -1,0 +1,22 @@
+contrast_id,family,left_model,right_model,left_process_parameter_count,right_process_parameter_count,parameter_count_scope
+forcing_response:FL:FB,forcing_response,FL,FB,4,4,joint four-stage process thresholds; residual learner excluded
+forcing_response:CL-FL-S:CL-FB-S,forcing_response,CL-FL-S,CL-FB-S,5,5,joint four-stage process thresholds; residual learner excluded
+forcing_response:CL-FL-P:CL-FB-P,forcing_response,CL-FL-P,CL-FB-P,5,5,joint four-stage process thresholds; residual learner excluded
+forcing_response:CB-FL-S:CB-FB-S,forcing_response,CB-FL-S,CB-FB-S,5,5,joint four-stage process thresholds; residual learner excluded
+forcing_response:CB-FL-P:CB-FB-P,forcing_response,CB-FL-P,CB-FB-P,5,5,joint four-stage process thresholds; residual learner excluded
+chilling_response:CL-FL-S:CB-FL-S,chilling_response,CL-FL-S,CB-FL-S,5,5,joint four-stage process thresholds; residual learner excluded
+chilling_response:CL-FL-P:CB-FL-P,chilling_response,CL-FL-P,CB-FL-P,5,5,joint four-stage process thresholds; residual learner excluded
+chilling_response:CL-FB-S:CB-FB-S,chilling_response,CL-FB-S,CB-FB-S,5,5,joint four-stage process thresholds; residual learner excluded
+chilling_response:CL-FB-P:CB-FB-P,chilling_response,CL-FB-P,CB-FB-P,5,5,joint four-stage process thresholds; residual learner excluded
+interaction:CL-FL-S:CL-FL-P,interaction,CL-FL-S,CL-FL-P,5,5,joint four-stage process thresholds; residual learner excluded
+interaction:CL-FB-S:CL-FB-P,interaction,CL-FB-S,CL-FB-P,5,5,joint four-stage process thresholds; residual learner excluded
+interaction:CB-FL-S:CB-FL-P,interaction,CB-FL-S,CB-FL-P,5,5,joint four-stage process thresholds; residual learner excluded
+interaction:CB-FB-S:CB-FB-P,interaction,CB-FB-S,CB-FB-P,5,5,joint four-stage process thresholds; residual learner excluded
+chilling_addition:FL:CL-FL-S,chilling_addition,FL,CL-FL-S,4,5,joint four-stage process thresholds; residual learner excluded
+chilling_addition:FL:CL-FL-P,chilling_addition,FL,CL-FL-P,4,5,joint four-stage process thresholds; residual learner excluded
+chilling_addition:FL:CB-FL-S,chilling_addition,FL,CB-FL-S,4,5,joint four-stage process thresholds; residual learner excluded
+chilling_addition:FL:CB-FL-P,chilling_addition,FL,CB-FL-P,4,5,joint four-stage process thresholds; residual learner excluded
+chilling_addition:FB:CL-FB-S,chilling_addition,FB,CL-FB-S,4,5,joint four-stage process thresholds; residual learner excluded
+chilling_addition:FB:CL-FB-P,chilling_addition,FB,CL-FB-P,4,5,joint four-stage process thresholds; residual learner excluded
+chilling_addition:FB:CB-FB-S,chilling_addition,FB,CB-FB-S,4,5,joint four-stage process thresholds; residual learner excluded
+chilling_addition:FB:CB-FB-P,chilling_addition,FB,CB-FB-P,4,5,joint four-stage process thresholds; residual learner excluded

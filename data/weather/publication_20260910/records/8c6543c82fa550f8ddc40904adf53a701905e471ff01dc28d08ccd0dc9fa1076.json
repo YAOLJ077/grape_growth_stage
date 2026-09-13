@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+48.9_lon+9.4",
+  "filename": "Schwaikheim.csv",
+  "first_date": "1967-01-01",
+  "last_date": "1992-12-31",
+  "max_absolute_old_dem_change_c": 0.33289961747625263,
+  "n_finite_raw": 9497,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 9497,
+  "n_old_dem_finite": 9497,
+  "n_rows": 9497,
+  "output_sha256": "e293e4012d1ec2e2ebd905a1def3355afceb4c5afe432987e33dc2f365f9ceb3",
+  "record_sha256": "5f306ac1037732821951cc6adcee2c3b8622e687d4166441ea47658ec5f9b138",
+  "site": "DE:dwd:10511",
+  "source_had_dem": true,
+  "source_sha256": "45245841af8bcff612317c6648e699aec1f7adb2971a6cea8f3c41a6fb20f89f",
+  "status": "completed",
+  "temperature_offset_c": 0.21004272683620773
+}

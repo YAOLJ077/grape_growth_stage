@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+52.3_lon+10.8",
+  "filename": "DE_dwd_08594.csv",
+  "first_date": "2022-01-01",
+  "last_date": "2024-12-31",
+  "max_absolute_old_dem_change_c": 0.08588810130887303,
+  "n_finite_raw": 1096,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 1096,
+  "n_old_dem_finite": 1096,
+  "n_rows": 1096,
+  "output_sha256": "2b8664dd7b798c1183103a5cc890f1d0ed9cef9c7d0c84a0613a388fdc5d47cc",
+  "record_sha256": "4143d60b8bc33121e8c39e7b66f7dfe2fe53d1132c91b0c56b31b7facb3b94fa",
+  "site": "DE:dwd:08594",
+  "source_had_dem": true,
+  "source_sha256": "7eddfde78980fca8e69b6fbcb254ecb5cf4c75fda7da1789d13457ce3533f37f",
+  "status": "completed",
+  "temperature_offset_c": 0.16615544561018958
+}

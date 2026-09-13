@@ -1,0 +1,326 @@
+{
+  "created": "2026-09-13T10:46:48.975626+00:00",
+  "scope": "Recompute published scoring-error statistics and figures from locked predictions, frozen covariates, observations and map inputs; no model retraining",
+  "files": {
+    "common/countries.geojson": {
+      "source": "data/topography/metadata/countries.geojson",
+      "sha256": "45f41865adec4f86602c2cd05c0e29cd8b437614bf2f5b5a863d12463202cae4"
+    },
+    "study_area/map_quality.json": {
+      "source": "fig/study_area/map_quality.json",
+      "sha256": "571de7f3f80afccddfe0d9ed9696e76cca2b987a8d554cf4313b44aa41f6b0c8"
+    },
+    "study_area/site_inventory.csv": {
+      "source": "fig/study_area/site_inventory.csv",
+      "sha256": "8e214031c4596d9a757f464804a087200f3bc0ffcf9d692e6ad1fb3e35a355ab"
+    },
+    "study_area/typography_verification.json": {
+      "source": "fig/study_area/typography_verification.json",
+      "sha256": "bdc5bfd3e32dc01e65a573ac3291dbe9ae151cff16958018da321f74c7c2fc43"
+    },
+    "study_area/verification.json": {
+      "source": "fig/study_area/verification.json",
+      "sha256": "f7b9433f4403c56715bb2e66463001288cf67f9ff13b3a93dc1da657ee07c2e4"
+    },
+    "study_area/panel_a_background.png": {
+      "source": "data/topography/processed/study_area_relief_20260912/panel_a_background.png",
+      "sha256": "0ad501277b9115e4b138b98e6579d1de68f67a06b5faaa2e27aee6647e11eaa2"
+    },
+    "study_area/panel_b_background.png": {
+      "source": "data/topography/processed/study_area_relief_20260912/panel_b_background.png",
+      "sha256": "e982164faacce7cfc477ccfdd475f04579ed61f16b4f7f32e53937e7221492f6"
+    },
+    "study_area/provenance.json": {
+      "source": "data/topography/processed/study_area_relief_20260912/provenance.json",
+      "sha256": "ef6d2825c44294e317f8f5904a850a9b899406587b89a14273dd09665186e35b"
+    },
+    "responses/temperature_responses.csv": {
+      "source": "fig/model_functions/temperature_responses.csv",
+      "sha256": "8bc8cae1f8854c2519c47b55bc9e5dcbcb3e8c539c8b4c55d05ac1495f342b73"
+    },
+    "responses/temperature_responses.json": {
+      "source": "fig/model_functions/temperature_responses.json",
+      "sha256": "754fe7b15df02a2588086d6dc2b4cd2cd6b38ca0dc0091d203686eac614c9a90"
+    },
+    "environment/environmental_zone_monthly_centres.csv": {
+      "source": "fig/model_evaluation/environmental_design_20260912/environmental_zone_monthly_centres.csv",
+      "sha256": "ec7ec4f0f7795441a4d514883a348afd4234ed07bc6c6b769a60dec9932d2ec8"
+    },
+    "environment/environmental_zone_partition_counts.csv": {
+      "source": "fig/model_evaluation/environmental_design_20260912/environmental_zone_partition_counts.csv",
+      "sha256": "1d72ea2c7916fee38e091ae808aa79e8a30a674d971ea3fbd37d124e79e66423"
+    },
+    "environment/environmental_zone_sites.csv": {
+      "source": "fig/model_evaluation/environmental_design_20260912/environmental_zone_sites.csv",
+      "sha256": "dc31e39de19e562274b04685c4d64af5f71fb3872a1b64dec92ac122a6ab3dec"
+    },
+    "environment/environmental_zone_stage_partition_counts.csv": {
+      "source": "fig/model_evaluation/environmental_design_20260912/environmental_zone_stage_partition_counts.csv",
+      "sha256": "78d1692c5b0285e380d4236a9ecfcf0feed3a71905ae7bac80331b787a909c99"
+    },
+    "environment/metadata.json": {
+      "source": "fig/model_evaluation/environmental_design_20260912/metadata.json",
+      "sha256": "23f2c6ec3a4268a1b87464e4ea63f1f1c35c5ad65c34bd4272aa41c26682a8a0"
+    },
+    "environment/verification.json": {
+      "source": "fig/model_evaluation/environmental_design_20260912/verification.json",
+      "sha256": "4144e00d71ada94b72ed826fa524a2699841ddf6a1417e4f79782c26ca3465d3"
+    },
+    "pbm/application_receipt.json": {
+      "source": "paper/pbm_results_20260913/application_receipt.json",
+      "sha256": "ef0fc8434bb18ae931de6a122914476a024563c03f79bb93ee960f2b65669d72"
+    },
+    "pbm/calibration_flags.csv": {
+      "source": "paper/pbm_results_20260913/calibration_flags.csv",
+      "sha256": "1a434cf84200e9ca6b8c1cce3b8499c0e0dad6704c7694e0eedf46783becf7a4"
+    },
+    "pbm/figure_verification.json": {
+      "source": "paper/pbm_results_20260913/figure_verification.json",
+      "sha256": "6092c52f5aca2271129705debf52ada5dd2db07528cf9698fcd62f017b8dce42"
+    },
+    "pbm/manifest.json": {
+      "source": "paper/pbm_results_20260913/manifest.json",
+      "sha256": "86335b7bbaaf70a787704be6a432407ebd3b1a3546c61dd24438f8d56a62950b"
+    },
+    "pbm/overall_metrics.csv": {
+      "source": "paper/pbm_results_20260913/overall_metrics.csv",
+      "sha256": "46c427341d7ed7bf20cba1cbb130e708c09c83396aeb2e7f156bfd312342bcb7"
+    },
+    "pbm/plotted_values.csv": {
+      "source": "paper/pbm_results_20260913/plotted_values.csv",
+      "sha256": "5a06c965a6f636a1efd53b2a1a9335605a15e4d07561e03c16f20652f8f2c4ba"
+    },
+    "pbm/stage_metrics.csv": {
+      "source": "paper/pbm_results_20260913/stage_metrics.csv",
+      "sha256": "bb92982ea932d02a64454980b83db04a97ce766f063e61a163cfd38b2c2ff72a"
+    },
+    "structure/cb_fl_s_site_metrics.csv": {
+      "source": "paper/structure_spatial_20260913/cb_fl_s_site_metrics.csv",
+      "sha256": "bc0a5587e8c1185e0fe2b1151b8e164a6d5ba09b6c266df734f460a2b0d17597"
+    },
+    "structure/cb_fl_s_zone_metrics.csv": {
+      "source": "paper/structure_spatial_20260913/cb_fl_s_zone_metrics.csv",
+      "sha256": "8a850f85e836799ec115fcc8a8b53dcd5ddd8825856d222fe6802dfccfdfb1c9"
+    },
+    "structure/cb_fl_s_zone_plotted_values.csv": {
+      "source": "paper/structure_spatial_20260913/cb_fl_s_zone_plotted_values.csv",
+      "sha256": "06464e0a68b7562fb02b02f5a34b10b2e8bfdbea9063e3001547ce25639e8767"
+    },
+    "structure/claim_evidence.csv": {
+      "source": "paper/structure_spatial_20260913/claim_evidence.csv",
+      "sha256": "969d7352325c06d683b8cc3ef788d09a1f111acfc1443fa9546847b004a9d36c"
+    },
+    "structure/controlled_pairs.csv": {
+      "source": "paper/structure_spatial_20260913/controlled_pairs.csv",
+      "sha256": "099e8477041aa0982f8594caeb193935e9ebb54cf6895b46dac8ea7f16c7f5f4"
+    },
+    "structure/figure_verification.json": {
+      "source": "paper/structure_spatial_20260913/figure_verification.json",
+      "sha256": "5956865209762ebe87840a559b98024c5dce2036042b3d7120e4425cbb26cd8b"
+    },
+    "structure/function_performance.csv": {
+      "source": "paper/structure_spatial_20260913/function_performance.csv",
+      "sha256": "f77a88443a08f2c5899e90fdb50838ecbd192a03e96aa8ea19df4e0642581f6e"
+    },
+    "structure/function_plotted_values.csv": {
+      "source": "paper/structure_spatial_20260913/function_plotted_values.csv",
+      "sha256": "770078023f68b93a0c49c706f0bb815987606d9af4c85ca44d1f8a38955ae0e4"
+    },
+    "structure/function_support.csv": {
+      "source": "paper/structure_spatial_20260913/function_support.csv",
+      "sha256": "c34cbc1dfde74180eb214f45f98d73edad5e573939e63b5440fc38c400d7c168"
+    },
+    "structure/manifest.json": {
+      "source": "paper/structure_spatial_20260913/manifest.json",
+      "sha256": "ee92137f426493c96aeda54331467b8dda90eeedf8e0fa114d25d641ef15e55c"
+    },
+    "structure/verification.json": {
+      "source": "paper/structure_spatial_20260913/verification.json",
+      "sha256": "4f747abe3a00c571642b646fd6d63f6855f27011fa24e28a2d754271cc709bc5"
+    },
+    "dem/afm_reference.json": {
+      "source": "paper/dem_results_20260913/afm_reference.json",
+      "sha256": "5a0aecf969a58f51f96a3332135eec03ff1fe0b60b5ffb3af0e2ded8c5bf26eb"
+    },
+    "dem/analysis.json": {
+      "source": "paper/dem_results_20260913/analysis.json",
+      "sha256": "dba0e552a87ae6e1adebcd83ce313da478bfef4ad8ad55f26854adabbe7d0317"
+    },
+    "dem/claim_evidence.csv": {
+      "source": "paper/dem_results_20260913/claim_evidence.csv",
+      "sha256": "7fbbaa798c4e9eb134ce6871f29eba2f27cd43ff7b02b34ab6f94ca27fbd6dee"
+    },
+    "dem/continuous_associations.csv": {
+      "source": "paper/dem_results_20260913/continuous_associations.csv",
+      "sha256": "13876c3e50e9aa236d62b9e919d892146bb77203b385981c2ffc69b18f2fc466"
+    },
+    "dem/figure_values.csv": {
+      "source": "paper/dem_results_20260913/figure_values.csv",
+      "sha256": "4894a1dedecfd30fb42f1f44abe2b1ebf7f50c0cf73ffe098c97f4def4420fc3"
+    },
+    "dem/figure_verification.json": {
+      "source": "paper/dem_results_20260913/figure_verification.json",
+      "sha256": "f5cf0146d1f3a94b5aa84254ded07516027cd7e1e91182938f1bb692e6af038b"
+    },
+    "dem/manifest.json": {
+      "source": "paper/dem_results_20260913/manifest.json",
+      "sha256": "4def7c48a806b0cf5a6bc30fc6e557975cf1db5a7b55833c0ec82d663d60392a"
+    },
+    "dem/model_effects.csv": {
+      "source": "paper/dem_results_20260913/model_effects.csv",
+      "sha256": "6888314fd2a2b4aec8a0edc329151d9af5e54de86914c7a0a6967f89fb089c36"
+    },
+    "dem/paired_effects.csv": {
+      "source": "paper/dem_results_20260913/paired_effects.csv",
+      "sha256": "9ff375b21ce099ab99acdd4164459bb2e604342be6d34fe4b44d665922a54588"
+    },
+    "dem/sensitivity.csv": {
+      "source": "paper/dem_results_20260913/sensitivity.csv",
+      "sha256": "a2d403de06d9c69b03a72b5e987b9332286b6f3651d70f3b955a8aa4f49dd1bd"
+    },
+    "dem/site_benefit_distribution.csv": {
+      "source": "paper/dem_results_20260913/site_benefit_distribution.csv",
+      "sha256": "20c1a364b218d59f93fe91457816deebb0079824e4b01bc5af0c0399c91adea8"
+    },
+    "dem/site_stage_effects.csv": {
+      "source": "paper/dem_results_20260913/site_stage_effects.csv",
+      "sha256": "f83303c2dfd695cdaa2de3ea1303d9b2de04da7acc51c1aad810081f54b441ea"
+    },
+    "dem/site_strata.csv": {
+      "source": "paper/dem_results_20260913/site_strata.csv",
+      "sha256": "d28f69271d7b24ef3c108dd83cee5e1239b58ff4916b511e718745979c2a3e4e"
+    },
+    "dem/stratum_contrasts.csv": {
+      "source": "paper/dem_results_20260913/stratum_contrasts.csv",
+      "sha256": "564de21cf937b7eb2bf1372724e8bc00b0a497f961a0a6e917aeda990b629248"
+    },
+    "dem/support.csv": {
+      "source": "paper/dem_results_20260913/support.csv",
+      "sha256": "cffc22d268af84eae77c4b0732985613f5c9cb09feca0e834e60693c7f9a7fe9"
+    },
+    "dem/verification.json": {
+      "source": "paper/dem_results_20260913/verification.json",
+      "sha256": "f4f1151b0cfc944afe09e9821bd6d9dd12f2907be04e6cd65e6533e0298d2793"
+    },
+    "ml/analysis.json": {
+      "source": "paper/ml_results_20260913/analysis.json",
+      "sha256": "2442689b57eeba55e357fb9ccc14cfdba3f936c0d290ed73662d91a761ea028c"
+    },
+    "ml/claim_evidence.csv": {
+      "source": "paper/ml_results_20260913/claim_evidence.csv",
+      "sha256": "a4a19f73e7669efafb513917b040a18a5f58ff56b29013f3b55265161da39ec4"
+    },
+    "ml/cohort_membership.csv": {
+      "source": "paper/ml_results_20260913/cohort_membership.csv",
+      "sha256": "7f60f71faa030206ef18c95fff5f37854d1286934d53b5bc0ab27ecdd1eb7e09"
+    },
+    "ml/figure_verification.json": {
+      "source": "paper/ml_results_20260913/figure_verification.json",
+      "sha256": "91d4d957988ba1196731cdfa2594f6945d5ac7f8b974ad47882e94373fd8e6ba"
+    },
+    "ml/model_effects.csv": {
+      "source": "paper/ml_results_20260913/model_effects.csv",
+      "sha256": "86f22719e48e3e7a7334807e42d4042082af4d81414b9f9817ab5434e2c34d51"
+    },
+    "ml/site_stage_effects.csv": {
+      "source": "paper/ml_results_20260913/site_stage_effects.csv",
+      "sha256": "ab962eccdb8e0c7d733649b1aff2719f525e6b6687cdc3784eaa842a4cbd0cfb"
+    },
+    "ml/support.csv": {
+      "source": "paper/ml_results_20260913/support.csv",
+      "sha256": "c36fe5bd0fd18181ae4718cc7eea44c634ce25679f4a330a12f6f5302315f426"
+    },
+    "ml/verification.json": {
+      "source": "paper/ml_results_20260913/verification.json",
+      "sha256": "c0b373695d19882c3e80befe28eb4600d4d6aeee4720a6c74268f70874672bca"
+    },
+    "ml/zone_effects.csv": {
+      "source": "paper/ml_results_20260913/zone_effects.csv",
+      "sha256": "8cb2780ab4c6eb66287e64ae6a1e70d8286bc68b0a316d5e0451fe01b1e49ee9"
+    },
+    "ml_baseline_link/analysis.json": {
+      "source": "paper/ml_baseline_link_20260913/analysis.json",
+      "sha256": "5f4bccbef54633a868ea37daf2e1cc8601ba4c6c1f28a2469eea9d2279856a1c"
+    },
+    "ml_baseline_link/baseline_hybrid_gain.csv": {
+      "source": "paper/ml_baseline_link_20260913/baseline_hybrid_gain.csv",
+      "sha256": "690f546fc4251c10ad7a49b7864f70860689cdbae33797db38f79c87c322120c"
+    },
+    "ml_baseline_link/claim_evidence.csv": {
+      "source": "paper/ml_baseline_link_20260913/claim_evidence.csv",
+      "sha256": "7625ef2e273d05ea8d096ca30032413b82e7b50b8f2904f7d427255468f16956"
+    },
+    "ml_baseline_link/figure_verification.json": {
+      "source": "paper/ml_baseline_link_20260913/figure_verification.json",
+      "sha256": "a60a8190f7aa8bd3b3e97329ff0e51aba96e7679ab944d42cec9479ed11a8616"
+    },
+    "ml_baseline_link/paired_dem_gain_decrease.csv": {
+      "source": "paper/ml_baseline_link_20260913/paired_dem_gain_decrease.csv",
+      "sha256": "244f633c0e0448821db4df9e823f757985ef010fd8a6501f3351b13e227894bc"
+    },
+    "ml_baseline_link/paired_site_stage_gains.csv": {
+      "source": "paper/ml_baseline_link_20260913/paired_site_stage_gains.csv",
+      "sha256": "c1f7ccfa08b34aeb61396e21cc126e2bb9a27c8834663e271f511e2683a9fda1"
+    },
+    "ml_baseline_link/pdf_audit.json": {
+      "source": "paper/ml_baseline_link_20260913/pdf_audit.json",
+      "sha256": "6ce76518ab98c63e8e4c3c7de911db53a0933d23300fda5724b574f7f4ae3f97"
+    },
+    "ml_baseline_link/verification.json": {
+      "source": "paper/ml_baseline_link_20260913/verification.json",
+      "sha256": "4e8c95830827760227d41e85ffddf45dee762facbacb38319e0889fea0023e3a"
+    },
+    "hybrid/stage_metrics.csv": {
+      "source": "model_run/results/median_cutoff_ml_20260912/final_analysis/stage_metrics.csv",
+      "sha256": "54abbef3bc229f1d69edbc441150c607142504a333e63306b3c1acd2cca65e65"
+    },
+    "hybrid/paired_effects.csv": {
+      "source": "model_run/results/median_cutoff_ml_20260912/final_analysis/paired_effects.csv",
+      "sha256": "5610aed510f9723c0be9aef9d57c51678e82e8cf9b654d7315ca45992d50eaca"
+    },
+    "hybrid/manifest.json": {
+      "source": "model_run/results/median_cutoff_ml_20260912/final_analysis/manifest.json",
+      "sha256": "6d7df2f15b10dbd8c45792a3e2b09c53183fc55b3951e4144c7b97c6921f220f"
+    },
+    "observations/test_observations.csv.gz": {
+      "source": "model_run/results/pooled_calibration_20260912/test_observations.csv.gz",
+      "sha256": "e692e2fda7b12fa717f014d414493a835a91a7f956e4ca51f9491477eb8aa204"
+    },
+    "observations/calibration_observations.csv.gz": {
+      "source": "model_run/results/pooled_calibration_20260912/calibration_observations.csv.gz",
+      "sha256": "2ab02de5acb25d4b9bf9026a85e083ed0b22c68a8408d138427aa11f7eb06794"
+    },
+    "workflow/workflow.md": {
+      "source": "fig/workflow/workflow.md",
+      "sha256": "deba4f13bea75bc15c188f514057a264dbea6e134b1a2c5017b2935f8f73da9e"
+    },
+    "study_area/SOURCES.md": {
+      "source": "fig/study_area/README.md",
+      "sha256": "9762d1a010b71e693b2f9644ba77beedd7b1c6481e193da070cea7941dbef1ac"
+    },
+    "study_area/map_payload.json": {
+      "source": "Derived from bundled site_inventory.csv, map_quality.json, countries.geojson and terrain provenance",
+      "sha256": "1492b2ffc1b1c817ace478e366d6e2bb9b8a360d9fe66553c626e987ce5ba69d"
+    },
+    "catalogue.json": {
+      "source": "Current manuscript and supplementary figure order and labels",
+      "sha256": "68b2b8dadb887cfe41bea82901c19e1efa7cfdd0b87c7336e12b0a8ffb7d54aa"
+    },
+    "reference_figure_text.json": {
+      "source": "PDFKit text extracted from the 15 current source PDFs; used only to verify regenerated artwork",
+      "sha256": "221cb7eab1e9eab438c3aea05bc14fc5c907a542373c683588c8a93f119ed5c3"
+    },
+    "predictions/provenance.json": {
+      "source": "Verified locked predictions; see predictions/provenance.json",
+      "sha256": "8e9dfd12686ea9b0e4c4da63b6784681a873734cd0a63fba586a9a8cd06da66e"
+    },
+    "predictions/identity.csv.gz": {
+      "source": "Verified locked predictions; see predictions/provenance.json",
+      "sha256": "2e7d4e310dfd8bf726642e5ba8290710256807baa78d79b58a438d6812eb4f24"
+    },
+    "predictions/scoring_errors.npz": {
+      "source": "Verified locked predictions; see predictions/provenance.json",
+      "sha256": "2cbf5f873d6ba123010638df6fe1a545f4265569aef37590f8552f7ca2811168"
+    }
+  }
+}

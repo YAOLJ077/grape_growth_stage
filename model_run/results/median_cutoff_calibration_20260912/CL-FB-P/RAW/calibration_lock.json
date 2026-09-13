@@ -1,0 +1,24 @@
+{
+  "locked_at": "2026-09-12T18:24:49.249330+00:00",
+  "parameters": {
+    "chilling_minimum": -1.7,
+    "chilling_optimum": 1.7,
+    "chilling_maximum": 13.2,
+    "minimum_response": 0.2,
+    "forcing_minimum": 0.0,
+    "forcing_maximum": 35.0,
+    "forcing_optimum_07": 25.4,
+    "forcing_optimum_65": 25.4,
+    "forcing_optimum_81": 25.4,
+    "forcing_optimum_89": 25.4,
+    "forcing_requirement_89": 35.43404823131786,
+    "chilling_requirement": 86.2095956120806,
+    "forcing_requirement_07": 17.166751863784995,
+    "forcing_requirement_65": 21.48366455959713,
+    "forcing_requirement_81": 49.95201121677757
+  },
+  "fit_sha256": "40b247fd59997fc5a2c5c2f9db608c980911d8b16ef6036480f9dbd499445777",
+  "calibration_only": true,
+  "calibration_observations": 59472,
+  "cutoff_month_day": "11-04"
+}

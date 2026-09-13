@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+47.0_lon+4.8",
+  "filename": "volnay.csv",
+  "first_date": "1950-01-02",
+  "last_date": "1976-12-31",
+  "max_absolute_old_dem_change_c": 0.04879284667968875,
+  "n_finite_raw": 9861,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 9861,
+  "n_old_dem_finite": 9861,
+  "n_rows": 9861,
+  "output_sha256": "86ce214b1c69d0c3f5e9d830fa777fa6c10d550a58223819f76bb86269214355",
+  "record_sha256": "11f735b1fdc671c0cefb7c011eb887e517e6029a4d15da0f2111c8830eafa518",
+  "site": "FR:tempo:5959",
+  "source_had_dem": true,
+  "source_sha256": "aa3d37ca5f733f254d4e75c6bacb81759efa4b279dc94ce8ffa68b4cc43288fa",
+  "status": "completed",
+  "temperature_offset_c": -0.35665511778948567
+}

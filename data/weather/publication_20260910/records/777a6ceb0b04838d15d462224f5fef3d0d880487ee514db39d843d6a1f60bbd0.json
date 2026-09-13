@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.7_lon+8.1",
+  "filename": "Albisheim.csv",
+  "first_date": "1962-01-01",
+  "last_date": "2013-12-31",
+  "max_absolute_old_dem_change_c": 0.0346215602175306,
+  "n_finite_raw": 18993,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 18993,
+  "n_old_dem_finite": 18993,
+  "n_rows": 18993,
+  "output_sha256": "39f87e4e8c42990d5f4f3b03adfc7b9bf340621c02cb158ea08d293c27161a5c",
+  "record_sha256": "a7fa8b96d99df3c83223b3549a5b5f717cbfaea7baef5f19ce4c7e7cfc6b0c63",
+  "site": "DE:dwd:10242",
+  "source_had_dem": true,
+  "source_sha256": "7743d8483c5b881c7bd1c504f00d149405f6df604dc554abf98b5af4683fe46c",
+  "status": "completed",
+  "temperature_offset_c": 0.5540778757536833
+}

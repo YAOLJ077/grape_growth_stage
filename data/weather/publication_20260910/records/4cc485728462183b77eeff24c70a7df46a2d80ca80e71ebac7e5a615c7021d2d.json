@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+43.7_lon+3.9",
+  "filename": "prades-le-lez.csv",
+  "first_date": "2000-01-01",
+  "last_date": "2003-12-31",
+  "max_absolute_old_dem_change_c": 0.0,
+  "n_finite_raw": 1461,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 1461,
+  "n_rows": 1461,
+  "output_sha256": "82cd67e2ddbb2554dbdb452c574e875f50ea9f4571ef741d0179b48edffe4819",
+  "record_sha256": "5c0af55e084d754bbef92c854c090561b136fee3ecc7cb9a5cdf2ad3be77a4bc",
+  "site": "FR:tempo:5862",
+  "source_had_dem": true,
+  "source_sha256": "82cd67e2ddbb2554dbdb452c574e875f50ea9f4571ef741d0179b48edffe4819",
+  "status": "completed",
+  "temperature_offset_c": 0.18967863448393757
+}

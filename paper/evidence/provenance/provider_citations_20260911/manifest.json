@@ -1,0 +1,21 @@
+{
+  "verified_utc": "2026-09-10T22:23:44.679398+00:00",
+  "local_date": "2026-09-11 Europe/Berlin",
+  "metadata_sources": {
+    "copernicus_dem_crossref.json": "https://api.crossref.org/works/10.5270/ESA-c5d3d65",
+    "era5_land_hourly.json": "https://api.datacite.org/dois/10.24381/cds.e2161bac",
+    "era5_land_monthly.json": "https://api.datacite.org/dois/10.24381/cds.68d2bb30",
+    "dem_registration.txt": "https://doi.org/ra/10.5270/ESA-c5d3d65",
+    "dem_bibtex.txt": "https://doi.org/10.5270/ESA-c5d3d65 (Accept: application/x-bibtex)"
+  },
+  "registry_fields_verified": true,
+  "interpretation": "citation publication year is distinct from input release or acquisition date; no author funding/declaration inferred",
+  "artifacts": {
+    "README.md": "e6f72e859fc50c57eb5c462c5b872340b57d4877e93f1edd6f886ab25176d017",
+    "era5_land_monthly.json": "c10127b564288b49e24792c742c9d447105b3eba0a65e2e704714300401a9af1",
+    "copernicus_dem_crossref.json": "bd2e1f4e8ae52a2d987166fc0dad7db1d3369a53ead29acec315e9fc08343720",
+    "era5_land_hourly.json": "12d100b1b65c2399921f70390a70997afdbb6ecd45a4de7fa4857d6c7f522ab5",
+    "dem_registration.txt": "7182c23f5bb792e0734c21351e631038e5969dec6277fc92cb6adb72a4b512e6",
+    "dem_bibtex.txt": "97bb1d2b090f6e3de66b5a7f90f1b04852fa680b3b1e46af5f0539eb30223d3c"
+  }
+}

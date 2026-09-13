@@ -1,0 +1,137 @@
+[
+  {
+    "id": "Fig_01",
+    "document": "manuscript",
+    "number": "1",
+    "label": "fig:study_framework",
+    "source_pdf": "fig/workflow/workflow.pdf",
+    "stem": "workflow",
+    "reference_sha256": "009493a9568f776292e7814134a857de0c3647fbffc857f54add1402dbd51bad"
+  },
+  {
+    "id": "Fig_02",
+    "document": "manuscript",
+    "number": "2",
+    "label": "fig:study_area",
+    "source_pdf": "fig/study_area/study_area.pdf",
+    "stem": "study_area",
+    "reference_sha256": "c72c68e335dbeed14cc8b364e60aada42fdce5a746882e11de26ca056b0a1aa6"
+  },
+  {
+    "id": "Fig_03",
+    "document": "manuscript",
+    "number": "3",
+    "label": "fig:temperature_responses",
+    "source_pdf": "fig/model_functions/temperature_responses.pdf",
+    "stem": "temperature_responses",
+    "reference_sha256": "13ad6af001bf522048f2037d20ce8991642b5a0fc6427001f20c21c5e987eb60"
+  },
+  {
+    "id": "Fig_04",
+    "document": "manuscript",
+    "number": "4",
+    "label": "fig:temperature_zones",
+    "source_pdf": "fig/model_evaluation/environmental_design_20260912/environmental_zones_and_split.pdf",
+    "stem": "environmental_zones_and_split",
+    "reference_sha256": "d4a6b779fed026ea594137986f6abe2c318ca7effe1755b802abf97cc45dd2a8"
+  },
+  {
+    "id": "Fig_05",
+    "document": "manuscript",
+    "number": "5",
+    "label": "fig:final_pbm_accuracy",
+    "source_pdf": "fig/model_evaluation/pbm_final_20260913/pbm_mae.pdf",
+    "stem": "pbm_mae",
+    "reference_sha256": "3483c6034417c328d928ed9299b7a00410dbba222412b5610135d437a99fd0be"
+  },
+  {
+    "id": "Fig_06",
+    "document": "manuscript",
+    "number": "6",
+    "label": "fig:function_performance",
+    "source_pdf": "fig/model_evaluation/structure_spatial_20260913/function_performance.pdf",
+    "stem": "function_performance",
+    "reference_sha256": "4d206c882c8605914e5b2c138ff4d65a885ccdf45fc20a18070f48ca3c3e50e3"
+  },
+  {
+    "id": "Fig_07",
+    "document": "manuscript",
+    "number": "7",
+    "label": "fig:cb_fl_s_spatial",
+    "source_pdf": "fig/model_evaluation/structure_spatial_20260913/cb_fl_s_spatial.pdf",
+    "stem": "cb_fl_s_spatial",
+    "reference_sha256": "9d4ee0b124467735b7b5bb730dc561b5d5e73006acd070d6425d2f5fa3d23eaa"
+  },
+  {
+    "id": "Fig_08",
+    "document": "manuscript",
+    "number": "8",
+    "label": "fig:dem_benefits",
+    "source_pdf": "fig/model_evaluation/dem_results_20260913/dem_benefits.pdf",
+    "stem": "dem_benefits",
+    "reference_sha256": "a72beea584674908b99d59691da15aee342a5473de42f59d70fdb0d5516c891e"
+  },
+  {
+    "id": "Fig_09",
+    "document": "manuscript",
+    "number": "9",
+    "label": "fig:final_ml_effects",
+    "source_pdf": "fig/model_evaluation/ml_results_20260913/ml_accuracy_gains.pdf",
+    "stem": "ml_accuracy_gains",
+    "reference_sha256": "31f21afd74c0e8a9cbc2cadf5a31e88f2f49a50073d084d305e6fc35a6eed1b0"
+  },
+  {
+    "id": "Fig_10",
+    "document": "manuscript",
+    "number": "10",
+    "label": "fig:dem_ml_effects",
+    "source_pdf": "fig/model_evaluation/ml_results_20260913/dem_effects_on_ml.pdf",
+    "stem": "dem_effects_on_ml",
+    "reference_sha256": "c024e1fe109f2ecaf781da99968cf10b0d32864a356fd0a8f03bbd066a0673fb"
+  },
+  {
+    "id": "Fig_S01",
+    "document": "supplementary",
+    "number": "S1",
+    "label": "fig:raw_pmb_bias",
+    "source_pdf": "fig/model_evaluation/pbm_final_20260913/pbm_bias_supplement.pdf",
+    "stem": "pbm_bias_supplement",
+    "reference_sha256": "55e37d576443dcfaaf43573928bb5846468345bc0e66440f0480cecc40fb10a3"
+  },
+  {
+    "id": "Fig_S02",
+    "document": "supplementary",
+    "number": "S2",
+    "label": "fig:stage_observation_coverage",
+    "source_pdf": "fig/model_evaluation/stage_observation_coverage_20260913/stage_observation_coverage.pdf",
+    "stem": "stage_observation_coverage",
+    "reference_sha256": "3da061fdc7ed89e03138e571ddfed6e98601153842b2bfab166027f04878b19f"
+  },
+  {
+    "id": "Fig_S03",
+    "document": "supplementary",
+    "number": "S3",
+    "label": "fig:dem_terrain_stages",
+    "source_pdf": "fig/model_evaluation/dem_results_20260913/dem_terrain_stages.pdf",
+    "stem": "dem_terrain_stages",
+    "reference_sha256": "5ebc93857e9b4329c4b2704631cfd363568c9ed58c2fea78a298e6d4462fdbad"
+  },
+  {
+    "id": "Fig_S04",
+    "document": "supplementary",
+    "number": "S4",
+    "label": "fig:dem_bias_rmse",
+    "source_pdf": "fig/model_evaluation/dem_results_20260913/dem_bias_rmse.pdf",
+    "stem": "dem_bias_rmse",
+    "reference_sha256": "a2dd4effdc332e80c773083620bcc2a08c1d45c643c3e8dce1d75ec7c265c4d5"
+  },
+  {
+    "id": "Fig_S05",
+    "document": "supplementary",
+    "number": "S5",
+    "label": "fig:ml_bias_supplement",
+    "source_pdf": "fig/model_evaluation/ml_results_20260913/ml_bias_supplement.pdf",
+    "stem": "ml_bias_supplement",
+    "reference_sha256": "1b04888a6debb223baf8e87e3b2e9de968632c14d72d2614f63fff19732387ba"
+  }
+]

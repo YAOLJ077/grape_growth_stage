@@ -1,0 +1,14 @@
+{
+  "requested_at": "2026-09-12T18:01:55.467929+00:00",
+  "commands": {
+    "3493": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/bin/python /Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/src/run_factorial_experiment.py resume --output /Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/publication_factorial_20260911_v3",
+    "47126": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/.venv/bin/python -u /Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/src/calibrate_median_cutoff.py --threads 7 --competing-pid 3493 --reserved-threads 4 --output /Users/gangzhao/Documents/workspace/grape_growth_stage-main/model_run/results/median_cutoff_calibration_20260912"
+  },
+  "actions": {
+    "3493": "SIGTERM process group; user requested stop of old publication run",
+    "47126": "SIGINT; restart from checkpoints with seven threads"
+  },
+  "preserved_completed_units": [
+    "FL/RAW"
+  ]
+}

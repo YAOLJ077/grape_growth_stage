@@ -1,0 +1,127 @@
+{
+  "policy": "four_target_qc_v3_20260912",
+  "created_utc": "2026-09-12T02:23:14.544096+00:00",
+  "scope": "four direct target stages; all original eligible countries; no weather filter or refitting",
+  "source_counts": {
+    "source_occurrences": 823028,
+    "target_source_occurrences": 118597
+  },
+  "n_pre_qc_targets": 77313,
+  "n_retained": 75738,
+  "n_quarantined": 1575,
+  "n_previous_retained": 75233,
+  "n_removed_from_previous": 503,
+  "n_restored_from_previous": 1008,
+  "stage_counts": {
+    "07": 25585,
+    "81": 18584,
+    "89": 4605,
+    "65": 26964
+  },
+  "country_counts": {
+    "BA": 56,
+    "CH": 2304,
+    "CZ": 94,
+    "DE": 55805,
+    "ES": 83,
+    "FR": 14801,
+    "HR": 1066,
+    "LU": 72,
+    "ME": 18,
+    "SE": 1,
+    "SK": 1438
+  },
+  "rules": {
+    "provider_doubtful": 140,
+    "higher_quality_annual_report": 403,
+    "calendar_window": 292,
+    "adjacent_interval": 737,
+    "derived_cross_stage_interval": 9
+  },
+  "calendar_windows": {
+    "07": [
+      "02-01",
+      "06-15"
+    ],
+    "65": [
+      "04-01",
+      "07-31"
+    ],
+    "81": [
+      "06-01",
+      "10-15"
+    ],
+    "89": [
+      "07-15",
+      "11-15"
+    ]
+  },
+  "adjacent_intervals": {
+    "07-65": [
+      20,
+      120
+    ],
+    "65-81": [
+      30,
+      120
+    ],
+    "81-89": [
+      10,
+      90
+    ]
+  },
+  "all_intervals": {
+    "07-65": [
+      20,
+      120
+    ],
+    "07-81": [
+      50,
+      240
+    ],
+    "07-89": [
+      60,
+      330
+    ],
+    "65-81": [
+      30,
+      120
+    ],
+    "65-89": [
+      40,
+      210
+    ],
+    "81-89": [
+      10,
+      90
+    ]
+  },
+  "input_hashes": {
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/.source_cache/france_grape_phenology_complete.csv": "436eec51c7267664ca8d6eb3ddf0e357cf87197449164c23ebcf8c4c4b64a27e",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/.source_cache/germany_grape_phenology_complete.csv": "d618d9c81a578a45bb55a72ef5ca9f447abaeaaeb6ea4a4e09cb2f5a090c8966",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/raw/france_tempo/tempo_other_countries_observations_joined.csv": "864a5b24d372b15ac088d61157506721e2850f21d59fa1df02610cb246444708",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/raw/pep725/pep725_20260701_0.csv": "66f95d92dcc776613da177d99cac75ce532c805cddfefade506567e49e3fba2f",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/phenology_data.csv": "2a1ad04af179b1056cd26373b0c9a5b274cc70b9a3cf577dd41d23de9b9066e5",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/data/phenology/phenology_data_quarantine.jsonl.gz": "7c477e0a4be134bc21eb6186b48227ee5d3d02d884fe48e762842a0dcf6f0091"
+  },
+  "source_hashes": {
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/src/phenology/prepare_target_qc_v3.py": "bdf4d10534c74732aec8d7c85aa6ead44df2b6804c64d4a2cce464803c6d65ae",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/src/phenology/target_qc_v3.py": "b14a57fa155b1379d6a0a1259e76d2b37a5ccde5cbb85ef00fa5daaa4f4d0a74",
+    "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/src/phenology/organize_phenology.py": "0a947b885196a41ec56794b2582fdaedea25bdda9b431abbe51813290c0cd0aa"
+  },
+  "production_inputs_modified": false,
+  "publication_ready": false,
+  "limits": [
+    "Candidate cohort: date/interval choices are project screening bounds, not physiological limits.",
+    "Four-target chronology differs from the previous whole-inventory branch screen.",
+    "Source precedence is a declared policy, not proof that every immediate report was a revision.",
+    "Unspecified variety and maturity labels do not establish plant identity.",
+    "No model residuals, predictions, parameters or test scores were used in cleaning."
+  ],
+  "output_hashes": {
+    "quarantine.jsonl.gz": "ef94ebffbc8e65ff536518058ab479082571d1d626bd429997de76dab5ff3f4e",
+    "membership_changes.csv": "9431d1ecf951242fdc65a2215a657c0373ee11cdd56c2151cbeee254a79f6c4f",
+    "provenance.jsonl.gz": "38c051c8f8cf0394396938d452e489337f07f54b85975c4b7ef3ea49a0d5d498",
+    "observations.csv": "4b10dd32cf1e43a83332e86c47245298b5c436df47889cffe24972bae42c26c2"
+  }
+}

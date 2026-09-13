@@ -1,0 +1,19 @@
+{
+  "era5_grid_id": "ERA5L_0.1_lat+49.4_lon+8.2",
+  "filename": "Wachenheim.csv",
+  "first_date": "1959-01-01",
+  "last_date": "2017-12-31",
+  "max_absolute_old_dem_change_c": 4.440892098500626e-16,
+  "n_finite_raw": 21550,
+  "n_missing_raw": 0,
+  "n_old_dem_changed": 0,
+  "n_old_dem_finite": 21550,
+  "n_rows": 21550,
+  "output_sha256": "f858dbf7f913b4d9716db46fb127ffb002c0427cca08de2ab39e80757c2f599b",
+  "record_sha256": "3944e19a8026ef2bbb244cfbcbf006393903c00585dbea2b56d2109ad393852c",
+  "site": "DE:dwd:10280",
+  "source_had_dem": true,
+  "source_sha256": "5b8a38c5f2800e03699f4025f37f72f782b903553e409f786107d89f725d90e0",
+  "status": "completed",
+  "temperature_offset_c": 0.43774706461685226
+}

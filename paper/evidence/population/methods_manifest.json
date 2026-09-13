@@ -1,0 +1,64 @@
+{
+  "version": "final_methods_20260913_structure_spatial",
+  "replacement_count": 0,
+  "ready_for_apply_after_complete_ml": true,
+  "active_documents_modified": true,
+  "package_sha256": {
+    "README.md": "6188722fa58e0c81ff8e6890f77f17140ca6d7bc5947f1172f05c306a64c80c9",
+    "apply_final_methods.py": "4b41e49f757393b325120bfc6def275fc82d3aaaf184a5ccd54090a435ec4ca0",
+    "validate_package.py": "e985d4618e194d4d18e6ed5de2eac42797f2cb846bfcb57fa6da0cdfae80d586",
+    "replacements.json": "83a88d41ad92ec96ea6a59cc0d7b83c2e69971cf868d1bf341d7321bf9943edd",
+    "manuscript.tex.preview": "2767ea9ee07aa71cdb017a8dd600092297102cd2d73ad60b6be1356d5b2172b9",
+    "supplementary.tex.preview": "614adc8a71dff53d952660edaec98e7f520bfdc01dc9cbd9f89c41feb7765843",
+    "population_summary.csv": "1404c1d5656f9e70a6116f806e0ec4c44ff0dd6caa7016bbee2f902ec1c98214",
+    "country_population.csv": "edc259e1dad91b256b546c58f438a6732481efea81ce3ada81f0a78681307e8b",
+    "country_population.tex": "acdcdc2fd872e6c48e21dfc17917d4b64172f2617405b162eb57d20447ba273d",
+    "protocol_population.tex": "106d32a2379b3aed5cf79c2c5794b6ca352dfaf2b34ea4f74327ab0eed49b4ba",
+    "country_test_support.csv": "81e86038e8c248a1ceb2bae8810fe772508c41a76597bae696088c820912f2d0",
+    "country_test_support.tex": "589bb3c3d433a639f51530094f0edb5e52030cbe51e7dfde7999ef6a429ad5b6"
+  },
+  "outputs": {
+    "paper/manuscript.tex": {
+      "before_sha256": "2767ea9ee07aa71cdb017a8dd600092297102cd2d73ad60b6be1356d5b2172b9",
+      "after_sha256": "2767ea9ee07aa71cdb017a8dd600092297102cd2d73ad60b6be1356d5b2172b9",
+      "preview": "paper/final_update_20260912/manuscript.tex.preview"
+    },
+    "paper/supplementary.tex": {
+      "before_sha256": "614adc8a71dff53d952660edaec98e7f520bfdc01dc9cbd9f89c41feb7765843",
+      "after_sha256": "614adc8a71dff53d952660edaec98e7f520bfdc01dc9cbd9f89c41feb7765843",
+      "preview": "paper/final_update_20260912/supplementary.tex.preview"
+    },
+    "paper/final_update_20260912/country_test_support.csv": {
+      "sha256": "81e86038e8c248a1ceb2bae8810fe772508c41a76597bae696088c820912f2d0"
+    },
+    "paper/final_update_20260912/country_population.tex": {
+      "sha256": "acdcdc2fd872e6c48e21dfc17917d4b64172f2617405b162eb57d20447ba273d"
+    },
+    "paper/final_update_20260912/protocol_population.tex": {
+      "sha256": "106d32a2379b3aed5cf79c2c5794b6ca352dfaf2b34ea4f74327ab0eed49b4ba"
+    },
+    "paper/final_update_20260912/country_test_support.tex": {
+      "sha256": "589bb3c3d433a639f51530094f0edb5e52030cbe51e7dfde7999ef6a429ad5b6"
+    },
+    "paper/final_update_20260912/country_population.csv": {
+      "sha256": "edc259e1dad91b256b546c58f438a6732481efea81ce3ada81f0a78681307e8b"
+    },
+    "paper/final_update_20260912/population_summary.csv": {
+      "sha256": "1404c1d5656f9e70a6116f806e0ec4c44ff0dd6caa7016bbee2f902ec1c98214"
+    }
+  },
+  "cli": {
+    "preview": ".venv/bin/python paper/final_update_20260912/apply_final_methods.py",
+    "validate": ".venv/bin/python paper/final_update_20260912/validate_package.py",
+    "apply": ".venv/bin/python paper/final_update_20260912/apply_final_methods.py --apply --run model_run/results/median_cutoff_ml_20260912"
+  },
+  "anchors": {
+    "results_insert_before": "\\section{Discussion}",
+    "results_prefix": "\\section{Results}",
+    "discussion_insert_before": "\\subsection{Scope and limitations of inference}",
+    "abstract_performance_insert_before": "\\end{abstract}"
+  },
+  "results_subsections_present": true,
+  "performance_prose_owner": "root/results renderer",
+  "hash_scope": "Current reviewed Methods, RAW-only PBM Results and population package; original anchored edits are archived."
+}
