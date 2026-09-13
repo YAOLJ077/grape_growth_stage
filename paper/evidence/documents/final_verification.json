@@ -1,5 +1,5 @@
 {
-  "verified_utc": "2026-09-13T15:07:38.770405+00:00",
+  "verified_utc": "2026-09-13T15:26:27.680392+00:00",
   "status": "passed",
   "pdfs": [
     {
@@ -34,5 +34,17 @@
   "content_fingerprints": "paper/evidence/documents/content_fingerprints.json",
   "new_native_word_rendering_performed": false,
   "live_zotero_refresh_tested": false,
-  "layout_scope": "Scientific text is preserved by the PDF build. Paragraph page breaks and vertical placement may reflow during recompilation; binary PDF identity is not required."
+  "layout_scope": "Scientific text is preserved by the PDF build. Paragraph page breaks and vertical placement may reflow during recompilation; binary PDF identity is not required.",
+  "bibliography": {
+    "path": "paper/references/Phenological.bib",
+    "sha256": "48bb6ea55ffb539ef7d2c754641da5320a0f43967fa7d43ebbe56e13cb794963",
+    "entries": 42,
+    "main_cited_entries": 42,
+    "supplementary_cited_entries": 11,
+    "uncited_entries": 0,
+    "cited_metadata_preserved": true,
+    "compiled_reference_lists_unchanged": true,
+    "isolated_pdf_and_docx_rebuild": "passed",
+    "canonical_pdf_docx_files_unchanged": true
+  }
 }
