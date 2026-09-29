@@ -1,36 +1,39 @@
 {
   "orientation": "portrait",
   "dimensions_inches": [
-    7.2,
-    10.4
+    8,
+    10
   ],
   "raster_pixels": [
-    2160,
-    3120
+    2400,
+    3000
   ],
   "raster_dpi": 300,
-  "design": "Conceptual DEM \u2192 PBMs \u2192 residual ML pipeline with botanical stage illustrations.",
+  "design": "Structure comparison, fully crossed terrain and residual corrections, and four stage endpoints; no bottom explanatory text.",
   "scientific_scope": {
-    "dem": "Fixed lapse-rate adjustment using site minus official weather-grid elevation, before separately recalibrated PBMs.",
-    "pbms": "Forcing with or without chilling; schematic threshold curve is not an empirical response or fitted trajectory.",
-    "ml": "Calibration observations define residual targets; weather and terrain provide predictive covariates. The illustrated network does not specify TabM architecture.",
-    "output": "ML adjusts dates for attained process stages; it does not change thermal states or repair non-attainment.",
-    "interpretation": "Illustrated correction roles do not identify the mechanisms responsible for observed accuracy gains.",
-    "main_finding": "DEM improved mean PBM accuracy; its additional mean benefit after ML was small and uncertain.",
-    "environmental_zones": "Five zones summarize monthly RAW temperature profiles. RAW flowering residual-learning MAE gains were 10.58 d in EZ05 and 1.44 d in EZ03. Zone comparisons use primary held-out sites and do not establish independent regional transfer; sparse zone-stage coverage limits inference."
+    "design": "Ten structures \u00d7 two temperature inputs \u00d7 two residual options; corrections retain all ten structures.",
+    "terrain": "Fixed lapse-rate correction precedes separate process recalibration; no claim of independently validated local temperature accuracy.",
+    "residual": "Schematic stage-specific residual model, not a neural-network architecture. Predictors include process dates, phase duration, weather, day length and terrain.",
+    "target": "Observed minus raw out-of-fold process date in calibration, with grouped nested refits.",
+    "output": "Correction adjusts attained dates; it does not repair non-attainment or modify process thermal states.",
+    "validation": "Grouped site holdouts within five represented environmental zones; not independent regional transfer.",
+    "gains": "No numerical gain or additive sequential-gain claim; corrections are evaluated as factorial contrasts."
   },
   "sources": {
-    "paper/manuscript.tex": "ce9d8f48732257a0f604c240f95d957599a7d9bab87990828251aabea54ba864",
-    "paper/evidence/ml_baseline/paired_dem_gain_decrease.csv": "244f633c0e0448821db4df9e823f757985ef010fd8a6501f3351b13e227894bc",
-    "paper/evidence/ml/zone_effects.csv": "8cb2780ab4c6eb66287e64ae6a1e70d8286bc68b0a316d5e0451fe01b1e49ee9"
+    "data/paper_figures/workflow/workflow.md": "deba4f13bea75bc15c188f514057a264dbea6e134b1a2c5017b2935f8f73da9e",
+    "paper/manuscript.tex": "ce9d8f48732257a0f604c240f95d957599a7d9bab87990828251aabea54ba864"
   },
-  "script_sha256": "65e2f1a22cb1329bbe490e325b59c0255cc36b96b2cbf27a49eb941cb10c989d",
+  "script_sha256": "2c90ac34a08f10f90cb35adab3b194673191a0d950ae6d822e6c5e74028424cd",
   "artifacts": {
-    "fig/graphical_abstract/graphical_abstract.pdf": "99e61e37309131c94ef8ae262eac0c2263590a818e4d0df74a23314343736785",
-    "fig/graphical_abstract/graphical_abstract.svg": "711581fe6ee85acbd569c81a74f3cbd2efc5148036ca52fe31e891e0353af5ce",
-    "fig/graphical_abstract/graphical_abstract.png": "06bbda37f585ded290c656a95cf5ccf2127f241a701a62c78e9eb7a95cd568ac",
-    "fig/graphical_abstract/graphical_abstract.tiff": "53aa7e58ed3570ea2173ca2ca74ff43b0c8c0b7a73338e89fae7aab0cd7f8e21"
+    "fig/graphical_abstract/graphical_abstract.pdf": "25020aefe9b4fe9be798a2996037d1e3174d36fac1601a2a8ecbd0728ca99e7e",
+    "fig/graphical_abstract/graphical_abstract.svg": "fb43a2ff012fbbffbad1c5f1eabdae37968ddb60390631856882c5f7dc4f80f2",
+    "fig/graphical_abstract/graphical_abstract.png": "ef0ffa8b9d50b9dad73c7b847ac421d4666a2cbcfb4548aa9626a85f8a48947a",
+    "fig/graphical_abstract/graphical_abstract.tiff": "87881c356252c56df384051ba9742b20d8451d04ea3950cb47d65a9c381d5c5d"
   },
-  "text_bounds_checked": true,
-  "source_script": "src/documents/plot_graphical_abstract.py"
+  "verification": {
+    "canvas_text_bounds_checked": true,
+    "minimum_text_y_canvas_units": 145,
+    "text_count": 28,
+    "method": "Matplotlib rendered text extents asserted within canvas and above footer exclusion zone."
+  }
 }

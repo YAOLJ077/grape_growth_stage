@@ -1,249 +1,162 @@
 #!/usr/bin/env python3
-"""Draw the portrait graphical abstract as editable vector artwork.
-
-The landscape, thermal curve and neural network are conceptual illustrations,
-not measured data or an exact neural architecture.
-"""
+"""Editable scientific schematic; all drawings are conceptual, not data plots."""
 from pathlib import Path
 import hashlib
 import json
-import math
 import matplotlib
-matplotlib.use("Agg")
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.patches import Circle, Ellipse, Polygon, FancyBboxPatch, PathPatch
-from matplotlib.path import Path as MPath
+from matplotlib.patches import Circle, Ellipse, Polygon, FancyBboxPatch
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "fig/graphical_abstract"
-INK, MUTED = "#243C39", "#60736C"
-GREEN, BLUE, GOLD, PURPLE = "#39806B", "#548FAC", "#D6A052", "#826099"
+OUT = ROOT / 'fig/graphical_abstract'
+INK, MUTED = '#233D3D', '#5A6D70'
+GREEN, BLUE, GOLD, PURPLE = '#35806D', '#447C9A', '#B98436', '#80619A'
 
-def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    plt.rcParams.update({"font.family": "Arial", "pdf.fonttype": 42,
-                         "ps.fonttype": 42, "svg.fonttype": "none"})
-    fig = plt.figure(figsize=(7.2, 10.4), facecolor="white")
-    ax = fig.add_axes((0, 0, 1, 1), xlim=(0, 720), ylim=(-40, 1000))
-    ax.axis("off")
-
-    def txt(x, y, s, size=11, color=INK, bold=False, ha="left"):
-        return ax.text(x, y, s, fontsize=size, color=color,
-                       weight="bold" if bold else "normal", ha=ha, va="center")
-
-    def line(x, y, color=INK, lw=1.4, **kw):
-        ax.plot(x, y, color=color, lw=lw, solid_capstyle="round", **kw)
-
-    def arrow(x0, y0, x1, y1, color=MUTED, lw=1.6, style="->"):
-        ax.annotate("", xy=(x1, y1), xytext=(x0, y0),
-                    arrowprops=dict(arrowstyle=style, color=color, lw=lw,
-                                    shrinkA=2, shrinkB=2))
-
-    def rounded(x, y, w, h, fill, edge="none", r=8, lw=1):
-        ax.add_patch(FancyBboxPatch((x, y), w, h,
-                     boxstyle=f"round,pad=0,rounding_size={r}",
-                     facecolor=fill, edgecolor=edge, lw=lw))
-
-    def leaf(x, y, scale=1, angle=25, color=GREEN):
-        ax.add_patch(Ellipse((x, y), 18*scale, 9*scale,
-                            angle=angle, facecolor=color, edgecolor="none"))
-
-    def vine(x, y, scale=1):
-        line([x, x+2*scale, x-2*scale], [y, y+20*scale, y+37*scale], "#8D7660", 2)
-        line([x, x-14*scale], [y+20*scale, y+27*scale], "#8D7660", 1)
-        line([x+1*scale, x+16*scale], [y+25*scale, y+31*scale], "#8D7660", 1)
-        leaf(x-13*scale, y+29*scale, scale, 28)
-        leaf(x+14*scale, y+33*scale, scale, -28)
-        leaf(x-1*scale, y+42*scale, scale, 65)
-
-    def grapes(x, y, scale=1, color=PURPLE):
-        line([x, x+2*scale], [y+14*scale, y+27*scale], GREEN, 1.6)
-        leaf(x+8*scale, y+22*scale, .8*scale)
-        for dx,dy in [(-9,9),(9,9),(-15,-5),(0,-5),(15,-5),(-8,-18),(8,-18),(0,-31)]:
-            ax.add_patch(Circle((x+dx*scale, y+dy*scale), 8*scale,
-                               facecolor=color, edgecolor="white", lw=.65))
-
-    def bloom(x, y, scale=1):
-        line([x,x], [y-30*scale,y+19*scale], GREEN, 1.5)
+class Artwork:
+    def __init__(self, width=800, height=1000, inches=(8,10)):
+        plt.rcParams.update({'font.family':'Arial', 'pdf.fonttype':42,
+                             'ps.fonttype':42, 'svg.fonttype':'none'})
+        self.fig=plt.figure(figsize=inches,facecolor='white')
+        self.ax=self.fig.add_axes((0,0,1,1),xlim=(0,width),ylim=(0,height))
+        self.ax.axis('off')
+        self.width,self.height=width,height
+    def text(self,x,y,s,size=12,color=INK,bold=False,ha='left'):
+        return self.ax.text(x,y,s,fontsize=size,color=color,weight='bold' if bold else 'normal',ha=ha,va='center',linespacing=1.35)
+    def line(self,x,y,color=INK,lw=1.5,**kw):
+        self.ax.plot(x,y,color=color,lw=lw,solid_capstyle='round',**kw)
+    def arrow(self,x0,y0,x1,y1,color=MUTED,lw=1.6,style='->'):
+        self.ax.annotate('',xy=(x1,y1),xytext=(x0,y0),arrowprops=dict(arrowstyle=style,color=color,lw=lw,shrinkA=3,shrinkB=3))
+    def box(self,x,y,w,h,fill='white',edge='none',r=10,lw=1):
+        self.ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle=f'round,pad=0,rounding_size={r}',facecolor=fill,edgecolor=edge,lw=lw))
+    def leaf(self,x,y,s=1,angle=25,color=GREEN):
+        self.ax.add_patch(Ellipse((x,y),18*s,9*s,angle=angle,facecolor=color,edgecolor='none'))
+    def vine(self,x,y,s=1):
+        self.line([x,x+2*s,x-2*s],[y,y+20*s,y+37*s],'#8D7660',2)
+        self.line([x,x-14*s],[y+20*s,y+27*s],'#8D7660',1)
+        self.line([x+s,x+16*s],[y+25*s,y+31*s],'#8D7660',1)
+        self.leaf(x-13*s,y+29*s,s,28);self.leaf(x+14*s,y+33*s,s,-28);self.leaf(x-s,y+42*s,s,65)
+    def grapes(self,x,y,s=1,color=PURPLE,mixed=False):
+        self.line([x,x+2*s],[y+14*s,y+27*s],GREEN,1.6)
+        self.leaf(x+8*s,y+22*s,.8*s)
+        for i,(dx,dy) in enumerate([(-9,9),(9,9),(-15,-5),(0,-5),(15,-5),(-8,-18),(8,-18),(0,-31)]):
+            self.ax.add_patch(Circle((x+dx*s,y+dy*s),8*s,facecolor='#9AB573' if mixed and i in (0,2) else color,edgecolor='white',lw=.7))
+    def bloom(self,x,y,s=1):
+        self.line([x,x],[y-30*s,y+19*s],GREEN,1.5)
         for dx,dy in [(-14,12),(12,19),(-15,-4),(14,-3),(-9,-20),(10,-18)]:
-            line([x,x+dx*scale], [y-10*scale,y+dy*scale], GREEN, .8)
-            for a in np.linspace(0, 2*np.pi, 5, endpoint=False):
-                ax.add_patch(Circle((x+dx*scale+3*scale*np.cos(a),
-                                     y+dy*scale+3*scale*np.sin(a)), 3.4*scale,
-                                     facecolor="#DDD39A", edgecolor="none"))
-            ax.add_patch(Circle((x+dx*scale,y+dy*scale), 2.2*scale, color=GOLD))
-
-    def calendar(x, y, color, scale=1, corrected=False, observed=False):
-        w,h=65*scale,64*scale
-        rounded(x-w/2,y-h/2,w,h,"white",color,r=5,lw=1.5)
-        rounded(x-w/2,y+h/2-17*scale,w,17*scale,color,r=4)
-        for dx in [-18,18]:
-            line([x+dx*scale]*2,[y+h/2-5*scale,y+h/2+6*scale],color,2.2)
+            self.line([x,x+dx*s],[y-10*s,y+dy*s],GREEN,.8)
+            for a in np.linspace(0,2*np.pi,5,endpoint=False):
+                self.ax.add_patch(Circle((x+dx*s+3*s*np.cos(a),y+dy*s+3*s*np.sin(a)),3.4*s,facecolor='#DDD39A',edgecolor='none'))
+            self.ax.add_patch(Circle((x+dx*s,y+dy*s),2.2*s,color=GOLD))
+    def calendar(self,x,y,color=GOLD,s=1):
+        self.box(x-26*s,y-25*s,52*s,50*s,'white',color,4,1.5)
+        self.box(x-26*s,y+11*s,52*s,14*s,color,r=3)
+        for dx in (-14,14): self.line([x+dx*s]*2,[y+21*s,y+31*s],color,1.8)
         for ix in range(3):
             for iy in range(2):
-                xx=x+(ix-1)*17*scale;yy=y+2*scale-iy*17*scale
-                if (ix,iy)==((1,0) if (corrected or observed) else (0,1)):
-                    rounded(xx-5*scale,yy-5*scale,10*scale,10*scale,color,r=1.5)
-                else:
-                    ax.add_patch(Circle((xx,yy),2*scale,facecolor="#CFD8D2"))
-        if corrected:
-            line([x+20*scale,x+27*scale,x+40*scale],
-                 [y-28*scale,y-35*scale,y-18*scale],GREEN,2.5)
+                xx,yy=x+(ix-1)*14*s,y+1*s-iy*14*s
+                self.ax.add_patch(Circle((xx,yy),3*s,facecolor=color if (ix,iy)==(1,0) else '#D4DDDA',edgecolor='none'))
+    def verify(self,blank_below=0):
+        self.fig.canvas.draw(); renderer=self.fig.canvas.get_renderer()
+        bounds=[]
+        for a in self.ax.texts:
+            if not a.get_text():continue
+            b=a.get_window_extent(renderer)
+            assert b.x0>=0 and b.y0>=0 and b.x1<=self.fig.bbox.width and b.y1<=self.fig.bbox.height,a.get_text()
+            y_min=b.y0/self.fig.bbox.height*self.height
+            assert y_min>=blank_below,(a.get_text(),y_min)
+            bounds.append({'text':a.get_text(),'bounds_pixels':[round(v,2) for v in b.extents]})
+        return bounds
+    def export(self,stem,exts=('pdf','svg','png','tiff'),blank_below=0):
+        stem.parent.mkdir(parents=True,exist_ok=True)
+        bounds=self.verify(blank_below)
+        for ext in exts:
+            options={'pil_kwargs':{'compression':'tiff_lzw'}} if ext=='tiff' else {}
+            self.fig.savefig(stem.with_suffix('.'+ext),dpi=300,facecolor='white',**options)
+        return bounds
 
-    def thermometer(x, y, color, height):
-        rounded(x-7,y+1,14,59,"white",color,r=7,lw=1.6)
-        rounded(x-3,y+3,6,height,color,r=3)
-        ax.add_patch(Circle((x,y),11,facecolor="white",edgecolor=color,lw=1.6))
-        ax.add_patch(Circle((x,y),7,facecolor=color,edgecolor="none"))
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 
-    txt(360,962,"Grapevine phenology prediction",22,bold=True,ha="center")
-    txt(360,928,"Five environmental zones (EZs)  •  Four developmental stages",12,MUTED,ha="center")
+def main():
+    a=Artwork();t=a.text
+    t(400,960,'Grapevine phenology across environments',22,bold=True,ha='center')
+    t(400,925,'Identify regional baselines · Improve stage-date estimates',13,MUTED,ha='center')
 
-    # DEM: the temperature adjustment occurs before the process simulation.
-    rounded(28,665,664,227,"#F1F6F0",r=14)
-    txt(51,864,"DEM",15,GREEN,True)
-    txt(124,864,"Adjust temperature to vineyard elevation",14,bold=True)
-    hill=np.array([[55,724],[99,730],[140,754],[183,794],[226,814],
-                   [263,807],[304,781],[340,761],[360,749],[360,707],[55,707]])
-    ax.add_patch(Polygon(hill,facecolor="#D3E3C9",edgecolor="none"))
-    line(hill[:9,0],hill[:9,1],GREEN,1.8)
-    # Official model-grid elevation is a distinct horizontal reference.
-    line([57,365],[740,740],"#8EAAA0",1.2,ls=(0,(4,3)))
-    txt(65,716,"Weather-grid elevation",9,MUTED)
-    vine(221,813,.75)
-    vine(273,800,.6)
-    vine(174,786,.55)
-    txt(129,810,"Vineyard",10,GREEN,ha="center")
-    arrow(326,742,326,810,GREEN,1.3,"<->")
-    txt(339,783,"Elevation",9,GREEN)
-    txt(339,769,"difference",9,GREEN)
-    thermometer(473,746,GOLD,44)
-    thermometer(594,746,BLUE,25)
-    arrow(493,775,574,775,GREEN)
-    txt(473,725,"Grid input",10,MUTED,ha="center")
-    txt(594,725,"Adjusted input",10,MUTED,ha="center")
-    txt(535,827,"Relative to the weather grid",10,MUTED,ha="center")
-    txt(535,810,"Higher → cooler   •   Lower → warmer",9.5,GREEN,ha="center")
-    txt(360,687,"Reduce elevation-related mismatch in temperature forcing",11,GREEN,ha="center")
-    arrow(360,659,360,632,GREEN)
+    # Structure comparison precedes the correction experiments in the narrative.
+    a.box(32,689,736,201,'#F8F4EB',r=14)
+    t(56,860,'1',15,GOLD,True);t(84,860,'Compare ten process structures',17,bold=True)
+    groups=[(160,'Forcing only',2),(400,'Sequential',4),(640,'Parallel',4)]
+    for x,label,n in groups:
+        t(x,820,label,12,GOLD,True,ha='center')
+        for i in range(n):
+            xx=x-(n-1)*24+i*48
+            a.box(xx-18,758,36,39,'white','#D5C5A7',5)
+            q=np.linspace(0,1,20)
+            peak=25.4/35; alpha=np.log(2)/np.log(1/peak)
+            response=q if i%2==0 else np.maximum(0,2*(q/peak)**alpha-(q/peak)**(2*alpha))
+            a.line(xx-11+22*q,767+21*response,GOLD,1.7)
+        t(x,738,'Heat' if n==2 else 'Chilling + heat',11,MUTED,ha='center')
+    t(400,710,'Grouped site holdouts within five environmental zones',11.5,MUTED,ha='center')
+    a.arrow(400,686,400,652,GOLD)
+    t(400,633,'2   Test both corrections across all ten structures',16,bold=True,ha='center')
+    # Two routes are factors, not additive improvements or a selected-model pipeline.
+    a.box(32,299,356,307,'#F0F6F2',r=14)
+    a.box(412,299,356,307,'#F4F0F8',r=14)
+    t(210,578,'Terrain-adjusted temperature',14,GREEN,True,ha='center')
+    t(590,578,'Process-guided residual model',13.5,PURPLE,True,ha='center')
+    hill=np.array([[58,429],[104,449],[162,506],[215,495],[278,461],[363,435],[363,419],[58,419]])
+    a.ax.add_patch(Polygon(hill,facecolor='#D3E3C9',edgecolor='none'))
+    a.line(hill[:6,0],hill[:6,1],GREEN,1.8)
+    a.line([60,364],[451,451],'#7FA194',1.2,ls=(0,(4,3)))
+    a.vine(162,506,.7)
+    a.line([168,309],[506,506],'#7FA194',1,ls=(0,(3,3)))
+    a.arrow(307,451,307,506,GREEN,1.2,'<->')
+    t(210,552,'Site–grid elevation difference',11.5,MUTED,ha='center')
+    t(210,397,'RAW  ↔  Elevation-corrected',12,GREEN,True,ha='center')
+    a.arrow(210,380,210,355,GREEN)
+    t(210,333,'Recalibrate each process structure',11.5,MUTED,ha='center')
 
-    # PBMs: an unscaled, conceptual accumulation-to-threshold illustration.
-    rounded(28,425,664,205,"#F9F5EC",r=14)
-    txt(51,602,"PBMs",15,"#A87532",True)
-    txt(124,602,"Translate temperature into development",14,bold=True)
-    # Snowflake + sun provide a compact cold / heat cue.
-    for angle in np.linspace(0,np.pi,3,endpoint=False):
-        dx,dy=18*np.cos(angle),18*np.sin(angle)
-        line([90-dx,90+dx],[526-dy,526+dy],BLUE,1.8)
-        for sign in [-1,1]:
-            ex,ey=90+sign*dx,526+sign*dy
-            bx,by=90+sign*dx*.57,526+sign*dy*.57
-            line([ex,bx-5*np.sin(angle)],[ey,by+5*np.cos(angle)],BLUE,1)
-            line([ex,bx+5*np.sin(angle)],[ey,by-5*np.cos(angle)],BLUE,1)
-    ax.add_patch(Circle((148,526),13,facecolor=GOLD,edgecolor="none"))
-    for angle in np.linspace(0,2*np.pi,8,endpoint=False):
-        line([148+18*np.cos(angle),148+24*np.cos(angle)],
-             [526+18*np.sin(angle),526+24*np.sin(angle)],GOLD,1.7)
-    txt(117,482,"Heat + optional chilling",9,MUTED,ha="center")
-    arrow(185,523,226,523,"#A87532")
-    arrow(246,476,458,476,MUTED,1)
-    arrow(246,476,246,566,MUTED,1)
-    x=np.linspace(250,438,100)
-    y=480+76*((x-250)/188)**1.65
-    line(x,y,"#B98236",2.7)
-    line([246,447],[545,545],"#B69B70",1,ls=(0,(3,3)))
-    crossx=250+188*((545-480)/76)**(1/1.65)
-    ax.add_patch(Circle((crossx,545),4,facecolor="#B98236"))
-    line([crossx,crossx],[476,545],"#B69B70",1,ls=(0,(3,3)))
-    txt(252,558,"Stage threshold",9,"#A87532")
-    txt(351,454,"Accumulate development",10,MUTED,ha="center")
-    arrow(464,523,535,523,"#A87532")
-    calendar(587,522,"#B98236")
-    txt(587,470,"PBM date",10,MUTED,ha="center")
-    arrow(360,419,360,394,PURPLE)
+    t(590,543,'Process dates + phase duration',11.5,MUTED,ha='center')
+    t(590,521,'Weather + day length + terrain',11.5,MUTED,ha='center')
+    a.arrow(590,504,590,480,PURPLE)
+    a.box(454,434,272,44,'white','#CBBAD8',8)
+    t(590,456,'Learn date residuals',13,PURPLE,True,ha='center')
+    t(590,411,'Target: observed − process date',11.5,MUTED,ha='center')
+    t(590,389,'Out-of-fold calibration predictions',10.5,MUTED,ha='center')
+    a.arrow(590,374,590,351,PURPLE)
+    t(590,331,'Adjust attained stage dates',12,PURPLE,True,ha='center')
 
-    # ML: calibration residual targets and environmental inputs drive learning.
-    rounded(28,181,664,211,"#F4F0F7",r=14)
-    txt(51,364,"ML",15,PURPLE,True)
-    txt(124,364,"Learn and correct remaining date errors",14,bold=True)
-    calendar(86,291,"#9A88AA",.56,observed=True)
-    calendar(147,291,"#B98236",.56)
-    txt(119,250,"Observed − PBM date",10,MUTED,ha="center")
-    txt(119,233,"Calibration records",9,PURPLE,ha="center")
-    arrow(211,290,298,290,PURPLE)
-    txt(251,308,"Errors",9,PURPLE,ha="center")
-    layers=[[(321,309),(321,274),(321,239)],
-            [(370,322),(370,287),(370,252)],
-            [(419,307),(419,272)]]
-    for la,lb in zip(layers,layers[1:]):
-        for x0,y0 in la:
-            for x1,y1 in lb:
-                line([x0,x1],[y0,y1],"#C9B7D7",.85)
-    for layer in layers:
-        for x0,y0 in layer:
-            ax.add_patch(Circle((x0,y0),7,facecolor="white",edgecolor=PURPLE,lw=1.5))
-    txt(370,210,"Residual patterns",10,PURPLE,ha="center")
-    txt(137,204,"Weather + terrain",9.5,MUTED,ha="center")
-    arrow(212,211,304,239,PURPLE,1.2)
-    arrow(439,290,538,290,PURPLE)
-    txt(489,309,"Adjust date",9,PURPLE,ha="center")
-    calendar(586,287,GREEN,corrected=True)
-    txt(586,237,"Corrected date",10,GREEN,ha="center")
-    arrow(360,175,360,150,GREEN)
-
-    # Four developmental endpoints, using simple botanical vector drawings.
-    vine(115,99,.75)
-    bloom(277,115,.77)
-    grapes(439,118,.67,"#AD91B6")
-    # A mixed green/purple bunch indicates onset of veraison.
-    for dx,dy in [(-9,9),(-15,-5)]:
-        ax.add_patch(Circle((439+dx*.67,118+dy*.67),8*.67,
-                           facecolor="#9AB573",edgecolor="white",lw=.65))
-    grapes(601,118,.67,"#6F5689")
-    for x0,label in [(115,"Budburst"),(277,"Flowering"),(439,"Veraison"),(601,"Maturity / harvest")]:
-        txt(x0,74,label,10,MUTED,ha="center")
-    txt(360,44,"DEM helps PBMs; little extra gain after ML.",12,GREEN,True,ha="center")
-    txt(360,21,"Flowering ML gain: EZ05 10.58 d  •  EZ03 1.44 d",10.7,PURPLE,True,ha="center")
-    txt(360,1,"Gains depend on zone and stage; sparse coverage limits inference.",9,MUTED,ha="center")
-    txt(360,-22,"PBMs: process-based models  •  DEM: digital elevation model  •  ML: machine learning",
-        8.2,MUTED,ha="center")
-
-    # Confirm all live labels remain inside the canvas.
-    fig.canvas.draw()
-    renderer=fig.canvas.get_renderer()
-    for artist in ax.texts:
-        bounds=artist.get_window_extent(renderer)
-        assert bounds.x0>=0 and bounds.y0>=0 and bounds.x1<=fig.bbox.width and bounds.y1<=fig.bbox.height,artist.get_text()
-    stem=OUT/"graphical_abstract"
-    for ext in ("pdf","svg","png","tiff"):
-        options={"pil_kwargs":{"compression":"tiff_lzw"}} if ext=="tiff" else {}
-        fig.savefig(stem.with_suffix("."+ext),dpi=300,facecolor="white",**options)
-    plt.close(fig)
-    evidence=[ROOT/"paper/manuscript.tex",
-              ROOT/"paper/evidence/ml_baseline/paired_dem_gain_decrease.csv",
-              ROOT/"paper/evidence/ml/zone_effects.csv"]
+    a.line([210,210,590,590],[296,272,272,296],MUTED,1.3)
+    a.arrow(400,272,400,237,GREEN)
+    a.box(32,39,736,197,'#F6F8F8',r=14)
+    t(400,207,'3   Evaluate final accuracy and paired gains',16,bold=True,ha='center')
+    for x,label in [(124,'Budburst'),(305,'Flowering'),(487,'Veraison'),(669,'Maturity / harvest')]:
+        t(x,160,label,11.5,MUTED,ha='center')
+    a.vine(124,70,1.35);a.bloom(305,105,1.2)
+    a.grapes(487,108,1.05,'#AF91B4',mixed=True);a.grapes(669,108,1.05,'#6F5689')
+    # No footer, abbreviation block, performance-number block or text below icons.
+    stem=OUT/'graphical_abstract'
+    bounds=a.export(stem,blank_below=145)
     metadata={
-        "orientation":"portrait","dimensions_inches":[7.2,10.4],
-        "raster_pixels":[2160,3120],"raster_dpi":300,
-        "design":"Conceptual DEM → PBMs → residual ML pipeline with botanical stage illustrations.",
-        "scientific_scope":{
-            "dem":"Fixed lapse-rate adjustment using site minus official weather-grid elevation, before separately recalibrated PBMs.",
-            "pbms":"Forcing with or without chilling; schematic threshold curve is not an empirical response or fitted trajectory.",
-            "ml":"Calibration observations define residual targets; weather and terrain provide predictive covariates. The illustrated network does not specify TabM architecture.",
-            "output":"ML adjusts dates for attained process stages; it does not change thermal states or repair non-attainment.",
-            "interpretation":"Illustrated correction roles do not identify the mechanisms responsible for observed accuracy gains.",
-            "main_finding":"DEM improved mean PBM accuracy; its additional mean benefit after ML was small and uncertain.",
-            "environmental_zones":"Five zones summarize monthly RAW temperature profiles. RAW flowering residual-learning MAE gains were 10.58 d in EZ05 and 1.44 d in EZ03. Zone comparisons use primary held-out sites and do not establish independent regional transfer; sparse zone-stage coverage limits inference."
-        },
-        "sources":{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in evidence},
-        "script_sha256":hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        "artifacts":{str(stem.with_suffix("."+ext).relative_to(ROOT)):hashlib.sha256(stem.with_suffix("."+ext).read_bytes()).hexdigest()
-                     for ext in ("pdf","svg","png","tiff")},
-        "text_bounds_checked":True
+        'orientation':'portrait','dimensions_inches':[8,10],'raster_pixels':[2400,3000],'raster_dpi':300,
+        'design':'Structure comparison, fully crossed terrain and residual corrections, and four stage endpoints; no bottom explanatory text.',
+        'scientific_scope':{
+            'design':'Ten structures × two temperature inputs × two residual options; corrections retain all ten structures.',
+            'terrain':'Fixed lapse-rate correction precedes separate process recalibration; no claim of independently validated local temperature accuracy.',
+            'residual':'Schematic stage-specific residual model, not a neural-network architecture. Predictors include process dates, phase duration, weather, day length and terrain.',
+            'target':'Observed minus raw out-of-fold process date in calibration, with grouped nested refits.',
+            'output':'Correction adjusts attained dates; it does not repair non-attainment or modify process thermal states.',
+            'validation':'Grouped site holdouts within five represented environmental zones; not independent regional transfer.',
+            'gains':'No numerical gain or additive sequential-gain claim; corrections are evaluated as factorial contrasts.'},
+        'sources':{str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'data/paper_figures/workflow/workflow.md',ROOT/'paper/manuscript.tex']},
+        'script_sha256':sha(Path(__file__)),
+        'artifacts':{str(stem.with_suffix('.'+ext).relative_to(ROOT)):sha(stem.with_suffix('.'+ext)) for ext in ('pdf','svg','png','tiff')},
+        'verification':{'canvas_text_bounds_checked':True,'minimum_text_y_canvas_units':145,'text_count':len(bounds),'method':'Matplotlib rendered text extents asserted within canvas and above footer exclusion zone.'}
     }
-    (OUT/"metadata.json").write_text(json.dumps(metadata,indent=2)+"\n")
-    print(json.dumps({"output":str(OUT),"pixels":metadata["raster_pixels"],"orientation":"portrait"},indent=2))
+    (OUT/'metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
+    (OUT/'text_bounds.json').write_text(json.dumps(bounds,indent=2)+'\n')
+    plt.close(a.fig)
+    print(json.dumps({'output':str(stem),'pixels':metadata['raster_pixels'],'text_count':len(bounds)}))
 
-if __name__=="__main__":
-    main()
+if __name__=='__main__':main()

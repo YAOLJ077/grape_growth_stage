@@ -1,0 +1,389 @@
+[
+  {
+    "text": "Matched phenology, weather and terrain",
+    "bounds_pixels": [
+      290.86,
+      812.77,
+      709.14,
+      841.23
+    ]
+  },
+  {
+    "text": "Phenology",
+    "bounds_pixels": [
+      148.5,
+      779.28,
+      235.5,
+      802.72
+    ]
+  },
+  {
+    "text": "74,618 observations \u00b7 3,169 sites",
+    "bounds_pixels": [
+      88.5,
+      754.94,
+      295.5,
+      775.06
+    ]
+  },
+  {
+    "text": "Four stages \u00b7 11 European countries",
+    "bounds_pixels": [
+      78.8,
+      732.2,
+      305.2,
+      751.8
+    ]
+  },
+  {
+    "text": "ERA5-Land weather",
+    "bounds_pixels": [
+      423.0,
+      779.28,
+      595.0,
+      802.72
+    ]
+  },
+  {
+    "text": "Daily mean temperature",
+    "bounds_pixels": [
+      424.0,
+      752.77,
+      594.0,
+      773.23
+    ]
+  },
+  {
+    "text": "Matched site\u2013year coverage",
+    "bounds_pixels": [
+      421.0,
+      732.2,
+      597.0,
+      751.8
+    ]
+  },
+  {
+    "text": "Terrain",
+    "bounds_pixels": [
+      783.39,
+      779.28,
+      844.61,
+      802.72
+    ]
+  },
+  {
+    "text": "Site and weather-grid elevation",
+    "bounds_pixels": [
+      716.16,
+      752.94,
+      911.84,
+      773.06
+    ]
+  },
+  {
+    "text": "Slope \u00b7 aspect \u00b7 local variability",
+    "bounds_pixels": [
+      715.0,
+      732.2,
+      913.0,
+      751.8
+    ]
+  },
+  {
+    "text": "Grouped calibration/test split within five environmental zones",
+    "bounds_pixels": [
+      209.41,
+      650.6,
+      790.59,
+      677.4
+    ]
+  },
+  {
+    "text": "Shared weather-grid cells and colocated sites stay in the same group",
+    "bounds_pixels": [
+      286.66,
+      625.94,
+      713.34,
+      646.06
+    ]
+  },
+  {
+    "text": "Calibration: fit process and residual models",
+    "bounds_pixels": [
+      106.31,
+      585.53,
+      429.69,
+      606.47
+    ]
+  },
+  {
+    "text": "Test: evaluate locked predictions",
+    "bounds_pixels": [
+      611.95,
+      585.53,
+      854.05,
+      606.47
+    ]
+  },
+  {
+    "text": "Fully crossed design: 40 configurations per stage",
+    "bounds_pixels": [
+      251.42,
+      485.77,
+      748.58,
+      514.23
+    ]
+  },
+  {
+    "text": "10 process structures",
+    "bounds_pixels": [
+      94.38,
+      431.44,
+      281.62,
+      456.56
+    ]
+  },
+  {
+    "text": "\u00d7",
+    "bounds_pixels": [
+      334.5,
+      339.54,
+      353.5,
+      380.46
+    ]
+  },
+  {
+    "text": "\u00d7",
+    "bounds_pixels": [
+      646.5,
+      339.54,
+      665.5,
+      380.46
+    ]
+  },
+  {
+    "text": "2 forcing only",
+    "bounds_pixels": [
+      136.5,
+      395.92,
+      239.5,
+      418.08
+    ]
+  },
+  {
+    "text": "4 sequential chilling\u2013forcing",
+    "bounds_pixels": [
+      85.0,
+      367.35,
+      291.0,
+      388.65
+    ]
+  },
+  {
+    "text": "4 parallel chilling\u2013forcing",
+    "bounds_pixels": [
+      94.5,
+      338.35,
+      281.5,
+      359.65
+    ]
+  },
+  {
+    "text": "Simulate the developmental",
+    "bounds_pixels": [
+      89.5,
+      290.77,
+      286.5,
+      311.23
+    ]
+  },
+  {
+    "text": "sequence and stage dates",
+    "bounds_pixels": [
+      99.0,
+      268.77,
+      277.0,
+      289.23
+    ]
+  },
+  {
+    "text": "2 temperature inputs",
+    "bounds_pixels": [
+      405.19,
+      431.44,
+      594.81,
+      456.56
+    ]
+  },
+  {
+    "text": "RAW",
+    "bounds_pixels": [
+      479.0,
+      396.12,
+      521.0,
+      417.88
+    ]
+  },
+  {
+    "text": "Elevation-corrected",
+    "bounds_pixels": [
+      424.16,
+      367.12,
+      575.84,
+      388.88
+    ]
+  },
+  {
+    "text": "Site\u2013grid elevation difference",
+    "bounds_pixels": [
+      407.65,
+      332.03,
+      592.35,
+      351.97
+    ]
+  },
+  {
+    "text": "Fixed temperature lapse rate",
+    "bounds_pixels": [
+      411.5,
+      310.03,
+      588.5,
+      329.97
+    ]
+  },
+  {
+    "text": "Separate calibration per input",
+    "bounds_pixels": [
+      408.0,
+      266.94,
+      592.0,
+      287.06
+    ]
+  },
+  {
+    "text": "2 residual options",
+    "bounds_pixels": [
+      731.69,
+      431.44,
+      892.31,
+      456.56
+    ]
+  },
+  {
+    "text": "Absent / present",
+    "bounds_pixels": [
+      749.16,
+      400.12,
+      874.84,
+      421.88
+    ]
+  },
+  {
+    "text": "Target: observed \u2212 process date",
+    "bounds_pixels": [
+      712.72,
+      369.03,
+      911.28,
+      388.97
+    ]
+  },
+  {
+    "text": "Grouped out-of-fold calibration",
+    "bounds_pixels": [
+      713.0,
+      347.2,
+      911.0,
+      366.8
+    ]
+  },
+  {
+    "text": "Process dates \u00b7 phase duration",
+    "bounds_pixels": [
+      717.5,
+      305.11,
+      906.5,
+      324.89
+    ]
+  },
+  {
+    "text": "Weather \u00b7 day length \u00b7 terrain",
+    "bounds_pixels": [
+      720.15,
+      283.11,
+      903.85,
+      302.89
+    ]
+  },
+  {
+    "text": "Adjust attained dates",
+    "bounds_pixels": [
+      746.5,
+      261.03,
+      877.5,
+      280.97
+    ]
+  },
+  {
+    "text": "Evaluate on the same held-out groups",
+    "bounds_pixels": [
+      307.71,
+      159.77,
+      692.29,
+      188.23
+    ]
+  },
+  {
+    "text": "Compare process structures",
+    "bounds_pixels": [
+      155.52,
+      108.28,
+      380.48,
+      131.72
+    ]
+  },
+  {
+    "text": "Regional baselines and structural contrasts",
+    "bounds_pixels": [
+      135.0,
+      80.94,
+      401.0,
+      101.06
+    ]
+  },
+  {
+    "text": "Accuracy by developmental stage and zone",
+    "bounds_pixels": [
+      131.0,
+      61.2,
+      405.0,
+      80.8
+    ]
+  },
+  {
+    "text": "Quantify paired improvements",
+    "bounds_pixels": [
+      606.84,
+      108.28,
+      859.16,
+      131.72
+    ]
+  },
+  {
+    "text": "Temperature correction and residual learning",
+    "bounds_pixels": [
+      592.55,
+      81.2,
+      873.45,
+      100.8
+    ]
+  },
+  {
+    "text": "Final error \u00b7 paired gains \u00b7 group uncertainty",
+    "bounds_pixels": [
+      593.5,
+      61.2,
+      872.5,
+      80.8
+    ]
+  }
+]

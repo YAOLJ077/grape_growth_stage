@@ -1,37 +1,35 @@
-# Portrait graphical abstract
+# Graphical abstract
 
 [PDF](graphical_abstract.pdf), [editable SVG](graphical_abstract.svg),
 [PNG](graphical_abstract.png), [300-dpi TIFF](graphical_abstract.tiff).
 
-The portrait diagram explains three components of grapevine phenology
-prediction in the order of computation:
+The portrait graphic places comparison of ten process structures before the
+terrain and residual corrections. Both corrections apply across all ten
+structures; the diagram does not depict correction of a selected winner only.
+The terrain and residual panels represent crossed experimental factors, not
+additive sequential gains. Four botanical stage illustrations finish the
+figure, with their labels above the illustrations and no explanatory footer.
 
-1. **DEM:** site-to-grid elevation differences adjust temperature forcing.
-   Under the fixed lapse rate, a site above the weather-grid elevation has
-   cooler adjusted input, and a site below it has warmer input.
-2. **PBMs:** forcing, with or without chilling, accumulates development until
-   a stage threshold is reached.
-3. **ML:** calibration observations define date residuals; environmental
-   covariates help predict a residual adjustment to the process date.
+Terrain correction uses site-minus-weather-grid elevation and a fixed lapse
+rate, with separate calibration under each temperature input. Residual learning
+uses process dates, phase duration, weather, day length and terrain. Its target
+is observed minus raw out-of-fold process date in calibration. Corrections
+adjust attained stage dates; they do not modify thermal states or create stage
+attainment. The schematic does not depict the TabM architecture.
 
-The hill, thermometers, development curve, calendars and network are conceptual
-illustrations, not measured values, a fitted trajectory or the exact TabM
-architecture. The graphic shows the combined pipeline; RAW and no-ML controls
-remain part of the manuscript's factorial comparison. Process thresholds and
-learners are fitted separately under each temperature input. ML adjusts dates
-for attained stages without changing thermal states or repairing non-attainment.
-The illustrated roles explain how corrections can help; the experiments do not
-identify the physical or biological mechanisms behind the accuracy gains.
+The ten small curves and the vineyard terrain are conceptual illustrations,
+not fitted temperature responses or measured topography. Grouped held-out-site
+evaluation takes place within five represented environmental zones and does
+not establish transfer to an independent region. No empirical improvement
+numbers or independently validated local-temperature claims appear in the
+figure.
 
-The final statements summarize the paired result: DEM improved mean PBM
-accuracy, with a small, uncertain additional benefit after residual learning.
-Flowering gains from residual learning under RAW temperature were 10.58 days
-in EZ05 and 1.44 days in EZ03. The five environmental zones summarize monthly
-temperature profiles; sparse zone--stage coverage limits regional inference.
-Sources and file hashes are recorded in [metadata.json](metadata.json).
-
-The editable vector canvas is 7.2 × 10.4 inches; raster exports are 2,160 × 3,120
-pixels at 300 dpi.
+The editable canvas is 8 × 10 inches. PNG and TIFF exports are 2,400 × 3,000
+pixels at 300 dpi. PDF and SVG retain vector elements and selectable text.
+[metadata.json](metadata.json) records sources, hashes and the performed
+rendered text-bound checks; [text_bounds.json](text_bounds.json) records the
+individual rendered extents. These checks establish canvas containment and
+an empty lower text margin, not automated detection of all possible overlaps.
 
 ```sh
 .venv/bin/python src/documents/plot_graphical_abstract.py
