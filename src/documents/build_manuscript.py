@@ -278,7 +278,7 @@ field = OxmlElement('w:fldSimple')
 field.set(qn('w:instr'), 'PAGE')
 footer._p.append(field)
 
-cover_blocks = (PAPER / 'eja_submission/cover_letter.md').read_text().strip().split('\n\n')
+cover_blocks = (PAPER / 'afm_submission/cover_letter.md').read_text().strip().split('\n\n')
 for block in cover_blocks:
     p = combined.add_paragraph(block)
     p.paragraph_format.line_spacing = 1.0
@@ -288,7 +288,7 @@ for block in cover_blocks:
 
 p = combined.add_paragraph('Highlights', style='Heading 1')
 p.paragraph_format.page_break_before = True
-highlights = [line[2:] for line in (PAPER / 'eja_submission/highlights.md').read_text().splitlines() if line.startswith('- ')]
+highlights = [line[2:] for line in (PAPER / 'afm_submission/highlights.md').read_text().splitlines() if line.startswith('- ')]
 for text in highlights:
     p = combined.add_paragraph(text, style='List Bullet')
     p.paragraph_format.line_spacing = 1.15
@@ -298,7 +298,7 @@ for text in highlights:
 
 p = combined.add_paragraph('Graphical abstract', style='Heading 1')
 p.paragraph_format.page_break_before = True
-ga = pdf_image(ROOT / 'fig/graphical_abstract/graphical_abstract.pdf', 'graphical_abstract')
+ga = pdf_image(ROOT / 'fig/paper_figures/graphical_abstract.pdf', 'graphical_abstract')
 p = combined.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p.paragraph_format.line_spacing = 1
@@ -354,7 +354,7 @@ with zipfile.ZipFile(OUT) as z:
     assert 'warmest zone (EZ05)' in xml
     assert 'Environmental-zone dependence of predictive performance' in xml
 
-source_paths = [PAPER / 'manuscript.pdf', PAPER / 'manuscript.tex', compiled('manuscript', 'aux'), compiled('manuscript', 'bbl'), PAPER / 'eja_submission/cover_letter.md', PAPER / 'eja_submission/highlights.md', ROOT / 'fig/graphical_abstract/graphical_abstract.pdf'] + [ROOT / r['source'] for r in figure_records]
+source_paths = [PAPER / 'manuscript.pdf', PAPER / 'manuscript.tex', compiled('manuscript', 'aux'), compiled('manuscript', 'bbl'), PAPER / 'afm_submission/cover_letter.md', PAPER / 'afm_submission/highlights.md', ROOT / 'fig/paper_figures/graphical_abstract.pdf'] + [ROOT / r['source'] for r in figure_records]
 manifest = {
     'output': str(OUT.relative_to(ROOT)),
     'order': ['Cover letter', 'Highlights', 'Graphical abstract', 'Manuscript'],

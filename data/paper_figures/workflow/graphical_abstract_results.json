@@ -1,0 +1,20 @@
+{
+  "primary_source": [
+    "data/paper_figures/predictions/scoring_errors.npz",
+    "data/paper_figures/predictions/identity.csv.gz"
+  ],
+  "weighting": "Fixed 10-model mean absolute errors, then within-site observations, equal sites within stage, equal four stages",
+  "primary": {
+    "observations": 15105,
+    "sites": 633,
+    "groups": 355,
+    "raw_process_mae": 12.584077779051068,
+    "raw_hybrid_mae": 8.488390086432615,
+    "dem_process_mae": 11.527862710599592,
+    "dem_hybrid_mae": 8.368929738919206,
+    "ml_gain": 4.095687692618453,
+    "process_dem_gain": 1.0562150684514755,
+    "hybrid_dem_gain": 0.1194603475134084,
+    "decrease_in_dem_gain": 0.9367547209380671
+  }
+}

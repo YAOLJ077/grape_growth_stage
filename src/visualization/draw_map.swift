@@ -173,6 +173,17 @@ for (panelIndex, panel) in panels.enumerated() {
         }
     }
     if panelIndex == 0 {
+        // Local geographic north under the Lambert projection (3°W, 61°N).
+        let base = point(-3, 61), north = point(-3, 61.2)
+        let distance = hypot(north.x-base.x, north.y-base.y)
+        let ux = (north.x-base.x)/distance, uy = (north.y-base.y)/distance
+        let tip = CGPoint(x: base.x+15.45*ux, y: base.y+15.45*uy)
+        line([base, tip], shade: ink, width: 1.09)
+        ctx.beginPath(); ctx.move(to: tip)
+        ctx.addLine(to: CGPoint(x: tip.x-4.55*ux-2*uy, y: tip.y-4.55*uy+2*ux))
+        ctx.addLine(to: CGPoint(x: tip.x-4.55*ux+2*uy, y: tip.y-4.55*uy-2*ux))
+        ctx.closePath(); ctx.setFillColor(ink.cgColor); ctx.fillPath()
+        text("N", tip.x, tip.y-11, size: 8, bold: true, center: true)
         let detailBounds = panels[1]["bounds"] as! [Double]
         let edge = [
             screen(CGPoint(x: detailBounds[0], y: detailBounds[1])),

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build editable EJA submission documents and cover-letter LaTeX from Markdown.
+"""Build editable AFM submission documents and cover-letter LaTeX from Markdown.
 
 Requires python-docx. Compile the generated cover_letter.tex with Tectonic.
 """
@@ -8,8 +8,8 @@ from docx import Document
 from docx.shared import Mm, Pt
 
 from paths import PAPER, DELIVERY, build_directory
-SOURCE = PAPER / "eja_submission"
-OUT = DELIVERY / "eja_submission"
+SOURCE = PAPER / "afm_submission"
+OUT = DELIVERY / "afm_submission"
 OUT.mkdir(parents=True, exist_ok=True)
 
 

@@ -5,9 +5,10 @@ import json
 import matplotlib.pyplot as plt
 from plot_graphical_abstract import Artwork,ROOT,INK,MUTED,GREEN,BLUE,GOLD,PURPLE,sha
 
-OUT=ROOT/'build/comment_revision/figures'
+OUT=ROOT/'fig/paper_figures'
 
-def main():
+def main(output=None):
+    destination=Path(output) if output is not None else OUT
     a=Artwork(width=1000,height=880,inches=(10,8.8));t=a.text
     plt.rcParams['font.family']='Times New Roman'
     a.box(26,719,948,135,'#EEF4F7',r=12)
@@ -74,7 +75,7 @@ def main():
     t(733,120,'Quantify paired improvements',14,PURPLE,True,ha='center')
     t(733,91,'Temperature correction and residual learning',11.5,ha='center')
     t(733,71,'Final error · paired gains · group uncertainty',11.5,MUTED,ha='center')
-    stem=OUT/'Fig_01'
+    stem=destination/'Fig_01'
     bounds=a.export(stem,exts=('pdf','svg','png'),blank_below=60)
     metadata={
         'font_family':'Times New Roman',
@@ -91,10 +92,10 @@ def main():
             'scoring':'Fixed 4 November late-season scoring convention and raw attainment remain described in the separate caption and Methods.',
             'interpretation':'Study schematic, not a measured process trajectory or the TabM architecture.'},
         'verification':{'canvas_text_bounds_checked':True,'text_count':len(bounds),'minimum_text_y_canvas_units':60},
-        'artifacts':{str(stem.with_suffix('.'+ext).relative_to(ROOT)):sha(stem.with_suffix('.'+ext)) for ext in ('pdf','svg','png')}
+        'artifacts':{stem.with_suffix('.'+ext).name:sha(stem.with_suffix('.'+ext)) for ext in ('pdf','svg','png')}
     }
-    (OUT/'Fig_01.metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
-    (OUT/'Fig_01.text_bounds.json').write_text(json.dumps(bounds,indent=2)+'\n')
+    (destination/'Fig_01.metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
+    (destination/'Fig_01.text_bounds.json').write_text(json.dumps(bounds,indent=2)+'\n')
     plt.close(a.fig)
     print(json.dumps({'output':str(stem),'pixels':metadata['raster_pixels'],'text_count':len(bounds)}))
 

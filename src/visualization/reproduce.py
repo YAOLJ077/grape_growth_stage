@@ -110,7 +110,10 @@ def main():
         from recompute_results import recompute
         statistical_checks=recompute(work/'statistics')
         print('Rendering workflow, study-area map and temperature responses',flush=True)
-        swift('draw_workflow.swift',native)
+        sys.path.insert(0,str(ROOT/'src/documents'))
+        from plot_revision_workflow import main as workflow
+        workflow(native)
+        shutil.copy2(native/'Fig_01.pdf',native/'workflow.pdf')
         payload=json.loads((DATA/'study_area/map_payload.json').read_text())
         for panel in payload['panels']:panel['background']=str(DATA/'study_area'/panel['background'])
         map_json=work/'map.json';map_json.write_text(json.dumps(payload))
@@ -131,7 +134,9 @@ def main():
         # Preserve embedded Unicode maps while scaling PDF contents and page boxes.
         for job in jobs:
             reader=pypdf.PdfReader(job['input']);assert len(reader.pages)==1
-            page=reader.pages[0];page.scale_by(561.6/float(page.mediabox.width))
+            page=reader.pages[0]
+            target_width=720 if job['id']=='Fig_01' else 561.6
+            page.scale_by(target_width/float(page.mediabox.width))
             writer=pypdf.PdfWriter();writer.add_page(page)
             writer.add_metadata({'/Title':job['id'],'/Creator':'Grapevine paper figure reproduction'})
             with open(job['output'],'wb') as stream:writer.write(stream)
@@ -139,12 +144,15 @@ def main():
         print(swift('export_figures.swift',jobfile),end='',flush=True)
         documents=audit([exports/(r['id']+'.pdf') for r in catalogue])
         reference=json.loads((DATA/'reference_figure_text.json').read_text())
+        reference['Fig_01']=' '.join(x['text'] for x in json.loads((native/'Fig_01.text_bounds.json').read_text()))
+        reference['Fig_02']+=' N'
         checks=[]
         from PIL import Image
         for row,doc in zip(catalogue,documents):
             assert len(doc['pages'])==1
             page=doc['pages'][0]
-            if abs(page['width_pt']-561.6)>.01:raise ValueError(f'Incorrect width: {row["id"]}')
+            expected_width=720 if row['id']=='Fig_01' else 561.6
+            if abs(page['width_pt']-expected_width)>.01:raise ValueError(f'Incorrect width: {row["id"]}')
             # PDFKit reading order can change after uniform PDF scaling.
             normalize=lambda s:Counter(re.sub(r'\s+','',s))
             if normalize(page['text'])!=normalize(reference[row['id']]):
@@ -152,10 +160,14 @@ def main():
             if not page['spans']:raise ValueError('Missing editable text')
             scale=198.12/180
             for span in page['spans']:
+                if row['id']=='Fig_01':
+                    if 'TimesNewRoman' not in span['font']:raise ValueError(f'Unexpected workflow font: {span}')
+                    continue
                 if 'Helvetica' not in span['font'] or not any(abs(span['size']-v*scale)<.13 for v in [6,8,9]):
                     raise ValueError(f'Unexpected font in {row["id"]}: {span}')
             with Image.open(exports/(row['id']+'.png')) as im:
-                if im.width!=2340:raise ValueError('Incorrect PNG width')
+                expected_pixels=round(expected_width*300/72)
+                if im.width!=expected_pixels:raise ValueError('Incorrect PNG width')
                 dpi=im.info.get('dpi',(0,0))
                 if abs(dpi[0]-300)>.1:raise ValueError(f'Incorrect PNG resolution: {dpi}')
             with Image.open(exports/(row['id']+'.png')) as im, Image.open(exports/(row['id']+'.reference.png')) as ref:
@@ -167,12 +179,17 @@ def main():
                 if pixel_error>3. or not numpy.isfinite(correlation) or correlation<.97:
                     raise ValueError(f'PNG differs from independent PDF rendering: {row["id"]}: MAE={pixel_error}, r={correlation}')
             checks.append({'id':row['id'],'width_inches':page['width_pt']/72,'height_inches':page['height_pt']/72,
-                'text_glyphs_match_original':True,'editable_vector_text':True,'png_reference_mean_absolute_pixel_error_500px':pixel_error,'png_reference_correlation_500px':correlation,'png_width_px':2340,'png_dpi':300})
+                'text_glyphs_match_current_source':True,'editable_vector_text':True,'png_reference_mean_absolute_pixel_error_500px':pixel_error,'png_reference_correlation_500px':correlation,'png_width_px':expected_pixels,'png_dpi':300})
         # Preserve the freshly recomputed numerical tables beside the input bundle.
         shutil.copytree(work/'statistics',DATA/'reproduced',dirs_exist_ok=True)
         # Publish only after every new figure has passed checks.
         for row in catalogue:
             for ext in ['pdf','png']:os.replace(exports/(row['id']+'.'+ext),OUTPUT/(row['id']+'.'+ext))
+        for suffix in ['svg','metadata.json','text_bounds.json']:
+            shutil.copy2(native/('Fig_01.'+suffix),OUTPUT/('Fig_01.'+suffix))
+        workflow_meta=json.loads((OUTPUT/'Fig_01.metadata.json').read_text())
+        workflow_meta['artifacts']={f'Fig_01.{ext}':digest(OUTPUT/f'Fig_01.{ext}') for ext in ['pdf','png','svg']}
+        (OUTPUT/'Fig_01.metadata.json').write_text(json.dumps(workflow_meta,indent=2)+'\n')
     report={'verified':True,'built_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'scope':manifest['scope'],'figures':checks,'numerical_row_checks':row_checks,'statistical_recomputation':statistical_checks,
         'data_manifest_sha256':digest(DATA/'manifest.json'),
@@ -185,11 +202,11 @@ def main():
         meta_path=ROOT/'paper/build_metadata.json'
         meta=json.loads(meta_path.read_text()) if meta_path.exists() else {}
         meta.update(built_utc=report['built_utc'],pages=report['documents']['manuscript']['pages'],
-            status='Numbered 7.8-inch figure bundle, statistics and both documents regenerated and verified',
+            status='Current numbered figure bundle, statistics and both documents regenerated and verified',
             compiler_verification=report['documents']['manuscript'],
             figure_reproduction='fig/paper_figures/verification.json',
             checks=['Locked scoring-error statistics and group-bootstrap intervals recomputed',
-                    '15 numbered vector PDFs and PNGs verified at 7.8-inch width',
+                    '15 numbered vector PDFs and PNGs verified at their designated widths',
                     'Manuscript and supplementary references, numbering and embedded scaling verified'])
         meta['visual_inspection_performed']=False
         meta['visual_inspection_note']='Automated rerun; visual inspection is recorded separately in fig/paper_figures/visual_review.json.'
@@ -199,8 +216,13 @@ def main():
             for ext in ['pdf','png']:
                 name=f'fig/paper_figures/{row["id"]}.{ext}';meta.setdefault('files',{})[name]=digest(ROOT/name)
         meta_path.write_text(json.dumps(meta,indent=2)+'\n')
+    from plot_graphical_abstract import main as graphical_abstract
+    graphical_abstract()
+    from merge_figures import main as merge_figures
+    merge_figures()
     report['elapsed_seconds']=round(time.monotonic()-started,2)
+    report['artifacts']={p.name:digest(p) for p in OUTPUT.iterdir() if p.suffix in ['.pdf','.png','.svg','.tiff']}
     (OUTPUT/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
-    print(f'Complete: 15 figures, each 7.8 inches wide ({report["elapsed_seconds"]} s).',flush=True)
+    print(f'Complete: 15 numbered figures and graphical abstract ({report["elapsed_seconds"]} s).',flush=True)
 
 if __name__=='__main__':main()

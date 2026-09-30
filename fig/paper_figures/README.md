@@ -1,9 +1,20 @@
-# Manuscript and supplementary figures
+# Current manuscript figures
 
-All 15 published figures are collected here. PDF files are vector artwork,
-7.8 inches (198.12 mm) wide. PNG previews are 2,340 pixels wide at 300 dpi.
+This folder contains the single current set: graphical abstract, Figures 1–10
+and Figures S1–S5. PDF, PNG, SVG and TIFF files are export formats of the same
+figure, not historical versions.
 
-| Published figure | Content | PDF | PNG |
+[All figures — combined 16-page PDF](All_figures.pdf)
+
+[Graphical abstract](graphical_abstract.md): [PDF](graphical_abstract.pdf),
+[PNG](graphical_abstract.png), [SVG](graphical_abstract.svg),
+[TIFF](graphical_abstract.tiff).
+
+Figure 1 uses Times New Roman throughout and a centered top heading. The
+graphical abstract also uses Times New Roman and has no bottom explanatory
+text. Figure 2 includes a north arrow aligned with the map projection.
+
+| Figure | Content | PDF | PNG |
 | --- | --- | --- | --- |
 | 1 | Overall workflow | [Fig_01.pdf](Fig_01.pdf) | [Fig_01.png](Fig_01.png) |
 | 2 | Study area | [Fig_02.pdf](Fig_02.pdf) | [Fig_02.png](Fig_02.png) |
@@ -21,10 +32,19 @@ All 15 published figures are collected here. PDF files are vector artwork,
 | S4 | DEM effects on bias and RMSE | [Fig_S04.pdf](Fig_S04.pdf) | [Fig_S04.png](Fig_S04.png) |
 | S5 | Hybrid signed bias | [Fig_S05.pdf](Fig_S05.pdf) | [Fig_S05.png](Fig_S05.png) |
 
-Double-click [reproduce.command](../../src/visualization/reproduce.command) to
-recompute the plotted statistics, regenerate every figure and rebuild the
-manuscript and supplementary PDFs. See the [code guide](../../src/visualization/README.md)
-and [input-data guide](../../data/paper_figures/README.md).
 
-The current run is recorded in [verification.json](verification.json).
-No historical figure files are required by the reproduction command.
+Figure 1 is 10 × 8.8 inches; its editable [SVG](Fig_01.svg) is retained.
+The graphical abstract is landscape, 1328 × 531 pixels. Other figures are 7.8 inches wide.
+PNG exports use 300 dpi. PDFs retain vector artwork and searchable text.
+
+## Update and reproduce
+
+- `src/documents/plot_revision_workflow.py`: current Figure 1.
+- `src/documents/plot_graphical_abstract.py`: current graphical abstract.
+- `src/visualization/reproduce.py`: numbered figures and graphical abstract,
+  with statistical checks against the frozen data inputs.
+- `src/visualization/merge_figures.py --update-manuscript`: combined PDF and
+  synchronization of Figures 1–10 in `paper/grape_pheno_manuscript_ylj.docx`.
+
+[Figure manifest](figure_manifest.json) records current assets and PDF order.
+[Verification](verification.json) records the latest reproduction checks.

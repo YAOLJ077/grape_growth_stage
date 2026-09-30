@@ -1,0 +1,63 @@
+{
+  "font_family": "Times New Roman",
+  "orientation": "landscape",
+  "dimensions_inches": [
+    4.426666666666667,
+    1.77
+  ],
+  "raster_pixels": [
+    1328,
+    531
+  ],
+  "raster_dpi": 300,
+  "design": "Title-free scientific schematic with three aligned fields, process topology, terrain and residual mechanisms, and a paired 2 \u00d7 2 MAE interaction plot; no footer.",
+  "design_reference": "https://www.nature.com/documents/natrev-artworkguide_PS.pdf",
+  "scientific_scope": {
+    "design": "Ten structures \u00d7 two temperature inputs \u00d7 two residual options; corrections retain all ten structures.",
+    "selection": "CB-FL-S is the selected RAW process structure: sequential beta chilling and linear forcing. Selection is not a filter on the correction experiment.",
+    "terrain": "Fixed lapse-rate correction precedes separate process recalibration; surface and vines are conceptual, not an observed terrain dataset.",
+    "residual": "Stage-specific residual design uses process states and environment; the \u0394d box is not a claim about neural-network architecture.",
+    "target": "Observed minus raw out-of-fold process date, learned with grouped nested refits.",
+    "output": "Correction adjusts attained dates; it does not repair non-attainment or modify process thermal states.",
+    "validation": "Grouped site holdouts within five represented environmental zones; not independent regional transfer.",
+    "gains": "The 2 \u00d7 2 paired plot shows the convergence of terrain-input MAEs after residual learning. No additive mechanism is assumed."
+  },
+  "sources": {
+    "data/paper_figures/workflow/workflow.md": "deba4f13bea75bc15c188f514057a264dbea6e134b1a2c5017b2935f8f73da9e",
+    "paper/manuscript.tex": "08e432309c44a79bf6de08ef12a839dd4f5323756cefb70f73cba99ad208d0dd"
+  },
+  "quantitative_results": {
+    "source": "data/paper_figures/workflow/graphical_abstract_results.json",
+    "source_sha256": "c11af383993fabdd7b8a48a21ae1cb65217aa30a082f4dca3b3519acd1cb51c7",
+    "cohort": {
+      "observations": 15105,
+      "sites": 633,
+      "groups": 355
+    },
+    "weighting": "Equal models, sites within each stage, and four stages",
+    "mae_days": {
+      "raw_process_mae": 12.584077779051068,
+      "dem_process_mae": 11.527862710599592,
+      "raw_hybrid_mae": 8.488390086432615,
+      "dem_hybrid_mae": 8.368929738919206
+    },
+    "axis_limits_days": [
+      7.5,
+      13.5
+    ],
+    "plot": "Connected point estimates, with endpoint leader labels and circle/diamond coding; no uncertainty intervals are implied."
+  },
+  "script_sha256": "39b0a99f5cc493c75264e4031081c5e1e14686f94cf504e237edf1bfe7dec7ef",
+  "artifacts": {
+    "fig/paper_figures/graphical_abstract.pdf": "6653cce4a54ab50ddde66f4a2bf8dc923d9994c92389e9be62cd238d787a9758",
+    "fig/paper_figures/graphical_abstract.svg": "aca26e8cb64239275f2e9669e9f5ddadf445bddd05765228d9efbbbf40902f8c",
+    "fig/paper_figures/graphical_abstract.png": "f22bc5b5584265819a26b3375c0dd03854d8ff5823fccece04bd0c23f14c1cd6",
+    "fig/paper_figures/graphical_abstract.tiff": "cf6161c504776c2a139cffff60fe57d62dbee9745ebd9c6e5e71c418e6b59e8c"
+  },
+  "verification": {
+    "canvas_text_bounds_checked": true,
+    "minimum_text_y_canvas_units": 52,
+    "text_count": 35,
+    "method": "Matplotlib rendered text extents asserted within canvas and above footer exclusion zone."
+  }
+}

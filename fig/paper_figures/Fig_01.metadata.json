@@ -1,0 +1,37 @@
+{
+  "font_family": "Times New Roman",
+  "dimensions_inches": [
+    10,
+    8.8
+  ],
+  "raster_pixels": [
+    3000,
+    2640
+  ],
+  "raster_dpi": 300,
+  "source": "src/documents/plot_revision_workflow.py",
+  "source_sha256": "8ef7521a0a9670ac212e68addd3ed9d9e8a156c2e57a4b92c032e14e0c1af230",
+  "shared_drawing_source_sha256": "0d97d7d917f547f1ae6ff18cd389d460a9ad9d3941f9d96fc29ac276bdb2bb20",
+  "evidence": {
+    "data/paper_figures/workflow/workflow.md": "deba4f13bea75bc15c188f514057a264dbea6e134b1a2c5017b2935f8f73da9e",
+    "paper/manuscript.tex": "ce9d8f48732257a0f604c240f95d957599a7d9bab87990828251aabea54ba864"
+  },
+  "scientific_scope": {
+    "validation": "Group-preserving calibration/test split within represented environmental zones; not zone-transfer validation.",
+    "design": "All ten process structures crossed with both temperature inputs and residual options.",
+    "residual": "Out-of-fold observed-minus-raw-process residuals from calibration; nested refitting details remain in the caption and Methods.",
+    "terrain": "DEM contrasts include separate calibration; no claim of measured local-temperature accuracy.",
+    "scoring": "Fixed 4 November late-season scoring convention and raw attainment remain described in the separate caption and Methods.",
+    "interpretation": "Study schematic, not a measured process trajectory or the TabM architecture."
+  },
+  "verification": {
+    "canvas_text_bounds_checked": true,
+    "text_count": 43,
+    "minimum_text_y_canvas_units": 60
+  },
+  "artifacts": {
+    "Fig_01.pdf": "26e18c6c06c100446e909f17e6b00ac85f54163a1c2431571f6d11c26d1d9129",
+    "Fig_01.png": "530b20494c6196eb87cff60cfe0e6b7cfdda101ae04435ff0b738ea4fad83584",
+    "Fig_01.svg": "32446175354e5ce912e13d1a2521f38735893f2f51cec7d64d229a4455ed990f"
+  }
+}

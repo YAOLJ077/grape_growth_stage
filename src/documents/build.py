@@ -39,7 +39,7 @@ def main():
         if not tectonic:
             raise RuntimeError('Install Tectonic and put it on PATH to compile the LaTeX sources')
         for name in ('manuscript', 'supplementary', 'cover_letter'):
-            source = ROOT / 'paper' / ('eja_submission' if name == 'cover_letter' else '') / (name + '.tex')
+            source = ROOT / 'paper' / ('afm_submission' if name == 'cover_letter' else '') / (name + '.tex')
             if name == 'cover_letter' and not args.pdf_only:
                 source = build / 'front_matter/cover_letter.tex'
             run([tectonic, '--keep-logs', '--keep-intermediates', '--outdir', cache,
@@ -47,7 +47,7 @@ def main():
             log = (cache / (name + '.log')).read_text(errors='replace')
             if re.search(r'Overfull \\[hv]box|undefined|LaTeX Error|Float too large', log, re.I):
                 raise RuntimeError(f'Unresolved compilation or layout warning in {name}.log')
-            target = output / ('eja_submission' if name == 'cover_letter' else '') / (name + '.pdf')
+            target = output / ('afm_submission' if name == 'cover_letter' else '') / (name + '.pdf')
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(cache / (name + '.pdf'), target)
         if args.pdf_only:

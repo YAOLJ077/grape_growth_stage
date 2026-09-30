@@ -15,12 +15,17 @@ To regenerate statistics and figures without compiling the documents:
 
 Inputs are in [`data/paper_figures/`](../../data/paper_figures/README.md).
 Outputs are in [`fig/paper_figures/`](../../fig/paper_figures/README.md), named
-`Fig_01`–`Fig_10` and `Fig_S01`–`Fig_S05`. Each vector PDF is exactly 7.8 inches
-(198.12 mm, 561.6 PDF points) wide. PNG previews are 2,340 pixels wide at
-300 dpi. All artwork is scaled proportionally from its original 180-mm layout;
-aspect ratios, axes, panel arrangements and numerical values are retained.
-The PDFs retain embedded fonts and searchable text. The manuscript embeds
-these files at its available text width, respecting its existing page margins.
+`Fig_01`–`Fig_10`, `Fig_S01`–`Fig_S05`, and `graphical_abstract`.
+Figure 1 is 10 inches wide, the graphical abstract is 8 inches wide, and the
+remaining figures are 7.8 inches wide. PNG previews use 300 dpi.
+`All_figures.pdf` combines the 16 current PDFs with bookmarks.
+Figure 1 and the graphical abstract use Times New Roman.
+
+To synchronize the latest numbered figures in the edited Word manuscript:
+
+```sh
+.venv/bin/python src/visualization/merge_figures.py --update-manuscript
+```
 
 ## Requirements
 
@@ -48,9 +53,9 @@ launcher.
   paired-group uncertainty calculation.
 - `render_*.py` contains the existing plot designs adapted to bundled inputs.
   Each renderer receives an explicit temporary output directory.
-- `draw_workflow.swift`, `draw_map.swift` and `draw_temperature_responses.swift`
-  draw the contextual vector figures. Workflow text can be edited in the
-  bundled `draw_workflow.swift`; its data references are in the workflow input.
+- `src/documents/plot_revision_workflow.py` draws the current workflow.
+  `draw_map.swift` includes the projected north arrow;
+  `draw_temperature_responses.swift` draws the temperature response curves.
 - `reproduce.py` validates input hashes, recomputes statistics, compares numerical
   labels, redraws figures and checks all 15 exports before replacing them.
   Pypdf performs proportional scaling without losing embedded Unicode mappings;

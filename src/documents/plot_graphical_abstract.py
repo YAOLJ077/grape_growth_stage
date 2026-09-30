@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Editable scientific schematic; all drawings are conceptual, not data plots."""
+"""Editable graphical abstract with conceptual diagrams and source-backed paired error comparisons."""
 from pathlib import Path
 import hashlib
 import json
@@ -10,13 +10,13 @@ from matplotlib.patches import Circle, Ellipse, Polygon, FancyBboxPatch
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'fig/graphical_abstract'
+OUT = ROOT / 'fig/paper_figures'
 INK, MUTED = '#233D3D', '#5A6D70'
 GREEN, BLUE, GOLD, PURPLE = '#35806D', '#447C9A', '#B98436', '#80619A'
 
 class Artwork:
     def __init__(self, width=800, height=1000, inches=(8,10)):
-        plt.rcParams.update({'font.family':'Arial', 'pdf.fonttype':42,
+        plt.rcParams.update({'font.family':'Times New Roman', 'pdf.fonttype':42,
                              'ps.fonttype':42, 'svg.fonttype':'none'})
         self.fig=plt.figure(figsize=inches,facecolor='white')
         self.ax=self.fig.add_axes((0,0,1,1),xlim=(0,width),ylim=(0,height))
@@ -79,83 +79,174 @@ class Artwork:
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def main():
-    a=Artwork();t=a.text
-    t(400,960,'Grapevine phenology across environments',22,bold=True,ha='center')
-    t(400,925,'Identify regional baselines · Improve stage-date estimates',13,MUTED,ha='center')
+    a=Artwork(width=1328,height=531,inches=(1328/300,531/300))
+    # A narrow typographic scale, dark labels and a semantic, restrained palette.
+    ink='#263336';muted='#5C686B';rule='#D9DFDF'
+    cold='#537E99';warm='#C49B52';terrain='#54887B';residual='#7B708D'
+    def t(x,y,s,size=6.6,bold=False,ha='left',color=ink):
+        return a.text(x,y,s,size,color,bold,ha)
+    from matplotlib.path import Path as MplPath
+    from matplotlib.patches import PathPatch,FancyArrowPatch
+    def arrow(x0,y0,x1,y1,color=muted,lw=.65):
+        a.ax.add_patch(FancyArrowPatch((x0,y0),(x1,y1),arrowstyle='-|>',
+            mutation_scale=5.5,lw=lw,color=color,shrinkA=0,shrinkB=0))
+    def curved(points,color=muted,lw=.65):
+        a.ax.add_patch(FancyArrowPatch(path=MplPath(points,[1,4,4,4]),
+            arrowstyle='-|>',mutation_scale=5.5,lw=lw,color=color))
+    def node(x,y,c,w=47,h=24):
+        a.box(x-w/2,y-h/2,w,h,c,r=3)
 
-    # Structure comparison precedes the correction experiments in the narrative.
-    a.box(32,689,736,201,'#F8F4EB',r=14)
-    t(56,860,'1',15,GOLD,True);t(84,860,'Compare ten process structures',17,bold=True)
-    groups=[(160,'Forcing only',2),(400,'Sequential',4),(640,'Parallel',4)]
-    for x,label,n in groups:
-        t(x,820,label,12,GOLD,True,ha='center')
-        for i in range(n):
-            xx=x-(n-1)*24+i*48
-            a.box(xx-18,758,36,39,'white','#D5C5A7',5)
-            q=np.linspace(0,1,20)
-            peak=25.4/35; alpha=np.log(2)/np.log(1/peak)
-            response=q if i%2==0 else np.maximum(0,2*(q/peak)**alpha-(q/peak)**(2*alpha))
-            a.line(xx-11+22*q,767+21*response,GOLD,1.7)
-        t(x,738,'Heat' if n==2 else 'Chilling + heat',11,MUTED,ha='center')
-    t(400,710,'Grouped site holdouts within five environmental zones',11.5,MUTED,ha='center')
-    a.arrow(400,686,400,652,GOLD)
-    t(400,633,'2   Test both corrections across all ten structures',16,bold=True,ha='center')
-    # Two routes are factors, not additive improvements or a selected-model pipeline.
-    a.box(32,299,356,307,'#F0F6F2',r=14)
-    a.box(412,299,356,307,'#F4F0F8',r=14)
-    t(210,578,'Terrain-adjusted temperature',14,GREEN,True,ha='center')
-    t(590,578,'Process-guided residual model',13.5,PURPLE,True,ha='center')
-    hill=np.array([[58,429],[104,449],[162,506],[215,495],[278,461],[363,435],[363,419],[58,419]])
-    a.ax.add_patch(Polygon(hill,facecolor='#D3E3C9',edgecolor='none'))
-    a.line(hill[:6,0],hill[:6,1],GREEN,1.8)
-    a.line([60,364],[451,451],'#7FA194',1.2,ls=(0,(4,3)))
-    a.vine(162,506,.7)
-    a.line([168,309],[506,506],'#7FA194',1,ls=(0,(3,3)))
-    a.arrow(307,451,307,506,GREEN,1.2,'<->')
-    t(210,552,'Site–grid elevation difference',11.5,MUTED,ha='center')
-    t(210,397,'RAW  ↔  Elevation-corrected',12,GREEN,True,ha='center')
-    a.arrow(210,380,210,355,GREEN)
-    t(210,333,'Recalibrate each process structure',11.5,MUTED,ha='center')
+    # Three visual fields share alignment; fine rules replace coloured panels.
+    t(32,483,'Process structure',7.4,True)
+    t(447,483,'Further improvement',7.4,True)
+    t(957,483,'Grapevine phenology',7.4,True)
+    for x in [414,922]:a.line([x,x],[70,460],rule,.4)
 
-    t(590,543,'Process dates + phase duration',11.5,MUTED,ha='center')
-    t(590,521,'Weather + day length + terrain',11.5,MUTED,ha='center')
-    a.arrow(590,504,590,480,PURPLE)
-    a.box(454,434,272,44,'white','#CBBAD8',8)
-    t(590,456,'Learn date residuals',13,PURPLE,True,ha='center')
-    t(590,411,'Target: observed − process date',11.5,MUTED,ha='center')
-    t(590,389,'Out-of-fold calibration predictions',10.5,MUTED,ha='center')
-    a.arrow(590,374,590,351,PURPLE)
-    t(590,331,'Adjust attained stage dates',12,PURPLE,True,ha='center')
+    # Process relationships, not repeated letters or illustrative fitted curves.
+    t(32,438,'10 candidate structures',6.5,color=muted)
+    a.line([33,58],[392,392],cold,1.7);t(71,392,'Chilling',6.3)
+    a.line([213,238],[392,392],warm,1.7);t(251,392,'Forcing',6.3)
+    t(32,343,'Forcing only',6.7)
+    t(32,302,'2 structures',6.0,color=muted)
+    arrow(211,323,365,323)
+    node(288,323,warm,76,27)
 
-    a.line([210,210,590,590],[296,272,272,296],MUTED,1.3)
-    a.arrow(400,272,400,237,GREEN)
-    a.box(32,39,736,197,'#F6F8F8',r=14)
-    t(400,207,'3   Evaluate final accuracy and paired gains',16,bold=True,ha='center')
-    for x,label in [(124,'Budburst'),(305,'Flowering'),(487,'Veraison'),(669,'Maturity / harvest')]:
-        t(x,160,label,11.5,MUTED,ha='center')
-    a.vine(124,70,1.35);a.bloom(305,105,1.2)
-    a.grapes(487,108,1.05,'#AF91B4',mixed=True);a.grapes(669,108,1.05,'#6F5689')
-    # No footer, abbreviation block, performance-number block or text below icons.
+    # The highlight marks the winning family without suggesting only it was corrected.
+    a.line([23,23],[213,281],terrain,1.05)
+    t(32,264,'Sequential',6.7,True)
+    t(32,228,'4 structures',6.0,color=muted)
+    node(235,246,cold,48,27);node(340,246,warm,48,27)
+    arrow(260,246,315,246)
+
+    t(32,183,'Parallel',6.7)
+    t(32,143,'4 structures',6.0,color=muted)
+    a.line([211,222,222],[165,165,187],muted,.55)
+    a.line([222,222],[165,143],muted,.55)
+    arrow(222,187,247,187);arrow(222,143,247,143)
+    node(276,187,cold,55,23);node(276,143,warm,55,23)
+    a.line([306,339,339],[187,187,165],muted,.55)
+    a.line([306,339,339],[143,143,165],muted,.55)
+    arrow(339,165,367,165)
+    # Compact selected-model annotation sits with the selected structure.
+    t(207,103,'Selected: CB-FL-S',6.6,True,ha='center')
+    t(207,70,'Beta chilling → linear forcing',6.0,ha='center',color=muted)
+
+    # Terrain-informed temperature input: original vector relief and vineyard rows.
+    t(447,438,'Terrain-adjusted temperature',6.6,True)
+    def surface(u,v):
+        return np.array([460+146*u+57*v,350-62*u+46*v+24*np.sin(np.pi*u)*np.sin(np.pi*v)])
+    u=np.linspace(0,1,50)
+    perimeter=np.vstack([np.array([surface(q,0) for q in u]),
+                         np.array([surface(1,q) for q in u]),
+                         np.array([surface(q,1) for q in u[::-1]]),
+                         np.array([surface(0,q) for q in u[::-1]])])
+    a.ax.add_patch(Polygon(perimeter,facecolor='#EEF2E9',edgecolor='#AEC1B1',lw=.55))
+    for vv in np.linspace(.1,.9,5):
+        pts=np.array([surface(q,vv) for q in u]);a.line(pts[:,0],pts[:,1],'#AEC1B1',.4)
+    for uu in [.16,.50,.84]:
+        pts=np.array([surface(uu,q) for q in u]);a.line(pts[:,0],pts[:,1],'#C9D4C2',.4)
+    # Small vines establish grapevine context without decorative landscape imagery.
+    for uu,vv in [(.25,.27),(.60,.27),(.25,.73),(.60,.73)]:
+        xx,yy=surface(uu,vv)
+        a.line([xx,xx,xx+2],[yy,yy+15,yy+23],'#938572',.65)
+        a.ax.add_patch(Ellipse((xx-7,yy+18),17,8,angle=30,facecolor=terrain,edgecolor='none'))
+        a.ax.add_patch(Ellipse((xx+7,yy+21),17,8,angle=-30,facecolor=terrain,edgecolor='none'))
+        for dx,dy in [(4,12),(9,12),(6.5,7)]:
+            a.ax.add_patch(Circle((xx+dx,yy+dy),2.2,facecolor=residual,edgecolor='none'))
+    a.line([663,689],[365,365],rule,.55)
+    a.line([622,689],[308,308],rule,.55)
+    a.ax.add_patch(FancyArrowPatch((684,312),(684,361),arrowstyle='<->',
+                mutation_scale=5,lw=.65,color=terrain,shrinkA=0,shrinkB=0))
+    t(700,355,'Elevation offset',6.1)
+    t(700,319,'Recalibration',6.1)
+
+    # The residual module explicitly combines process and environmental predictors.
+    t(447,270,'Process-guided residual learning',6.6,True)
+    t(447,222,'Process states',6.3)
+    t(447,181,'Environment',6.3)
+    a.line([626,642,642,626],[222,222,181,181],muted,.6)
+    arrow(643,202,670,202)
+    a.box(677,176,82,51,'#EEEAF1',r=4)
+    t(718,202,'Δd',8.0,ha='center')
+    arrow(763,202,794,202)
+    # Date correction, represented as a calendar with an adjusted date marker.
+    a.box(807,177,52,52,'white',muted,4,.6)
+    a.line([807,859],[215,215],muted,.55)
+    for dx in [819,847]:a.line([dx,dx],[224,237],muted,.65)
+    for xx in [819,833,847]:
+        for yy in [189,201]:
+            a.ax.add_patch(Circle((xx,yy),2.5,facecolor='#CDD5D3',edgecolor='none'))
+    a.ax.add_patch(Circle((833,201),4,facecolor=residual,edgecolor='none'))
+    t(447,125,'Grouped out-of-fold errors',6.1,color=muted)
+    t(447,72,'Both corrections evaluated across all 10',6.0,color=muted)
+
+    # A paired 2 × 2 plot exposes the limited extra terrain gain after residual learning.
+    source=ROOT/'data/paper_figures/workflow/graphical_abstract_results.json'
+    results=json.loads(source.read_text())['primary']
+    bars=[('Process only','raw_process_mae',cold),('Terrain','dem_process_mae',terrain),
+          ('Residual','raw_hybrid_mae',cold),('Both','dem_hybrid_mae',terrain)]
+    t(957,438,'Regional test MAE (days)',6.5)
+    a.line([958,980],[395,395],cold,.8)
+    a.ax.add_patch(Circle((969,395),4,facecolor=cold,edgecolor='none'))
+    t(992,395,'Grid temperature',6.0)
+    a.line([958,980],[359,359],terrain,.8)
+    a.ax.add_patch(Polygon([[969,354],[974,359],[969,364],[964,359]],facecolor=terrain,edgecolor='none'))
+    t(992,359,'Terrain adjusted',6.0)
+    x_left,x_right=1032,1223
+    y0,y1=110,325;low,high=7.5,13.5
+    def yy(value):return y0+(value-low)/(high-low)*(y1-y0)
+    for value in [8,10,12]:
+        y=yy(value)
+        a.line([995,1268],[y,y],'#E2E7E7',.4)
+        t(979,y,str(value),6.0,ha='right',color=muted)
+    # Values in each series are computed on the same cohort, with no synthetic data.
+    for keys,c,marker in [(('raw_process_mae','raw_hybrid_mae'),cold,'o'),
+                          (('dem_process_mae','dem_hybrid_mae'),terrain,'D')]:
+        v0,v1=(results[k] for k in keys)
+        # Tiny symmetric x offsets keep the two convergent endpoints distinguishable.
+        offset=-3 if marker=='o' else 3
+        xs=[x_left+offset,x_right+offset];ys=[yy(v0),yy(v1)]
+        a.line(xs,ys,c,.95)
+        a.ax.plot(xs,ys,ls='none',marker=marker,markersize=3.2,color=c,
+                  markeredgecolor='white',markeredgewidth=.35)
+        t(1014,ys[0]+23 if marker=='o' else ys[0]-17,f'{v0:.2f}',6.4,ha='right')
+        # Separate leader labels avoid falsely separating almost equal MAEs.
+        ylab=ys[1]+33 if marker=='o' else ys[1]-31
+        a.line([xs[1]+5,1268],[ys[1],ylab],c,.45)
+        t(1294,ylab,f'{v1:.2f}',6.2,ha='right')
+    t(x_left,74,'Process',6.4,ha='center')
+    t(x_right,74,'+ Residual',6.4,ha='center')
+
     stem=OUT/'graphical_abstract'
-    bounds=a.export(stem,blank_below=145)
+    bounds=a.export(stem,blank_below=52)
     metadata={
-        'orientation':'portrait','dimensions_inches':[8,10],'raster_pixels':[2400,3000],'raster_dpi':300,
-        'design':'Structure comparison, fully crossed terrain and residual corrections, and four stage endpoints; no bottom explanatory text.',
+        'font_family':'Times New Roman','orientation':'landscape',
+        'dimensions_inches':[1328/300,531/300],'raster_pixels':[1328,531],'raster_dpi':300,
+        'design':'Title-free scientific schematic with three aligned fields, process topology, terrain and residual mechanisms, and a paired 2 × 2 MAE interaction plot; no footer.',
+        'design_reference':'https://www.nature.com/documents/natrev-artworkguide_PS.pdf',
         'scientific_scope':{
             'design':'Ten structures × two temperature inputs × two residual options; corrections retain all ten structures.',
-            'terrain':'Fixed lapse-rate correction precedes separate process recalibration; no claim of independently validated local temperature accuracy.',
-            'residual':'Schematic stage-specific residual model, not a neural-network architecture. Predictors include process dates, phase duration, weather, day length and terrain.',
-            'target':'Observed minus raw out-of-fold process date in calibration, with grouped nested refits.',
+            'selection':'CB-FL-S is the selected RAW process structure: sequential beta chilling and linear forcing. Selection is not a filter on the correction experiment.',
+            'terrain':'Fixed lapse-rate correction precedes separate process recalibration; surface and vines are conceptual, not an observed terrain dataset.',
+            'residual':'Stage-specific residual design uses process states and environment; the Δd box is not a claim about neural-network architecture.',
+            'target':'Observed minus raw out-of-fold process date, learned with grouped nested refits.',
             'output':'Correction adjusts attained dates; it does not repair non-attainment or modify process thermal states.',
             'validation':'Grouped site holdouts within five represented environmental zones; not independent regional transfer.',
-            'gains':'No numerical gain or additive sequential-gain claim; corrections are evaluated as factorial contrasts.'},
+            'gains':'The 2 × 2 paired plot shows the convergence of terrain-input MAEs after residual learning. No additive mechanism is assumed.'},
         'sources':{str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'data/paper_figures/workflow/workflow.md',ROOT/'paper/manuscript.tex']},
+        'quantitative_results':{'source':str(source.relative_to(ROOT)),'source_sha256':sha(source),
+            'cohort':{'observations':15105,'sites':633,'groups':355},
+            'weighting':'Equal models, sites within each stage, and four stages',
+            'mae_days':{key:results[key] for _,key,_ in bars},
+            'axis_limits_days':[low,high],
+            'plot':'Connected point estimates, with endpoint leader labels and circle/diamond coding; no uncertainty intervals are implied.'},
         'script_sha256':sha(Path(__file__)),
         'artifacts':{str(stem.with_suffix('.'+ext).relative_to(ROOT)):sha(stem.with_suffix('.'+ext)) for ext in ('pdf','svg','png','tiff')},
-        'verification':{'canvas_text_bounds_checked':True,'minimum_text_y_canvas_units':145,'text_count':len(bounds),'method':'Matplotlib rendered text extents asserted within canvas and above footer exclusion zone.'}
+        'verification':{'canvas_text_bounds_checked':True,'minimum_text_y_canvas_units':52,'text_count':len(bounds),
+                        'method':'Matplotlib rendered text extents asserted within canvas and above footer exclusion zone.'}
     }
-    (OUT/'metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
-    (OUT/'text_bounds.json').write_text(json.dumps(bounds,indent=2)+'\n')
+    (OUT/'graphical_abstract.metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
+    (OUT/'graphical_abstract.text_bounds.json').write_text(json.dumps(bounds,indent=2)+'\n')
     plt.close(a.fig)
     print(json.dumps({'output':str(stem),'pixels':metadata['raster_pixels'],'text_count':len(bounds)}))
 

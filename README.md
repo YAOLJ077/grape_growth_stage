@@ -10,7 +10,7 @@ Linjia Yao, Qiang Yu and Gang Zhao
 
 This repository contains the observations, model implementations, fitted parameters, predictions, figures and submission documents for a European grapevine phenology study. The analysis evaluates **ten process-based model structures**, **two temperature inputs** and **the absence or presence of residual machine learning**, giving **40 configurations for each of four developmental stages**. Its final population comprises **74,618 observations at 3,169 reported sites in 11 countries during 1951–2025**, with complete groups of sites held out for testing.
 
-![Graphical abstract showing the study design, improvements from DEM correction and residual learning, and environmental-zone differences](fig/graphical_abstract/graphical_abstract.png)
+![Graphical abstract showing the study design, improvements from DEM correction and residual learning, and environmental-zone differences](fig/paper_figures/graphical_abstract.png)
 
 ## Research background and objectives
 
@@ -150,7 +150,7 @@ Geographic imbalance, ambiguous cultivar or plant identities and the operational
 | Main manuscript | [PDF](paper/manuscript.pdf), [Word](paper/manuscript.docx), [LaTeX](paper/manuscript.tex) |
 | Supplementary information | [PDF](paper/supplementary.pdf), [Word](paper/supplementary.docx), [LaTeX](paper/supplementary.tex): additional methods, bias diagnostics, sample support and sensitivities |
 | Complete submission | [Word](paper/submission_complete.docx): front matter, manuscript and appended supplement |
-| Graphical abstract | [PDF](fig/graphical_abstract/graphical_abstract.pdf), [SVG](fig/graphical_abstract/graphical_abstract.svg), [PNG](fig/graphical_abstract/graphical_abstract.png) |
+| Graphical abstract | [PDF](fig/paper_figures/graphical_abstract.pdf), [SVG](fig/paper_figures/graphical_abstract.svg), [PNG](fig/paper_figures/graphical_abstract.png) |
 | Study design | [Fig. 1](fig/paper_figures/Fig_01.pdf): workflow; [Fig. 2](fig/paper_figures/Fig_02.pdf): historical observation domain; [Fig. 3](fig/paper_figures/Fig_03.pdf): temperature responses; [Fig. 4](fig/paper_figures/Fig_04.pdf): environmental zones and partitions |
 | Process-model results | [Fig. 5](fig/paper_figures/Fig_05.pdf): MAE; [Fig. 6](fig/paper_figures/Fig_06.pdf): controlled structure contrasts; [Fig. 7](fig/paper_figures/Fig_07.pdf): site errors across zones |
 | Correction results | [Fig. 8](fig/paper_figures/Fig_08.pdf): DEM benefits; [Fig. 9](fig/paper_figures/Fig_09.pdf): residual-learning gains and remaining error; [Fig. 10](fig/paper_figures/Fig_10.pdf): DEM effects within hybrids |
@@ -170,7 +170,7 @@ Fig. 2 describes an earlier phenology-only snapshot with **74,341 observations a
 | Numerical engines | `model/`, `model_run/factorial/`, `model_run/src/` | Original model code and calibration engines with frozen source fingerprints |
 | Source data | [`data/`](data/README.md) | Canonical observations, weather, terrain, climate and figure inputs |
 | Frozen model results | [`model_run/results/`](model_run/README.md) | Fitted parameters, folds, checkpoints, raw/scoring predictions and completion markers |
-| Publication artifacts | `fig/paper_figures/`, `fig/graphical_abstract/`, `paper/` | Final figures, manuscripts and submission files |
+| Publication artifacts | `fig/paper_figures/`, `paper/` | Final figures, manuscripts and submission files |
 
 The numerical engines retain their physical paths and original bytes because the completed runs fingerprint them. Classified entry points call those engines. Dated result directory names identify frozen scientific inputs and dependencies of the final run.
 
